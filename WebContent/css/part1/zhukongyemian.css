@@ -1,0 +1,148 @@
+.zhukongyemian{
+	
+	background-image: url(../../img/part1/login.png);
+	background-size: 100% 100%;
+	height: 100%;
+}
+	
+
+
+.zhukongyemian_top{
+	position: fixed;
+	left: 50%;/*上下左右居中*/
+	top: 50%;
+	-webkit-transform:translate(-50%,-50%);
+	-moz-transform:translate(-50%,-50%);
+	-o-transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%);
+	transform:translate(-50%,-50%);
+  text-shadow:none !important;
+  font-size: 2rem;
+
+}
+
+.backimage img{
+	position:relative;
+	font-size: 2rem;
+  color: rgb(178,196,202);
+	
+}
+
+/*.a{
+	position: relative;
+	margin-top:-13rem;
+	margin-left:4rem;
+	font-size: 2rem;
+	
+}
+
+
+.b{
+	position: relative;
+	margin-top:-3rem;
+	margin-left: 10rem;
+	
+}
+
+.c{
+	position: relative;
+	margin-top:2.5rem;
+	margin-left: 2rem;
+}
+
+.d{
+	position: relative;
+	margin-top:-2.5rem;
+	margin-left: 12rem;
+}
+
+.e{
+	position: relative;
+	margin-left: 7rem;
+	
+}*/
+.a{
+	position: absolute;
+	margin-top:-14rem;
+	margin-left:3rem;
+	font-size: 2rem;
+}
+
+.a a{
+	text-decoration: none;
+}
+
+.a span{
+	color: rgb(178,196,202);
+	
+}
+
+
+.b{
+	position: absolute;
+	margin-top:-14rem;
+	margin-left:10rem;
+	font-size: 2rem;
+}
+
+.b a{
+	text-decoration: none;
+}
+
+.b span{
+	color: rgb(178,196,202);
+	
+}
+
+.c{
+	position: absolute;
+	margin-top:-8rem;
+	margin-left:1.5rem;
+	font-size: 2rem;
+}
+
+.c a{
+	text-decoration: none;
+}
+
+.c span{
+	color: rgb(178,196,202);
+	
+}
+.d{
+	position: absolute;
+	margin-top:-8rem;
+	margin-left:12rem;
+	font-size: 2rem;
+}
+
+.d a{
+	text-decoration: none;
+}
+
+.d span{
+	color: rgb(178,196,202);
+	
+}
+.e{
+	position: absolute;
+	margin-top:-5rem;
+	margin-left:7rem;
+	font-size: 2rem;
+	
+}
+
+
+.e a{
+	text-decoration: none;
+}
+
+.e span{
+	color: rgb(178,196,202);
+	
+}
+
+
+
+
+
