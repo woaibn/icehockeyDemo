@@ -21,13 +21,25 @@
 			    window.location.href="../part3/bingtianxuedizhuyemian.jsp";
 			  });
 			  $(".c").click(function(){
-			    window.location.href="../part2/jiaobingbibaizhuyemian.jsp";
+			    window.location.href="";
 			  });
 			  $(".d").click(function(){
-			    window.location.href="../part2/jiaobingbibaizhuyemian.jsp";
+			    window.location.href="";
 			  });
 			  $(".e").click(function(){
-			    window.location.href="../part2/jiaobingbibaizhuyemian.jsp";
+			    window.location.href="";
+			  });
+			  $(".shouye").click(function(){
+			    window.location.href="zhukongyemian.jsp";
+			  });
+			  $(".zhanshu").click(function(){
+			    window.location.href="../part7/zhanshubanzhuyemian.jsp";
+			  });
+			  $(".zhandui").click(function(){
+			    window.location.href="";
+			  });
+			  $(".wode").click(function(){
+			    window.location.href="../part8/wodezhongxin.jsp";
 			  });
 			});
 		</script>
@@ -63,7 +75,7 @@
 					<div class="d"><a href="../part/binglinchengxiazhuyemian "><span>兵临<br/>城下</span></a></div>
 					<div class="e"><a href="../part/bingbuxuerenzhuyemian "><span>冰步<br/>雪刃</span></a></div>
                 -->
-              	    <div class="a"><span>骄兵<br/>必败</span></div>
+              	    <div class="a"><span>浇兵<br/>必败</span></div>
 					<div class="b"><span>冰天<br/>雪地</span></div>
 					<div class="c"><span>添兵<br/>添将</span></div>
 					<div class="d"><a href="../part/binglinchengxiazhuyemian "><span>兵临<br/>城下</span></a></div>
@@ -71,18 +83,18 @@
 				</div>
 			</div>
 			<div class="button">
-						<div onclick="shouyeClick()">
-							<span>首页</span>
+							<div class="shouye" onclick="shouyeClick()">
+								<span>首页</span>
 							</div>
-						<div onclick="zhanshuClick()">
-							<span>战术</span>
-						</div>
-						<div onclick="zhanduiClick()">
-							<span>战队</span>
+							<div  class="zhanshu" onclick="zhanshuClick()">
+								<span>战术</span>
 							</div>
-						<div onclick="wodeClick()">
-							<span>我的</span>
-						</div>
+							<div  class="zhandui" onclick="zhanduiClick()">
+								<span>战队</span>
+							</div>
+							<div class="wode" onclick="wodeClick()">
+								<span>我的</span>
+							</div>
 			</div>	
 		</div>
 	</body>

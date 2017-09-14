@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,6 +12,22 @@
 		<link rel="stylesheet" href="../../css/part1/zhucedengluyemain.css"/>
 		<script type="text/javascript"  src="../../js/jQuery/jquery-2.2.3.min.js"></script>
 		<script type="text/javascript"  src="../../js/jqueryMobile/jquery.mobile-1.4.5.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+			  $(".shouye").click(function(){
+			    window.location.href="../part1/zhukongyemian.jsp";
+			  });
+			  $(".zhanshu").click(function(){
+			    window.location.href="../part7/zhanshubanzhuyemian.jsp";
+			  });
+			  $(".zhandui").click(function(){
+			    window.location.href="";
+			  });
+			  $(".wode").click(function(){
+			    window.location.href="../part8/wodezhongxin.jsp";
+			  });
+			});
+		</script>
 
 	</head>
 	
@@ -49,9 +66,7 @@
 					<ul data-role="listview"  data-inset="true" data-filter="true" data-filter-placeholder="精确搜索">
 						
 						<!--
-							第一个冰场
-                        -->
-						<div class="playground">
+							<div class="playground">
 							<div class="day">
 								<li data-role="list-divider" class="day">日期</li>
 							</div>
@@ -79,101 +94,51 @@
 									<div class="content_bottom">冰球培训、交流</div>
 								</div>
 							</div>	
-	
-						<!--
-							第二个冰场
-                      -->
-							<div class="day">
-								<li data-role="list-divider" class="day">肖雪期</li>
-							</div>
-							
-							<div class="name_content">
-								<span>浩泰冰上中心</span>
-								<div class="huanjing">
-									<span>环境指数:</span>
-									<img src="../../img/part2/star.png" />
-									<img src="../../img/part2/star.png" />
-									<img src="../../img/part2/star.png" />
-									<img src="../../img/part2/star.png" />
-									<img src="../../img/part2/star.png" />
-								</div>
-							</div>	
-							
-							<div class="content">
-								<div class="content_img">
-									<img src="../../img/part2/b.jpg"/>
-								</div>
-								<div class="content_div_right">
-									<li class="content_top"><a href="#">浩泰冰上中心</a></li>
-									<div class="mid">010-64102356</div>
-									<div class="content_bottom">冰球培训、交流</div>
-								</div>
-							</div>	
-							
-						
-						
-						<!--
-							第三个冰场
+						</div>
                         -->
-                  
-							<div class="day">
-								<li data-role="list-divider" class="day">日期</li>
-							</div>
-							
-							<div class="name_content">
-								<span>博宏俱乐部冰场</span>
-								<div class="huanjing">
-									<span>环境指数:</span>
-									<img src="../../img/part2/star.png" />
-									<img src="../../img/part2/star.png" />
-									<img src="../../img/part2/star.png" />
-									<img src="../../img/part2/star.png" />
-									<img src="../../img/part2/star.png" />
-								</div>
-							</div>	
-							
-							<div class="content">
-								<div class="content_img">
-									<img src="../../img/part2/e.jpg"/>
-								</div>
-								<div class="content_div_right">
-									<li class="content_top"><a href="#">博宏俱乐部冰场</a></li>
-									<div class="mid">010-64102356</div>
-									<div class="content_bottom">冰球培训、交流</div>
-								</div>
-							</div>	
-							
 						<!--
-							第四个冰场
+                        	 var：迭代参数的名称。在迭代体中可以使用的变量的名称，用来表示每一个迭代变量。类型为String。 
+           					items：要进行迭代的集合。对于它所支持的类型将在下面进行讲解。 
+         					  varStatus：迭代变量的名称，用来表示迭代的状态，可以访问到迭代自身的信息。 
+
                         -->
-                        
-                        
-							<div class="day">
-								<li data-role="list-divider" class="day">日期</li>
-							</div>
-							
-							<div class="name_content">
-								<span>KNX俱乐部冰场</span>
-								<div class="huanjing">
-									<span>环境指数:</span>
-									<img src="../../img/part2/star.png" />
-									<img src="../../img/part2/star.png" />
-									<img src="../../img/part2/star.png" />
-									<img src="../../img/part2/star.png" />
-									<img src="../../img/part2/star.png" />
-								</div>
-							</div>	
-							
-							<div class="content">
-								<div class="content_img">
-									<img src="../../img/part2/d.jpg"/>
-								</div>
-								<div class="content_div_right">
-									<li class="content_top"><a href="#">KNX俱乐部冰场</a></li>
-									<div class="mid">010-64102356</div>
-									<div class="content_bottom">冰球培训、交流</div>
-								</div>
-							</div>	
+						
+						<div class="playground">
+							<c:choose>
+								<c:when test="${!empty placeName}"><!--搜索的是冰场的名字,若冰场名字存在，则..-->
+									<c:forEach items="${placeName}" var="Place" varStatus="st">
+										
+										<div class="day">
+											<li data-role="list-divider" class="day">日期</li>
+										</div>
+										
+										<div class="name_content">
+											<span> ${Place.placeName}</span>
+											
+											<div class="huanjing">
+												<span>环境指数:</span>
+												<img src="../../img/part2/star.png" />
+												<img src="../../img/part2/star.png" />
+												<img src="../../img/part2/star.png" />
+												<img src="../../img/part2/star.png" />
+												<img src="../../img/part2/star.png" />
+											</div>	
+										</div>	
+										<div class="content">
+											<div class="content_img">
+												<img>${Place.image}</img>
+											</div>
+											<div class="content_div_right">
+												<li class="content_top"><a href="">${Place.placeName}</a></li>
+												<div class="mid">${Place.placeNumber}</div>
+												<div class="content_bottom">${Place.other}</div>
+											</div>
+										</div>	
+										
+									</c:forEach>
+							</c:when>
+							<c:otherwise> <P>没有记录</P></c:otherwise>
+							</c:choose>
 							
 						</div>
 	    
@@ -184,19 +149,19 @@
 		
 		
 		<div class="button">
-							<div onclick="shouyeClick()">
+							<div class="shouye" onclick="shouyeClick()">
 								<span>首页</span>
 							</div>
-							<div onclick="zhanshuClick()">
+							<div  class="zhanshu" onclick="zhanshuClick()">
 								<span>战术</span>
 							</div>
-							<div onclick="zhanduiClick()">
+							<div  class="zhandui" onclick="zhanduiClick()">
 								<span>战队</span>
 							</div>
-							<div onclick="wodeClick()">
+							<div class="wode" onclick="wodeClick()">
 								<span>我的</span>
 							</div>
-		</div>	
+		 </div>	
 
 	</body>
 	

@@ -11,6 +11,23 @@
 		<link rel="stylesheet" href="../../css/part1/zhucedengluyemain.css"/>
 		<script src="../../js/jQuery/jquery-2.2.3.min.js"></script>
 		<script src="../../js/jqueryMobile/jquery.mobile-1.4.5.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				
+			  $(".shouye").click(function(){
+			    window.location.href="zhukongyemian.jsp";
+			  });
+			  $(".zhanshu").click(function(){
+			    window.location.href="../part7/zhanshubanzhuyemian.jsp";
+			  });
+			  $(".zhandui").click(function(){
+			    window.location.href="";
+			  });
+			  $(".wode").click(function(){
+			    window.location.href="../part8/wodezhongxin.jsp";
+			  });
+			});
+		</script>
 	
 	</head>
 
@@ -74,16 +91,16 @@
 				</div>	
 				
 				<div class="button">
-							<div onclick="shouyeClick()">
+							<div class="shouye" onclick="shouyeClick()">
 								<span>首页</span>
 							</div>
-							<div onclick="zhanshuClick()">
+							<div  class="zhanshu" onclick="zhanshuClick()">
 								<span>战术</span>
 							</div>
-							<div onclick="zhanduiClick()">
+							<div  class="zhandui" onclick="zhanduiClick()">
 								<span>战队</span>
 							</div>
-							<div onclick="wodeClick()">
+							<div class="wode" onclick="wodeClick()">
 								<span>我的</span>
 							</div>
 				   </div>	

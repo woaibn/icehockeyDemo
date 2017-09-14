@@ -1,0 +1,49 @@
+.bingtianxuedizhuyemian{
+	background-image: url(../../img/part1/lock-screen-background.png);
+	background-size: 100% 100%;
+	height: 100%;
+	margin: 0 !important;
+	background-repeat:no-repeat;
+    background-attachment:fixed;
+	display: flex;
+	flex-direction: column;
+	-webkit-flex-direction: column;
+	font-family: "宋体";
+	color: rgb(178,196,202);
+}
+
+.top{
+	position: fixed;
+	top:0;
+	color: rgb(178,196,202);
+	padding: 1.5rem 0;
+	height: 6rem;
+	width:100%;
+}
+
+/*
+.top a{
+	  float: left;	
+	  padding: 2rem 0;
+	  margin-top: 0.5rem;
+}
+*/
+
+.top a{
+	text-decoration: none;
+}
+
+.top img{
+	 width:3rem;
+	  height: 3rem;
+	
+}
+
+.top span{
+	/*display: block;/*默认属性值*/
+	font-weight: 600;
+	text-shadow:none !important;
+	font-size: 2.5rem;
+	margin-left: 30%;	
+	color: rgb(178,196,202);
+}
