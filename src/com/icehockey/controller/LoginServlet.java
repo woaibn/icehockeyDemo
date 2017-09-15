@@ -91,7 +91,7 @@ public class LoginServlet extends HttpServlet {
 			map.put("result", "-1");
 		}
 		if ("0".equals(map.get("result"))) {// 登录成功，且不是第一次登陆
-			writer.println("<script>window.location.href='./views/part1/zhukongyemiani.jsp'</script>");
+			writer.println("<script>window.location.href='./views/part1/zhukongyemian.jsp'</script>");
 		} else if ("-1".equals(map.get("result"))) {// 缺少参数
 			writer.println("<script>alert('缺少参数');window.location.href='./views/part1/qitadenglufangshi.jsp'</script>");
 		} else if ("-2".equals(map.get("result"))) {// 登陆失败，密码错误
