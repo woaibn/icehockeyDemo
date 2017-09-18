@@ -93,59 +93,59 @@
 			<div class="list">
 				
 				
-				<div class="list1" onclick="wodezhengjianClick()" 
+				<div class="list1" onclick="wodezhengjianClick()" >
 					<span>我的证件</span>
 					<img src="../../img/part8/next1.png" style="position:fixed;top:30%; right: 10%;" />
 					<hr style="position:fixed; right:10%;  width: 80%;" />
 				</div>
 				
 				
-				<div class="list2" onclick="yaoqinghaoyouClick()" 
+				<div class="list2" onclick="yaoqinghaoyouClick()" >
 					<span>邀请好友</span>
 					<img src="../../img/part8/next1.png" style="position:fixed;top:36%; right: 10%;" />
 					<hr style="position:fixed; right:10%;  width: 80%;" />
 				</div>
 				
 				
-				<div class="list3" onclick="xiaoxiClick()"
+				<div class="list3" onclick="xiaoxiClick()">
 					<span>消息</span>
 					<img src="../../img/part8/next1.png" style="position:fixed;top:42%; right: 10%;" />
 					<hr style="position:fixed; right:10%;  width: 80%;" />
 				</div>
 				
 				
-				<div class="list4" onclick="yonghuxieyiClick()"
+				<div class="list4" onclick="yonghuxieyiClick()">
 					<span>用户协议</span>
 					<img src="../../img/part8/next1.png" style="position:fixed;top:48%; right: 10%;" />
 					<hr style="position:fixed; right:10%;  width: 80%;" />
 				</div>
 				
 				
-				<div class="list5" onclick="yijianfankuiClick()"
+				<div class="list5" onclick="yijianfankuiClick()">
 					<span>意见反馈</span>
 					<img src="../../img/part8/next1.png" style="position:fixed;top:54%; right: 10%;" />
 					<hr style="position:fixed; right:10%;  width: 80%;" />
 				</div>
 				
-				<div class="list6" onclick="shezhiClick()"
+				<div class="list6" onclick="shezhiClick()">
 					<span>设置</span>
 					<img src="../../img/part8/next1.png" style="position:fixed;top:60%; right: 10%;" />
 					<hr style="position:fixed; right:10%;  width: 80%;" />
 				</div>
 				
-				<div class="list7" onclick="qinglihuancunClick()"
+				<div class="list7" onclick="qinglihuancunClick()">
 					<span>清理缓存</span>
 					<img src="../../img/part8/next1.png" style="position:fixed;top:66%; right: 10%;" />
 					<hr style="position:fixed; right:10%;  width: 80%;" />
 				</div>
 				
-				<div class="list8" onclick="jianchagengxinClick()"
+				<div class="list8" onclick="jianchagengxinClick()">
 					<span>检查更新</span>
 					<img src="../../img/part8/next1.png" style="position:fixed;top:72%; right: 10%;" />
 					<hr style="position:fixed; right:10%;  width: 80%;" />
 				</div>
 				
-				<div class="list9" onclick="tuichudengluClick()"
+				<div class="list9" onclick="tuichudengluClick()">
 					<span>用户协议</span>
 					<img src="../../img/part8/next1.png" style="position:fixed;top:78%; right: 10%;" />
 					<hr style="position:fixed; right:10%;  width: 80%;" />

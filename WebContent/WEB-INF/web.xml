@@ -19,5 +19,14 @@
     <servlet-name>BingChangInfoServlet</servlet-name>
     <url-pattern>/BingChangInfoServlet</url-pattern>
   </servlet-mapping>
-
+  <servlet>
+    <description></description>
+    <display-name>JiaoBingBiBaiServlet</display-name>
+    <servlet-name>JiaoBingBiBaiServlet</servlet-name>
+    <servlet-class>com.icehockey.controller.JiaoBingBiBaiServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>JiaoBingBiBaiServlet</servlet-name>
+    <url-pattern>/JiaoBingBiBaiServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
