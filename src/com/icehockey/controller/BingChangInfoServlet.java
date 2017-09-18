@@ -12,9 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.icehockey.entity.Place;
-import com.icehockey.entity.User;
 import com.icehockey.service.PlaceService;
-import com.icehockey.service.UserService;
 
 /**
  * Servlet implementation class BingChangInfoServlet
@@ -27,7 +25,6 @@ public class BingChangInfoServlet extends HttpServlet {
 	 */
 	public BingChangInfoServlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -42,7 +39,7 @@ public class BingChangInfoServlet extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=UTF-8");
 		response.setHeader("set-Cookie", "name=value;HttpOnly");
-		System.out.println("-------------HeightServlet.html-----------");
+		System.out.println("-------------BingChangInfoServlet.html-----------");
 		PrintWriter writer = response.getWriter();
 		PlaceService placeService = new PlaceService();
 		Place place = null;

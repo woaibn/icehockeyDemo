@@ -1,7 +1,10 @@
-<!DOCTYPE html>
-<html class="teamInfo_html">
-	<head>
-		<meta charset="UTF-8">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>冰场详细信息</title>
 		<link rel="stylesheet" href="../../css/part2/bingchangxiangxixinxi.css"/>
 		<script src="../../js/jQuery/jquery-2.2.3.min.js" type="text/javascript"></script>
@@ -57,41 +60,41 @@
 			
 				<div class="content">
 					<div class="content_div">
-						<span>位置、电话 :${Place.placeNumber}</span>
+						<span>位置、电话 :${place.placeNumber}</span>
 					</div>
 		
 					<div class="content_div">
-						<span>所属机构:${Place.suoshujigou}</span>
-		
-					</div>
-		
-					<div class="content_div">
-						<span>场地名称:${Place.placeName}</span>
+						<span>所属机构:${place.organization}</span>
 		
 					</div>
 		
 					<div class="content_div">
-						<span>冰场等级:${Place.trainingDegree}</span>
+						<span>场地名称:${place.placeName}</span>
 		
 					</div>
 		
 					<div class="content_div">
-						<span>陆地训练室:${Place.landTrainingRoom}</span>
+						<span>冰场等级:${place.trainingDegree}</span>
 		
 					</div>
 		
 					<div class="content_div">
-						<span>冰场面积:${Place.iceArea}</span>
+						<span>陆地训练室:${place.landTrainingRoom}</span>
 		
 					</div>
 		
 					<div class="content_div">
-						<span>是否接受散滑:${Place.acceptIndividual}</span>
+						<span>冰场面积:${place.iceArea}</span>
 		
 					</div>
 		
 					<div class="content_div">
-						<span>开放时间:${Place.openDate}</span>
+						<span>是否接受散滑:${place.acceptIndividual}</span>
+		
+					</div>
+		
+					<div class="content_div">
+						<span>开放时间:${place.openDate}</span>
 		
 					</div>
 		
