@@ -24,10 +24,10 @@
 			    window.location.href="../part4/tianbingtianjiangzhuyemian.jsp";
 			  });
 			  $(".d").click(function(){
-			    window.location.href="";
+			    window.location.href="../part5/binglinchengxiazhuyemian.jsp";
 			  });
 			  $(".e").click(function(){
-			    window.location.href="";
+			    window.location.href="../part6/bingbuxuerenzhuyemian.jsp";
 			  });
 			  $(".shouye").click(function(){
 			    window.location.href="zhukongyemian.jsp";
@@ -39,7 +39,7 @@
 			    window.location.href="";
 			  });
 			  $(".wode").click(function(){
-			    window.location.href="../part8/wodezhongxin.jsp";
+			    window.location.href="../part8/wodezhongxinyemian.jsp";
 			  });
 			});
 		</script>
