@@ -12,37 +12,7 @@
 		<link rel="stylesheet" href="../../css/part1/zhucedengluyemain.css"/>
 		<script src="../../js/jQuery/jquery-2.2.3.min.js"></script>
 		<script src="../../js/jqueryMobile/jquery.mobile-1.4.5.min.js"></script>	
-		<script type="text/javascript">
-			$(document).ready(function(){
-			  $(".a").click(function(){
-			    window.location.href="../part2/jiaobingbibaizhuyemian.jsp";
-			  });
-			  $(".b").click(function(){
-			    window.location.href="../part3/bingtianxuedizhuyemian.jsp";
-			  });
-			  $(".c").click(function(){
-			    window.location.href="../part4/tianbingtianjiangzhuyemian.jsp";
-			  });
-			  $(".d").click(function(){
-			    window.location.href="../part5/binglinchengxiazhuyemian.jsp";
-			  });
-			  $(".e").click(function(){
-			    window.location.href="../part6/bingbuxuerenzhuyemian.jsp";
-			  });
-			  $(".shouye").click(function(){
-			    window.location.href="zhukongyemian.jsp";
-			  });
-			  $(".zhanshu").click(function(){
-			    window.location.href="../part7/zhanshubanzhuyemian.jsp";
-			  });
-			  $(".zhandui").click(function(){
-			    window.location.href="";
-			  });
-			  $(".wode").click(function(){
-			    window.location.href="../part8/wodezhongxinyemian.jsp";
-			  });
-			});
-		</script>
+		
 	</head>
 	<body>
 		<script>
@@ -97,5 +67,8 @@
 							</div>
 			</div>	
 		</div>
+		 <script src="../../js/common/common.js"></script>
+		<script src="../../js/urlApi/api.js"></script>
+		<script src="../../js/part1/zhukongyemian.js"></script>
 	</body>
 </html>
