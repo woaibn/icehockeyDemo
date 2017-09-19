@@ -29,7 +29,7 @@
 			    window.location.href="";
 			  });
 			  $(".wode").click(function(){
-			    window.location.href="../part8/wodezhongxinyemian.jsp";
+			    window.location.href="../part8/wodezhongxin.jsp";
 			  });
 			});
 		</script>
