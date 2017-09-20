@@ -4,7 +4,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>左右手杆</title>
+		<title>热图</title>
 		<link rel="stylesheet" href="../../css/part4/tianbingtianjiangzhuyemian.css" />
 		<link rel="stylesheet" href="../../css/jqueryMobile/jquery.mobile-1.4.5.min.css"/>
 		<link rel="stylesheet" href="../../css/part4/retu.css" />
@@ -52,9 +52,8 @@
 			<div data-role="content">
 				<div class="header">
 					<a href="#" onClick="javascript :history.back(-1);" data-ajax="false"></a>
-					<span>添兵添将</span>
+					<span>数据记录显示</span>
 				</div>
-				
 				
 	      		<div class="button">
 					<div class="shouye" onclick="shouyeClick()">
