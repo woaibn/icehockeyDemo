@@ -19,19 +19,6 @@ $(function() {
 		var data = {
 			gender : gender
 		};
-		// 请求后台保存数据
-		var myForm = document.createElement("form");
-		myForm.method = "post";
-		myForm.action = GENDERURL;
-		myForm.style.display = "none";
-		for ( var k in data) {
-			var myInput = document.createElement("input");
-			myInput.name = k;
-			myInput.value = data[k];
-			myForm.appendChild(myInput);
-		}
-		document.body.appendChild(myForm);
-		myForm.submit();
-		return myForm;
+		jump(GENDERURL, data);
 	}
 });

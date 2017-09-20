@@ -5,45 +5,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
 	content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-<title>左右手杆</title>
+<title>体重</title>
 <link rel="stylesheet"
 	href="../../css/part4/tianbingtianjiangzhuyemian.css" />
 <link rel="stylesheet"
 	href="../../css/jqueryMobile/jquery.mobile-1.4.5.min.css" />
-<link rel="stylesheet" href="../../css/part4/zuoyoushougan.css" />
-
+<link rel="stylesheet" href="../../css/part4/weight.css" />
+<link rel="stylesheet" href="../../css/part4/tizhong.css" />
 <script src="../../js/jQuery/jquery-2.2.3.min.js"></script>
 <script src="../../js/jqueryMobile/jquery.mobile-1.4.5.min.js"></script>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$("#right").click(function() {
-			window.location.href = "qiuyuanshimingye.jsp";
-		});
-		$("#left").click(function() {
-			window.location.href = "qiuyuanshimingye.jsp";
-		});
-	});
-</script>
 </head>
 
 <body>
-	<!--	屏幕适配	-->
-	<script>
-		(function(doc, win) {
-			var docEl = doc.documentElement, resizeEvt = 'orientationchange' in window ? 'orientationchange'
-					: 'resize', recalc = function() {
-				var clientWidth = docEl.clientWidth;
-				if (!clientWidth)
-					return;
-				docEl.style.fontSize = 16 * (clientWidth / 720) + 'px';
-			};
-
-			if (!doc.addEventListener)
-				return;
-			win.addEventListener(resizeEvt, recalc, false);
-			doc.addEventListener('DOMContentLoaded', recalc, false);
-		})(document, window);
-	</script>
 
 	<div data-role="page" class="tianbingtianjiangzhuyemian main">
 		<div data-role="content">
@@ -51,22 +24,33 @@
 				<a href="#" onClick="javascript :history.back(-1);"
 					data-ajax="false"></a> <span>添兵添将</span>
 			</div>
-			<div class="chiganfangshi_top">
-				<span> 告诉我们你的用杆习惯 </span>
+
+
+			<div class="text">
+				<p>
+					我们会根据您的身体资料<br /> 优化您的运动算法
+				</p>
+			</div>
+			<br />
+			<div class="weight_image" align="center">
+				<img src="../../img/part4/manAll.png" />
+			</div>
+			<div data-role="fieldcontain">
+				<input type="range" name="points" id="points" value="30" min="100"
+					max="200">
 			</div>
 
+			<div class="weight">
+				<span>KG</span>
+			</div>
 
-			<div class="chiganfangshi_bottom">
-				<div class="chiganfangshi_left">
-					<div>
-						<img src="../../img/part4/zuoshougan.png" id="left" /> <span>左手杆</span>
-					</div>
-				</div>
-				<div class="chiganfangshi_right">
-					<div>
-						<img src="../../img/part4/youshougan.png" id="right" /> <span>右手杆</span>
-					</div>
-				</div>
+			<div data-role="controlgroup" data-type="horizontal" class="btn">
+				<a href="#" onClick="javascript :history.back(-1);"
+					data-ajax="false" data-role="button" data-corners="true"
+					data-transition="slide" class="back"> <span>上一步</span>
+				</a> <a href="#" data-ajax="false" data-role="button"
+					data-corners="true" data-transition="slide" class="next"> <span>下一步</span>
+				</a>
 			</div>
 
 			<div class="button">
@@ -90,5 +74,6 @@
 
 	<script src="../../js/common/common.js"></script>
 	<script src="../../js/urlApi/api.js"></script>
+	<script src="../../js/part4/weight.js"></script>
 </body>
 </html>

@@ -881,8 +881,8 @@ public class UserDao {
 			} else {// (roleId==103)守门员或者球员
 				sql2 = "INSERT INTO player (userId) VALUES (" + userId + ")";
 			}
-			System.out.println("sql1:  "+sql1);
-			System.out.println("sql2:  "+sql2);
+			System.out.println("sql1:  " + sql1);
+			System.out.println("sql2:  " + sql2);
 			// 执行SQL语句
 			statement = conn.createStatement();
 			statement.executeUpdate(sql1);
@@ -921,6 +921,83 @@ public class UserDao {
 			}
 		}
 		return null;
+	}
+
+	public User updateUser(String gender) {
+		int sex = 1;
+		if ("man".equals(gender)) {
+			sex = 1;
+		} else if ("lady".equals(gender)) {
+			sex = 0;
+		} else {
+			System.out.println("性别输入不合法");
+		}
+		String sql = "INSERT INTO user (sex) VALUES (?)";
+		try {
+			conn = util.openConnection();
+			preparedStatement = conn.prepareStatement(sql);
+			preparedStatement.setInt(1, sex);
+			System.out.println("sql:" + sql);
+			int i = preparedStatement.executeUpdate();
+			if (i == 1) {
+				user = getUserByUserId(getUserId1());
+				System.out.println(user);
+				return user;
+			} else
+				return null;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (preparedStatement != null) {
+					preparedStatement.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+		}
+		return user;
+	}
+
+	private int getUserId1() {
+		String sql = "SELECT * FROM USER WHERE userId = (SELECT max(userId) FROM USER)";
+		int userId = -1;
+		try {
+			conn = util.openConnection();
+			preparedStatement = conn.prepareStatement(sql);
+			System.out.println(sql);
+			rs = preparedStatement.executeQuery();
+			if (rs.next()) {
+
+				userId = rs.getInt("userId");// '登录编号',
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (preparedStatement != null) {
+					preparedStatement.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+		}
+		return userId;
 	}
 
 }

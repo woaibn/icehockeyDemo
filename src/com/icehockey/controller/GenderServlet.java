@@ -45,6 +45,7 @@ public class GenderServlet extends HttpServlet {
 		System.out.println("-------------Gender.html-----------");
 		PrintWriter writer = response.getWriter();
 		User user = null;
+		User userNew = null;
 		Map<String, Object> map = new HashMap<String, Object>();
 		UserService userService = new UserService();
 		System.out.println("跳转后的sessionId :" + session.getId());
@@ -64,12 +65,13 @@ public class GenderServlet extends HttpServlet {
 			}
 
 			System.out.println("找到当前session用户" + user);
-			user = userService.updateUserSex(user.getUserId(), gender);
+			userNew = userService.insertUser(gender);
 			if (user != null) {// 插入成功
-				System.out.println("插入后用户" + user);
+				System.out.println("插入后用户" + userNew);
 				// 处理成功返回result=0
 				map.put("result", "0");
 				map.put("gender", gender);
+				session.setAttribute("userNew", userNew);
 				session.setAttribute("user", user);
 				System.out.println("map..." + map);
 			} else {
@@ -80,14 +82,11 @@ public class GenderServlet extends HttpServlet {
 		// 根据result值，判断页面如何跳转
 		if ("0".equals(map.get("result"))) {// 登录成功，且不是第一次登陆
 			System.out.println("页面操作正确");
-			if ("man".equals(map.get("gender"))) {
-				System.out.println(map.get("gender"));
-				writer.println("<script language='javascript'>window.location.href='./views/bxy/manWeight.html'</script>");
-			} else {
-				writer.println("<script>window.location.href='./views/bxy/ladyWeight.html'</script>");
-			}
+
+				writer.println("<script>window.location.href='./views/part4/height.jsp'</script>");
+			
 		} else if ("-1".equals(map.get("result"))) {// 登陆失败，用户名不存在
-			writer.println("<script language='javascript'>alert('当前没有登录用户');window.location.href='./views/login.html'</script>");
+			writer.println("<script language='javascript'>alert('当前没有登录用户');window.location.href='./views/part1/zhucedengluyemian.jsp'</script>");
 
 		} else if ("-2".equals(map.get("result"))) {// 前端错误
 			writer.println("<script language='javascript'>alert('前端错误');window.location.href='history.back(-1);'</script>");

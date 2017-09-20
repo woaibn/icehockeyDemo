@@ -24,7 +24,7 @@
 				<a href="#" onClick="javascript :history.back(-1);"
 					data-ajax="false"></a> <span>添兵添将</span>
 			</div>
-
+		<h1>待开发</h1>
 			<div class="button">
 				<div class="shouye" onclick="shouyeClick()">
 					<span>首页</span>

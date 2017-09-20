@@ -3,27 +3,16 @@ $(function() {
 		'min-height' : $(window).height()
 	});
 	$('.next').click(function() { // ---> 注意function为小写
-		var weight = $(".number").text();// 得到weight的值
+		var weight = $("#points").text();// 得到weight的值
 		submit(weight);
 	});
 
 	function submit(weight) {
 		var data = {
-			weight : weight,
+			weight : 50,
 		};
-		var myForm = document.createElement("form");
-		myForm.method = "post";
-		myForm.action = WEIGHTURL;
-		myForm.style.display = "none";
-		for ( var k in data) {
-			var myInput = document.createElement("input");
-			myInput.name = k;
-			myInput.value = data[k];
-			myForm.appendChild(myInput);
-		}
-		document.body.appendChild(myForm);
-		myForm.submit();
-		return myForm;	
-	
+		//alert(JSON.stringify(data));
+		jump(WEIGHTURL, data);
+		
 	}
 });

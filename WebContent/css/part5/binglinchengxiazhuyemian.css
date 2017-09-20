@@ -137,9 +137,6 @@
 	margin-top: 0.5rem;
 }
 
-.content div{
-width: 33%;
-}
 
 .img{
 	text-align: center;
@@ -152,8 +149,25 @@ width: 33%;
 }
 
 .name{
-font-size: 1.5rem;
+	font-size: 1rem;
+	width:8rem!important;
 }
+
+.content_left div{
+	width: 100%;
+	
+}
+
+
+.name span{
+	width:100%;
+	
+}
+
+.content div{
+width: 33%;
+}
+
 
 .content_mid div{
 	width: 100%;

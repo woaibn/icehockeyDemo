@@ -48,7 +48,7 @@
 							<span>${duikang.address}</span>
 							<div class="huanjing">
 								<span>环境指数:</span>
-								<c:forEach var="v" begin="0" end="${duikang.star}">
+								<c:forEach var="v" begin="1" end="${duikang.star}">
 									<img src="../../img/part2/star.png" />
 								</c:forEach>
 							</div>

@@ -9,7 +9,13 @@ $(function() {
 		var clubAName = $("#clubAName").val();
 		var clubBName = $("#clubBName").val();
 		var beizhu = $("#beizhu").val();
+		var time = $("#time").val();
 
+		if (time == "") {
+			alert("请选择比赛时间");
+			return false;
+		}
+		
 		if (address == "") {
 			alert("请输入比赛场地");
 			return false;
@@ -30,9 +36,10 @@ $(function() {
 			address : address,
 			clubAName : clubAName,
 			clubBName : clubBName,
-			beizhu : beizhu
+			beizhu : beizhu,
+			time : time
 		};
-		alert(JSON.stringify(data));
+//		alert(JSON.stringify(data));
 		jump(BINGLINCHENGXIAURL, data);
 	});
 });

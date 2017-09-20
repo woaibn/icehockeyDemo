@@ -32,26 +32,5 @@ function callback(content) {
 		touxiang : content,
 		name : name,
 		};
-	var myForm = document.createElement("form");
-	myForm.method = "post";
-	myForm.action = ALIASURL;
-	myForm.style.display = "none";
-	for ( var k in data) {
-		var myInput = document.createElement("input");
-		myInput.name = k;
-		myInput.value = data[k];
-		myForm.appendChild(myInput);
-	}
-	document.body.appendChild(myForm);
-	myForm.submit();
-	return myForm;
-	
-	$.post(ALIASURL,data,function(result) {
-		var jsonReturn = JSON.parse(result);// 将JSON字符串转换为对象
-		if (jsonReturn.result == "0") {
-			window.location.href = "../main.html?userid="+jsonReturn.userid;
-			}else if (jsonReturn.result == "-1") {
-				alert("当前没有登录用户");
-			}
-		}, "json");
+	jump(ALIASURL, data);
 }

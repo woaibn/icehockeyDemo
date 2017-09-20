@@ -61,7 +61,14 @@ font-family: "宋体";
 	margin-top: 1.5rem;
 }
 
-
+/*时间*/
+.time{
+	border-radius: 1rem !important;
+    width: 80%;
+    margin-left: 2%;
+    height:1rem!important;
+	
+}
 
 .button3{
 	display: flex;

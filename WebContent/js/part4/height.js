@@ -8,21 +8,9 @@ $(function() {
 	});
 	function submit(height) {
 		var data = {
-			height : height,
+			height : 175,
 		};
-		var myForm = document.createElement("form");
-		myForm.method = "post";
-		myForm.action = HEIGHTURL;
-		myForm.style.display = "none";
-		for ( var k in data) {
-			var myInput = document.createElement("input");
-			myInput.name = k;
-			myInput.value = data[k];
-			myForm.appendChild(myInput);
-		}
-		document.body.appendChild(myForm);
-		myForm.submit();
-		return myForm;
+		jump(HEIGHTURL, data);
 
 	}
 });

@@ -12,26 +12,28 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.icehockey.entity.DuiKang;
-import com.icehockey.service.DuiKangService;
+import com.icehockey.entity.User;
+import com.icehockey.service.UserService;
 
 /**
  * Servlet implementation class TianBingTianJiangServlet
  */
 public class TianBingTianJiangServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public TianBingTianJiangServlet() {
-        super();
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public TianBingTianJiangServlet() {
+		super();
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		response.setContentType("application/json");
 		request.setCharacterEncoding("utf-8");
@@ -40,8 +42,8 @@ public class TianBingTianJiangServlet extends HttpServlet {
 		response.setHeader("set-Cookie", "name=value;HttpOnly");
 		System.out.println("-------------添兵添将.html-----------");
 		PrintWriter writer = response.getWriter();
-		DuiKangService duiKangService = new DuiKangService();
-		List<DuiKang> duiKangs = null;
+		UserService UserService = new UserService();
+		List<User> users = null;
 		Map<String, Object> map = new HashMap<String, Object>();
 		System.out.println("跳转后的sessionId :" + session.getId());
 		String operateType = null;
@@ -51,31 +53,18 @@ public class TianBingTianJiangServlet extends HttpServlet {
 		} else {
 			if (request.getParameter("operateType") != null) {
 				operateType = request.getParameter("operateType");
-				if ("BingLinChengXia".equals(operateType)) {// 如果操作类型是主控页面到浇冰必拜主页面，则取出场地表中的所有场地信息
-					duiKangs = duiKangService.getDuiKangs();
-					session.setAttribute("duiKangs", duiKangs);
-					map.put("duiKangs", duiKangs);
+				if ("TianBingTianJiang".equals(operateType)) {// 如果操作类型是主控页面到浇冰必拜主页面，则取出场地表中的所有场地信息
 					map.put("result", "0");
 					map.put("ok", "1");
 
-				} else if ("tianjianxunliansai".equals(operateType)) {// 如果操作类型是主控页面到浇冰必拜主页面，则取出场地表中的所有场地信息
-					String address = request.getParameter("address");
-					String clubAName = request.getParameter("clubAName");
-					String clubBName = request.getParameter("clubBName");
-					String beizhu = request.getParameter("beizhu");
-					boolean f = false;
-					f = duiKangService.addSaiShi(address, clubAName, clubBName,
-							beizhu);
-					if (f) {// 添加成功
-						duiKangs = duiKangService.getDuiKangs();
-						session.setAttribute("duiKangs", duiKangs);
-						map.put("duiKangs", duiKangs);
-						map.put("result", "0");
-						map.put("ok", "2");
-					} else {// 添加失败
+				} else if ("sousuo".equals(operateType)) {// 如果操作类型是主控页面到浇冰必拜主页面，则取出场地表中的所有场地信息
+					String userName=request.getParameter("searchName");
+					users=UserService.queryUserByUserName(userName);
+					session.setAttribute("users", users);		
+					map.put("result", "0");
+					map.put("ok", "2");
+				} 
 
-					}
-				}
 			} else {
 				map.put("result", "-2");// 没有操作类型
 			}
@@ -85,9 +74,9 @@ public class TianBingTianJiangServlet extends HttpServlet {
 		if ("0".equals(map.get("result"))) {// 登录成功，且不是第一次登陆
 			System.out.println("页面操作正确");
 			if ("1".equals(map.get("ok"))) {
-				writer.println("<script language='javascript'>window.location.href='./views/part5/binglinchengxiazhuyemian.jsp'</script>");
+				writer.println("<script language='javascript'>window.location.href='./views/part4/tianbingtianjiangzhuyemian.jsp'</script>");
 			} else if ("2".equals(map.get("ok"))) {
-				writer.println("<script language='javascript'>alert('添加成功');window.location.href='./views/part5/binglinchengxiazhuyemian.jsp'</script>");
+				writer.println("<script language='javascript'>alert('搜索成功');window.location.href='./views/part4/sousuojieguo.jsp'</script>");
 			} else {
 
 			}
@@ -104,9 +93,11 @@ public class TianBingTianJiangServlet extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
 

@@ -17,6 +17,6 @@ $(".submitBtn").click(function() {
 		operateType : "sousuo",
 		placeName : searchName,
 	};
-	alert(JSON.stringify(data));
+	//alert(JSON.stringify(data));
 	jump(JIAOBINGBIBAIURL, data);
 });

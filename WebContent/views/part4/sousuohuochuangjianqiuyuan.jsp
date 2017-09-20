@@ -13,14 +13,7 @@
 
 <script src="../../js/jQuery/jquery-2.2.3.min.js"></script>
 <script src="../../js/jqueryMobile/jquery.mobile-1.4.5.min.js"></script>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$("#new_btn").click(function() {
-			window.location.href = "xingbiexuanze.jsp";
-		});
 
-	});
-</script>
 </head>
 
 <body>
@@ -33,13 +26,12 @@
 			</div>
 
 			<div class="search">
-				<form method="post" action="demoform.asp">
-					<div data-role="fieldcontain">
+				<div data-role="fieldcontain">
 						<label for="search">请输入搜索姓名：</label> <input data-role=""
 							type="search" name="search" id="search" placeholder="">
 					</div>
-					<input type="submit" data-inline="true" value="搜索" id="btn">
-				</form>
+					<input type="submit" data-inline="true" value="搜索" id="searchbtn">
+				
 			</div>
 
 			<div id="new_btn">

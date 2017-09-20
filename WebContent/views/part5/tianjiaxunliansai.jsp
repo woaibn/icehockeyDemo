@@ -45,8 +45,10 @@
 		</div>
 		<div class="button3">
 			<div class="a">
-				<span>时间</span>
+				<span>时间:</span>
 			</div>
+			<input type="datetime-local"  class="time"
+				placeholder="" id="time" />
 		</div>
 		<div class="button3">
 			<div class="a">
