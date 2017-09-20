@@ -156,4 +156,71 @@ public class PlaceDao {
 		return places;
 	}
 
+	public List<Place> getPlaces2(String placeName) {
+		String sql = "SELECT * FROM place where placeName=?;";
+		places=new ArrayList<Place>();
+		try {
+			conn = util.openConnection();
+			preparedStatement = conn.prepareStatement(sql);
+			preparedStatement.setString(1, placeName);
+			System.out.println(sql);
+			rs = preparedStatement.executeQuery();
+			while (rs.next()) {
+				System.out.println("bbbbbbbbbbbbbbbbbb");
+				int placeId = rs.getInt("placeId");
+				String logo = rs.getString("logo");
+				placeName = rs.getString("placeName");
+				String placeAddress = rs.getString("placeAddress");
+				String placeNumber = rs.getString("placeNumber");
+				String indoor = rs.getString("indoor");
+				String changingRoom = rs.getString("changingRoom");
+				String parkingLot = rs.getString("parkingLot");
+				String trainingDegree = rs.getString("trainingDegree");
+				int scale = rs.getInt("scale");
+				String landTrainingRoom = rs.getString("landTrainingRoom");
+				double area = rs.getDouble("area");
+				double iceArea = rs.getDouble("iceArea");
+				Date buildDate = rs.getDate("buildDate");
+				Date useDate = rs.getDate("useDate");
+				Date openDate = rs.getDate("openDate");
+				String acceptIndividual = rs.getString("acceptIndividual");
+				String linkman = rs.getString("linkman");
+				String linkNumber = rs.getString("linkNumber");
+				String email = rs.getString("email");
+				String surface = rs.getString("surface");
+				String organization = rs.getString("organization");
+				String image = rs.getString("image");
+
+				place = new Place(placeId, logo, placeName, placeAddress,
+						placeNumber, indoor, changingRoom, parkingLot,
+						trainingDegree, scale, landTrainingRoom, area, iceArea,
+						buildDate, useDate, openDate, acceptIndividual,
+						linkman, linkNumber, email, surface, organization,
+						image);
+				System.out.println(place);
+				places.add(place);
+				
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (statement != null) {
+					statement.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+		}
+		return places;
+	}
+
 }

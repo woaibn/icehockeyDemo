@@ -4,10 +4,7 @@ $(document).ready(function() {
 		var data = {
 			operateType : "zhukongToJiaoZhu",
 		};
-		alert(JSON.stringify(data));
 		jump(JIAOBINGBIBAIURL, data);
-		
-		//window.location.href = "../part2/jiaobingbibaizhuyemian.jsp";
 	});
 	$(".b").click(function() {
 		window.location.href = "../part3/bingtianxuedizhuyemian.jsp";
@@ -21,16 +18,5 @@ $(document).ready(function() {
 	$(".e").click(function() {
 		window.location.href = "../part6/bingbuxuerenzhuyemian.jsp";
 	});
-	$(".shouye").click(function() {
-		window.location.href = "zhukongyemian.jsp";
-	});
-	$(".zhanshu").click(function() {
-		window.location.href = "../part7/zhanshubanzhuyemian.jsp";
-	});
-	$(".zhandui").click(function() {
-		window.location.href = "";
-	});
-	$(".wode").click(function() {
-		window.location.href = "../part8/wodezhongxin.jsp";
-	});
+	
 });

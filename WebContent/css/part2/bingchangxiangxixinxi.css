@@ -13,15 +13,14 @@
 
 .top{
 	color: rgb(178,196,202);
-	padding: 1.5rem 0;
+padding: 1.5rem 0;
 }
 
 .top a{
-	  width:4rem;
-	  height: 3rem;
+	  width:2.5rem;
 	  background: url(../../img/part1/back.png) no-repeat;
-	  background-size: 50% 50%;
 	  float: left;	
+	  margin-left: 1rem;
 	  padding: 1rem 0;
 	  margin-top: 0.5rem;
 }
@@ -33,6 +32,17 @@
 	font-size: 2.5rem;
 	margin-left: 30%;	
 }
+.logo{
+text-align: center;
+}
+
+.logo img{
+height: auto;
+width: 70%;
+
+}
+
+
 
 /*下半部分*/
 .content{
