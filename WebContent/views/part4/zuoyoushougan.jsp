@@ -26,6 +26,12 @@
 			  $(".wode").click(function(){
 			    window.location.href="../part8/wodezhongxin.jsp";
 			  });
+			  $("#right").click(function(){
+			    window.location.href="qiuyuanshimingye.jsp";
+			  });
+			  $("#left").click(function(){
+			    window.location.href="qiuyuanshimingye.jsp";
+			  });
 			});
 		</script>
 	</head>
@@ -54,12 +60,13 @@
 					<a href="#" onClick="javascript :history.back(-1);" data-ajax="false"></a>
 					<span>添兵添将</span>
 				</div>
-				<div class="text">
+				<div class="chiganfangshi_top">
 					<span>
 						告诉我们你的用杆习惯
 					</span>
 				</div>
 				
+				 
 				<div class="chiganfangshi_bottom">
 					<div class="chiganfangshi_left">
 						<div>
@@ -96,6 +103,5 @@
         
         <script src="../../js/common/common.js"></script>
 		<script src="../../js/urlApi/api.js"></script>
-		<script type="text/javascript" src="../../js/part4/zuoyoushougan.js" ></script>
 	</body>
 </html>

@@ -4,10 +4,10 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>左右手杆</title>
+		<title>解除绑定</title>
 		<link rel="stylesheet" href="../../css/part4/tianbingtianjiangzhuyemian.css" />
 		<link rel="stylesheet" href="../../css/jqueryMobile/jquery.mobile-1.4.5.min.css"/>
-		<link rel="stylesheet" href="../../css/part4/zuoyoushougan.css" />
+		<link rel="stylesheet" href="../../css/part4/jiechubangding.css" />
 		
 		<script src="../../js/jQuery/jquery-2.2.3.min.js"></script>
 		<script src="../../js/jqueryMobile/jquery.mobile-1.4.5.min.js"></script>	
@@ -25,6 +25,9 @@
 			  });
 			  $(".wode").click(function(){
 			    window.location.href="../part8/wodezhongxin.jsp";
+			  });
+			  $(".jiechubangding").click(function(){
+			    alert("您确认要解除绑定吗？");
 			  });
 			});
 		</script>
@@ -54,8 +57,12 @@
 					<a href="#" onClick="javascript :history.back(-1);" data-ajax="false"></a>
 					<span>添兵添将</span>
 				</div>
-			
-			
+				<span class="jiechubangding">解除绑定</span>
+				<div class="search">
+	        		<input data-role="" type="search" name="search" id="search" placeholder="搜索内容...">
+	      		</div>
+	      		
+	      		
 	      		<div class="button">
 					<div class="shouye" onclick="shouyeClick()">
 						<span>首页</span>

@@ -7,6 +7,7 @@
 		<title>身高</title>
 		<link rel="stylesheet" href="../../css/part4/tianbingtianjiangzhuyemian.css" />
 		<link rel="stylesheet" href="../../css/part4/tizhong.css" />
+		<link rel="stylesheet" href="../../css/part4/height.css" />
 		<link rel="stylesheet" href="../../css/jqueryMobile/jquery.mobile-1.4.5.min.css"/>
 		
 		<script src="../../js/jQuery/jquery-2.2.3.min.js"></script>
@@ -25,6 +26,9 @@
 			  });
 			  $(".wode").click(function(){
 			    window.location.href="../part8/wodezhongxin.jsp";
+			  });
+			  $(".next").click(function(){
+			    window.location.href="tizhong.jsp";
 			  });
 			});
 		</script>
@@ -66,7 +70,22 @@
 				<div class="weight_image" align="center" >
 					<img src="../../img/part4/manAll.png" />
 				</div>
-				
+				<div data-role="fieldcontain">   	    	
+        			<input type="range" name="points" id="points" value="170" min="120" max="200" >
+	      		</div>
+	      		
+	      		<div class="height">
+	      			<span>CM</span>
+	      		</div>
+					<div data-role="controlgroup" data-type="horizontal" class="btn">
+						<a href="#" onClick="javascript :history.back(-1);"  data-ajax="false" data-role="button" data-corners="true" data-transition="slide" class="back">
+							<span>上一步</span>
+						</a>
+		  				<a href="#"  data-ajax="false" data-role="button" data-corners="true" data-transition="slide" class="next">
+		  					<span>下一步</span>
+		  				</a>
+		  			</div>	
+				</div>
 	      		<div class="button">
 					<div class="shouye" onclick="shouyeClick()">
 						<span>首页</span>
@@ -88,6 +107,5 @@
         
         <script src="../../js/common/common.js"></script>
 		<script src="../../js/urlApi/api.js"></script>
-		<script type="text/javascript" src="../../js/part4/shengao.js" ></script>
 	</body>
 </html>

@@ -4,10 +4,10 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>左右手杆</title>
+		<title>mengjianghuoqiuyuan</title>
 		<link rel="stylesheet" href="../../css/part4/tianbingtianjiangzhuyemian.css" />
 		<link rel="stylesheet" href="../../css/jqueryMobile/jquery.mobile-1.4.5.min.css"/>
-		<link rel="stylesheet" href="../../css/part4/zuoyoushougan.css" />
+		<link rel="stylesheet" href="../../css/part4/mengjianghuoqiuyuan.css" />
 		
 		<script src="../../js/jQuery/jquery-2.2.3.min.js"></script>
 		<script src="../../js/jqueryMobile/jquery.mobile-1.4.5.min.js"></script>	
@@ -25,6 +25,12 @@
 			  });
 			  $(".wode").click(function(){
 			    window.location.href="../part8/wodezhongxin.jsp";
+			  });
+			  $("#shoumen").click(function(){
+			    window.location.href="zuoyoushougan.jsp";
+			  });
+			  $("#qiuyuan").click(function(){
+			    window.location.href="zuoyoushougan.jsp";
 			  });
 			});
 		</script>
@@ -52,9 +58,28 @@
 			<div data-role="content">
 				<div class="header">
 					<a href="#" onClick="javascript :history.back(-1);" data-ajax="false"></a>
-					<span>添兵添将</span>
+					<span>编辑</span>
 				</div>
 				 
+				<div  class="text">
+					<p>
+		     		请选择您的身份
+					</p>
+				</div>
+				
+				<div class="left">
+					<div class="left_role_div">
+						<img src="../../img/part4/qiuyuan.png" id="qiuyuan"/>
+						<span>球员</span>
+					</div>
+				</div>
+				<br/>
+				<div class="right">
+					<div class="right_role_div">
+						<img src="../../img/part4/shoumenyuan.png" id="shoumen"/>
+						<span>守门员</span>
+					</div>
+				</div>
 				
 	      		<div class="button">
 					<div class="shouye" onclick="shouyeClick()">

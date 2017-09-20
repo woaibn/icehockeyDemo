@@ -1,0 +1,41 @@
+.text{
+	color: rgb(178,196,202);
+	text-align: center;
+	font-size: 3rem;
+	padding: 2rem 0;
+}
+
+.left{
+	
+	flex: 1;
+}
+.left_role_div{
+	
+	height: 33%;
+	text-align: center;
+}
+
+.left_role_div img{
+	width: 50%;	
+	padding:1rem 1rem 0 1rem;
+}
+
+.right{
+	flex: 1;
+}
+.right_role_div{
+	
+ 	height: 33%;
+	text-align: center;
+}
+
+.right_role_div img{
+	width: 50%;	
+	padding:1rem 1rem  0 1rem ;
+}
+
+span{
+	display: block;
+	color: white;
+	font-size: 3rem;
+}

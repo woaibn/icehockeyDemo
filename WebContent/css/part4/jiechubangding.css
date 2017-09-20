@@ -1,0 +1,11 @@
+.jiechubangding{
+	height: 20px;
+	width: 50x;
+	display: inline-block;
+	background-color: #E6E6E6;
+	position:fixed;
+	right :20px;
+	top:30px;
+	color: red;
+	font-size: 15px;
+}
