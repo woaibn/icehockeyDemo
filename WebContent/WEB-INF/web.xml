@@ -39,4 +39,24 @@
     <servlet-name>DaoHangLanServlet</servlet-name>
     <url-pattern>/DaoHangLanServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>TianBingTianJiangServlet</display-name>
+    <servlet-name>TianBingTianJiangServlet</servlet-name>
+    <servlet-class>com.icehockey.controller.TianBingTianJiangServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TianBingTianJiangServlet</servlet-name>
+    <url-pattern>/TianBingTianJiangServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BingLinChengXiaServlet</display-name>
+    <servlet-name>BingLinChengXiaServlet</servlet-name>
+    <servlet-class>com.icehockey.controller.BingLinChengXiaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BingLinChengXiaServlet</servlet-name>
+    <url-pattern>/BingLinChengXiaServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
