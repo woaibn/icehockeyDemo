@@ -16,13 +16,14 @@
 	top:0;
 	color: rgb(178,196,202);
 	padding: 1.5rem 0;
-	height: 6rem;
+	height: 3rem;
 	width:100%;
 }
 
 
 .top a{
 	  width:2.5rem;
+	  margin-left: 1rem;
 	  background: url(../../img/part1/back.png) no-repeat;
 	  float: left;	
 	  padding: 1rem 0;
@@ -37,6 +38,9 @@
 	margin-left: 30%;	
 }
 
+
+
+
 /*下方滚动框*/
 
 .search{
@@ -45,9 +49,35 @@
 	margin-top: 5rem;
 	overflow: scroll;
 
-
-	
 }
+
+.search_a{
+display: flex;
+
+}
+
+.search_b{
+border-radius: 2rem !important;
+width: 80%;
+
+
+}
+
+.submitBtn{
+	background: transparent! important;
+	border-radius: 1rem !important;
+	
+	margin: 0.5rem   2rem;
+	height: 2.5rem;
+
+    font-size: 1.5rem;
+    color: #fff;
+    text-shadow:none !important;
+    padding: 0 0.5rem;
+    
+}
+
+
 
 
 /*日期显示*/

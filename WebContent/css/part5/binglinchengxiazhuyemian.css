@@ -13,8 +13,9 @@
 .head{
 	color: white;
 	text-align: center;
-	font-size: 1.3rem;
-	margin-top: 2rem;
+	font-size: 2rem;
+	margin-top: 3rem;
+	text-decoration: none;
 }
 .zengjia{
 	position: fixed;
@@ -31,15 +32,16 @@
 	display: flex;
 	color:white;
 	text-shadow: none;
+
 	
 }
-#yiguanzhu{
+.yiguanzhu{
 	
 	text-align: center;
 	font-size: 1.3rem;
 	width:50%;
 }
-#saishixuanze{
+.saishixuanze{
 	text-align: center;
 	font-size: 1.3rem;
 	width:50%;
@@ -61,3 +63,137 @@
 .button div{
 	margin: auto;
 }
+
+.team{
+	width:90%;
+	margin: auto;
+	margin-top: 1rem;
+	overflow: scroll;
+}
+
+/*日期*/
+.day{
+	margin-top: 0.5rem;
+	font-size: 2rem;
+	color: rgb(178,196,202);
+}
+/*x姓名，星级*/
+
+.name_content{
+	position:relative;
+	margin-top: 0.5rem;
+	background: white;
+	height: 1.5rem;
+	border-radius: 2rem;
+	display: -webkit-flex;
+	border-bottom: 1px solid #d9d9d9; 
+}
+
+.name_content span1{
+	position: absolute;
+	
+	/*
+	 * font-size: 1.5rem;
+	margin-left: 0.5rem;
+	margin-top:0.3rem;
+	padding-right: 1rem;
+	*/
+	
+}
+
+.name_content span2{
+	position: absolute;
+	
+}
+
+.huanjing{
+	display: flex;
+	position:absolute;
+	margin-left: 10rem;
+}
+
+
+/*
+.huanjing span{
+	font-family: "宋体";
+	text-shadow:none;
+}
+.huanjing img{
+	position: relative;
+	margin-left: 5rem;
+	
+}
+*/
+
+/*球场信息*/
+
+.content{
+	background: white;
+	height: 10rem;
+	font-size: 1.5rem;
+	border-radius: 2rem;
+	display: -webkit-flex;
+	border-bottom: 1px solid #d9d9d9; 
+	margin-top: 0.5rem;
+}
+
+
+.img{
+	text-align: center;
+	width: 7rem;	
+}
+
+.img img{
+	width:7rem;
+	height: 7rem;
+}
+
+.name{
+	font-size: 1rem;
+	width:8rem!important;
+}
+
+.content_left div{
+	width: 100%;
+	
+}
+
+
+.name span{
+	width:100%;
+	
+}
+
+.content div{
+width: 33%;
+}
+
+
+.content_mid div{
+	width: 100%;
+	text-align: center;
+	font-size: 1.3rem;
+	color: rgb(89,100,243);	
+	margin: 1rem 0rem;
+	
+
+}
+
+
+/*
+.content_top{
+	font-size: 2rem;
+	color: rgb(89,100,243);	
+}
+
+.content_mid{
+	font-size: 2rem;
+	color: rgb(89,100,243);
+	
+}
+
+.content_bottom{
+	font-size:1rem;
+	color: #666666;
+}
+*/

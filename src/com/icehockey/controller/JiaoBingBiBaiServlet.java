@@ -60,10 +60,10 @@ public class JiaoBingBiBaiServlet extends HttpServlet {
 					map.put("places", places);
 					map.put("result", "0");
 					map.put("ok", "1");
-					
+
 				} else if ("JiaoZhuToJiaoXiang".equals(operateType)) {// 如果操作类型是浇冰必拜主页面场地详细信息，则根据场地名称取出场地表中的该场地信息
 					if (request.getParameter("placeName") != null) {
-						String placeName=request.getParameter("placeName");
+						String placeName = request.getParameter("placeName");
 						place = placeService.getPlaceByPlaceName(placeName);
 						session.setAttribute("place", place);
 						map.put("place", place);
@@ -72,9 +72,19 @@ public class JiaoBingBiBaiServlet extends HttpServlet {
 					} else {
 						map.put("result", "-2");// 没有操作类型
 					}
-					System.out.println("map:"+map);
-				} else {
-
+				} else if ("sousuo".equals(operateType)) {// 如果操作类型是浇冰必拜主页面场地详细信息，则根据场地名称取出场地表中的该场地信息
+					if (request.getParameter("placeName") != null) {
+						String placeName = request.getParameter("placeName");
+						System.out.println("placeName:"+placeName);
+						places = placeService.getPlacesByPlaceName(placeName);
+						session.setAttribute("places", places);
+						map.put("places", places);
+						map.put("result", "0");
+						map.put("ok", "3");
+					} else {
+						map.put("result", "-2");// 没有操作类型
+					}
+					System.out.println("map:" + map);
 				}
 			} else {
 				map.put("result", "-2");// 没有操作类型
@@ -88,6 +98,8 @@ public class JiaoBingBiBaiServlet extends HttpServlet {
 				writer.println("<script language='javascript'>window.location.href='./views/part2/jiaobingbibaizhuyemian.jsp'</script>");
 			} else if ("2".equals(map.get("ok"))) {
 				writer.println("<script language='javascript'>window.location.href='./views/part2/bingchangxiangxixinxi.jsp'</script>");
+			} else if ("3".equals(map.get("ok"))) {
+				writer.println("<script language='javascript'>window.location.href='./views/part2/jiaobingbibaizhuyemian.jsp'</script>");
 			}
 		} else if ("-1".equals(map.get("result"))) {// 登陆失败，用户名不存在
 			writer.println("<script language='javascript'>alert('当前没有登录用户');window.location.href='./views/part1/zhucedengluyemian.jsp'</script>");
@@ -99,6 +111,7 @@ public class JiaoBingBiBaiServlet extends HttpServlet {
 			writer.println("<script language='javascript'>alert('插入失败');window.location.href='history.back(-1);'</script>");
 
 		}
+
 	}
 
 	/**

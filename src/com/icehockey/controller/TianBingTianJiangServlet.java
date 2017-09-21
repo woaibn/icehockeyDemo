@@ -3,27 +3,28 @@ package com.icehockey.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.icehockey.entity.User;
+import com.icehockey.service.UserService;
+
 /**
- * Servlet implementation class BodyServlet
+ * Servlet implementation class TianBingTianJiangServlet
  */
-@WebServlet("/BodyServlet")
-public class BodyServlet extends HttpServlet {
+public class TianBingTianJiangServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public BodyServlet() {
+	public TianBingTianJiangServlet() {
 		super();
 	}
 
@@ -39,36 +40,48 @@ public class BodyServlet extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=UTF-8");
 		response.setHeader("set-Cookie", "name=value;HttpOnly");
-		System.out.println("-------------HeightServlet.html-----------");
+		System.out.println("-------------添兵添将.html-----------");
 		PrintWriter writer = response.getWriter();
-		User user = null;
+		UserService UserService = new UserService();
+		List<User> users = null;
 		Map<String, Object> map = new HashMap<String, Object>();
 		System.out.println("跳转后的sessionId :" + session.getId());
+		String operateType = null;
 		// session
 		if (session.getAttribute("user") == null) {
-			map.put("reslut", "-1");
+			map.put("result", "-1");// 没有用户登录
 		} else {
-			System.out.println("跳转前的sessionId :" + session.getId());
-			user = (User) session.getAttribute("user");
-			System.out.println("user: " + user);
-			System.out.println("找到当前session用户" + user);
-			if (user != null) {// 插入成功
-				System.out.println("插入后用户" + user);
-				// 处理成功返回result=0
-				map.put("result", "0");
-				session.setAttribute("user", user);
-				System.out.println("map..." + map);
-			} else {
-				map.put("result", "-3");
-			}
+			if (request.getParameter("operateType") != null) {
+				operateType = request.getParameter("operateType");
+				if ("TianBingTianJiang".equals(operateType)) {// 如果操作类型是主控页面到浇冰必拜主页面，则取出场地表中的所有场地信息
+					map.put("result", "0");
+					map.put("ok", "1");
 
+				} else if ("sousuo".equals(operateType)) {// 如果操作类型是主控页面到浇冰必拜主页面，则取出场地表中的所有场地信息
+					String userName=request.getParameter("searchName");
+					users=UserService.queryUserByUserName(userName);
+					session.setAttribute("users", users);		
+					map.put("result", "0");
+					map.put("ok", "2");
+				} 
+
+			} else {
+				map.put("result", "-2");// 没有操作类型
+			}
 		}
+
 		// 根据result值，判断页面如何跳转
 		if ("0".equals(map.get("result"))) {// 登录成功，且不是第一次登陆
 			System.out.println("页面操作正确");
-			writer.println("<script>window.location.href='./views/bxy/alias.html'</script>");
+			if ("1".equals(map.get("ok"))) {
+				writer.println("<script language='javascript'>window.location.href='./views/part4/tianbingtianjiangzhuyemian.jsp'</script>");
+			} else if ("2".equals(map.get("ok"))) {
+				writer.println("<script language='javascript'>alert('搜索成功');window.location.href='./views/part4/sousuojieguo.jsp'</script>");
+			} else {
+
+			}
 		} else if ("-1".equals(map.get("result"))) {// 登陆失败，用户名不存在
-			writer.println("<script language='javascript'>alert('当前没有登录用户');window.location.href='./views/login.html'</script>");
+			writer.println("<script language='javascript'>alert('当前没有登录用户');window.location.href='./views/part1/zhucedengluyemian.jsp'</script>");
 
 		} else if ("-2".equals(map.get("result"))) {// 前端错误
 			writer.println("<script language='javascript'>alert('前端错误');window.location.href='history.back(-1);'</script>");

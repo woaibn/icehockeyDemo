@@ -35,4 +35,15 @@ public class PlaceService {
 		}
 	}
 
+	public List<Place> getPlacesByPlaceName(String placeName) {
+		places=placeDao.getPlaces2(placeName);
+		if(places!=null){
+			System.out.println(places.toString());
+			return places;
+		}else{
+			System.out.println("places为空");
+			return null;
+		}
+	}
+
 }
