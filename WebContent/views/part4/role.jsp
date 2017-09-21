@@ -14,7 +14,12 @@
 
 <script src="../../js/jQuery/jquery-2.2.3.min.js"></script>
 <script src="../../js/jqueryMobile/jquery.mobile-1.4.5.min.js"></script>
+
+
+
+
 <script type="text/javascript">
+
 	$(document).ready(function() {
 
 		$("#shoumen").click(function() {
