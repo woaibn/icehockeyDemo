@@ -54,24 +54,16 @@
 			<div class="playground">
 				<c:choose>
 					<c:when test="${!empty users}">
-						<!--搜索的是冰场的名字,若冰场名字存在，则..-->
 						<c:forEach items="${users}" var="user" varStatus="st">
 
 							<div class="day">
+
 								<li data-role="list-divider" class="day">日期：2017-01-12星期日</li>
+
 							</div>
 
 							<div class="name_content">
-
 								<span><a onclick="goto1('${user.userName}')">${user.userName}</a></span>
-
-								<div class="huanjing">
-									<span>环境指数:</span> <img src="../../img/part2/star.png" /> <img
-										src="../../img/part2/star.png" /> <img
-										src="../../img/part2/star.png" /> <img
-										src="../../img/part2/star.png" /> <img
-										src="../../img/part2/star.png" />
-								</div>
 							</div>
 							<div class="content">
 								<div class="content_img">
