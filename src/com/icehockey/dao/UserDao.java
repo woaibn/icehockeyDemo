@@ -1000,4 +1000,130 @@ public class UserDao {
 		return userId;
 	}
 
-}
+	public List<User> queryUserByUserName(String userName) {
+		List<User> users = new ArrayList<User>();
+
+		String sql = "SELECT * FROM USER, role, handling WHERE USER .roleId = role.roleId AND USER .handlingId = handling.handlingId AND user.userName=?";
+		try {
+			conn = util.openConnection();
+			preparedStatement = conn.prepareStatement(sql);
+			preparedStatement.setString(1, userName);
+			rs = preparedStatement.executeQuery();
+			while (rs.next()) {
+
+				int userId = rs.getInt("userId");// '登录编号',
+				String weChatId = rs.getString("weChatId");// '微信账号',
+				String telephone = rs.getString("telephone");// '手机号码',
+				userName = rs.getString("userName");// '用户姓名'
+				String sex = "man";
+				if (rs.getInt("sex") == 1) {
+					sex = "man";// '1代表男生0表示女生,默认为1男生',
+				} else {
+					sex = "lady";
+				}
+				String password = rs.getString("password");// '密码',
+				Date birthday = rs.getDate("birthday");// '出生日期',
+				String country = rs.getString("country");// '国籍',
+				String city = rs.getString("city");// '城市',
+				double height = rs.getDouble("height");// '身高',
+				double weight = rs.getDouble("weight");// '体重',
+				String play = rs.getString("play");// '爱好：玩雪，玩冰，都玩',
+				String ice_User = rs.getString("ice_play");// '游戏项目',
+				String snow_play = rs.getString("snow_play");// '单板，双板，都玩',
+				String role = rs.getString("roleName");// '角色编号',
+				String handing = rs.getString("handlingName");// '持杆方式',
+				String image = rs.getString("image");// '头像',
+
+				user = new User(userId, weChatId, telephone, userName, sex,
+						password, birthday, country, city, height, weight,
+						play, ice_User, snow_play, role, handing, image);
+
+				users.add(user);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (statement != null) {
+					statement.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+		}
+		return users;
+	}
+
+	public List<User> queryTop10() {
+		List<User> users = new ArrayList<User>();
+
+		String sql = "SELECT * FROM user,role,handling WHERE user.roleId=role.roleId AND user.handlingId=handling.handlingId LIMIT 10 ";
+
+		try {
+			conn = util.openConnection();
+			preparedStatement = conn.prepareStatement(sql);
+			
+			rs = preparedStatement.executeQuery();
+			while (rs.next()) {
+
+				int userId = rs.getInt("userId");// '登录编号',
+				String weChatId = rs.getString("weChatId");// '微信账号',
+				String telephone = rs.getString("telephone");// '手机号码',
+				String userName = rs.getString("userName");// '用户姓名'
+				String sex = "man";
+				if (rs.getInt("sex") == 1) {
+					sex = "man";// '1代表男生0表示女生,默认为1男生',
+				} else {
+					sex = "lady";
+				}
+				String password = rs.getString("password");// '密码',
+				Date birthday = rs.getDate("birthday");// '出生日期',
+				String country = rs.getString("country");// '国籍',
+				String city = rs.getString("city");// '城市',
+				double height = rs.getDouble("height");// '身高',
+				double weight = rs.getDouble("weight");// '体重',
+				String play = rs.getString("play");// '爱好：玩雪，玩冰，都玩',
+				String ice_User = rs.getString("ice_play");// '游戏项目',
+				String snow_play = rs.getString("snow_play");// '单板，双板，都玩',
+				String role = rs.getString("roleName");// '角色编号',
+				String handing = rs.getString("handlingName");// '持杆方式',
+				String image = rs.getString("image");// '头像',
+
+				user = new User(userId, weChatId, telephone, userName, sex,
+						password, birthday, country, city, height, weight,
+						play, ice_User, snow_play, role, handing, image);
+
+				users.add(user);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (statement != null) {
+					statement.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+		}
+		return users;
+	}
+	}
+
+

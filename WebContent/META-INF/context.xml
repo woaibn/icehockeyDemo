@@ -11,7 +11,7 @@
          maxIdle="30" 
          maxWait="10000"
          username="root"
-         password="123456" />
+         password="cheng" />
      
      <Resource name="jdbc/Orcl_DBCP" 
 	     auth="Container"
