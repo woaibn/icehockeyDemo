@@ -17,7 +17,6 @@
 	
 }
 #kapian{
-	
 	color:white;
 	text-shadow: none;
 	background-color: rgb(144,144,144);
@@ -27,6 +26,8 @@
 	left:10%;
 	right:10%;
 	max-height: 30%;
+	margin-top: 3rem;
+	
 }
 .button1{
 	position: fixed;

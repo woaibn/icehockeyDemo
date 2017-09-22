@@ -17,6 +17,9 @@
 <body>
 	<div data-role="page" class="main">
 		<h1 class="head">门将技术统计-待开发</h1>
+		<div class="button1" onclick="javascript:history.back(-1);">
+			<img src="../../img/part8/back.png" />
+		</div>
 
 		<!--<div id="saishigundong">
 			<span>赛事滚动</span>
