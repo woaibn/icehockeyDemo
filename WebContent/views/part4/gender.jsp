@@ -22,9 +22,9 @@
 		<div data-role="content">
 			<div class="header">
 				<a href="#" onClick="javascript :history.back(-1);"
-					data-ajax="false"></a> <span>添兵添将</span>
+					data-ajax="false"></a> 
 			</div>
-
+            <h1 class="head">添兵添将</h1>
 			<div class="text">
 				<p>
 					我们会根据您的身体资料<br /> 优化您的运动算法

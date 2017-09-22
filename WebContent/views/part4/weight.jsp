@@ -22,9 +22,9 @@
 		<div data-role="content">
 			<div class="header">
 				<a href="#" onClick="javascript :history.back(-1);"
-					data-ajax="false"></a> <span>添兵添将</span>
+					data-ajax="false"></a>  
 			</div>
-
+			<h1 class="head">添兵添将</h1>
 
 			<div class="text">
 				<p>
@@ -36,8 +36,8 @@
 				<img src="../../img/part4/manAll.png" />
 			</div>
 			<div data-role="fieldcontain">
-				<input type="range" name="points" id="points" value="30" min="100"
-					max="200">
+				<input type="range" name="points" id="points" value="65" min="35"
+					max="100" data-popup-enabled="true">
 			</div>
 
 			<div class="weight">

@@ -1,7 +1,8 @@
 .text{
-	color: rgb(178,196,202);
+	color: #fff;
 	text-align: center;
 	font-size: 3rem;
+	text-shadow:none !important;
 	padding: 2rem 0;
 }
 
@@ -16,8 +17,8 @@
 }
 
 .left_role_div img{
-	width: 50%;	
-	padding:1rem 1rem 0 1rem;
+	width:40%;	
+	padding:2rem 1rem 0 1rem;
 }
 
 .right{
@@ -30,8 +31,8 @@
 }
 
 .right_role_div img{
-	width: 50%;	
-	padding:1rem 1rem  0 1rem ;
+	width: 40%;	
+	padding:4rem 1rem  0 1rem ;
 }
 
 span{

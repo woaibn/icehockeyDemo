@@ -31,8 +31,9 @@
 		<div data-role="content">
 			<div class="header">
 				<a href="#" onClick="javascript :history.back(-1);"
-					data-ajax="false"></a> <span>添兵添将</span>
+					data-ajax="false"></a>  
 			</div>
+            <h1 class="head">添兵添将</h1>			
 			<span class="jiechubangding">解除绑定</span>
 			<div class="search">
 				<input data-role="" type="search" name="search" id="search"

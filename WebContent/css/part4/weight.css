@@ -7,18 +7,16 @@
 
 .weight{
 	text-align: center;
-	font-size: 1.3rem;
-	
 }
 
 .weight span{
 	color: #fff;
+	font-size: 2.5rem;
 }
 
 .btn{
 	border-radius: 2rem !important;
 	width: 80%;
-	
     min-height: 3em;
 
     

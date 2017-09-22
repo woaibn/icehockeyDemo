@@ -5,13 +5,13 @@ $(function() {
 	// 
 	$("#man").click(function() {
 		submit('man');
-		//window.location.href = "manWeight.html";
+		window.location.href = "weight.jsp";
 	});
 
 	// 性别"lady"击事件
 	$("#lady").click(function() {
 		submit('lady');
-		//window.location.href = "ladyWeight.html";
+		window.location.href = "weight.jsp";
 	});
 
 	// 请求后台服务

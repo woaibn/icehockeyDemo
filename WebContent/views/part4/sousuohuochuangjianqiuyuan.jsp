@@ -22,12 +22,13 @@
 		<div data-role="content">
 			<div class="header">
 				<a href="#" onClick="javascript :history.back(-1);"
-					data-ajax="false"></a> <span>添兵添将</span>
+					data-ajax="false"></a> 
 			</div>
+			<h1 class="head">添兵添将</h1>
 
 			<div class="search">
 				<div data-role="fieldcontain">
-						<label for="search">请输入搜索姓名：</label> <input data-role=""
+						<label for="search" class="text">请输入搜索姓名：</label> <input data-role=""
 							type="search" name="search" id="search" placeholder="">
 					</div>
 					<input type="submit" data-inline="true" value="搜索" id="searchbtn">

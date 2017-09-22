@@ -29,8 +29,9 @@
 		<div data-role="content">
 			<div class="header">
 				<a href="#" onClick="javascript :history.back(-1);"
-					data-ajax="false"></a> <span>球员技术报告</span>
+					data-ajax="false"></a>  
 			</div>
+			<h1 class="head">球员技术报告</h1>
 			<span class="retuxianshi">热图显示</span> <br />
 			<div class="shujv">
 				<div class="left">
