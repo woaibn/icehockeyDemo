@@ -16,6 +16,7 @@
 </head>
 <body>
 	<div data-role="page" class="main"></div>
+	
 	<div class="wait">
 		<span> 功能待开发！ </span>
 	</div>

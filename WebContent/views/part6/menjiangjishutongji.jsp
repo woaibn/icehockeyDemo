@@ -16,8 +16,9 @@
 </head>
 <body>
 	<div data-role="page" class="main">
+		<h1 class="head">门将技术统计-待开发</h1>
 
-		<div id="saishigundong">
+		<!--<div id="saishigundong">
 			<span>赛事滚动</span>
 		</div>
 		<div class="button1">
@@ -36,7 +37,7 @@
 			<div onclick="diwujieClick()">
 				<span>第五节</span>
 			</div>
-		</div>
+		</div>-->
 	</div>
 </body>
 <script src="../../js/common/common.js"></script>
