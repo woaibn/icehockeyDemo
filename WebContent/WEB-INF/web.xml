@@ -19,5 +19,44 @@
     <servlet-name>BingChangInfoServlet</servlet-name>
     <url-pattern>/BingChangInfoServlet</url-pattern>
   </servlet-mapping>
-
+  <servlet>
+    <description></description>
+    <display-name>JiaoBingBiBaiServlet</display-name>
+    <servlet-name>JiaoBingBiBaiServlet</servlet-name>
+    <servlet-class>com.icehockey.controller.JiaoBingBiBaiServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>JiaoBingBiBaiServlet</servlet-name>
+    <url-pattern>/JiaoBingBiBaiServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DaoHangLanServlet</display-name>
+    <servlet-name>DaoHangLanServlet</servlet-name>
+    <servlet-class>com.icehockey.controller.DaoHangLanServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DaoHangLanServlet</servlet-name>
+    <url-pattern>/DaoHangLanServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>TianBingTianJiangServlet</display-name>
+    <servlet-name>TianBingTianJiangServlet</servlet-name>
+    <servlet-class>com.icehockey.controller.TianBingTianJiangServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TianBingTianJiangServlet</servlet-name>
+    <url-pattern>/TianBingTianJiangServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BingLinChengXiaServlet</display-name>
+    <servlet-name>BingLinChengXiaServlet</servlet-name>
+    <servlet-class>com.icehockey.controller.BingLinChengXiaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BingLinChengXiaServlet</servlet-name>
+    <url-pattern>/BingLinChengXiaServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

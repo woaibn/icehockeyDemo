@@ -13,9 +13,19 @@
 	display:block !important;
 }
 
+.head{
+	color: white;
+	text-align: center;
+	font-size: 2rem;
+	margin-top: 3rem;
+	text-decoration: none;
+	font-family: "宋体";
+	text-shadow: none;
+}
 .header{
-	color: rgb(178,196,202);
-	margin-top: 2rem;
+	position: fixed;
+	left: 8%;
+	top: 6%;
 }
 
 .header a{
@@ -33,7 +43,6 @@
 .header span{
 	text-align:center;
 	position: relative;
-    padding-right: 22%;
 	font-weight: 600;
 	text-shadow:none !important;
 	font-size: 2.5rem;
@@ -58,4 +67,15 @@
 
 .button div{
 	margin: auto;
+}
+
+.tianjia{
+	height: 20px;
+	width: 50x;
+	display: inline-block;
+	position:fixed;
+	right :15px;
+	top:30px;
+	color: red;
+	font-size: 15px;
 }

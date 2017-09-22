@@ -1,0 +1,145 @@
+.main{
+	background-image: url(../../img/part8/lock-screen-background.png)!important;
+	background-size: 100% 100%;
+	height: 100%;
+	margin: 0 !important;
+	display: flex;	/*弹性布局，子元素的float失效*/
+	flex-direction: column;/*定义主轴竖，默认横*/
+	-webkit-flex-direction: column;/*伸缩容器的主轴的方向row row-reverse column column-reverse*/	
+    background-repeat:no-repeat;/*背景固定*/
+    background-attachment:fixed
+}
+
+.head{
+	color: white;
+	text-align: center;
+	font-size: 2rem;
+	margin-top: 3rem;
+	text-decoration: none;
+	font-family: "宋体";
+	text-shadow: none;
+}
+.zengjia{
+	position: fixed;
+	top: 6%;
+	right: 8%;
+}	
+.button1{
+	position: fixed;
+	left: 8%;
+	top: 6%;
+	font-family: "宋体";
+	
+}
+
+
+.button2{
+	display: flex;
+	color:white;
+	text-shadow: none;
+	font-family: "宋体";
+	
+}
+
+
+.a{
+ text-decoration: none;
+
+}
+
+.a span{
+font-family: "宋体";
+ text-decoration: none;
+
+}
+
+
+.button2 div{
+	text-align: center;
+	font-size: 2rem;
+	width:50%;
+	margin-top: 1.5rem;
+}
+
+/*时间*/
+.time{
+	border-radius: 1rem !important;
+    width: 80%;
+    margin-left: 2%;
+    height:1rem!important;
+	
+}
+
+.button3{
+	display: flex;
+	width:80%;
+	margin: auto;
+	font-size: 2rem;
+	color:white;
+	margin-top: 1.5rem;
+	text-decoration: none;
+	font-family: "宋体";
+}
+
+
+.shurukuang1{
+	border-radius: 1rem !important;
+    width: 80%;
+    margin-left: 2%;
+}
+
+/*对阵双方*/
+.button4{
+	width:80%;
+	margin: auto;
+	font-size: 2rem;
+	color:white;
+	margin-top: 1rem;
+	font-family: "宋体";
+	text-decoration: none;
+}
+
+
+.shurukuang2{
+	margin-top: 0.5rem;
+	border-radius: 1rem !important;
+    width: 90%;
+    margin-left: 10%;
+}
+
+.vs{
+margin-top: 0.5rem;
+text-align: center;
+}
+
+/*备注*/
+.button5{
+	width:80%;
+	margin: auto;
+	font-size: 2rem;
+	color:white;
+	margin-top: 1rem;
+	font-family: "宋体";
+}
+
+.shurukuang4{
+	margin-top: 0.5rem;
+	border-radius: 1rem !important;
+    width: 90%;
+    margin-left: 10%;
+    height: 7rem;
+}
+
+
+/*确认*/
+.submitBtn{
+width: 5rem;
+height: 2rem;
+
+
+}
+
+.queren{
+width: 5rem;
+margin: 3rem auto;
+}

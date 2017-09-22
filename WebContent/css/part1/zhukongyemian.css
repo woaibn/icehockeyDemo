@@ -4,20 +4,40 @@
 	background-size: 100% 100%;
 	height: 100%;
 }
-	
-
 
 .zhukongyemian_top{
-	position: fixed;
-	left: 50%;/*上下左右居中*/
+	position: relative;
+	height: 16rem;
+	width: 16rem;
+	background-color: #0088BB;
+	background: url(../../img/part1/zhukongyemian.png) no-repeat;
+	text-align: center;
+	left: 50%;
 	top: 50%;
 	-webkit-transform:translate(-50%,-50%);
 	-moz-transform:translate(-50%,-50%);
 	-o-transform:translate(-50%,-50%);
 	-ms-transform:translate(-50%,-50%);
 	transform:translate(-50%,-50%);
-  text-shadow:none !important;
-  font-size: 2rem;
+	
+  	text-shadow:none !important;
+  	font-size: 2rem;
+
+}
+	
+/*
+
+.zhukongyemian_top{
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	-webkit-transform:translate(-50%,-50%);
+	-moz-transform:translate(-50%,-50%);
+	-o-transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%);
+	transform:translate(-50%,-50%);
+  	text-shadow:none !important;
+  	font-size: 2rem;
 
 }
 
@@ -27,6 +47,7 @@
   color: rgb(178,196,202);
 	
 }
+*/
 
 /*.a{
 	position: relative;
@@ -63,9 +84,10 @@
 }*/
 .a{
 	position: absolute;
-	margin-top:-14rem;
-	margin-left:3rem;
+	margin-top:2rem;
+	margin-left:4rem;
 	font-size: 2rem;
+
 }
 
 .a a{
@@ -80,7 +102,7 @@
 
 .b{
 	position: absolute;
-	margin-top:-14rem;
+	margin-top:2rem;
 	margin-left:10rem;
 	font-size: 2rem;
 }
@@ -96,7 +118,7 @@
 
 .c{
 	position: absolute;
-	margin-top:-8rem;
+	margin-top:8rem;
 	margin-left:1.5rem;
 	font-size: 2rem;
 }
@@ -111,7 +133,7 @@
 }
 .d{
 	position: absolute;
-	margin-top:-8rem;
+	margin-top:8rem;
 	margin-left:12rem;
 	font-size: 2rem;
 }
@@ -126,7 +148,7 @@
 }
 .e{
 	position: absolute;
-	margin-top:-5rem;
+	margin-top:11rem;
 	margin-left:7rem;
 	font-size: 2rem;
 	

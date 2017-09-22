@@ -46,6 +46,8 @@ public class WeightServlet extends HttpServlet {
 		System.out.println("-------------HobbySelectIce.html-----------");
 		PrintWriter writer = response.getWriter();
 		User user = null;
+
+		User userNew = null;
 		Map<String, Object> map = new HashMap<String, Object>();
 		UserService userService = new UserService();
 		System.out.println("跳转后的sessionId :" + session.getId());
@@ -55,8 +57,9 @@ public class WeightServlet extends HttpServlet {
 		} else {
 			System.out.println("跳转前的sessionId :" + session.getId());
 			user = (User) session.getAttribute("user");
+			userNew = (User) session.getAttribute("userNew");
 			System.out.println("user: " + user);
-			
+
 			// 前端获取传入的data
 			String weightValue = "";
 			double weight = -1;
@@ -67,30 +70,28 @@ public class WeightServlet extends HttpServlet {
 			} else {
 				map.put("reslut", "-2");
 			}
-			
+
 			System.out.println("找到当前session用户" + user);
-			user = userService.updateUserWeight(user.getUserId(), weight);
+			user = userService.updateUserWeight(userNew.getUserId(), weight);
 			if (user != null) {// 插入成功
 				System.out.println("插入后用户" + user);
 				// 处理成功返回result=0
 				map.put("result", "0");
 				map.put("weight", weight);
 				session.setAttribute("user", user);
+				session.setAttribute("userNew", userNew);
 				System.out.println("map..." + map);
 			} else {
 				map.put("result", "-3");
 			}
 
 		}
-		//根据result值，判断页面如何跳转
+		// 根据result值，判断页面如何跳转
 		if ("0".equals(map.get("result"))) {// 登录成功，且不是第一次登陆
 			System.out.println("页面操作正确");
-			if ("man".equals(user.getSex())) {
-				System.out.println(map.get("gender"));
-				writer.println("<script language='javascript'>window.location.href='./views/bxy/manHeight.html'</script>");
-			} else {
-				writer.println("<script>window.location.href='./views/bxy/ladyHeight.html'</script>");
-			}
+
+			writer.println("<script language='javascript'>window.location.href='./views/part4/role.jsp'</script>");
+
 		} else if ("-1".equals(map.get("result"))) {// 登陆失败，用户名不存在
 			writer.println("<script language='javascript'>alert('当前没有登录用户');window.location.href='./views/login.html'</script>");
 

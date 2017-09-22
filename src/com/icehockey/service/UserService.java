@@ -201,4 +201,17 @@ public class UserService {
 		return user;
 	}
 
+	public List<User> queryUserByUserName(String userName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public User insertUser(String gender) {
+		user = dao.updateUser(gender);
+		if (user != null) {
+			System.out.println("第一次登录页面更新成功gender....." + gender);
+		}
+		return user;
+	}
+
 }
