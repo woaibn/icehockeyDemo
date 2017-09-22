@@ -24,16 +24,15 @@
 </head>
 
 <body>
-
-
 	<div data-role="page" class="tianbingtianjiangzhuyemian main">
 		<div data-role="content">
 			<div class="header">
 				<a href="#" onClick="javascript :history.back(-1);"
-					data-ajax="false"></a> <span>添兵添将</span> <img
+					data-ajax="false"></a> 
+					<img
 					src="../../img/part4/plus.png" / class="tianjia">
 			</div>
-
+			<h1 class="head">添兵添将</h1>
 			<div class="search">
 				<input data-role="" type="search" name="search" id="search"
 					placeholder="搜索内容...">

@@ -23,14 +23,15 @@
 		<div data-role="content">
 			<div class="header">
 				<a href="#" onClick="javascript :history.back(-1);"
-					data-ajax="false"></a> <span>添兵添将</span>
+					data-ajax="false"></a> 
 			</div>
-
+			<h1 class="head">添兵添将</h1>
 
 			<div data-role="content">
 				<div class="text">
 					<p>
-						有头有脸，有名有姓<br /> 更受欢迎
+						有头有脸，有名有姓
+						<br/>更受欢迎
 					</p>
 				</div>
 

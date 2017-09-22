@@ -30,9 +30,9 @@
 		<div data-role="content">
 			<div class="header">
 				<a href="#" onClick="javascript :history.back(-1);"
-					data-ajax="false"></a> <span>添兵添将</span>
+					data-ajax="false"></a>  
 			</div>
-
+            <h1 class="head">添兵添将</h1>
 
 			<div class="text">
 				<p>
@@ -44,34 +44,35 @@
 				<img src="../../img/part4/manAll.png" />
 			</div>
 			<div data-role="fieldcontain">
-				<input type="range" name="points" id="points" value="170" min="120"
-					max="200">
+				<input type="range" name="points" id="points" value="160" min="120"
+					max="200" data-popup-enabled="true">
 			</div>
 
 			<div class="height">
 				<span>CM</span>
 			</div>
-			<div data-role="controlgroup" data-type="horizontal" class="btn">
+			<div data-role="controlgroup" data-type="horizontal" class="btn" data-role="none">
 				<a href="#" onClick="javascript :history.back(-1);" data-ajax="false" data-role="button" data-corners="true" data-transition="slide" class="back"> <span>上一步</span></a> 
 				<a href="#" data-ajax="false" data-role="button"
 					data-corners="true" data-transition="slide" class="next"> <span>下一步</span>
 				</a>
 			</div>
+			<div class="button">
+				<div class="shouye" onclick="shouyeClick()">
+					<span>首页</span>
+				</div>
+				<div class="zhanshu" onclick="zhanshuClick()">
+					<span>战术</span>
+				</div>
+				<div class="zhandui" onclick="zhanduiClick()">
+					<span>战队</span>
+				</div>
+				<div class="wode" onclick="wodeClick()">
+					<span>我的</span>
+				</div>
+			</div>
 		</div>
-		<div class="button">
-			<div class="shouye" onclick="shouyeClick()">
-				<span>首页</span>
-			</div>
-			<div class="zhanshu" onclick="zhanshuClick()">
-				<span>战术</span>
-			</div>
-			<div class="zhandui" onclick="zhanduiClick()">
-				<span>战队</span>
-			</div>
-			<div class="wode" onclick="wodeClick()">
-				<span>我的</span>
-			</div>
-		</div>
+		
 
 	</div>
 

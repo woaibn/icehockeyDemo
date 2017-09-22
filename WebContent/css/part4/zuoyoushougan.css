@@ -10,21 +10,18 @@
 	display:block!important;
 	background-color: transparent;
 }
-
-.chiganfangshi_top{
-	color: rgb(178,196,202);
+.text{
+	color: #fff;
 	text-align: center;
-	font-size: 1.6rem;
-	padding: 8rem 0;
-	position: absolute;
-	top: 2rem;
-	width: 100%;
+	font-size: 3rem;
+	text-shadow:none !important;
+	padding: 2rem 0;
 }
 
 /*两个图标的外层div*/
 .chiganfangshi_bottom{
 	position: absolute;
-	top:18rem;
+	top:50%;
 	-webkit-flex: 1;	
 	display: flex;
 	height: 20px;
@@ -67,7 +64,7 @@
 	display: block;
 }
 .chiganfangshi_left div img{
-	width: 50%;
+	width: 70%;
 }
 
 
@@ -80,7 +77,7 @@
 
 
 .chiganfangshi_right div img{
-	width: 50%;
+	width: 70%;
 }
 
 
@@ -90,7 +87,7 @@
 }
 
 .chiganfangshi_left,.chiganfangshi_right span{
-	font-size: 1.4rem;
+	font-size: 3rem;
 	color: rgb(178,196,202);
 	display: block;
 	font-weight: 600;

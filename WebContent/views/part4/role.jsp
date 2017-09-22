@@ -33,9 +33,9 @@
 		<div data-role="content">
 			<div class="header">
 				<a href="#" onClick="javascript :history.back(-1);"
-					data-ajax="false"></a> <span>编辑</span>
+					data-ajax="false"></a> 
 			</div>
-
+			<h1 class="head">编辑</h1>
 			<div class="text">
 				<p>请选择您的身份</p>
 			</div>

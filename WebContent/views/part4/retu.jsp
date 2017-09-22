@@ -24,9 +24,9 @@
 		<div data-role="content">
 			<div class="header">
 				<a href="#" onClick="javascript :history.back(-1);"
-					data-ajax="false"></a> <span>数据记录显示</span>
+					data-ajax="false"></a> 
 			</div>
-
+            <h1 class="head">数据记录显示</h1>
 			<div class="button">
 				<div class="shouye" onclick="shouyeClick()">
 					<span>首页</span>

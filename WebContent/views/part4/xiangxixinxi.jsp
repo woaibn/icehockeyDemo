@@ -27,14 +27,14 @@
 		<div data-role="content">
 			<div class="header">
 				<a href="#" onClick="javascript :history.back(-1);"
-					data-ajax="false"></a> <span>添兵添将</span>
+					data-ajax="false"></a>  
 			</div>
-
+			<h1 class="head">添兵添将</h1>
 			<div class="search">
 				<input data-role="" type="search" name="search" id="search"
 					placeholder="搜索内容...">
 			</div>
-
+<p>待开发</p>
 			<div class="button">
 				<div class="shouye" onclick="shouyeClick()">
 					<span>首页</span>
