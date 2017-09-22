@@ -6,6 +6,7 @@
 <meta name="viewport"
 	content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 <title>添兵添将主页面</title>
+<link rel="stylesheet" href="../../css/part2/jiaobingbibaizhuyemian.css" />
 <link rel="stylesheet"
 	href="../../css/part4/tianbingtianjiangzhuyemian.css" />
 <link rel="stylesheet"
@@ -17,6 +18,9 @@
 	$(document).ready(function() {
 		$(".tianjia").click(function() {
 			window.location.href = "sousuohuochuangjianqiuyuan.jsp";
+		});
+		$(".content").click(function() {
+			window.location.href = "qiuyuanxiangxixinxi.jsp";
 		});
 
 	});
@@ -34,12 +38,64 @@
 			</div>
 			<h1 class="head">添兵添将</h1>
 			<div class="search">
-				<input data-role="" type="search" name="search" id="search"
-					placeholder="搜索内容...">
+			<div class="search_a">
+				<div class="search_b">
+					<input type="text" name="search" id="search" placeholder="精确查询">
+				</div>
+				<div>
+					<input type="submit" data-role='none' value="搜索" class="submitBtn"></input>
+				</div>
+
 			</div>
-			<div>
-				<p>待开发</p>
 			</div>
+			
+			
+			<div class="playground">
+				<c:choose>
+					<c:when test="${!empty users}">
+						<!--搜索的是冰场的名字,若冰场名字存在，则..-->
+						<c:forEach items="${users}" var="user" varStatus="st">
+
+							<div class="day">
+								<li data-role="list-divider" class="day">开放日期：${user.openDate}</li>
+							</div>
+
+							<div class="name_content">
+
+								<span><a onclick="goto1('${user.userName}')">${user.userName}</a></span>
+
+								<div class="huanjing">
+									<span>环境指数:</span> <img src="../../img/part2/star.png" /> <img
+										src="../../img/part2/star.png" /> <img
+										src="../../img/part2/star.png" /> <img
+										src="../../img/part2/star.png" /> <img
+										src="../../img/part2/star.png" />
+								</div>
+							</div>
+							<div class="content">
+								<div class="content_img">
+									<img src="../../img/part2/c.jpg" />
+								</div>
+								<div class="content_div_right">
+									<li class="content_top"><a href="">${user.userName}</a></li>
+									<div class="mid">${user.userSex}</div>
+									<div class="content_bottom">${user.userHeight}</div>
+									<div class="content_bottom">${user.userWeight}</div>
+								</div>
+							</div>
+
+						</c:forEach>
+					</c:when>
+					<c:otherwise>
+						<P>没有记录</P>
+					</c:otherwise>
+				</c:choose>
+
+			</div>
+
+
+		</div>
+
 			
 
 			<div class="button">
@@ -63,7 +119,6 @@
 
 	<script src="../../js/common/common.js"></script>
 	<script src="../../js/urlApi/api.js"></script>
-	<script type="text/javascript"
-		src="../../js/part4/tianbingtianjiangzhuyemian.js"></script>
+	<script src="../../js/part2/jiaobingbibaizhuyemian.js"></script>
 </body>
 </html>
