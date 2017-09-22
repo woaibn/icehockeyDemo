@@ -81,7 +81,7 @@ public class TianBingTianJiangServlet extends HttpServlet {
 			if ("1".equals(map.get("ok"))) {
 				writer.println("<script language='javascript'>window.location.href='./views/part4/tianbingtianjiangzhuyemian.jsp'</script>");
 			} else if ("2".equals(map.get("ok"))) {
-				writer.println("<script language='javascript'>alert('搜索成功');window.location.href='./views/part4/sousuojieguo.jsp'</script>");
+				writer.println("<script language='javascript'>window.location.href='./views/part4/sousuojieguo.jsp'</script>");
 			} else {
 
 			}

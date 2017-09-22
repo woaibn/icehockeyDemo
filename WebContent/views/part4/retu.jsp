@@ -26,7 +26,7 @@
 				<a href="#" onClick="javascript :history.back(-1);"
 					data-ajax="false"></a> 
 			</div>
-            <h1 class="head">数据记录显示</h1>
+            <h1 class="head">数据记录显示(待开发)</h1>
 			<div class="button">
 				<div class="shouye" onclick="shouyeClick()">
 					<span>首页</span>

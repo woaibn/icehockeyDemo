@@ -26,7 +26,6 @@ public class User {
 	
 	public User() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public User(int userId, String weChatId, String telephone, String userName,
 			String sex, String password, Date birthday, String country,

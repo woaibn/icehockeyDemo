@@ -11,8 +11,8 @@ $(function() {
 		var data = {
 			weight : weight,
 		};
-		alert(JSON.stringify(data));
-		//jump(WEIGHTURL, data);
+		//alert(JSON.stringify(data));
+		jump(WEIGHTURL, data);
 		
 	}
 });

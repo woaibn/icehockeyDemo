@@ -10,8 +10,8 @@ $(function() {
 		var data = {
 			height : height,
 		};
-		alert(JSON.stringify(data));
-//		jump(HEIGHTURL, data);
+	//	alert(JSON.stringify(data));
+		jump(HEIGHTURL, data);
 
 	}
 });

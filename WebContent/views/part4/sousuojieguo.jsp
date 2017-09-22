@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -25,24 +26,26 @@
 				<a href="#" onClick="javascript :history.back(-1);"
 					data-ajax="false"></a>  
 			</div>
-			<h1 class="head">添兵添将</h1>
+			<h1 class="head">添兵添将(球员搜索结果)</h1>
 			<br/>
 			<div class="playground">
 				<c:choose>
 					<c:when test="${!empty users}">
 						<c:forEach items="${users}" var="user" varStatus="st">
 							<div class="name_content">
-								<span><a onclick="goto1('${user.userName}')">${user.userName}</a></span>
+								<span>球员姓名：<a onclick="goto1('${user.userName}')">${user.userName}</a></span>
 							</div>
 							<div class="content">
 								<div class="content_img">
 									<img src="../../img/part2/c.jpg" />
 								</div>
 								<div class="content_div_right">
-									<li class="content_top"><a href="">${user.userName}</a></li>
-									<div class="mid">${user.userSex}</div>
-									<div class="content_bottom">${user.userHeight}</div>
-									<div class="content_bottom">${user.userWeight}</div>
+									<li class="content_top"><a href="">球员姓名:${user.userName}</a></li>
+									<div class="mid">性别：${user.sex}</div>
+									<div class="content_bottom">身高：${user.height}</div>
+									<div class="content_bottom">体重：${user.weight}</div>
+									<div class="content_bottom">国籍：${user.country}</div>
+									<div class="content_bottom">城市：${user.city}</div>
 								</div>
 							</div>
 

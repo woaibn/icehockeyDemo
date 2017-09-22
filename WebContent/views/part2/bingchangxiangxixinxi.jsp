@@ -32,7 +32,7 @@
 
 		<div class="content">
 			<div class="content_div">
-				<span>位置、电话 :${place.placeNumber}</span>
+				<span>位置、电话 :${palce.adderss}&${place.placeNumber}</span>
 			</div>
 
 			<div class="content_div">

@@ -42,12 +42,9 @@
 				<a href="#" onClick="javascript :history.back(-1);"
 					data-ajax="false"></a>  
 			</div>
-            <h1 class="head">添兵添将</h1>			
+            <h1 class="head">添兵添将(待开发)</h1>			
 			<span class="jiechubangding">解除绑定</span>
-			<div class="search">
-				<input data-role="" type="search" name="search" id="search"
-					placeholder="搜索内容...">
-			</div>
+			
 			
 			<div class="xinxione">
 				<h1>详细信息1</h1>

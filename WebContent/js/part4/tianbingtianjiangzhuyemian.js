@@ -7,7 +7,7 @@ function goto1(para) {
 		placeName : para,
 	};
 	// alert(JSON.stringify(data));
-	jump(JIAOBINGBIBAIURL, data);
+	jump(TIANBINGTIANJIANGURL, data);
 }
 
 $(".submitBtn").click(function() {
@@ -18,5 +18,5 @@ $(".submitBtn").click(function() {
 		placeName : searchName,
 	};
 	//alert(JSON.stringify(data));
-	jump(JIAOBINGBIBAIURL, data);
+	jump(TIANBINGTIANJIANGURL, data);
 });
