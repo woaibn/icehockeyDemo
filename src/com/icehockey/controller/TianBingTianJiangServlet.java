@@ -54,11 +54,15 @@ public class TianBingTianJiangServlet extends HttpServlet {
 			if (request.getParameter("operateType") != null) {
 				operateType = request.getParameter("operateType");
 				if ("TianBingTianJiang".equals(operateType)) {// 如果操作类型是主控页面到浇冰必拜主页面，则取出场地表中的所有场地信息
+					users=UserService.queryTop10();
+					System.out.println(users);
+					session.setAttribute("users", users);		
 					map.put("result", "0");
 					map.put("ok", "1");
 
 				} else if ("sousuo".equals(operateType)) {// 如果操作类型是主控页面到浇冰必拜主页面，则取出场地表中的所有场地信息
-					String userName=request.getParameter("searchName");
+					String userName=request.getParameter("placeName");
+					System.out.println("userName:"+userName);
 					users=UserService.queryUserByUserName(userName);
 					System.out.println(users);
 					session.setAttribute("users", users);		
