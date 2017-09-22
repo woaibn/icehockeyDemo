@@ -11,8 +11,7 @@ $(function() {
 		var data = {
 			weight : weight,
 		};
-		alert("fdsaf");
-		//alert(JSON.stringify(data));
+		alert(JSON.stringify(data));
 		//jump(WEIGHTURL, data);
 		
 	}
