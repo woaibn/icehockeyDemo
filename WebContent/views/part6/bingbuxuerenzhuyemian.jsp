@@ -42,6 +42,7 @@
 			<span>下一步</span>
 		</div>
 		<div class="daikaifa">
+			<span>未知关联页面入口</span>
 			<div class="saishixuanze" onclick="saishixuanzeClick()">
 				<span>数据采集-赛事选择</span>
 			</div>
