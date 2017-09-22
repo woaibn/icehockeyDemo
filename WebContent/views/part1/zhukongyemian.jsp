@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="../../css/part1/zhucedengluyemain.css"/>
 		<script src="../../js/jQuery/jquery-2.2.3.min.js"></script>
 		<script src="../../js/jqueryMobile/jquery.mobile-1.4.5.min.js"></script>	
+	
 	</head>
 	
 	<body>
@@ -19,11 +20,11 @@
 		<div data-role="page" class="zhukongyemian">
 			<div class="zhukongyemian_top">
 			
-				<!--<div class="backimage">
-					<img src="../../img/part1/zhukongyemian.png" />
+				<div class="backimage">
+					<img src="../../img/part1/fengwo.png" />
 				</div>
 				
-				<div>
+				<!--<div>
               	    <div class="a"><span>浇兵<br/>必败</span></div>
 					<div class="b"><span>冰天<br/>雪地</span></div>
 					<div class="c"><span>添兵<br/>添将</span></div>
@@ -33,11 +34,11 @@
 			
 				
 				
-              	    <div class="a"><span>浇兵<br/>必败</span></div>
-					<div class="b"><span>冰天<br/>雪地</span></div>
-					<div class="c"><span>添兵<br/>添将</span></div>
-					<div class="d"><span>兵临<br/>城下</span></a></div>
-					<div class="e"><span>冰步<br/>雪刃</span></a></div>
+              	    <div class="f"><span>浇兵必败</span></div>
+					<div class="b"><span>冰雪天地</span></div>
+					<div class="c"><span>添兵添将</span></div>
+					<div class="d"><span>兵临城下</span></a></div>
+					<div class="e"><span>冰不雪刃</span></a></div>
 				
 				
 				
@@ -45,18 +46,22 @@
 			
 			<div class="button">
 							<div class="shouye" onclick="shouyeClick()">
-								<span>首页</span>
+								<span class="ch">首页</span>
+								<span class="en">	Home</span>
 							</div>
 							<div  class="zhanshu" onclick="zhanshuClick()">
-								<span>战术</span>
+								<span class="ch">战术</span>
+								<span class="en">Tactical</span>
 							</div>
 							<div  class="zhandui" onclick="zhanduiClick()">
-								<span>战队</span>
+								<span class="ch">战队</span>
+								<span class="en">Team</span>
 							</div>
 							<div class="wode" onclick="wodeClick()">
-								<span>我的</span>
+								<span class="ch">我的</span>
+								<span class="en">Mine</span>
 							</div>
-			</div>	
+				   </div>	
 		</div>
 		
 		 <script src="../../js/common/common.js"></script>
