@@ -43,7 +43,7 @@ user-scalable - 用户是否可以手动缩放
 	</head>
 	
 	<body>
-        	<script>
+   <script>
 		(function(doc, win) {
 			var docEl = doc.documentElement, resizeEvt = 'orientationchange' in window ? 'orientationchange'
 					: 'resize', recalc = function() {
@@ -64,25 +64,44 @@ user-scalable - 用户是否可以手动缩放
 		<div data-role="page" class="main">
 				 <div data-role="content">
 				 	
+				 	<div class="welcome">
+				 		<img src="../../img/part1/welcome.png" />
+				 		<!--<span class="a">Welcome</span>
+				 		<span class="b">欢迎登陆，使用愉快</span>-->
+				 	</div>
+				 	
+				 	
 				 	<div  class="btn">
-						  <a href="#" data-role="button"  class="buttonone">
+						  <!--<a href="#" data-role="button"  class="buttonone">
 						  	<img src="../../img/part1/weixin.png" />
-						  	<span >微信登录</span></a>
-						  <a href="qitadenglufangshi.jsp"  class="buttontwo" data-role="button"  data-ajax="false">其它登录方式</a>
+						  	<span >微信登陆</span></a>
+						  <a href="qitadenglufangshi.jsp"  class="buttontwo" data-role="button"  data-ajax="false">其它登陆方式</a>-->
+					 	<div class="buttonone">
+							  	<img src="../../img/part1/weixindenglu.png" />
+						</div>
+							  	
+						<div class="buttontwo" >
+							<img src="../../img/part1/qitafangshi.png" />
+						</div>
+				 	
 				 	</div>
 				 	
 				 	<div class="button">
 							<div class="shouye" onclick="shouyeClick()">
-								<span>首页</span>
+								<span class="ch">首页</span>
+								<span class="en">	Home</span>
 							</div>
 							<div  class="zhanshu" onclick="zhanshuClick()">
-								<span>战术</span>
+								<span class="ch">战术</span>
+								<span class="en">Tactical</span>
 							</div>
 							<div  class="zhandui" onclick="zhanduiClick()">
-								<span>战队</span>
+								<span class="ch">战队</span>
+								<span class="en">Team</span>
 							</div>
 							<div class="wode" onclick="wodeClick()">
-								<span>我的</span>
+								<span class="ch">我的</span>
+								<span class="en">Mine</span>
 							</div>
 				   </div>	
 				</div>		  

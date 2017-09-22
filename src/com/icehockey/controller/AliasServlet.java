@@ -45,6 +45,8 @@ public class AliasServlet extends HttpServlet {
 		System.out.println("-------------HeightServlet.html-----------");
 		PrintWriter writer = response.getWriter();
 		User user = null;
+		
+		User userNew = null;
 		Map<String, Object> map = new HashMap<String, Object>();
 		UserService userService = new UserService();
 		System.out.println("跳转后的sessionId :" + session.getId());
@@ -55,7 +57,7 @@ public class AliasServlet extends HttpServlet {
 			System.out.println("跳转前的sessionId :" + session.getId());
 			user = (User) session.getAttribute("user");
 			System.out.println("user: " + user);
-
+			userNew= (User) session.getAttribute("userNew");
 			// 前端获取传入的data
 			String userName = "";
 			if (request.getParameter("name") != null) {
@@ -73,13 +75,14 @@ public class AliasServlet extends HttpServlet {
 				map.put("reslut", "-2");
 			}
 			System.out.println("找到当前session用户" + user);
-			user = userService.updateUserNameAndImage(user.getUserId(),
+			user = userService.updateUserNameAndImage(userNew.getUserId(),
 					userName, imageUrl);
 			if (user != null) {// 插入成功
 				System.out.println("插入后用户" + user);
 				// 处理成功返回result=0
 				map.put("result", "0");
 				session.setAttribute("user", user);
+				session.setAttribute("userNew", userNew);
 				System.out.println("map..." + map);
 			} else {
 				map.put("result", "-3");
@@ -89,9 +92,9 @@ public class AliasServlet extends HttpServlet {
 		// 根据result值，判断页面如何跳转
 		if ("0".equals(map.get("result"))) {// 登录成功，且不是第一次登陆
 			System.out.println("页面操作正确");
-			writer.println("<script>window.location.href='./views/main.html'</script>");
+			writer.println("<script>window.location.href='./views/part4/tianbingtianjiangzhuyemian.jsp'</script>");
 		} else if ("-1".equals(map.get("result"))) {// 登陆失败，用户名不存在
-			writer.println("<script language='javascript'>alert('当前没有登录用户');window.location.href='./views/login.html'</script>");
+			writer.println("<script language='javascript'>alert('当前没有登录用户');window.location.href='./views/part1/zhucedengluyemian.jsp'</script>");
 
 		} else if ("-2".equals(map.get("result"))) {// 前端错误
 			writer.println("<script language='javascript'>alert('前端错误');window.location.href='history.back(-1);'</script>");

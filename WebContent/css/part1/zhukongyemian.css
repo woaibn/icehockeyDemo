@@ -1,88 +1,52 @@
 .zhukongyemian{
-	
-	background-image: url(../../img/part1/login.png);
+	background-image: url(../../img/part1/zhukongbeijing.png);
 	background-size: 100% 100%;
 	height: 100%;
-}
+	margin: 0 !important;
+	background-repeat:no-repeat;
+    background-attachment:fixed;
 	
+}
 
 
 .zhukongyemian_top{
-	position: fixed;
-	left: 50%;/*上下左右居中*/
-	top: 50%;
-	-webkit-transform:translate(-50%,-50%);
-	-moz-transform:translate(-50%,-50%);
-	-o-transform:translate(-50%,-50%);
-	-ms-transform:translate(-50%,-50%);
-	transform:translate(-50%,-50%);
-  text-shadow:none !important;
-  font-size: 2rem;
+position: fixed;
+font-size: 2.3rem;
+	font-family: "微软雅黑";
+	/*上下左右居中*/
+}
 
+.backimage{
+	position:relative;
 }
 
 .backimage img{
-	position:relative;
-	font-size: 2rem;
-  color: rgb(178,196,202);
+   width:100%;
 	
 }
 
-/*.a{
-	position: relative;
-	margin-top:-13rem;
-	margin-left:4rem;
-	font-size: 2rem;
-	
-}
-
-
-.b{
-	position: relative;
-	margin-top:-3rem;
-	margin-left: 10rem;
-	
-}
-
-.c{
-	position: relative;
-	margin-top:2.5rem;
-	margin-left: 2rem;
-}
-
-.d{
-	position: relative;
-	margin-top:-2.5rem;
-	margin-left: 12rem;
-}
-
-.e{
-	position: relative;
-	margin-left: 7rem;
-	
-}*/
-.a{
+.f{
 	position: absolute;
-	margin-top:-14rem;
-	margin-left:3rem;
-	font-size: 2rem;
+	margin-top:-112%;
+	margin-left:5%;
+
 }
 
-.a a{
+.f a{
 	text-decoration: none;
 }
 
-.a span{
-	color: rgb(178,196,202);
+.f span{
+	color: black;
 	
 }
 
 
 .b{
 	position: absolute;
-	margin-top:-14rem;
-	margin-left:10rem;
-	font-size: 2rem;
+	margin-top:-83%;
+	margin-left:23%;
+	
 }
 
 .b a{
@@ -90,15 +54,19 @@
 }
 
 .b span{
-	color: rgb(178,196,202);
+	font-size: 2.3rem;
+	font-family: "微软雅黑";
+	color: black;
 	
 }
 
 .c{
+	font-size: 2.3rem;
+	font-family: "微软雅黑";
 	position: absolute;
-	margin-top:-8rem;
-	margin-left:1.5rem;
-	font-size: 2rem;
+	margin-top:-83%;
+	margin-left:58%;
+	height: 4rem;
 }
 
 .c a{
@@ -106,14 +74,16 @@
 }
 
 .c span{
-	color: rgb(178,196,202);
+	color: black;
 	
 }
 .d{
+	font-size: 2.3rem;
+	font-family: "微软雅黑";
 	position: absolute;
-	margin-top:-8rem;
-	margin-left:12rem;
-	font-size: 2rem;
+	margin-top:-53%;
+	margin-left:41%;
+	height: 4rem;
 }
 
 .d a{
@@ -121,14 +91,16 @@
 }
 
 .d span{
-	color: rgb(178,196,202);
+	color: black;
 	
 }
 .e{
+	font-size: 2.3rem;
+	font-family: "微软雅黑";
 	position: absolute;
-	margin-top:-5rem;
-	margin-left:7rem;
-	font-size: 2rem;
+	margin-top:-22%;
+	margin-left:23%;
+	height: 4rem;
 	
 }
 
@@ -138,7 +110,7 @@
 }
 
 .e span{
-	color: rgb(178,196,202);
+	color: black;
 	
 }
 
