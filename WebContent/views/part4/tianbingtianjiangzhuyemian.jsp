@@ -62,7 +62,7 @@
 
 							<div class="name_content">
 
-								<span><a onclick="goto1('${user.placeName}')">${user.placeName}</a></span>
+								<span><a onclick="goto1('${user.userName}')">${user.userName}</a></span>
 
 							</div>
 							<div class="content">
