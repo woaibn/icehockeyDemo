@@ -16,6 +16,7 @@
 </head>
 <body>
 	<div data-role="page" class="main">
+		<h1 class="head">球员技术统计-待开发</h1>
 		<div class="button">
 			<div class="shouye" onclick="shouyeClick()">
 				<span>首页</span>

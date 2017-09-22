@@ -41,6 +41,20 @@
 		<div class="button3" onclick="xiayibuClick()">
 			<span>下一步</span>
 		</div>
+		<div class="daikaifa">
+			<div class="saishixuanze" onclick="saishixuanzeClick()">
+				<span>数据采集-赛事选择</span>
+			</div>
+			<div class="bingmianxuandian" onclick="bingdianxuanzeClick()">
+				<span>数据采集-冰点选择</span>
+			</div>
+			<div class="menjiangjishutongji" onclick="menjiangjishutongjiClick()">
+				<span>门将技术统计</span>
+			</div>
+			<div class="qiuyuanjishutongji" onclick="qiuyuanjishutongjiClick()">
+				<span>球员技术统计</span>
+			</div>
+		</div>
 		<div class="button">
 			<div class="shouye" onclick="shouyeClick()">
 				<span>首页</span>
@@ -61,4 +75,5 @@
 </body>
 <script src="../../js/common/common.js"></script>
 <script src="../../js/urlApi/api.js"></script>
+<script src="../../js/part6/bingbuxuerenzhuyemian.js"></script>
 </html>
