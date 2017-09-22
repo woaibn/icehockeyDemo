@@ -105,6 +105,18 @@
 	width: 40%;
 	text-align: center;
 }
+.daikaifa{
+	font-size: 2rem;
+	color: white;
+	border: dashed;
+	position: fixed;
+	top:70%;
+	
+}
+.daikaifa div{
+	margin: auto;
+	width: 80%;
+}
 .button{
 	background:rgb(216,215,213);
 	display: flex;
