@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>	
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -57,7 +58,7 @@
 						<c:forEach items="${users}" var="user" varStatus="st">
 
 							<div class="day">
-								<li data-role="list-divider" class="day">开放日期：${user.openDate}</li>
+								<li data-role="list-divider" class="day">日期：2017-01-12星期日</li>
 							</div>
 
 							<div class="name_content">
@@ -78,9 +79,9 @@
 								</div>
 								<div class="content_div_right">
 									<li class="content_top"><a href="">${user.userName}</a></li>
-									<div class="mid">${user.userSex}</div>
-									<div class="content_bottom">${user.userHeight}</div>
-									<div class="content_bottom">${user.userWeight}</div>
+									<div class="mid">${user.sex}</div>
+									<div class="content_bottom">${user.height}</div>
+									<div class="content_bottom">${user.weight}</div>
 								</div>
 							</div>
 

@@ -24,21 +24,12 @@
 					<img src="../../img/part1/fengwo.png" />
 				</div>
 				
-				<!--<div>
-              	    <div class="a"><span>浇兵<br/>必败</span></div>
-					<div class="b"><span>冰天<br/>雪地</span></div>
-					<div class="c"><span>添兵<br/>添将</span></div>
-					<div class="d"><span>兵临<br/>城下</span></a></div>
-					<div class="e"><span>冰步<br/>雪刃</span></a></div>
-				</div>-->
-			
-				
 				
               	    <div class="f"><span>浇兵必败</span></div>
 					<div class="b"><span>冰雪天地</span></div>
 					<div class="c"><span>添兵添将</span></div>
-					<div class="d"><span>兵临城下</span></a></div>
-					<div class="e"><span>冰不雪刃</span></a></div>
+					<div class="d"><span>兵临城下</span></div>
+					<div class="e"><span>冰步雪刃</span></div>
 				
 				
 				
