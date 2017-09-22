@@ -1,5 +1,5 @@
 .main{
-	background-image: url(../../img/part1/login.png);
+	background-image: url(../../img/part1/denggluzhucebeijing.jpg);
 	background-size: 100% 100%;
 	height: 100%;
 	margin: 0 !important;
@@ -7,64 +7,83 @@
 	flex-direction: column;/*定义主轴竖，默认横*/
 	-webkit-flex-direction: column;/*伸缩容器的主轴的方向row row-reverse column column-reverse*/	
    background-repeat:no-repeat;/*背景固定*/
-   background-attachment:fixed
+   background-attachment:fixed;
+   font-family: "微软雅黑";
 }
+
+
+.welcome{
+	margin:5.5rem auto;
+	width:70%;
+
+}
+
+.welcome img{
+	width:100%;
+}
+
 
 .btn { 
-    position: fixed;/*以窗口为参考点*/
-  	bottom: 10%; 
-  	padding: 0em;/*这个div的内边距，可以去掉*/
-	width: 90%; 
-}
+	display: flex;	
+	flex-direction: column;
+	margin-top: 5rem;
 
-.btn img{
-	position: absolute;
-	bottom: 2%;
-	left: 30%;
-	/*position: relative; 这样定位之后元图存在会使上下边框变宽
-	left:5%;
-	top: 1rem;
-	*/
-}
 
-.btn span{
-	position: relative;
-	left: 10%; /*右移*/
-	text-shadow:none !important;
-	text-decoration: none;/*下划线*/
-	font-family: '宋体';	
 }
 
 .buttonone{
-	background-color: #6bbd65 !important;/*背景颜色*/
-	border-radius: 2rem !important;/*圆角*/
-	color: #fff !important;/*按钮里面字体颜色*/
-	padding: 0rem;
+	margin:1rem auto;
+	width: 60%;
+	margin-top: 5rem;
+}
+
+.buttonone img{
+	width:100%;
 }
 
 .buttontwo{
-	background-color: #1F1F1F!important;
-	border-radius: 2rem !important;
-	color: #fff !important;
-	text-shadow:none !important;/*字体阴影*/
-	font-family: '宋体';
+	margin:0.5rem auto;
+	width:60%;
+
 }
 
+.buttontwo img{
+	width:100%;
+}
+
+
 .button{
-	background:rgb(216,215,213);
+	background:rgb(163,163,163);
+	color:white;
 	display: flex;
-	position: fixed;/*以窗口为参考点*/
+	position: fixed;
 	left: 0;
-  	bottom: 0rem;
+  	bottom: 0px;
   	padding: 0rem;/*这个div的内边距，可以去掉*/
 	width: 100%; 
-	height: 4.2rem;
-	font-size: 2.5rem;
-	font-family:黑体;	
+	height: 3.5rem;
 	
+	font-family:Microsoft YaHei!important;	
+	text-decoration: none!important;	
 }
 
 .button div{
 	margin: auto;
+	display: flex;
+	flex-direction: column;
 }
 
+.ch{
+	text-align: center;
+	font-size: 2.5rem;
+	font-family: "微软雅黑";
+	text-shadow:none;
+	
+}
+
+.en{
+	text-align: center;
+	font-size: 0.5rem;
+	font-family: "微软雅黑";
+	text-shadow:none;
+}

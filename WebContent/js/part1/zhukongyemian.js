@@ -1,9 +1,10 @@
 $(document).ready(function() {
-	$(".a").click(function() {// 主页面跳转浇冰必拜主页面
+	$(".f").click(function() {// 主页面跳转浇冰必拜主页面
 		// 请求后台服务
 		var data = {
 			operateType : "zhukongToJiaoZhu",
 		};
+		// alert(JSON.stringify(data));
 		jump(JIAOBINGBIBAIURL, data);
 	});
 	$(".b").click(function() {
