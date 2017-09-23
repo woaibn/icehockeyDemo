@@ -42,19 +42,23 @@
 			</div>
 
 			<div class="button">
-				<div class="shouye" onclick="shouyeClick()">
-					<span>首页</span>
-				</div>
-				<div class="zhanshu" onclick="zhanshuClick()">
-					<span>战术</span>
-				</div>
-				<div class="zhandui" onclick="zhanduiClick()">
-					<span>战队</span>
-				</div>
-				<div class="wode" onclick="wodeClick()">
-					<span>我的</span>
-				</div>
-			</div>
+							<div class="shouye" onclick="shouyeClick()">
+								<span class="ch">首页</span>
+								<span class="en">	Home</span>
+							</div>
+							<div  class="zhanshu" onclick="zhanshuClick()">
+								<span class="ch">战术</span>
+								<span class="en">Tactical</span>
+							</div>
+							<div  class="zhandui" onclick="zhanduiClick()">
+								<span class="ch">战队</span>
+								<span class="en">Team</span>
+							</div>
+							<div class="wode" onclick="wodeClick()">
+								<span class="ch">我的</span>
+								<span class="en">Mine</span>
+							</div>
+				   </div>	
 
 		</div>
 
