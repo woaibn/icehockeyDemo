@@ -12,6 +12,10 @@ $(document).ready(function() {
 		window.location.href = "../../views/part6/qiuyuanjishutongji.jsp";
 	});
 	$(".button3").click(function(){
-		window.location.href = "../../views/part5/binglinchengxiazhuyemian.jsp";
+		// 请求后台服务
+		var data = {
+			operateType : "BingLinChengXia",
+		};
+		jump(BINGLINCHENGXIAURL, data);
 	});
 });
