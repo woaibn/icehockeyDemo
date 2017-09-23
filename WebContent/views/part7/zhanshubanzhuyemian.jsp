@@ -18,7 +18,7 @@
 	<div data-role="page" class="main">
 	<h1 class="head">待开发</h1>
 	<div class="backgroundimage">
-			<img src="../../img/part6/QQ截图20170923094244.png" height="84%" width="100%"/>
+			<img src="../../img/part6/image3.png" height="84%" width="100%"/>
 		</div>
 	
 	
