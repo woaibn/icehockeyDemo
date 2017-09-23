@@ -69,9 +69,11 @@
 									</div>
 									-->
 									
-									<div class="content_button">
-										<input type="button" name="" id="tj" value="添加" />
+									
+									<div class="tj" onclick="tjClick()">
+										<span>添加</span>
 									</div>
+									
 						
 							</div>
 
