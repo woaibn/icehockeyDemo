@@ -48,7 +48,7 @@ public class UserService {
 		System.out.println("aaaaaa");
 		users = dao.queryUserByUserName(userName);
 		if (users != null) {
-			System.out.println(users);
+			System.out.println("users:"+users);
 		} else {
 			System.out.println("不存在此名字的用户");
 		}
@@ -70,16 +70,18 @@ public class UserService {
 			String roleName, String handlingName, String userName, String imageUrl) {
 		Role role=roleService.queryRole(roleName);
 		if(role==null){
+			System.out.println(roleName+"角色未找到");
 			return false;
 		}
 		Handling handling =handlingService.queryHandling(handlingName);
 		if(handling==null){
+			System.out.println(handlingName+"持杆方式未找到");
 			return false;
 		}		
 		boolean f=dao.insertNewUser(gender, height,
 				weight, role.getRoleId(), handling.getHandlingId(), userName, imageUrl);
-		if(user!=null){
-			System.out.println(user);
+		if(f){
+			System.out.println("创建成功");
 		}else{
 			System.out.println("新建球员失败");
 		}

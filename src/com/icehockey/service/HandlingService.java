@@ -9,6 +9,13 @@ public class HandlingService {
 	Handling handling = null;
 
 	public Handling queryHandling(String handlingName) {
-		return dao.getHandlingByHandlingValue(handlingName);
+		
+		handling =dao.getHandlingByHandlingValue(handlingName);
+		if(handling!=null){
+			System.out.println(handling);
+		}else{
+			System.out.println("持杆方式未找到");
+		}
+		return handling;
 	}
 }

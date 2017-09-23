@@ -80,6 +80,11 @@ public class AliasServlet extends HttpServlet {
 				double weight = (Double) session.getAttribute("weight");
 				String role = (String) session.getAttribute("role");
 				String handling = (String) session.getAttribute("handling");
+				System.out.println(gender);
+				System.out.println(height);
+				System.out.println(weight);
+				System.out.println(role);
+				System.out.println(handling);
 				boolean f = userService.insertNewUser(gender, height,
 						weight, role, handling, userName, imageUrl);
 				if (f) {

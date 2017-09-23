@@ -67,15 +67,15 @@ user-scalable - 用户是否可以手动缩放
 				 	<div class="welcome">
 				 		<img src="../../img/part1/welcome.png" />
 				 		<!--<span class="a">Welcome</span>
-				 		<span class="b">欢迎登陆，使用愉快</span>-->
+				 		<span class="b">欢迎登录，使用愉快</span>-->
 				 	</div>
 				 	
 				 	
 				 	<div  class="btn">
 						  <!--<a href="#" data-role="button"  class="buttonone">
 						  	<img src="../../img/part1/weixin.png" />
-						  	<span >微信登陆</span></a>
-						  <a href="qitadenglufangshi.jsp"  class="buttontwo" data-role="button"  data-ajax="false">其它登陆方式</a>-->
+						  	<span >微信登录</span></a>
+						  <a href="qitadenglufangshi.jsp"  class="buttontwo" data-role="button"  data-ajax="false">其它登录方式</a>-->
 					 	<div class="buttonone">
 							  	<img src="../../img/part1/weixindenglu.png" />
 						</div>

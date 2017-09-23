@@ -96,7 +96,7 @@ public class RoleDao {
 	}
 
 	public Role getRoleByRoleId(String roleName) {
-		String sql = "SELECT * FROM role where roleName=?;";
+		String sql = "SELECT * FROM role where roleValue=?;";
 		System.out.println(sql);
 		try {
 			conn = util.openConnection();
