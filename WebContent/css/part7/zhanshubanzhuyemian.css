@@ -9,6 +9,14 @@
     background-repeat:no-repeat;/*背景固定*/
     background-attachment:fixed
 }
+
+.head{
+	color: white;
+	text-align: center;
+	font-size: 1.3rem;
+	margin-top: 2rem;
+	
+}
 .button{
 	background:rgb(216,215,213);
 	display: flex;

@@ -17,10 +17,14 @@
 <body>
 	<div data-role="page" class="main">
 	<h1 class="head">待开发</h1>
-	</div>
+	<div class="backgroundimage">
+			<img src="../../img/part6/QQ截图20170923094244.png" height="84%" width="100%"/>
+		</div>
+	
 	
 	
 	<div class="button">
+		
 		<div class="shouye" onclick="shouyeClick()">
 			<span>首页</span>
 		</div>
@@ -33,6 +37,7 @@
 		<div class="wode" onclick="wodeClick()">
 			<span>我的</span>
 		</div>
+	</div>
 	</div>
 </body>
 <script src="../../js/common/common.js"></script>

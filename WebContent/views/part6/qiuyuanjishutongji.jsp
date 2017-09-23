@@ -20,6 +20,9 @@
 		<div class="button1" onclick="javascript:history.back(-1);">
 			<img src="../../img/part8/back.png" />
 		</div>
+		<div class="backgroundimage">
+			<img src="../../img/part6/QQ截图20170923101738.png" height="84%" width="100%"/>
+		</div>
 		<div class="button">
 			<div class="shouye" onclick="shouyeClick()">
 				<span>首页</span>

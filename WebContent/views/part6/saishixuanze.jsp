@@ -13,6 +13,22 @@
 	href="../../css/jqueryMobile/jquery.mobile-1.4.5.min.css" />
 <script src="../../js/jQuery/jquery-2.2.3.min.js"></script>
 <script src="../../js/jqueryMobile/jquery.mobile-1.4.5.min.js"></script>
+<script>
+		(function(doc, win) {
+			var docEl = doc.documentElement, resizeEvt = 'orientationchange' in window ? 'orientationchange'
+					: 'resize', recalc = function() {
+				var clientWidth = docEl.clientWidth;
+				if (!clientWidth)
+					return;
+				docEl.style.fontSize = 16 * (clientWidth / 720) + 'px';
+			};
+
+			if (!doc.addEventListener)
+				return;
+			win.addEventListener(resizeEvt, recalc, false);
+			doc.addEventListener('DOMContentLoaded', recalc, false);
+		})(document, window);
+		</script>
 </head>
 <body>
 	<div data-role="page" class="main">
