@@ -14,5 +14,12 @@ public class RoleService {
 		}
 		return role;
 	}
+	public Role queryRole(String roleName) {
+		role=dao.getRoleByRoleId(roleName);
+		if(role!=null){
+			System.out.println(role.toString());
+		}
+		return role;
+	}
 
 }

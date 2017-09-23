@@ -20,6 +20,15 @@
 		$(".jiechubangding").click(function() {
 			alert("您确认要解除绑定吗？");
 		});
+		$(".xinxione").click(function() {
+			window.location.href = "xiangxixinxi.jsp";
+		});
+		$(".xinxitwo").click(function() {
+			window.location.href = "shujvxinxi2.jsp";
+		});
+		$(".retu").click(function() {
+			window.location.href = "retu.jsp";
+		});
 	});
 </script>
 </head>
@@ -33,13 +42,21 @@
 				<a href="#" onClick="javascript :history.back(-1);"
 					data-ajax="false"></a>  
 			</div>
-            <h1 class="head">添兵添将</h1>			
+            <h1 class="head">添兵添将(待开发)</h1>			
 			<span class="jiechubangding">解除绑定</span>
-			<div class="search">
-				<input data-role="" type="search" name="search" id="search"
-					placeholder="搜索内容...">
+			
+			
+			<div class="xinxione">
+				<h1>详细信息1</h1>
+					
 			</div>
-
+			<div class="xinxitwo">
+				<h1>详细信息2</h1>
+			</div>
+			<div class="retu">
+				<h1>热图</h1>
+			</div>
+			
 			<div class="button">
 				<div class="shouye" onclick="shouyeClick()">
 					<span>首页</span>

@@ -15,11 +15,11 @@
 <script src="../../js/jqueryMobile/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
-	<div data-role="page" class="main"></div>
-	
-	<div class="wait">
-		<span> 功能待开发！ </span>
+	<div data-role="page" class="main">
+	<h1 class="head">待开发</h1>
 	</div>
+	
+	
 	<div class="button">
 		<div class="shouye" onclick="shouyeClick()">
 			<span>首页</span>

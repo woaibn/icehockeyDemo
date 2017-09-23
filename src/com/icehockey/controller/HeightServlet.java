@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.icehockey.entity.User;
-import com.icehockey.service.UserService;
 
 /**
  * Servlet implementation class HeightServlet
@@ -27,7 +26,6 @@ public class HeightServlet extends HttpServlet {
      */
     public HeightServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -44,9 +42,7 @@ public class HeightServlet extends HttpServlet {
 		System.out.println("-------------HeightServlet.html-----------");
 		PrintWriter writer = response.getWriter();
 		User user = null;
-		User userNew = null;
 		Map<String, Object> map = new HashMap<String, Object>();
-		UserService userService = new UserService();
 		System.out.println("跳转后的sessionId :" + session.getId());
 		// session
 		if (session.getAttribute("user") == null) {
@@ -55,38 +51,24 @@ public class HeightServlet extends HttpServlet {
 			System.out.println("跳转前的sessionId :" + session.getId());
 			user = (User) session.getAttribute("user");
 			System.out.println("user: " + user);
-			userNew = (User) session.getAttribute("userNew");
 			// 前端获取传入的data
-			String heightValue = "";
-			double height = -1;
 			if (request.getParameter("height") != null) {
-				heightValue = request.getParameter("height");
+				String	heightValue = request.getParameter("height");
 				// 转化height
-				height = Double.parseDouble(heightValue);
-			} else {
-				map.put("reslut", "-2");
-			}
-			
-			System.out.println("找到当前session用户" + user);
-			user = userService.updateUserHeight(userNew.getUserId(), height);
-			if (user != null) {// 插入成功
-				System.out.println("插入后用户" + user);
-				// 处理成功返回result=0
+				double height = Double.parseDouble(heightValue);
 				map.put("result", "0");
 				map.put("height", height);
 				session.setAttribute("user", user);
-				session.setAttribute("userNew", userNew);
+				session.setAttribute("height", height);
 				System.out.println("map..." + map);
 			} else {
-				map.put("result", "-3");
+				map.put("reslut", "-2");
 			}
-
 		}
 		//根据result值，判断页面如何跳转
 		if ("0".equals(map.get("result"))) {// 登录成功，且不是第一次登陆
 			System.out.println("页面操作正确");
-			
-				writer.println("<script>window.location.href='./views/part4/weight.jsp'</script>");
+			writer.println("<script>window.location.href='./views/part4/weight.jsp'</script>");
 			
 		} else if ("-1".equals(map.get("result"))) {// 登陆失败，用户名不存在
 			writer.println("<script language='javascript'>alert('当前没有登录用户');window.location.href='./views/part1/zhucedengluyemian.jsp'</script>");

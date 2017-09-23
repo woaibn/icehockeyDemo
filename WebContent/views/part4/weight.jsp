@@ -44,14 +44,16 @@
 				<span>KG</span>
 			</div>
 
-			<div data-role="controlgroup" data-type="horizontal" class="btn">
-				<a href="#" onClick="javascript :history.back(-1);"
-					data-ajax="false" data-role="button" data-corners="true"
-					data-transition="slide" class="back"> <span>上一步</span>
-				</a> <a href="#" data-ajax="false" data-role="button"
-					data-corners="true" data-transition="slide" class="next"> <span>下一步</span>
-				</a>
-			</div>
+			
+				<div data-role="controlgroup" data-type="horizontal" class="btn">
+					<a href="#" onClick="javascript :history.back(-1);"
+						data-ajax="false" data-role="button" data-corners="true"
+						data-transition="slide" class="back"> <span>上一步</span>
+					</a> <a href="#" data-ajax="false" data-role="button"
+						data-corners="true" data-transition="slide" class="next"> <span>下一步</span>
+					</a>
+				</div>
+		
 
 			<div class="button">
 				<div class="shouye" onclick="shouyeClick()">

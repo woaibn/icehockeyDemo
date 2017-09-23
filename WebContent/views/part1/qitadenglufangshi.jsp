@@ -62,7 +62,7 @@
 				</div>	
 				
 				<div class="loginOther">
-					<span>————社交账号登陆————</span>
+					<span>————社交账号登录————</span>
 				</div>
 				
 				<div class="button">

@@ -29,7 +29,7 @@
 				<a href="#" onClick="javascript :history.back(-1);"
 					data-ajax="false"></a>  
 			</div>
-			<h1 class="head">添兵添将</h1>
+			<h1 class="head">添兵添将(球员详细信息1待开发)</h1>
 			<div class="search">
 				<input data-role="" type="search" name="search" id="search"
 					placeholder="搜索内容...">

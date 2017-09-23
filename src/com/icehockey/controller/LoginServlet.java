@@ -49,19 +49,19 @@ public class LoginServlet extends HttpServlet {
 		Map<String, Object> map = new HashMap<String, Object>();
 		// 遍历map得到前端传入的值
 		String telephone = "";
-		//String verificationCode = "";
+		// String verificationCode = "";
 		String password = "";
 		if (request.getParameter("phoneNumber") != null) {
 			telephone = request.getParameter("phoneNumber");
 		} else {
 			map.put("result", "-1");
 		}
-//		if (request.getParameter("verificationCode") != null) {
+		// if (request.getParameter("verificationCode") != null) {
 		// verificationCode = request.getParameter("verificationCode");
 		// } else {
 		// map.put("result", "-1");
 		// }
-		
+
 		if (request.getParameter("newPassword") != null) {
 			password = request.getParameter("newPassword");
 		} else {
@@ -74,21 +74,18 @@ public class LoginServlet extends HttpServlet {
 				System.out.println("找到session当前用户" + user);
 				// session
 				session.setAttribute("user", user);
-				if (session.getAttribute("user") != null) {
-					System.out.println("user: " + user);
-					map.put("result", "0");
-					map.put("telephone", telephone);
-					map.put("password", password);
-					System.out.println("map..." + map);
-				} else {
-					map.put("result", "-2");// 密码错误
-				}
+				System.out.println("user: " + user);
+				map.put("result", "0");
+				map.put("telephone", telephone);
+				map.put("password", password);
+				System.out.println("map..." + map);
 			} else {
 				System.out.println("session存储失败");
+				map.put("result", "-2");// 密码错误
 			}
 		} else {
 			System.out.println("map未找到...");
-			map.put("result", "-1");
+			map.put("result", "-3");
 		}
 		if ("0".equals(map.get("result"))) {// 登录成功，且不是第一次登陆
 			writer.println("<script>window.location.href='./views/part1/zhukongyemian.jsp'</script>");

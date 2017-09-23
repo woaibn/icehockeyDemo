@@ -15,6 +15,7 @@ $(document).ready(function() {
 		var data = {
 			operateType : "TianBingTianJiang",
 		};
+		 //alert(JSON.stringify(data));
 		jump(TIANBINGTIANJIANGURL, data);
 		// window.location.href = "../part4/tianbingtianjiangzhuyemian.jsp";
 	});

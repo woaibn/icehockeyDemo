@@ -94,4 +94,45 @@ public class RoleDao {
 		}
 		return role;
 	}
+
+	public Role getRoleByRoleId(String roleName) {
+		String sql = "SELECT * FROM role where roleValue=?;";
+		System.out.println(sql);
+		try {
+			conn = util.openConnection();
+			preparedStatement = conn.prepareStatement(sql);
+			preparedStatement.setString(1, roleName);
+			System.out.println(sql);
+			rs = preparedStatement.executeQuery();
+			if (rs.next()) {
+				String roleValue = rs.getString("roleValue");
+				int roleId = rs.getInt("roleId");
+				roleName = rs.getString("roleName");
+				role = new Role(roleId, roleName, roleValue);
+				System.out.println(role);
+			}else{
+				System.out.println("该角色不存在");
+				role=null;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (statement != null) {
+					statement.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+		}
+		return role;
+	}
 }
