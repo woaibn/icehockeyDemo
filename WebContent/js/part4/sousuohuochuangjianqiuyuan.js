@@ -12,7 +12,7 @@
 				operateType : "sousuo",
 				placeName : searchName,
 			};
-			alert(JSON.stringify(data));
+			//alert(JSON.stringify(data));
 			jump(TIANBINGTIANJIANGURL, data);
 		});
 		$("#new_btn").click(function() {
