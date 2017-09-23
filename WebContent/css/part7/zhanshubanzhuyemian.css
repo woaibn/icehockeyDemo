@@ -31,7 +31,12 @@
 	font-family:Microsoft YaHei!important;	
 	text-decoration: none!important;	
 }
-
+.button1{
+	position: fixed;
+	left: 8%;
+	top: 6%;
+	
+}
 .button div{
 	margin: auto;
 	display: flex;
