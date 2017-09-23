@@ -154,12 +154,12 @@
 	text-shadow:none;
 }
 .menjiangjishutongji{
-	
-	width: 40%;!important
+	background: rgb(100,149,237);
+	width: 40%;
 	text-align: center;
 }
 .qiuyuanjishutongji{
-	
+	background: rgb(100,149,237);
 	width: 40%;
 	text-align: center;
 }

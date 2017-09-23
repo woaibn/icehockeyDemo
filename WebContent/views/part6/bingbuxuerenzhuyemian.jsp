@@ -49,14 +49,12 @@
 			<div class="bingmianxuandian" onclick="bingdianxuanzeClick()">
 <!-- 				<span>数据采集-冰点选择</span> -->
 			</div>
-			<!--<div class="menjiangjishutongji" onclick="menjiangjishutongjiClick()">
+			<div class="menjiangjishutongji" onclick="menjiangjishutongjiClick()">
 				<span>门将技术统计</span>
-			</div>-->
-			<input type="button" class="menjiangjishutongji" value="门将技术统计" />
-			<!--<div class="qiuyuanjishutongji" onclick="qiuyuanjishutongjiClick()">
+			</div>
+			<div class="qiuyuanjishutongji" onclick="qiuyuanjishutongjiClick()">
 				<span>球员技术统计</span>
-			</div>-->
-			<input type="button" class="qiuyuanjishutongji" value="球员技术统计" />
+			</div>
 		</div>
 		<div class="button">
 							<div class="shouye" onclick="shouyeClick()">
