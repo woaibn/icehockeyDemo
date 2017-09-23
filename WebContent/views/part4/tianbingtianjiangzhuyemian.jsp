@@ -65,19 +65,48 @@
 							<div class="name_content">
 								<span>球员姓名：${user.userName}</span>
 							</div>
+								
 							<div class="content">
-								<div class="content_img">
-									<img src="../../img/part2/c.jpg" />
-								</div>
-								<div class="content_div_right">
-									<li class="content_top"><a href="">球员姓名：${user.userName}</a></li>
-									<div class="mid">性别：${user.sex}</div>
-									<div class="content_bottom">身高：${user.height}</div>
-									<div class="content_bottom">体重：${user.weight}</div>
-									<div class="content_bottom">国籍：${user.country}</div>
-									<div class="content_bottom">城市：${user.city}</div>
-								</div>
+									<div class="content_left">
+										<div class="img">
+											<img src="../../img/part2/c.jpg" />
+											<!--球队logo-->
+										</div>
+									</div>
+		
+									<div class="content_mid">
+										<div class="">球员姓名：${user.userName}</div>
+										<div class="">性别：${user.sex}</div>
+										<div class="">身高：${user.height}</div>
+		
+									</div>
+		
+									<div class="content_right">
+										<div class="">体重：${user.weight}</div>
+										<div class="">国籍：${user.country}</div>
+										<div class="">城市：${user.city}</div>
+		
+									</div>
+									
+									<!--<div class="content_mid">
+										<div class="">球员姓名：ss</div>
+										<div class="">性别ff</div>
+										<div class="">身高：ff</div>
+		
+									</div>
+		
+									<div class="content_right">
+										<div class="">体重：ffdf</div>
+										<div class="">国籍zfd</div>
+										<div class="">城市bgsd</div>
+		
+									</div>
+									-->
+									
+									
 							</div>
+							
+							
 
 						</c:forEach>
 					</c:when>

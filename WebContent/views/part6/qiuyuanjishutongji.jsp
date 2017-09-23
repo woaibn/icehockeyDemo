@@ -21,7 +21,7 @@
 			<img src="../../img/part8/back.png" />
 		</div>
 		<div class="backgroundimage">
-			<img src="../../img/part6/QQ截图20170923101738.png" height="84%" width="100%"/>
+			<img src="../../img/part6/imag2.png" height="84%" width="100%"/>
 		</div>
 		<div class="button">
 							<div class="shouye" onclick="shouyeClick()">

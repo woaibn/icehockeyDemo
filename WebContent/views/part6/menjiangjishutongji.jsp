@@ -37,7 +37,7 @@
 			<img src="../../img/part8/back.png" />
 		</div>
 		<div class="backgroundimage">
-			<img src="../../img/part6/QQ截图20170923100446.png" height="84%" width="100%"/>
+			<img src="../../img/part6/imag1.png" height="84%" width="100%"/>
 		</div>
 		<!--<div id="saishigundong">
 			<span>赛事滚动</span>

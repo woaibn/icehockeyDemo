@@ -21,7 +21,7 @@
 			<img src="../../img/part8/back.png" />
 		</div>
 
-		<h1 class="head">兵布雪刃</h1>
+		<h1 class="head">兵步雪刃</h1>
 		<div class="button2">
 			<div id="xunlian" onclick="xunlianClick()">
 				<span>训练</span>
@@ -44,7 +44,7 @@
 		<div class="daikaifa">
 			<span>未知关联页面入口</span>
 			<div class="saishixuanze" onclick="saishixuanzeClick()">
-				<span>数据采集-赛事选择</span>
+<!-- 				<span>数据采集-赛事选择</span> -->
 			</div>
 			<div class="bingmianxuandian" onclick="bingdianxuanzeClick()">
 				<span>数据采集-冰点选择</span>
