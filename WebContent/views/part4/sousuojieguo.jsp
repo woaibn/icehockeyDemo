@@ -17,7 +17,6 @@
 	</head>
 
 	<body>
-
 		<div data-role="page" class="tianbingtianjiangzhuyemian main">
 			<div data-role="content">
 				<div class="header">
@@ -75,6 +74,7 @@
 									</div>
 									
 						
+>>>>>>> f50044d59b68d70fb772b4fa083826aabac38318
 							</div>
 
 							</c:forEach>
@@ -83,6 +83,7 @@
 							<P>没有记录</P>
 						</c:otherwise>
 					</c:choose>
+
 
 				</div>
 

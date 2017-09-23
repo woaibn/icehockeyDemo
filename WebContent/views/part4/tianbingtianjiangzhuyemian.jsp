@@ -69,7 +69,7 @@
 							<div class="content">
 									<div class="content_left">
 										<div class="img">
-											<img src="../../img/part2/c.jpg" />
+											<img src="${user.image}" />
 											<!--球队logo-->
 										</div>
 									</div>

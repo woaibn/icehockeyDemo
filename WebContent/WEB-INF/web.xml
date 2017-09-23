@@ -59,4 +59,24 @@
     <servlet-name>BingLinChengXiaServlet</servlet-name>
     <url-pattern>/BingLinChengXiaServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UploadServlet2</display-name>
+    <servlet-name>UploadServlet2</servlet-name>
+    <servlet-class>com.icehockey.controller.UploadServlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UploadServlet2</servlet-name>
+    <url-pattern>/UploadServlet2</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DownloadImageServlet</display-name>
+    <servlet-name>DownloadImageServlet</servlet-name>
+    <servlet-class>com.icehockey.controller.DownloadImageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DownloadImageServlet</servlet-name>
+    <url-pattern>/DownloadImageServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
