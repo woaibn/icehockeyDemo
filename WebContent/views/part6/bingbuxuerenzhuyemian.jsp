@@ -7,7 +7,7 @@
 <meta name="viewport"
 	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>兵布雪刃主页面</title>
+<title>冰步雪刃主页面</title>
 <link rel="stylesheet" href="../../css/part6/bingbuxuerenzhuyemian.css" />
 <link rel="stylesheet"
 	href="../../css/jqueryMobile/jquery.mobile-1.4.5.min.css" />
@@ -21,7 +21,7 @@
 			<img src="../../img/part8/back.png" />
 		</div>
 
-		<h1 class="head">兵步雪刃</h1>
+		<h1 class="head">冰步雪刃</h1>
 		<div class="button2">
 			<div id="xunlian" onclick="xunlianClick()">
 				<span>训练</span>
@@ -42,12 +42,12 @@
 			<span>下一步</span>
 		</div>
 		<div class="daikaifa">
-			<span>未知关联页面入口</span>
+<!-- 			<span>未知关联页面入口</span> -->
 			<div class="saishixuanze" onclick="saishixuanzeClick()">
 <!-- 				<span>数据采集-赛事选择</span> -->
 			</div>
 			<div class="bingmianxuandian" onclick="bingdianxuanzeClick()">
-				<span>数据采集-冰点选择</span>
+<!-- 				<span>数据采集-冰点选择</span> -->
 			</div>
 			<div class="menjiangjishutongji" onclick="menjiangjishutongjiClick()">
 				<span>门将技术统计</span>

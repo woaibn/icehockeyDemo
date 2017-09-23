@@ -42,10 +42,10 @@ $(".zhanshu").click(function() {
 	jump(DAOHANGLANURL, data);
 });
 $(".zhandui").click(function() {
-	var data = {
-		operateType : "zhandui",
-	};
-	jump(DAOHANGLANURL, data);
+//	var data = {
+//		operateType : "zhandui",
+//	};
+//	jump(DAOHANGLANURL, data);
 });
 $(".wode").click(function() {
 	var data = {

@@ -34,7 +34,7 @@
 								<div class="content">
 									<div class="content_left">
 										<div class="img">
-											<img src="../../img/part2/c.jpg" />
+											<img src="../../img/part4/pic/i7.jpg" />
 											<!--球队logo-->
 										</div>
 									</div>
@@ -49,7 +49,7 @@
 									<div class="content_right">
 										<div class="">体重：${user.weight}</div>
 										<div class="">国籍：${user.country}</div>
-										<div class="">城市：${user.city</div>
+										<div class="">城市：${user.city}</div>
 		
 									</div>
 									
@@ -69,12 +69,9 @@
 									-->
 									
 									
-									<div class="tj" onclick="tjClick()">
+									<!-- <div class="tj" onclick="tjClick()">
 										<span>添加</span>
-									</div>
-									
-						
->>>>>>> f50044d59b68d70fb772b4fa083826aabac38318
+									</div> -->
 							</div>
 
 							</c:forEach>
