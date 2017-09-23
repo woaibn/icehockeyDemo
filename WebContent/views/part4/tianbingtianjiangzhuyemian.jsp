@@ -84,7 +84,7 @@
 									<div class="content_right">
 										<div class="">体重：${user.weight}</div>
 										<div class="">国籍：${user.country}</div>
-										<div class="">城市：${user.city</div>
+										<div class="">城市：${user.city}</div>
 		
 									</div>
 									

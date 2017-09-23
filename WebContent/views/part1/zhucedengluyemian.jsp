@@ -19,18 +19,18 @@
 			  $(".buttontwo").click(function(){
 			    window.location.href="qitadenglufangshi.jsp";
 			  });
-			  $(".shouye").click(function(){
-			    window.location.href="zhukongyemian.jsp";
-			  });
-			  $(".zhanshu").click(function(){
-			    window.location.href="../part7/zhanshubanzhuyemian.jsp";
-			  });
-			  $(".zhandui").click(function(){
-			    window.location.href="";
-			  });
-			  $(".wode").click(function(){
-			    window.location.href="../part8/wodezhongxinyemian.jsp";
-			  });
+// 			  $(".shouye").click(function(){
+// 			    window.location.href="zhukongyemian.jsp";
+// 			  });
+// 			  $(".zhanshu").click(function(){
+// 			    window.location.href="../part7/zhanshubanzhuyemian.jsp";
+// 			  });
+// 			  $(".zhandui").click(function(){
+// 			    window.location.href="";
+// 			  });
+// 			  $(".wode").click(function(){
+// 			    window.location.href="../part8/wodezhongxinyemian.jsp";
+// 			  });
 			});
 		</script>
 		<!--
@@ -126,5 +126,6 @@ user-scalable - 用户是否可以手动缩放
         this.location=''
     });
 -->
-	
+	 <script src="../../js/common/common.js"></script>
+		<script src="../../js/urlApi/api.js"></script>
 </html>

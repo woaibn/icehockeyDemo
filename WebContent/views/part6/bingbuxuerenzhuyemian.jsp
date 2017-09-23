@@ -7,7 +7,7 @@
 <meta name="viewport"
 	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>兵布雪刃主页面</title>
+<title>兵步雪刃主页面</title>
 <link rel="stylesheet" href="../../css/part6/bingbuxuerenzhuyemian.css" />
 <link rel="stylesheet"
 	href="../../css/jqueryMobile/jquery.mobile-1.4.5.min.css" />
