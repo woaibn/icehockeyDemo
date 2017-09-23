@@ -53,19 +53,36 @@
 	height: 60%;
 }
 .button{
-	background:rgb(216,215,213);
+	background:rgb(163,163,163);
+	color:white;
 	display: flex;
-	position: fixed;/*以窗口为参考点*/
+	position: fixed;
 	left: 0;
-  	bottom: 0rem;
+  	bottom: 0px;
   	padding: 0rem;/*这个div的内边距，可以去掉*/
 	width: 100%; 
-	height: 4.2rem;
-	font-size: 2.5rem;
-	font-family:黑体;	
+	height: 3.5rem;
 	
+	font-family:Microsoft YaHei!important;	
+	text-decoration: none!important;	
 }
 
 .button div{
 	margin: auto;
+	display: flex;
+	flex-direction: column;
+}
+.ch{
+	text-align: center;
+	font-size: 2.5rem;
+	font-family: "微软雅黑";
+	text-shadow:none;
+	
+}
+
+.en{
+	text-align: center;
+	font-size: 0.5rem;
+	font-family: "微软雅黑";
+	text-shadow:none;
 }
