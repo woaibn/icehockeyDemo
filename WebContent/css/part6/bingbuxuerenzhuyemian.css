@@ -12,9 +12,9 @@
 .head{
 	color: white;
 	text-align: center;
-	font-size: 1.3rem;
-	margin-top: 2rem;
-	
+	font-size: 2rem;
+	margin-top: 3rem;
+	text-decoration: none;
 }
 .button1{
 	position: fixed;
