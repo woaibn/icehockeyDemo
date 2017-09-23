@@ -110,7 +110,7 @@
 	font-size: 2rem;
 	width: 100%;
 	color: white;
-	border: dashed;
+	border: none;
 	position: fixed;
 	top:70%;
 	
@@ -152,4 +152,14 @@
 	font-size: 0.5rem;
 	font-family: "微软雅黑";
 	text-shadow:none;
+}
+.menjiangjishutongji{
+	background: rgb(100,149,237);
+	width: 40%;
+	text-align: center;
+}
+.qiuyuanjishutongji{
+	background: rgb(100,149,237);
+	width: 40%;
+	text-align: center;
 }
