@@ -74,6 +74,7 @@ public class AliasServlet extends HttpServlet {
 			} else {
 				map.put("reslut", "-2");
 			}
+			 imageUrl = "../../img/part4/pic/i1.jpg";
 			if ("0".equals(map.get("result"))) {
 				String gender = (String) session.getAttribute("gender");
 				double height = (Double) session.getAttribute("height");
