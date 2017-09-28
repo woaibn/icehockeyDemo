@@ -90,9 +90,7 @@ public class BingLinChengXiaServlet extends HttpServlet {
 				writer.println("<script language='javascript'>window.location.href='./views/part5/binglinchengxiazhuyemian.jsp'</script>");
 			} else if ("2".equals(map.get("ok"))) {
 				writer.println("<script language='javascript'>alert('添加成功');window.location.href='./views/part5/binglinchengxiazhuyemian.jsp'</script>");
-			} else {
-
-			}
+			} 
 		} else if ("-1".equals(map.get("result"))) {// 登陆失败，用户名不存在
 			writer.println("<script language='javascript'>alert('当前没有登录用户');window.location.href='./views/part1/zhucedengluyemian.jsp'</script>");
 

@@ -19,17 +19,14 @@ public class ClubDao {
 	private Connection conn = null;
 	private PreparedStatement preparedStatement = null;
 
-	public Club getClubByClubName(String clubName) {
+	public Club getClubByClubName(String clubName) {//通过俱乐部名称查找俱乐部对象并返回
 		String sql = "SELECT * FROM club where clubName=?;";
-		System.out.println(sql);
 		try {
 			conn = util.openConnection();
-			preparedStatement = conn.prepareStatement(sql);
-			preparedStatement.setString(1, clubName);
-			System.out.println(sql);
-			rs = preparedStatement.executeQuery();
+			preparedStatement = conn.prepareStatement(sql);//预编译
+			preparedStatement.setString(1, clubName);//放参数
+			rs = preparedStatement.executeQuery();//执行sql
 			if (rs.next()) {
-				System.out.println(sql);
 				int clubId = rs.getInt("clubId");
 				String organization = rs.getString("organization");
 				String clubManager = rs.getString("clubManager");
@@ -42,14 +39,12 @@ public class ClubDao {
 
 				club = new Club(clubId, clubName, organization, clubManager, address, managementContent, telephone,
 						buildTime, resource, construct);
-				System.out.println(club);
 			} else {
 				System.out.println("俱乐部未找到");
 				club = null;
 			}
 
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			try {

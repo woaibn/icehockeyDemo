@@ -8,7 +8,7 @@ public class HandlingService {
 	HandlingDao dao = new HandlingDao();
 	Handling handling = null;
 
-	public Handling queryHandling(String handlingName) {
+	public Handling queryHandling(String handlingName) {//根据持杆方式名称获得持杆方式对象
 		
 		handling =dao.getHandlingByHandlingValue(handlingName);
 		if(handling!=null){

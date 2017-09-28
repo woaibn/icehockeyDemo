@@ -17,99 +17,18 @@ public class RoleDao {
 	private Connection conn = null;
 	private PreparedStatement preparedStatement = null;
 
-	public Role getRoleByRoleValue(String roleValue) {
+	public Role getRoleByRoleId(String roleName) {//通过roleValue获取角色对象
 		String sql = "SELECT * FROM role where roleValue=?;";
-		System.out.println(sql);
-		try {
-			conn = util.openConnection();
-			preparedStatement = conn.prepareStatement(sql);
-			preparedStatement.setString(1, roleValue);
-			System.out.println(sql);
-			rs = preparedStatement.executeQuery();
-			if (rs.next()) {
-				int roleId = rs.getInt("roleId");
-				String roleName = rs.getString("roleName");
-				role = new Role(roleId, roleName, roleValue);
-			}
-
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} finally {
-			try {
-				if (rs != null) {
-					rs.close();
-				}
-				if (statement != null) {
-					statement.close();
-				}
-				if (conn != null) {
-					conn.close();
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-
-		}
-		return role;
-	}
-
-	public Role getRoleByRoleId(int roleId) {
-		String sql = "SELECT * FROM role where roleId=?;";
-		System.out.println(sql);
-		try {
-			conn = util.openConnection();
-			preparedStatement = conn.prepareStatement(sql);
-			preparedStatement.setInt(1, roleId);
-			System.out.println(sql);
-			rs = preparedStatement.executeQuery();
-			if (rs.next()) {
-				String roleValue = rs.getString("roleValue");
-				String roleName = rs.getString("roleName");
-				role = new Role(roleId, roleName, roleValue);
-				System.out.println(role);
-			}else{
-				System.out.println("该角色不存在");
-				role=null;
-			}
-
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} finally {
-			try {
-				if (rs != null) {
-					rs.close();
-				}
-				if (statement != null) {
-					statement.close();
-				}
-				if (conn != null) {
-					conn.close();
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-
-		}
-		return role;
-	}
-
-	public Role getRoleByRoleId(String roleName) {
-		String sql = "SELECT * FROM role where roleValue=?;";
-		System.out.println(sql);
 		try {
 			conn = util.openConnection();
 			preparedStatement = conn.prepareStatement(sql);
 			preparedStatement.setString(1, roleName);
-			System.out.println(sql);
 			rs = preparedStatement.executeQuery();
 			if (rs.next()) {
 				String roleValue = rs.getString("roleValue");
 				int roleId = rs.getInt("roleId");
 				roleName = rs.getString("roleName");
 				role = new Role(roleId, roleName, roleValue);
-				System.out.println(role);
 			}else{
 				System.out.println("该角色不存在");
 				role=null;

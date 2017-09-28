@@ -9,7 +9,7 @@ public class ClubService {
 
 	Club club = null;
 
-	public Club getClubByClubName(String clubName) {
+	public Club getClubByClubName(String clubName) {//通过俱乐部名称查找俱乐部对象
 		
 		club=clubDao.getClubByClubName(clubName);
 		if(club!=null){
