@@ -56,12 +56,7 @@ public class LoginServlet extends HttpServlet {
 		} else {
 			map.put("result", "-1");
 		}
-		// if (request.getParameter("verificationCode") != null) {
-		// verificationCode = request.getParameter("verificationCode");
-		// } else {
-		// map.put("result", "-1");
-		// }
-
+		
 		if (request.getParameter("newPassword") != null) {
 			password = request.getParameter("newPassword");
 		} else {
