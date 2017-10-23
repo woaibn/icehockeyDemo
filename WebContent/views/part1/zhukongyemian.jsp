@@ -26,7 +26,7 @@
 				
 				
               	    <div class="f"><span>浇兵必拜</span></div>
-					<div class="b"><span>冰雪天地</span></div>
+					<div class="b"><span>冰天雪地</span></div>
 					<div class="c"><span>添兵添将</span></div>
 					<div class="d"><span>兵临城下</span></div>
 					<div class="e"><span>冰步雪刃</span></div>
