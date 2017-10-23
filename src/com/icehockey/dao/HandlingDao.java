@@ -17,23 +17,20 @@ public class HandlingDao {
 	private Connection conn = null;
 	private PreparedStatement preparedStatement = null;
 
-	public Handling getHandlingByHandlingValue(String handlingValue) {
+	public Handling getHandlingByHandlingValue(String handlingValue) {//通过持杆方式简称获取持杆方式对象
 		String sql = "SELECT * FROM handling where handlingValue=?";
 		try {
 			conn = util.openConnection();
 			preparedStatement = conn.prepareStatement(sql);
 			preparedStatement.setString(1, handlingValue);
-			System.out.println(sql);
 			rs = preparedStatement.executeQuery();
 			if (rs.next()) {
-				
 				int handlingId = rs.getInt("handlingId");
 				String handlingName = rs.getString("handlingName");
 				handling = new Handling(handlingId, handlingName,handlingValue);
 			}
 
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			try {

@@ -27,7 +27,6 @@ public class AliasServlet extends HttpServlet {
 	 */
 	public AliasServlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -42,13 +41,11 @@ public class AliasServlet extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=UTF-8");
 		response.setHeader("set-Cookie", "name=value;HttpOnly");
-		System.out.println("-------------HeightServlet.html-----------");
+		System.out.println("-------------AliasServlet.html-----------");
 		PrintWriter writer = response.getWriter();
 		User user = null;
-		
-		User userNew = null;
-		Map<String, Object> map = new HashMap<String, Object>();
 		UserService userService = new UserService();
+		Map<String, Object> map = new HashMap<String, Object>();
 		System.out.println("跳转后的sessionId :" + session.getId());
 		// session
 		if (session.getAttribute("user") == null) {
@@ -57,12 +54,13 @@ public class AliasServlet extends HttpServlet {
 			System.out.println("跳转前的sessionId :" + session.getId());
 			user = (User) session.getAttribute("user");
 			System.out.println("user: " + user);
-			userNew= (User) session.getAttribute("userNew");
 			// 前端获取传入的data
 			String userName = "";
 			if (request.getParameter("name") != null) {
 				userName = request.getParameter("name");
-
+				map.put("result", "0");
+				session.setAttribute("user", user);
+				session.setAttribute("userName", userName);
 			} else {
 				map.put("reslut", "-2");
 			}
@@ -70,29 +68,43 @@ public class AliasServlet extends HttpServlet {
 			String imageUrl = "";
 			if (request.getParameter("touxiang") != null) {
 				imageUrl = request.getParameter("touxiang");
-
+				map.put("result", "0");
+				session.setAttribute("user", user);
+				session.setAttribute("imageUrl", imageUrl);
 			} else {
 				map.put("reslut", "-2");
 			}
-			System.out.println("找到当前session用户" + user);
-			user = userService.updateUserNameAndImage(userNew.getUserId(),
-					userName, imageUrl);
-			if (user != null) {// 插入成功
-				System.out.println("插入后用户" + user);
-				// 处理成功返回result=0
-				map.put("result", "0");
-				session.setAttribute("user", user);
-				session.setAttribute("userNew", userNew);
-				System.out.println("map..." + map);
-			} else {
-				map.put("result", "-3");
+			 imageUrl = "../../img/part4/pic/i1.jpg";
+			if ("0".equals(map.get("result"))) {
+				String gender = (String) session.getAttribute("gender");
+				double height = (Double) session.getAttribute("height");
+				double weight = (Double) session.getAttribute("weight");
+				String role = (String) session.getAttribute("role");
+				String handling = (String) session.getAttribute("handling");
+				System.out.println(gender);
+				System.out.println(height);
+				System.out.println(weight);
+				System.out.println(role);
+				System.out.println(handling);
+				boolean f = userService.insertNewUser(gender, height,
+						weight, role, handling, userName, imageUrl);
+				if (f) {
+					map.put("ok", "0");
+				} else {
+					map.put("ok", "-1");
+				}
 			}
-
 		}
 		// 根据result值，判断页面如何跳转
 		if ("0".equals(map.get("result"))) {// 登录成功，且不是第一次登陆
 			System.out.println("页面操作正确");
+			if("0".equals(map.get("ok"))){
+				writer.println("<script language='javascript'>alert('新建球员成功');'</script>");
+			}else{
+				writer.println("<script language='javascript'>alert('新建球员失败');'</script>");			
+			}
 			writer.println("<script>window.location.href='./views/part4/tianbingtianjiangzhuyemian.jsp'</script>");
+			
 		} else if ("-1".equals(map.get("result"))) {// 登陆失败，用户名不存在
 			writer.println("<script language='javascript'>alert('当前没有登录用户');window.location.href='./views/part1/zhucedengluyemian.jsp'</script>");
 

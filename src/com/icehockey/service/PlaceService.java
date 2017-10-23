@@ -11,7 +11,7 @@ public class PlaceService {
 	Place place = null;
 	List<Place> places=null;
 
-	public Place getPlaceByPlaceName(String placeName) {
+	public Place getPlaceByPlaceName(String placeName) {//根据冰场名称查找冰场信息
 		
 		place=placeDao.getPlaceByPlaceName(placeName);
 		if(place!=null){
@@ -24,7 +24,7 @@ public class PlaceService {
 		
 	}
 
-	public List<Place> getPlaces() {
+	public List<Place> getPlaces() {//返回数据中的所有冰场信息
 		places=placeDao.getPlaces();
 		if(places!=null){
 			System.out.println(places.toString());
@@ -35,7 +35,7 @@ public class PlaceService {
 		}
 	}
 
-	public List<Place> getPlacesByPlaceName(String placeName) {
+	public List<Place> getPlacesByPlaceName(String placeName) {//通过冰场名称，查找数据库中所有的冰场对象，并返回集合
 		places=placeDao.getPlaces2(placeName);
 		if(places!=null){
 			System.out.println(places.toString());

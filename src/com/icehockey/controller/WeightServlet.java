@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.icehockey.entity.User;
-import com.icehockey.service.UserService;
 
 /**
  * Servlet implementation class WeightServlet
@@ -27,7 +26,6 @@ public class WeightServlet extends HttpServlet {
 	 */
 	public WeightServlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -43,13 +41,10 @@ public class WeightServlet extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=UTF-8");
 		response.setHeader("set-Cookie", "name=value;HttpOnly");
-		System.out.println("-------------HobbySelectIce.html-----------");
+		System.out.println("-------------WeightServlet.html-----------");
 		PrintWriter writer = response.getWriter();
 		User user = null;
-
-		User userNew = null;
 		Map<String, Object> map = new HashMap<String, Object>();
-		UserService userService = new UserService();
 		System.out.println("跳转后的sessionId :" + session.getId());
 		// session
 		if (session.getAttribute("user") == null) {
@@ -57,35 +52,21 @@ public class WeightServlet extends HttpServlet {
 		} else {
 			System.out.println("跳转前的sessionId :" + session.getId());
 			user = (User) session.getAttribute("user");
-			userNew = (User) session.getAttribute("userNew");
-			System.out.println("user: " + user);
-
-			// 前端获取传入的data
-			String weightValue = "";
-			double weight = -1;
-			if (request.getParameter("weight") != null) {
-				weightValue = request.getParameter("weight");
+			if(request.getParameter("weight")!=null){
+				String weightValue = request.getParameter("weight");
 				// 转化weight
-				weight = Double.parseDouble(weightValue);
-			} else {
-				map.put("reslut", "-2");
-			}
-
-			System.out.println("找到当前session用户" + user);
-			user = userService.updateUserWeight(userNew.getUserId(), weight);
-			if (user != null) {// 插入成功
-				System.out.println("插入后用户" + user);
-				// 处理成功返回result=0
+				double weight = Double.parseDouble(weightValue);
 				map.put("result", "0");
 				map.put("weight", weight);
 				session.setAttribute("user", user);
-				session.setAttribute("userNew", userNew);
+				session.setAttribute("weight", weight);
 				System.out.println("map..." + map);
 			} else {
-				map.put("result", "-3");
+				map.put("reslut", "-2");
 			}
-
 		}
+
+		
 		// 根据result值，判断页面如何跳转
 		if ("0".equals(map.get("result"))) {// 登录成功，且不是第一次登陆
 			System.out.println("页面操作正确");

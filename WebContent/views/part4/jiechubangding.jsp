@@ -23,28 +23,28 @@
 				<a href="#" onClick="javascript :history.back(-1);"
 					data-ajax="false"></a>  
 			</div>
-            <h1 class="head">添兵添将</h1>			
+            <h1 class="head">添兵添将(解除绑定待开发)</h1>			
 			<span class="jiechubangding">解除绑定</span>
-			<div class="search">
-				<input data-role="" type="search" name="search" id="search"
-					placeholder="搜索内容...">
-			</div>
-
+			
 
 			<div class="button">
-				<div class="shouye" onclick="shouyeClick()">
-					<span>首页</span>
-				</div>
-				<div class="zhanshu" onclick="zhanshuClick()">
-					<span>战术</span>
-				</div>
-				<div class="zhandui" onclick="zhanduiClick()">
-					<span>战队</span>
-				</div>
-				<div class="wode" onclick="wodeClick()">
-					<span>我的</span>
-				</div>
-			</div>
+							<div class="shouye" onclick="shouyeClick()">
+								<span class="ch">首页</span>
+								<span class="en">	Home</span>
+							</div>
+							<div  class="zhanshu" onclick="zhanshuClick()">
+								<span class="ch">战术</span>
+								<span class="en">Tactical</span>
+							</div>
+							<div  class="zhandui" onclick="zhanduiClick()">
+								<span class="ch">战队</span>
+								<span class="en">Team</span>
+							</div>
+							<div class="wode" onclick="wodeClick()">
+								<span class="ch">我的</span>
+								<span class="en">Mine</span>
+							</div>
+				   </div>	
 
 		</div>
 

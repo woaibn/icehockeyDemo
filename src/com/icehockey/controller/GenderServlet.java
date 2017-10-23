@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.icehockey.entity.User;
-import com.icehockey.service.UserService;
 
 /**
  * Servlet implementation class GenderServlet
@@ -45,11 +44,9 @@ public class GenderServlet extends HttpServlet {
 		System.out.println("-------------Gender.html-----------");
 		PrintWriter writer = response.getWriter();
 		User user = null;
-		User userNew = null;
 		Map<String, Object> map = new HashMap<String, Object>();
-		UserService userService = new UserService();
 		System.out.println("跳转后的sessionId :" + session.getId());
-		// session		
+		// session
 		if (session.getAttribute("user") == null) {
 			map.put("reslut", "-1");
 		} else {
@@ -57,34 +54,22 @@ public class GenderServlet extends HttpServlet {
 			user = (User) session.getAttribute("user");
 			System.out.println("user: " + user);
 
-			String gender = "";
 			if (request.getParameter("gender") != null) {
-				gender = request.getParameter("gender");
-			} else {
-				map.put("reslut", "-2");// 当前页面操作有误
-			}
-
-			System.out.println("找到当前session用户" + user);
-			userNew = userService.insertUser(gender);
-			if (user != null) {// 插入成功
-				System.out.println("插入后用户" + userNew);
-				// 处理成功返回result=0
+				String gender = request.getParameter("gender");
 				map.put("result", "0");
 				map.put("gender", gender);
-				session.setAttribute("userNew", userNew);
+				session.setAttribute("gender", gender);
 				session.setAttribute("user", user);
 				System.out.println("map..." + map);
 			} else {
-				map.put("result", "-3");
+				map.put("reslut", "-2");// 当前页面操作有误
 			}
-
 		}
 		// 根据result值，判断页面如何跳转
 		if ("0".equals(map.get("result"))) {// 登录成功，且不是第一次登陆
 			System.out.println("页面操作正确");
+			writer.println("<script>window.location.href='./views/part4/height.jsp'</script>");
 
-				writer.println("<script>window.location.href='./views/part4/height.jsp'</script>");
-			
 		} else if ("-1".equals(map.get("result"))) {// 登陆失败，用户名不存在
 			writer.println("<script language='javascript'>alert('当前没有登录用户');window.location.href='./views/part1/zhucedengluyemian.jsp'</script>");
 

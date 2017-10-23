@@ -15,23 +15,37 @@
 <script src="../../js/jqueryMobile/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
-	<div data-role="page" class="main"></div>
-	<div class="wait">
-		<span> 功能待开发！ </span>
+	<div data-role="page" class="main">
+	<h1 class="head">待开发</h1>
+	<div class="backgroundimage">
+			<img src="../../img/part6/image3.png"  width="100%"/>
+		</div>
+	
+	
+	
+	<div class="button1" onclick="javascript:history.back(-1);">
+			<img src="../../img/part8/back.png" />
+		</div>
+		
+		<div class="button">
+							<div class="shouye" onclick="shouyeClick()">
+								<span class="ch">首页</span>
+								<span class="en">	Home</span>
+							</div>
+							<div  class="zhanshu" onclick="zhanshuClick()">
+								<span class="ch">战术</span>
+								<span class="en">Tactical</span>
+							</div>
+							<div  class="zhandui" onclick="zhanduiClick()">
+								<span class="ch">战队</span>
+								<span class="en">Team</span>
+							</div>
+							<div class="wode" onclick="wodeClick()">
+								<span class="ch">我的</span>
+								<span class="en">Mine</span>
+							</div>
+				   </div>	
 	</div>
-	<div class="button">
-		<div class="shouye" onclick="shouyeClick()">
-			<span>首页</span>
-		</div>
-		<div class="zhanshu" onclick="zhanshuClick()">
-			<span>战术</span>
-		</div>
-		<div class="zhandui" onclick="zhanduiClick()">
-			<span>战队</span>
-		</div>
-		<div class="wode" onclick="wodeClick()">
-			<span>我的</span>
-		</div>
 	</div>
 </body>
 <script src="../../js/common/common.js"></script>

@@ -9,6 +9,7 @@
     background-repeat:no-repeat;/*背景固定*/
     background-attachment:fixed
 }
+
 #saishigundong{
 	position:fixed;
 	left: 20%;
@@ -18,14 +19,20 @@
 	text-align: center;
 	height: 2rem%;
 }
-.button1{
-	width: 100%;
-	background: rgb(135,206,235);
-	display: flex;
-	color:white;
+.head{
+	color: white;
+	text-align: center;
+	font-size: 2rem;
+	margin-top: 3rem;
+	text-decoration: none;
+	font-family: "宋体";
 	text-shadow: none;
+}
+.button1{
 	position: fixed;
-	top:5%;
+	left: 8%;
+	top: 6%;
+	
 }
 .button1 div{
 	margin: auto;
@@ -33,19 +40,36 @@
 }
 
 .button{
-	background:rgb(216,215,213);
+	background:rgb(163,163,163);
+	color:white;
 	display: flex;
-	position: fixed;/*以窗口为参考点*/
+	position: fixed;
 	left: 0;
-  	bottom: 0rem;
+  	bottom: 0px;
   	padding: 0rem;/*这个div的内边距，可以去掉*/
 	width: 100%; 
-	height: 4.2rem;
-	font-size: 2.5rem;
-	font-family:黑体;	
+	height: 3.5rem;
 	
+	font-family:Microsoft YaHei!important;	
+	text-decoration: none!important;	
 }
 
 .button div{
 	margin: auto;
+	display: flex;
+	flex-direction: column;
+}
+.ch{
+	text-align: center;
+	font-size: 2.5rem;
+	font-family: "微软雅黑";
+	text-shadow:none;
+	
+}
+
+.en{
+	text-align: center;
+	font-size: 0.5rem;
+	font-family: "微软雅黑";
+	text-shadow:none;
 }

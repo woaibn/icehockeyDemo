@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.icehockey.entity.User;
-import com.icehockey.service.UserService;
 
 /**
  * Servlet implementation class RoleServlet
@@ -27,7 +26,6 @@ public class RoleServlet extends HttpServlet {
 	 */
 	public RoleServlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -43,13 +41,10 @@ public class RoleServlet extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=UTF-8");
 		response.setHeader("set-Cookie", "name=value;HttpOnly");
-		System.out.println("-------------HobbySelectIce.html-----------");
+		System.out.println("-------------RoleServlet.html-----------");
 		PrintWriter writer = response.getWriter();
 		User user = null;
-		
-		User userNew = null;
 		Map<String, Object> map = new HashMap<String, Object>();
-		UserService userService = new UserService();
 		System.out.println("跳转后的sessionId :" + session.getId());
 		// session
 		if (session.getAttribute("user") == null) {
@@ -58,25 +53,15 @@ public class RoleServlet extends HttpServlet {
 			System.out.println("跳转前的sessionId :" + session.getId());
 			user = (User) session.getAttribute("user");
 			System.out.println("user: " + user);
-			userNew= (User) session.getAttribute("userNew");
-			String role = null;// role
 			if (request.getParameter("role") != null) {
-				role = request.getParameter("role");
-			} else {
-				map.put("reslut", "-2");// 当前页面操作有误
-			}
-			
-			System.out.println("找到当前session用户" + user);
-			user = userService.updateUserRole(userNew.getUserId(), role);
-			if (user != null) {// 插入成功
-				System.out.println("插入后用户" + user);
-				// 处理成功返回result=0
+				String role = request.getParameter("role");
 				map.put("result", "0");
 				map.put("role", role);
 				session.setAttribute("user", user);
+				session.setAttribute("role", role);
 				System.out.println("map..." + map);
 			} else {
-				map.put("result", "-3");
+				map.put("reslut", "-2");// 当前页面操作有误
 			}
 
 		}

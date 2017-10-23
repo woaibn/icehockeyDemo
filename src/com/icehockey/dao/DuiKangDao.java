@@ -22,17 +22,14 @@ public class DuiKangDao {
 	private Connection conn = null;
 	private PreparedStatement preparedStatement = null;
 
-	public List<DuiKang> getDuiKangs() {
+	public List<DuiKang> getDuiKangs() {//获取数据库所俱乐部对抗信息
 		String sql = "SELECT * FROM duikangview";
-		System.out.println(sql);
 		duiKangs = new ArrayList<DuiKang>();
 		try {
 			conn = util.openConnection();
 			preparedStatement = conn.prepareStatement(sql);
-			System.out.println(sql);
 			rs = preparedStatement.executeQuery();
 			while (rs.next()) {
-				System.out.println(sql);
 				int duikangId = rs.getInt("duikangId");
 				int clubAId = rs.getInt("clubAId");
 				int clubBId = rs.getInt("clubBId");
@@ -49,8 +46,6 @@ public class DuiKangDao {
 				duiKang = new DuiKang(duikangId, clubAId, clubBId, clubAName,
 						logoA, clubBName, logoB, onDate, degree, address, star,
 						round);
-
-				System.out.println(duiKang);
 				duiKangs.add(duiKang);
 			}
 
@@ -76,7 +71,7 @@ public class DuiKangDao {
 	}
 
 	public boolean addSaiShi(String address, String clubAName,
-			String clubBName, String beizhu) {
+			String clubBName, String beizhu) {//向duikang表中插入一条新的纪录
 		try {
 			// 获取数据库链接
 			conn = util.openConnection();
@@ -92,9 +87,6 @@ public class DuiKangDao {
 					+ clubAName
 					+ "' ), ( SELECT clubId FROM club WHERE clubName = '"
 					+ clubBName + "' ), '" + address + "', '" + beizhu + "' )";
-			System.out.println("sql1:  " + sql1);
-			System.out.println("sql2:  " + sql2);
-			System.out.println("sql3:  " + sql3);
 			// 执行SQL语句
 			statement = conn.createStatement();
 			statement.executeUpdate(sql1);
@@ -134,7 +126,7 @@ public class DuiKangDao {
 	}
 
 	public boolean addSaiShiToDuikang(String address, int clubAId, int clubBId,
-			String beizhu) {
+			String beizhu) {//向duikang表中插入一条新的纪录
 		String sql = "INSERT INTO duikang ( clubAId, clubBId, address, beizhu ) VALUES (?,?,?,?)";
 		try {
 			conn = util.openConnection();
@@ -143,7 +135,6 @@ public class DuiKangDao {
 			preparedStatement.setInt(2, clubBId);
 			preparedStatement.setString(3, address);
 			preparedStatement.setString(4, beizhu);
-			System.out.println(sql);
 			int i = preparedStatement.executeUpdate();
 			if (i == 1) {
 				System.out.println("插入成功");
@@ -173,7 +164,7 @@ public class DuiKangDao {
 	}
 
 	public boolean addSaiShi2(String address, int clubId, String clubName,
-			String beizhu,int f) {
+			String beizhu,int f) {//向duikang表中插入一条新的纪录
 		try {
 			// 获取数据库链接
 			conn = util.openConnection();
@@ -181,18 +172,13 @@ public class DuiKangDao {
 			// 不把其设置为true之前都是一个当作一个事务来处理
 			conn.setAutoCommit(false);
 			// 创造SQL语句
-			
 			String sql2 = "INSERT INTO club (clubName) VALUES ('" + clubName+ "')";
 			String sql3=null;
 			if(f==0){
 				 sql3 = "INSERT INTO duikang ( clubAId, clubBId, address, beizhu ) VALUES ("+clubId+", ( SELECT clubId FROM club WHERE clubName = '"+ clubName + "' ), '" + address + "', '" + beizhu + "' )";
-				
 			}else if(f==1){
 				 sql3 = "INSERT INTO duikang ( clubBId, clubAId, address, beizhu ) VALUES ("+clubId+", ( SELECT clubId FROM club WHERE clubName = '"+ clubName + "' ), '" + address + "', '" + beizhu + "' )";
-				
 			}
-			System.out.println("sql2:  " + sql2);
-			System.out.println("sql3:  " + sql3);
 			// 执行SQL语句
 			statement = conn.createStatement();
 			statement.executeUpdate(sql2);

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>	
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -56,23 +57,56 @@
 						<c:forEach items="${users}" var="user" varStatus="st">
 
 							<div class="day">
-								<li data-role="list-divider" class="day">日期：${user.openDate}</li>
+
+								<li data-role="list-divider" class="day">2017-01-12星期日</li>
+
 							</div>
 
 							<div class="name_content">
-								<span><a onclick="goto1('${user.userName}')">${user.userName}</a></span>
+								<span>球员姓名：${user.userName}</span>
 							</div>
+								
 							<div class="content">
-								<div class="content_img">
-									<img src="../../img/part2/c.jpg" />
-								</div>
-								<div class="content_div_right">
-									<li class="content_top"><a href="">${user.userName}</a></li>
-									<div class="mid">${user.userSex}</div>
-									<div class="content_bottom">${user.userHeight}</div>
-									<div class="content_bottom">${user.userWeight}</div>
-								</div>
+									<div class="content_left">
+										<div class="img">
+											<img src="${user.image}" />
+											<!--球队logo-->
+										</div>
+									</div>
+		
+									<div class="content_mid">
+										<div class="">球员姓名：${user.userName}</div>
+										<div class="">性别：${user.sex}</div>
+										<div class="">身高：${user.height}</div>
+		
+									</div>
+		
+									<div class="content_right">
+										<div class="">体重：${user.weight}</div>
+										<div class="">国籍：${user.country}</div>
+										<div class="">城市：${user.city}</div>
+		
+									</div>
+									
+									<!--<div class="content_mid">
+										<div class="">球员姓名：ss</div>
+										<div class="">性别ff</div>
+										<div class="">身高：ff</div>
+		
+									</div>
+		
+									<div class="content_right">
+										<div class="">体重：ffdf</div>
+										<div class="">国籍zfd</div>
+										<div class="">城市bgsd</div>
+		
+									</div>
+									-->
+									
+									
 							</div>
+							
+							
 
 						</c:forEach>
 					</c:when>
@@ -89,26 +123,28 @@
 			
 
 			<div class="button">
-				<div class="shouye" onclick="shouyeClick()">
-					<span>首页</span>
-				</div>
-				<div class="zhanshu" onclick="zhanshuClick()">
-					<span>战术</span>
-				</div>
-				<div class="zhandui" onclick="zhanduiClick()">
-					<span>战队</span>
-				</div>
-				<div class="wode" onclick="wodeClick()">
-					<span>我的</span>
-				</div>
-			</div>
+							<div class="shouye" onclick="shouyeClick()">
+								<span class="ch">首页</span>
+								<span class="en">	Home</span>
+							</div>
+							<div  class="zhanshu" onclick="zhanshuClick()">
+								<span class="ch">战术</span>
+								<span class="en">Tactical</span>
+							</div>
+							<div  class="zhandui" onclick="zhanduiClick()">
+								<span class="ch">战队</span>
+								<span class="en">Team</span>
+							</div>
+							<div class="wode" onclick="wodeClick()">
+								<span class="ch">我的</span>
+								<span class="en">Mine</span>
+							</div>
+				   </div>	
 
 		</div>
 
-	</div>
-
 	<script src="../../js/common/common.js"></script>
 	<script src="../../js/urlApi/api.js"></script>
-	<script src="../../js/part2/jiaobingbibaizhuyemian.js"></script>
+	<script src="../../js/part4/tianbingtianjiangzhuyemian.js"></script>
 </body>
 </html>

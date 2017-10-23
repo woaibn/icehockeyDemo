@@ -16,20 +16,31 @@
 </head>
 <body>
 	<div data-role="page" class="main">
-		<div class="button">
-			<div class="shouye" onclick="shouyeClick()">
-				<span>首页</span>
-			</div>
-			<div class="zhanshu" onclick="zhanshuClick()">
-				<span>战术</span>
-			</div>
-			<div class="zhandui" onclick="zhanduiClick()">
-				<span>战队</span>
-			</div>
-			<div class="wode" onclick="wodeClick()">
-				<span>我的</span>
-			</div>
+		<h1 class="head">球员技术统计-待开发</h1>
+		<div class="button1" onclick="javascript:history.back(-1);">
+			<img src="../../img/part8/back.png" />
 		</div>
+		<div class="backgroundimage">
+			<img src="../../img/part6/imag2.png" height="84%" width="100%"/>
+		</div>
+		<div class="button">
+							<div class="shouye" onclick="shouyeClick()">
+								<span class="ch">首页</span>
+								<span class="en">	Home</span>
+							</div>
+							<div  class="zhanshu" onclick="zhanshuClick()">
+								<span class="ch">战术</span>
+								<span class="en">Tactical</span>
+							</div>
+							<div  class="zhandui" onclick="zhanduiClick()">
+								<span class="ch">战队</span>
+								<span class="en">Team</span>
+							</div>
+							<div class="wode" onclick="wodeClick()">
+								<span class="ch">我的</span>
+								<span class="en">Mine</span>
+							</div>
+				   </div>	
 	</div>
 </body>
 <script src="../../js/common/common.js"></script>

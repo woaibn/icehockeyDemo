@@ -21,17 +21,14 @@ public class PlaceDao {
 	private Connection conn = null;
 	private PreparedStatement preparedStatement = null;
 
-	public Place getPlaceByPlaceName(String placeName) {
+	public Place getPlaceByPlaceName(String placeName) {//通过冰场名称获取冰场对象
 		String sql = "SELECT * FROM place where placeName=?;";
-		System.out.println(sql);
 		try {
 			conn = util.openConnection();
 			preparedStatement = conn.prepareStatement(sql);
 			preparedStatement.setString(1, placeName);
-			System.out.println(sql);
 			rs = preparedStatement.executeQuery();
 			if (rs.next()) {
-				System.out.println(sql);
 				int placeId = rs.getInt("placeId");
 				String logo = rs.getString("logo");
 				placeName = rs.getString("placeName");
@@ -62,7 +59,6 @@ public class PlaceDao {
 						buildDate, useDate, openDate, acceptIndividual,
 						linkman, linkNumber, email, surface, organization,
 						image);
-				System.out.println(place);
 			} else {
 				System.out.println("俱乐部未找到");
 				place = null;
@@ -89,17 +85,14 @@ public class PlaceDao {
 		return place;
 	}
 
-	public List<Place> getPlaces() {
+	public List<Place> getPlaces() {//互殴place表中的所有信息
 		String sql = "SELECT * FROM place;";
-		System.out.println(sql);
 		places=new ArrayList<Place>();
 		try {
 			conn = util.openConnection();
 			preparedStatement = conn.prepareStatement(sql);
-			System.out.println(sql);
 			rs = preparedStatement.executeQuery();
 			while (rs.next()) {
-				System.out.println(sql);
 				int placeId = rs.getInt("placeId");
 				String logo = rs.getString("logo");
 				String placeName = rs.getString("placeName");
@@ -130,7 +123,6 @@ public class PlaceDao {
 						buildDate, useDate, openDate, acceptIndividual,
 						linkman, linkNumber, email, surface, organization,
 						image);
-				System.out.println(place);
 				places.add(place);
 				
 			}
@@ -156,17 +148,15 @@ public class PlaceDao {
 		return places;
 	}
 
-	public List<Place> getPlaces2(String placeName) {
+	public List<Place> getPlaces2(String placeName) {//根据placeName获取所有此名称的冰场
 		String sql = "SELECT * FROM place where placeName=?;";
 		places=new ArrayList<Place>();
 		try {
 			conn = util.openConnection();
 			preparedStatement = conn.prepareStatement(sql);
 			preparedStatement.setString(1, placeName);
-			System.out.println(sql);
 			rs = preparedStatement.executeQuery();
 			while (rs.next()) {
-				System.out.println("bbbbbbbbbbbbbbbbbb");
 				int placeId = rs.getInt("placeId");
 				String logo = rs.getString("logo");
 				placeName = rs.getString("placeName");
@@ -197,7 +187,6 @@ public class PlaceDao {
 						buildDate, useDate, openDate, acceptIndividual,
 						linkman, linkNumber, email, surface, organization,
 						image);
-				System.out.println(place);
 				places.add(place);
 				
 			}
