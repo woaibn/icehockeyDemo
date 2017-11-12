@@ -11,7 +11,7 @@ import java.util.List;
 import com.icehockey.entity.User;
 import com.icehockey.util.DBUtil;
 
-public class UserDao {
+public class ADao {
 
 	DBUtil util = new DBUtil();
 	private ResultSet rs = null;
@@ -124,46 +124,5 @@ public class UserDao {
 		}
 		return null;
 	}
-	/**
-	 * @param userId
-	 * @return User
-	 * 
-	 *          通过userid查找用户并返回user对象
-	 */
-	public User getUserByUserId(int userId) {
-
-		return user;
-	}
-	/**
-	 * @param userName
-	 * @return List<User>
-	 * 
-	 *          // 返回所有姓名为userName的用户，并返回user的集合
-	 */
-	public List<User> queryUserByUserName(String userName) {
-
-		return users;
-	}
-	/**
-	 * @param telephone
-	 * @return List<User>
-	 * 
-	 *          // 返回数据库中前10位用户的信息
-	 */
-	public List<User> queryTop10() {
-
-		return users;
-	}
-	/**
-	 * @param telephone
-	 * @return User
-	 * 
-	 *         // 插入新的用户，并返回是否出成功
-	 */
-	public boolean insertNewUser(String gender, double height, double weight, int roleId, int handlingId,
-			String userName, String imageUrl) {
-		return false;
-	}
-
 	
 }

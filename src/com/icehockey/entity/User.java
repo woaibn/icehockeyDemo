@@ -4,51 +4,45 @@ import java.util.Date;
 
 public class User {
 
-	private int userId;// 用户编号
-	private String weChatId;// 微信账号
-	private String telephone;// 手机号码',
-	private String userName;// 用户姓名',
-	private String sex;// 1代表男生0表示女生,默认为1男生',man是男生，lady是女生
-	private String password;// 密码
-	private Date birthday;// 出生日期
-	private String country;// 国籍
-	private String city;// 城市
-	private double height;// 身高
-	private double weight;// 体重
-	private String play;// 爱好：玩雪，玩冰，都玩
-	private String ice_play;// 游戏项目
-	private String snow_play;// 单板，双板，都玩
-	private String role;// 角色编号
-	private String handling;// 持杆方式编号
-	private String image;// 头像
+	private int userId;// '用户编号',
+	private String userName;// '用户姓名',
+	private String weChatId;// '微信账号',
+	private String telephone;// '电话号码',
+	private String password;// '登录密码',
+	private String roleId;// '角色编号',
+	private boolean sex;// '性别',
+	private Date birthday;// '出生日期',
+	private String idType;// '证件类型',
+	private int idInfoId;// '证件类型编号',
+	private int countryId;// '国籍编号',
+	private int cityId;// '籍贯编号',
+	private String address;// '住址',
+	private Date joinDate;// '注册时间',
+	private String remark;// '备注',
 
 	public User() {
 		super();
 	}
 
-	public User(int userId, String weChatId, String telephone, String userName,
-			String sex, String password, Date birthday, String country,
-			String city, double height, double weight, String play,
-			String ice_play, String snow_play, String role, String handling,
-			String image) {
+	public User(int userId, String userName, String weChatId, String telephone, String password, String roleId,
+			boolean sex, Date birthday, String idType, int idInfoId, int countryId, int cityId, String address,
+			Date joinDate, String remark) {
 		super();
 		this.userId = userId;
+		this.userName = userName;
 		this.weChatId = weChatId;
 		this.telephone = telephone;
-		this.userName = userName;
-		this.sex = sex;
 		this.password = password;
+		this.roleId = roleId;
+		this.sex = sex;
 		this.birthday = birthday;
-		this.country = country;
-		this.city = city;
-		this.height = height;
-		this.weight = weight;
-		this.play = play;
-		this.ice_play = ice_play;
-		this.snow_play = snow_play;
-		this.role = role;
-		this.handling = handling;
-		this.image = image;
+		this.idType = idType;
+		this.idInfoId = idInfoId;
+		this.countryId = countryId;
+		this.cityId = cityId;
+		this.address = address;
+		this.joinDate = joinDate;
+		this.remark = remark;
 	}
 
 	public int getUserId() {
@@ -57,6 +51,14 @@ public class User {
 
 	public void setUserId(int userId) {
 		this.userId = userId;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getWeChatId() {
@@ -75,28 +77,28 @@ public class User {
 		this.telephone = telephone;
 	}
 
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public String getSex() {
-		return sex;
-	}
-
-	public void setSex(String sex) {
-		this.sex = sex;
-	}
-
 	public String getPassword() {
 		return password;
 	}
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getRoleId() {
+		return roleId;
+	}
+
+	public void setRoleId(String roleId) {
+		this.roleId = roleId;
+	}
+
+	public boolean isSex() {
+		return sex;
+	}
+
+	public void setSex(boolean sex) {
+		this.sex = sex;
 	}
 
 	public Date getBirthday() {
@@ -107,96 +109,69 @@ public class User {
 		this.birthday = birthday;
 	}
 
-	public String getCountry() {
-		return country;
+	public String getIdType() {
+		return idType;
 	}
 
-	public void setCountry(String country) {
-		this.country = country;
+	public void setIdType(String idType) {
+		this.idType = idType;
 	}
 
-	public String getCity() {
-		return city;
+	public int getIdInfoId() {
+		return idInfoId;
 	}
 
-	public void setCity(String city) {
-		this.city = city;
+	public void setIdInfoId(int idInfoId) {
+		this.idInfoId = idInfoId;
 	}
 
-	public double getHeight() {
-		return height;
+	public int getCountryId() {
+		return countryId;
 	}
 
-	public void setHeight(double height) {
-		this.height = height;
+	public void setCountryId(int countryId) {
+		this.countryId = countryId;
 	}
 
-	public double getWeight() {
-		return weight;
+	public int getCityId() {
+		return cityId;
 	}
 
-	public void setWeight(double weight) {
-		this.weight = weight;
+	public void setCityId(int cityId) {
+		this.cityId = cityId;
 	}
 
-	public String getPlay() {
-		return play;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setPlay(String play) {
-		this.play = play;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
-	public String getIce_play() {
-		return ice_play;
+	public Date getJoinDate() {
+		return joinDate;
 	}
 
-	public void setIce_play(String ice_play) {
-		this.ice_play = ice_play;
+	public void setJoinDate(Date joinDate) {
+		this.joinDate = joinDate;
 	}
 
-	public String getSnow_play() {
-		return snow_play;
+	public String getRemark() {
+		return remark;
 	}
 
-	public void setSnow_play(String snow_play) {
-		this.snow_play = snow_play;
-	}
-
-	public String getRole() {
-		return role;
-	}
-
-	public void setRole(String role) {
-		this.role = role;
-	}
-
-	public String getHandling() {
-		return handling;
-	}
-
-	public void setHandling(String handling) {
-		this.handling = handling;
-	}
-
-	public String getImage() {
-		return image;
-	}
-
-	public void setImage(String image) {
-		this.image = image;
+	public void setRemark(String remark) {
+		this.remark = remark;
 	}
 
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", weChatId=" + weChatId
-				+ ", telephone=" + telephone + ", userName=" + userName
-				+ ", sex=" + sex + ", password=" + password + ", birthday="
-				+ birthday + ", country=" + country + ", city=" + city
-				+ ", height=" + height + ", weight=" + weight + ", play="
-				+ play + ", ice_play=" + ice_play + ", snow_play=" + snow_play
-				+ ", role=" + role + ", handling=" + handling + ", image="
-				+ image + "]";
+		return "User [userId=" + userId + ", userName=" + userName + ", weChatId=" + weChatId + ", telephone="
+				+ telephone + ", password=" + password + ", roleId=" + roleId + ", sex=" + sex + ", birthday="
+				+ birthday + ", idType=" + idType + ", idInfoId=" + idInfoId + ", countryId=" + countryId + ", cityId="
+				+ cityId + ", address=" + address + ", joinDate=" + joinDate + ", remark=" + remark + "]";
 	}
-
+	
+	
 }
