@@ -3,122 +3,138 @@ package com.icehockey.entity;
 import java.util.Date;
 
 public class Club {
-	private int clubId;// 俱乐部编号
-	private String clubName;// 俱乐部名称
-	private String organization;// 所属机构
-	private String clubManager;// 俱乐部主席
-	private String address;// 所在地
-	private String managementContent;// 经营内容
-	private String telephone;// 联系方式
-	private Date buildTime;// 组建时间
-	private String resource;// 场地资源
-	private String construct;// 球队建设
-
+	private int clubId; // 俱乐部编号
+	private String clubName; // 俱乐部名称
+	private String clubLogo; //俱乐部LOGO
+	private String organization; //俱乐部所属机构
+	private String address; //官方地址
+	private Date buildTime; //成立时间
+	private int countryId; //国籍编号
+	private int cityId; //城市编号
+	private String managerContent; //经营内容
+	private String email; //电子邮件
+	private String construction; //球队建设
+	private String province; //省份
+	private String remark; //备注
+	
+	
 	public int getClubId() {
 		return clubId;
 	}
-
 	public void setClubId(int clubId) {
 		this.clubId = clubId;
 	}
-
 	public String getClubName() {
 		return clubName;
 	}
-
 	public void setClubName(String clubName) {
 		this.clubName = clubName;
 	}
-
+	public String getClubLogo() {
+		return clubLogo;
+	}
+	public void setClubLogo(String clubLogo) {
+		this.clubLogo = clubLogo;
+	}
 	public String getOrganization() {
 		return organization;
 	}
-
 	public void setOrganization(String organization) {
 		this.organization = organization;
 	}
-
-	public String getClubManager() {
-		return clubManager;
-	}
-
-	public void setClubManager(String clubManager) {
-		this.clubManager = clubManager;
-	}
-
 	public String getAddress() {
 		return address;
 	}
-
 	public void setAddress(String address) {
 		this.address = address;
 	}
-
-	public String getManagementContent() {
-		return managementContent;
-	}
-
-	public void setManagementContent(String managementContent) {
-		this.managementContent = managementContent;
-	}
-
-	public String getTelephone() {
-		return telephone;
-	}
-
-	public void setTelephone(String telephone) {
-		this.telephone = telephone;
-	}
-
 	public Date getBuildTime() {
 		return buildTime;
 	}
-
 	public void setBuildTime(Date buildTime) {
 		this.buildTime = buildTime;
 	}
-
-	public String getResource() {
-		return resource;
+	public int getCountryId() {
+		return countryId;
 	}
-
-	public void setResource(String resource) {
-		this.resource = resource;
+	public void setCountryId(int countryId) {
+		this.countryId = countryId;
 	}
-
-	public String getConstruct() {
-		return construct;
+	public int getCityId() {
+		return cityId;
 	}
-
-	public void setConstruct(String construct) {
-		this.construct = construct;
+	public void setCityId(int cityId) {
+		this.cityId = cityId;
 	}
-
-	public Club(int clubId, String clubName, String organization,
-			String clubManager, String address, String managementContent,
-			String telephone, Date buildTime, String resource, String construct) {
+	public String getManagerContent() {
+		return managerContent;
+	}
+	public void setManagerContent(String managerContent) {
+		this.managerContent = managerContent;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getConstruction() {
+		return construction;
+	}
+	public void setConstruction(String construction) {
+		this.construction = construction;
+	}
+	public String getProvince() {
+		return province;
+	}
+	public void setProvince(String province) {
+		this.province = province;
+	}
+	public String getRemark() {
+		return remark;
+	}
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
+	
+	
+	public Club() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	public Club(int clubId, String clubName, String clubLogo,
+			String organization, String address, Date buildTime, int countryId,
+			int cityId, String managerContent, String email,
+			String construction, String province, String remark) {
 		super();
 		this.clubId = clubId;
 		this.clubName = clubName;
+		this.clubLogo = clubLogo;
 		this.organization = organization;
-		this.clubManager = clubManager;
 		this.address = address;
-		this.managementContent = managementContent;
-		this.telephone = telephone;
 		this.buildTime = buildTime;
-		this.resource = resource;
-		this.construct = construct;
-
+		this.countryId = countryId;
+		this.cityId = cityId;
+		this.managerContent = managerContent;
+		this.email = email;
+		this.construction = construction;
+		this.province = province;
+		this.remark = remark;
 	}
-
+	
+	
 	@Override
 	public String toString() {
 		return "Club [clubId=" + clubId + ", clubName=" + clubName
-				+ ", organization=" + organization + ", clubManager="
-				+ clubManager + ", address=" + address + ", managementContent="
-				+ managementContent + ", telephone=" + telephone
-				+ ", buildTime=" + buildTime + ", resource=" + resource
-				+ ", construct=" + construct + "]";
+				+ ", clubLogo=" + clubLogo + ", organization=" + organization
+				+ ", address=" + address + ", buildTime=" + buildTime
+				+ ", countryId=" + countryId + ", cityId=" + cityId
+				+ ", managerContent=" + managerContent + ", email=" + email
+				+ ", construction=" + construction + ", province=" + province
+				+ ", remark=" + remark + "]";
 	}
-
+	
+	
 }
