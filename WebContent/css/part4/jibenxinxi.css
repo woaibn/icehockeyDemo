@@ -1,0 +1,61 @@
+
+
+.all{
+	display: flex;
+	flex-direction: column;
+	height:75% ;
+	width: 100%;
+	padding:0rem!important;
+	overflow: auto;
+}
+
+
+
+.everyone{ 
+	background:whitesmoke ;
+	border-style:solid; 
+	border-width:1px; 
+	border-color:#000;
+	margin: 0.5rem 1rem!important;
+	padding:1%;
+}
+
+.a{
+	color: white;
+	margin-left: 5%;
+	margin-top: 5%;
+}
+
+.everyone div{
+	margin: 1%;
+}
+
+
+
+.content_left{
+	width:22%;
+}
+
+.content_mid{
+	width:78%;
+	
+	
+}
+
+.team{
+	display: flex;
+}
+
+.image img{
+
+	width: 100%;
+}
+.shujv_content_mid{
+	width: 100%;
+}
+
+
+.bianji{
+	width: 50%;
+	margin: auto;
+}

@@ -11,12 +11,18 @@ $(function() {
 
 		var touxiang = $("#touxiang").val();
 		var name = $("#name").val();
+		var idnum=$("#idnum").val();
 		if (touxiang == "") {
 			alert("请选择您的头像");
 			return false;
 		}
 		if (name == "") {
-			alert("请输入您的昵称!");
+			alert("请输入您的真实姓名!");
+			return false;
+		}
+		
+		if (idnum == "") {
+			alert("请输入您的身份证号!");
 			return false;
 		}
 		$("#formimgupload").append($("#touxiang"));
@@ -29,8 +35,9 @@ function callback(content) {
 	var name = $("#name").val();
 	// 请求后台服务
 	var data = {
-		touxiang : content,
+		touxiang : touxiang,
 		name : name,
+		idnum:idnum
 		};
 	jump(ALIASURL, data);
 }

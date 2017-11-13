@@ -4,18 +4,18 @@
 $(function() {
 	var sportEvent = null;
 	$('#left').on('click', function() {
-		sportEvent = "LEFT";
+		sportEvent = "leftHand";
 		submit(sportEvent);
 	});
 	$('#right').on('click', function() {
-		sportEvent = "RIGHT";
+		sportEvent = "rightHand";
 		submit(sportEvent);
 	});
 	// 提交用户选择的信息
 	function submit(sportEvent) {
 
 		var data = {
-			handlingId : sportEvent,
+			handlingValue : sportEvent,
 		};
 	//	alert(JSON.stringify(data));
 		jump(HANDLINGURL, data);

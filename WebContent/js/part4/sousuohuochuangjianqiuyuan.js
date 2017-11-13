@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 	$(document).ready(function() {
 		$("#searchbtn").click(function() {
 			var searchName = $("#search").val();
@@ -9,10 +7,10 @@
 				return false;
 			}
 			var data = {
-				operateType : "sousuo",
-				placeName : searchName,
+				operateType : "jingquesousuo",//精确搜索
+				playerName : searchName,
 			};
-			//alert(JSON.stringify(data));
+			alert(JSON.stringify(data));
 			jump(TIANBINGTIANJIANGURL, data);
 		});
 		$("#new_btn").click(function() {

@@ -4,9 +4,9 @@
 function goto1(para) {
 	var data = {
 		operateType : "JiaoZhuToJiaoXiang",
-		placeName : para,
+		rinkId : para,
 	};
-	// alert(JSON.stringify(data));
+	alert(JSON.stringify(data));
 	jump(JIAOBINGBIBAIURL, data);
 }
 
@@ -15,8 +15,8 @@ $(".submitBtn").click(function() {
 	var searchName = $("#search").val();
 	var data = {
 		operateType : "sousuo",
-		placeName : searchName,
+		rinkName : searchName,
 	};
-	//alert(JSON.stringify(data));
+	alert(JSON.stringify(data));
 	jump(JIAOBINGBIBAIURL, data);
 });

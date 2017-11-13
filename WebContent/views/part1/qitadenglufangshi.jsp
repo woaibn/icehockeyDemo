@@ -5,85 +5,74 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>其它登录方式页面</title>
+		<title>手机号登录页面</title>
 		<link rel="stylesheet" href="../../css/part1/qitadenglufangshi.css" />
 		<link rel="stylesheet" href="../../css/jqueryMobile/jquery.mobile-1.4.5.min.css"/>
-		<link rel="stylesheet" href="../../css/part1/zhucedengluyemain.css"/>
+		<link rel="stylesheet" href="../../css/part1/allpagesame.css"/>
 		<script src="../../js/jQuery/jquery-2.2.3.min.js"></script>
 		<script src="../../js/jqueryMobile/jquery.mobile-1.4.5.min.js"></script>
+	
+		
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+			  $(".submitBtntwo").click(function(){
+			    window.location.href="zhuceyemian.jsp";
+			  });
+			});
+
+		</script>      
+	
+	
 	
 	</head>
 
 	<body>
-		
-
-		<div data-role="page" class="qitadenglufangshi">	
-				<div class="top">
-					<span >手机注册</span>
+		<div data-role="page" class="allpage">		
+				<div class="top">	
+					 <div href="#" onClick="javascript :history.back(-1);" data-ajax="false" class="back">	
+                    	<img src="../../img/part1/back.png" />
+				    </div>
+					<div class="biaoti">
+						手机号登录
+					</div>
 				</div>
-
-				<div class="s1">
+					
+				    
+				   
+				
+				<div >
 					<input type="text" data-role='none' class="phoneNumber" placeholder="输入注册时的手机号" id="phoneNumber"/>	
 				</div>
 				
-				
-				<div class="yanBtn">
-					<div class="ver">
-						<input type="text" data-role='none' class="verificationCode" placeholder="输入验证码" id="verificationCode"/>
-					</div>
-				
-					<div class="yan">
-					<input type="submit" data-role='none' value="获取验证码"   class="getCode"></input>
-				</div>
+				<div >
+					<input type="password" data-role='none' class="newPassword" placeholder="请输入密码" id="newPassword"/>	
 				</div>
 				
-				<div class="mima">
-					<input type="password" data-role='none' class="newPassword" placeholder="请输入至少8位新密码" id="newPassword"/>	
+				<div >
+					<input type="submit" data-role='none' value="登录"   class="submitBtnone"></input>
 				</div>
 				
-				<div class="denglu">
-					<input type="submit" data-role='none' value="登录"   class="submitBtn"></input>
+				<div class="zhuce">
+					<input type="submit" data-role='none' value="注册"   class="submitBtntwo"></input>
 				</div>
-				
-				<div class="fanhui">
-					<input type="submit" data-role='none' value="返回"   class="fanhuiBtn"></input>
-				</div>
-            	 
-            	 
-			    <!--<div class="errorBtn">
-            	    <a href="error.html"  data-ajax="false" style="text-decoration: none;"> 登录遇到问题</a>
-                </div>-->
+            	     
+			    <div class="errorBtn">
+            	    <a href="error.jsp"  data-ajax="false" style="text-decoration: none;" class="error"> 登录遇到问题</a>
+                </div>
 					
-
+					
+					
+				<div class="loginOther">
+					<span>推荐登录</span>
+				</div>
+				
 				<div class="loginList">
 					<a href="" class="weixin" data-ajax="false"><img src="../../img/part1/weixin.png"/></a>
 					<a href="" class="weibo" data-ajax="false"><img src="../../img/part1/weibo.png"/></a>
 					<a href="" class="qq" data-ajax="false"><img src="../../img/part1/qq.png"/></a>
 				</div>	
-				
-				<div class="loginOther">
-					<span>————社交账号登录————</span>
-				</div>
-				
-				<div class="button">
-							<div class="shouye" onclick="shouyeClick()">
-								<span class="ch">首页</span>
-								<span class="en">	Home</span>
-							</div>
-							<div  class="zhanshu" onclick="zhanshuClick()">
-								<span class="ch">战术</span>
-								<span class="en">Tactical</span>
-							</div>
-							<div  class="zhandui" onclick="zhanduiClick()">
-								<span class="ch">战队</span>
-								<span class="en">Team</span>
-							</div>
-							<div class="wode" onclick="wodeClick()">
-								<span class="ch">我的</span>
-								<span class="en">Mine</span>
-							</div>
-				   </div>	
-				
+		
         </div>
         
         <script src="../../js/common/common.js"></script>

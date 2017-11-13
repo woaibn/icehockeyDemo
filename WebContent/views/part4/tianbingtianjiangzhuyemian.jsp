@@ -12,46 +12,118 @@
 	href="../../css/part4/tianbingtianjiangzhuyemian.css" />
 <link rel="stylesheet"
 	href="../../css/jqueryMobile/jquery.mobile-1.4.5.min.css" />
-
+<link rel="stylesheet" href="../../css/part1/allpagesame.css" />
 <script src="../../js/jQuery/jquery-2.2.3.min.js"></script>
 <script src="../../js/jqueryMobile/jquery.mobile-1.4.5.min.js"></script>
+
+
 <script type="text/javascript">
 	$(document).ready(function() {
-		$(".tianjia").click(function() {
+		$(".submitBtn1").click(function() {
 			window.location.href = "sousuohuochuangjianqiuyuan.jsp";
 		});
-		$(".content").click(function() {
-			window.location.href = "qiuyuanxiangxixinxi.jsp";
+		$(".submitBtn").click(function() {
+			window.location.href = "";
 		});
-
 	});
 </script>
 </head>
 
-<body>
-	<div data-role="page" class="tianbingtianjiangzhuyemian main">
-		<div data-role="content">
-			<div class="header">
-				<a href="#" onClick="javascript :history.back(-1);"
-					data-ajax="false"></a> 
-					<img
-					src="../../img/part4/plus.png" / class="tianjia">
-			</div>
-			<h1 class="head">添兵添将</h1>
-			<div class="search">
-			<div class="search_a">
-				<div class="search_b">
-					<input type="text" name="search" id="search" placeholder="精确查询">
-				</div>
-				<div>
-					<input type="submit" data-role='none' value="搜索" class="submitBtn"></input>
-				</div>
 
+
+<body>
+	<body >
+
+			 		   
+		<div data-role="page" id="pageone" class="allpage">
+			<!--标题-->
+			<div class="top">	
+				        <div href="#" onClick="javascript :history.back(-1);" data-ajax="false" class="back">	
+		                    	<img src="../../img/part1/back.png" />
+				        </div>
+					    <div class="biaoti">
+								添兵添将
+					    </div>
 			</div>
+		
+			<!--查询框-->
+			<div class="search_a">
+							<div class="search_c">
+								<input type="submit" data-role='none' value="添加" class="submitBtn1"></input>
+							</div>
+				
+							<div class="search_b">
+								<input type="text" name="search" id="search" placeholder="输入球员姓名模糊查询">
+							</div>
+							
+							<div class="search_d">
+                                                  <!--搜索之后在当前页面显示  -->
+								<input type="submit" data-role='none' value="搜索" class="submitBtn"></input>
+							</div>
 			</div>
 			
+
 			
-			<div class="playground">
+			<div data-role="content" class="all">
+				<c:choose>
+		    		<c:when test="${!empty playerId}">
+		    			<c:forEach items="${playerId}" var="playerId" varStatus="st">
+					    	<div class="everyone" onclick="goto1('${player.playerId}')">
+								<div class="day">所属俱乐部：</div>
+								<div class="team">
+									<div class="content_left">
+													<div class="image">
+														<img src="../../img/part4/lady.png" />
+													</div>
+									</div>
+					
+									<div class="content_mid">
+													<div class="name">姓名:${player.name}</div>
+													<div class="sex">性别:${player.sex}</div>
+													<div class="height">身高:${player.height}</div>
+					
+									</div>
+					
+									<div class="content_right">
+													<div class="weight">体重:${player.weight}</div>
+													<div class="countryId">国籍:${player.countryId}</div>
+													<div class="cityId">城市:${player.cityId}</div>
+									</div>		
+								</div>	
+							</div>
+						</c:forEach>		
+    		        </c:when>
+    			</c:choose>
+
+	        </div>
+	        <!--
+                	<div class="everyone">
+					<div class="day">所属俱乐部：</div>
+					<div class="team">
+						<div class="content_left">
+										<div class="image">
+											<img src="../../img/part4/lady.png" />
+										</div>
+						</div>
+		
+						<div class="content_mid">
+										<div class="name">姓名</div>
+										<div class="sex">性别</div>
+										<div class="height">身高</div>
+		
+						</div>
+		
+						<div class="content_right">
+										<div class="weight">体重</div>
+										<div class="countryId">国籍</div>
+										<div class="cityId">城市</div>
+						</div>		
+					</div>	
+				</div>
+                -->
+				
+			<!--
+            	<div class="playground">
 				<c:choose>
 					<c:when test="${!empty users}">
 						<c:forEach items="${users}" var="user" varStatus="st">
@@ -65,48 +137,19 @@
 							<div class="name_content">
 								<span>球员姓名：${user.userName}</span>
 							</div>
-								
 							<div class="content">
-									<div class="content_left">
-										<div class="img">
-											<img src="${user.image}" />
-											<!--球队logo-->
-										</div>
-									</div>
-		
-									<div class="content_mid">
-										<div class="">球员姓名：${user.userName}</div>
-										<div class="">性别：${user.sex}</div>
-										<div class="">身高：${user.height}</div>
-		
-									</div>
-		
-									<div class="content_right">
-										<div class="">体重：${user.weight}</div>
-										<div class="">国籍：${user.country}</div>
-										<div class="">城市：${user.city}</div>
-		
-									</div>
-									
-									<!--<div class="content_mid">
-										<div class="">球员姓名：ss</div>
-										<div class="">性别ff</div>
-										<div class="">身高：ff</div>
-		
-									</div>
-		
-									<div class="content_right">
-										<div class="">体重：ffdf</div>
-										<div class="">国籍zfd</div>
-										<div class="">城市bgsd</div>
-		
-									</div>
-									-->
-									
-									
+								<div class="content_img">
+									<img src="../../img/part2/c.jpg" />
+								</div>
+								<div class="content_div_right">
+									<li class="content_top"><a href="">球员姓名：${user.userName}</a></li>
+									<div class="mid">性别：${user.sex}</div>
+									<div class="content_bottom">身高：${user.height}</div>
+									<div class="content_bottom">体重：${user.weight}</div>
+									<div class="content_bottom">国籍：${user.country}</div>
+									<div class="content_bottom">城市：${user.city}</div>
+								</div>
 							</div>
-							
-							
 
 						</c:forEach>
 					</c:when>
@@ -117,29 +160,27 @@
 
 			</div>
 
+            -->
+			
 
 		</div>
 
 			
 
 			<div class="button">
-							<div class="shouye" onclick="shouyeClick()">
-								<span class="ch">首页</span>
-								<span class="en">	Home</span>
-							</div>
-							<div  class="zhanshu" onclick="zhanshuClick()">
-								<span class="ch">战术</span>
-								<span class="en">Tactical</span>
-							</div>
-							<div  class="zhandui" onclick="zhanduiClick()">
-								<span class="ch">战队</span>
-								<span class="en">Team</span>
-							</div>
-							<div class="wode" onclick="wodeClick()">
-								<span class="ch">我的</span>
-								<span class="en">Mine</span>
-							</div>
-				   </div>	
+				<div class="shouye" onclick="shouyeClick()">
+					<span>首页</span>
+				</div>
+				<div class="zhanshu" onclick="zhanshuClick()">
+					<span>战术</span>
+				</div>
+				<div class="zhandui" onclick="zhanduiClick()">
+					<span>战队</span>
+				</div>
+				<div class="wode" onclick="wodeClick()">
+					<span>我的</span>
+				</div>
+			</div>
 
 		</div>
 

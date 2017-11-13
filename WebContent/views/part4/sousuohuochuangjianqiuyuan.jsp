@@ -10,7 +10,7 @@
 	href="../../css/part4/sousuohuochuangjianqiuyuan.css" />
 <link rel="stylesheet"
 	href="../../css/jqueryMobile/jquery.mobile-1.4.5.min.css" />
-
+<link rel="stylesheet" href="../../css/part1/allpagesame.css"/>
 <script src="../../js/jQuery/jquery-2.2.3.min.js"></script>
 <script src="../../js/jqueryMobile/jquery.mobile-1.4.5.min.js"></script>
 
@@ -18,45 +18,49 @@
 
 <body>
 
-	<div data-role="page" class="sousuohuochaungjianqiuyuan main">
-		<div data-role="content">
-			<div class="header">
-				<a href="#" onClick="javascript :history.back(-1);"
-					data-ajax="false"></a> 
-			</div>
-			<h1 class="head">添兵添将</h1>
-
-			<div class="search">
-				<div data-role="fieldcontain">
-						<label for="search" class="text">请输入搜索姓名：</label> <input data-role=""
-							type="search" name="search" id="search" placeholder="">
+	<body>
+		<div data-role="page" class="allpage">		
+				<div class="top">	
+					 <div href="#" onClick="javascript :history.back(-1);" data-ajax="false" class="back">	
+                    	<img src="../../img/part1/back.png" />
+				    </div>
+					<div class="biaoti">
+						添兵添将
 					</div>
-					<input type="submit" data-inline="true" value="搜索" id="searchbtn">
+				</div>
+				
+				
+			<div class="content">
+				   <div data-role="fieldcontain">
+						<label for="search" class="text">请输入您想搜索的姓名：</label> 
+						<input data-role="" type="search" name="search" id="search" placeholder="">
+					</div>
+					
+					<div class="search_b">
+								<input type="submit" data-role='none' value="搜索" class="submitBtn" id="searchbtn"></input>
+					</div>
+					
+					<div id="new_btn">
+						<button>创建新球员</button>
+					</div>
 				
 			</div>
-
-			<div id="new_btn">
-				<button>创建新球员</button>
-			</div>
+	
 
 			<div class="button">
-							<div class="shouye" onclick="shouyeClick()">
-								<span class="ch">首页</span>
-								<span class="en">	Home</span>
-							</div>
-							<div  class="zhanshu" onclick="zhanshuClick()">
-								<span class="ch">战术</span>
-								<span class="en">Tactical</span>
-							</div>
-							<div  class="zhandui" onclick="zhanduiClick()">
-								<span class="ch">战队</span>
-								<span class="en">Team</span>
-							</div>
-							<div class="wode" onclick="wodeClick()">
-								<span class="ch">我的</span>
-								<span class="en">Mine</span>
-							</div>
-				   </div>	
+				<div class="shouye" onclick="shouyeClick()">
+					<span>首页</span>
+				</div>
+				<div class="zhanshu" onclick="zhanshuClick()">
+					<span>战术</span>
+				</div>
+				<div class="zhandui" onclick="zhanduiClick()">
+					<span>战队</span>
+				</div>
+				<div class="wode" onclick="wodeClick()">
+					<span>我的</span>
+				</div>
+			</div>
 
 		</div>
 

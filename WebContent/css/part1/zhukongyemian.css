@@ -1,89 +1,106 @@
 .zhukongyemian{
-	background-image: url(../../img/part1/zhukongbeijing.png);
+	
+	background-image: url(../../img/part1/login.png);
 	background-size: 100% 100%;
 	height: 100%;
-	margin: 0 !important;
-	background-repeat:no-repeat;
-    background-attachment:fixed;
-	
 }
+	
 
 
 .zhukongyemian_top{
-position: fixed;
-font-size: 2.3rem;
-	font-family: "微软雅黑";
-	/*上下左右居中*/
-}
+	position: fixed;
+	left: 50%;/*上下左右居中*/
+	top: 50%;
+	-webkit-transform:translate(-50%,-50%);
+	-moz-transform:translate(-50%,-50%);
+	-o-transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%);
+	transform:translate(-50%,-50%);
+  text-shadow:none !important;
+  font-size: 2rem;
 
-.backimage{
-	position:relative;
 }
 
 .backimage img{
-   width:100%;
+	position:relative;
+	font-size: 2rem;
+  color: rgb(178,196,202);
 	
 }
 
-.f{
-	position: absolute;
-	margin-top:-112%;
-	margin-left:5%;
-
-}
-
-.f a{
-	text-decoration: none;
-}
-
-.f span{
-	color: black;
+/*.a{
+	position: relative;
+	margin-top:-13rem;
+	margin-left:4rem;
+	font-size: 2rem;
 	
 }
 
 
 .b{
-	position: absolute;
-	margin-top:-83%;
-	margin-left:23%;
-	
-}
-
-.b a{
-	text-decoration: none;
-}
-
-.b span{
-	font-size: 2.3rem;
-	font-family: "微软雅黑";
-	color: black;
+	position: relative;
+	margin-top:-3rem;
+	margin-left: 10rem;
 	
 }
 
 .c{
-	font-size: 2.3rem;
-	font-family: "微软雅黑";
-	position: absolute;
-	margin-top:-83%;
-	margin-left:58%;
-	height: 4rem;
+	position: relative;
+	margin-top:2.5rem;
+	margin-left: 2rem;
 }
 
+.d{
+	position: relative;
+	margin-top:-2.5rem;
+	margin-left: 12rem;
+}
+
+.e{
+	position: relative;
+	margin-left: 7rem;
+	
+}*/
+.a{
+	position: absolute;
+	margin-top:-14rem;
+	margin-left:3rem;	
+}
+.a a{
+	text-decoration: none;
+}
+
+.a span{
+	color: rgb(178,196,202);	
+}
+
+.b{
+	position: absolute;
+	margin-top:-14rem;
+	margin-left:10rem;
+}
+.b a{
+	text-decoration: none;
+}
+.b span{
+	color: rgb(178,196,202);
+}
+.c{
+	position: absolute;
+	margin-top:-8rem;
+	margin-left:1.5rem;	
+}
 .c a{
 	text-decoration: none;
 }
 
 .c span{
-	color: black;
-	
+	color: rgb(178,196,202);
 }
 .d{
-	font-size: 2.3rem;
-	font-family: "微软雅黑";
 	position: absolute;
-	margin-top:-53%;
-	margin-left:41%;
-	height: 4rem;
+	margin-top:-8rem;
+	margin-left:12rem;
 }
 
 .d a{
@@ -91,16 +108,14 @@ font-size: 2.3rem;
 }
 
 .d span{
-	color: black;
+	color: rgb(178,196,202);
 	
 }
 .e{
-	font-size: 2.3rem;
-	font-family: "微软雅黑";
 	position: absolute;
-	margin-top:-22%;
-	margin-left:23%;
-	height: 4rem;
+	margin-top:-5rem;
+	margin-left:7rem;
+
 	
 }
 
@@ -110,7 +125,7 @@ font-size: 2.3rem;
 }
 
 .e span{
-	color: black;
+	color: rgb(178,196,202);
 	
 }
 

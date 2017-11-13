@@ -27,12 +27,15 @@ public class UserDao {
 	 *         通过手机号码查找到user对象并返回
 	 */
 	public User getUserByTelephone(String telephone) {
-		String sql = "SELECT * FROM USER WHERE telephone=?";
+		String sql = "SELECT * FROM user WHERE user.telephone=?";
+		System.out.println(sql);
 		try {
 			conn = util.openConnection();
+			System.out.println(conn);
 			preparedStatement = conn.prepareStatement(sql);
 			preparedStatement.setString(1, telephone);
 			rs = preparedStatement.executeQuery();
+			System.out.println(telephone);
 			if (rs.next()) {
 				int userId = rs.getInt("userId");// '用户编号',
 				String userName = rs.getString("userName");// '用户姓名',
@@ -58,8 +61,10 @@ public class UserDao {
 				String remark = rs.getString("remark");// '备注',
 				user = new User(userId, userName, weChatId, telephone, password, roleId, sex, birthday, idType,
 						idInfoId, countryId, cityId, address, joinDate, remark);
+				System.out.println(user+"......DAO");
 				return user;
 			} else {
+				System.out.println("dao层未找到");
 				return null;
 			}
 		} catch (SQLException e) {

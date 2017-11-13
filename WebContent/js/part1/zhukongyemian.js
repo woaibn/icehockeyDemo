@@ -1,10 +1,10 @@
 $(document).ready(function() {
-	$(".f").click(function() {// 主页面跳转浇冰必拜主页面
+	$(".a").click(function() {// 主页面跳转浇冰必拜主页面
 		// 请求后台服务
 		var data = {
 			operateType : "zhukongToJiaoZhu",
 		};
-		// alert(JSON.stringify(data));
+		 alert(JSON.stringify(data));
 		jump(JIAOBINGBIBAIURL, data);
 	});
 	$(".b").click(function() {
@@ -13,7 +13,7 @@ $(document).ready(function() {
 	$(".c").click(function() {// 主页面跳转到添兵添将主页面
 		// 请求后台服务
 		var data = {
-			operateType : "TianBingTianJiang",
+			operateType : "zhukongToTianBingTianJiang",
 		};
 		 //alert(JSON.stringify(data));
 		jump(TIANBINGTIANJIANGURL, data);

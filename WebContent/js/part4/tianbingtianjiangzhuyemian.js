@@ -6,17 +6,17 @@ function goto1(para) {
 		operateType : "tianbingtianjiangzhuyemian",
 		placeName : para,
 	};
-	// alert(JSON.stringify(data));
+	 alert(JSON.stringify(data));
 	jump(TIANBINGTIANJIANGURL, data);
 }
 
 $(".submitBtn").click(function() {
-	// 请求后台服务
+	// 搜索当前页面
 	var searchName = $("#search").val();
 	var data = {
-		operateType : "sousuo",
-		placeName : searchName,
+		operateType : "mohusousuo",
+		playerName : searchName,
 	};
-	//alert(JSON.stringify(data));
+	alert(JSON.stringify(data));
 	jump(TIANBINGTIANJIANGURL, data);
 });

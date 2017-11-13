@@ -41,34 +41,49 @@
 	filter:alpha(opacity=0); 
 	margin-top:-5px;
 }
+
+/*
 .name{
-	position: relative;
-	width:100%;
-	margin-top:2rem;
-	margin-left: -1rem;
-	font-size: 3rem;
-	padding-right: 1rem;
-	padding-left: 1rem;
-	padding-top: 0.6rem;
-	padding-bottom: 0.6rem;
-	border-top: hidden;
-	border-bottom: hidden;
+
+
 	border-style:none;
 	filter:alpha(Opacity=80);
 	-moz-opacity:0.5;
 	opacity: 0.15;
 }
 
+*/
+.content{
+	width:80%;
+	margin: auto;
+}
+
+
+.name{
+	width: 100%;
+	margin-top: 10%;
+	border-style:none;
+	padding: 3%;
+	opacity: 0.5;
+}
+
+
+.idnum{
+	width: 100%;
+	margin-top: 10%;
+	border-style:none;
+	padding: 3%;
+	opacity: 0.5;
+	
+}
+
 .submitBtn{
 	background: transparent! important;
-	border-radius: 2rem !important;
-	border: solid #FFA657;
-	border-width: 0.1em;
+	border-radius: 1rem !important;
+
 	width: 100%;
-	margin-top: 2.5rem;
-	height: 3rem;
-    min-height: 3em;
-    font-size: 2rem;
+	margin-top: 10%;
+    padding: 3%;
     color: #fff;
     text-shadow:none !important;
 }

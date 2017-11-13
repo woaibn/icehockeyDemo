@@ -13,7 +13,7 @@ public class UnitTest1 {
 	@Test
 	public void test() {
 		UserService userService=new UserService();
-		User user=userService.loginByTelepone("100001", "100001");
+		User user=userService.loginByTelepone("1", "1");
 		System.out.println(user);
 	}
 	@Test

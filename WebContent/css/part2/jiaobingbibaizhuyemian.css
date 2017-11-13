@@ -1,185 +1,76 @@
-.jiaobingbibaizhuyemain{
-	background-image: url(../../img/part1/lock-screen-background.png);
-	background-size: 100% 100%;
-	height: 100%;
-	margin: 0 !important;
-	background-repeat:no-repeat;
-    background-attachment:fixed;
+
+.all{
 	display: flex;
 	flex-direction: column;
-	-webkit-flex-direction: column;
-	font-family: "宋体";
-}
+	height:75% ;
+	width: 95%;
+	padding:0rem!important;
 
-.top{
-	position: fixed;
-	top:0;
-	color: rgb(178,196,202);
-	padding: 1.5rem 0;
-	height: 3rem;
-	width:100%;
-}
-
-
-.top a{
-	  width:2.5rem;
-	  margin-left: 1rem;
-	  background: url(../../img/part1/back.png) no-repeat;
-	  float: left;	
-	  padding: 1rem 0;
-	  margin-top: 0.5rem;
-}
-
-.top span{
-	/*display: block;/*默认属性值*/
-	font-weight: 600;
-	text-shadow:none !important;
-	font-size: 2.5rem;
-	margin-left: 30%;	
-}
-
-
-
-
-/*下方滚动框*/
-
-.search{
-	width:80%;
 	margin: auto;
-	margin-top: 5rem;
-	overflow: scroll;
+	margin-top: 2%;
+}
 
+
+
+.everyone{ 
+	background:whitesmoke ;
+	border-style:solid; 
+	border-width:1px; 
+	border-color:#000;
+	margin: 0.5rem!important;
+	padding:1%;
+}
+
+.everyone div{
+	margin: 1%;
+}
+
+
+
+.content_left{
+	width:25%;
+}
+
+
+.content_right{
+	width:80%;
+}
+
+.place{
+	display: flex;
+}
+
+.img img{
+	height: 6rem;
+	width: 6rem;
+	margin-top: 30%;
 }
 
 .search_a{
-display: flex;
-
-}
-
-.search_b{
-border-radius: 0rem !important;
-width: 80%;
-
-
-}
-
-.submitBtn{
-	background: transparent! important;
-	border-radius: 0rem !important;
-	border：1rem;
-	
-	margin: 0.5rem   2rem;
-	height: 2.5rem;
-
-    font-size: 1.5rem;
-    color: #fff;
-    text-shadow:none !important;
-    padding: 0 0.5rem;
-    
-}
-
-
-
-
-/*日期显示*/
-
-.day{
-	margin-top: 0.5rem;
-	font-size: 2rem;
-	color: rgb(178,196,202);
-}
-/*x姓名，星级*/
-
-.name_content{
-	position:relative;
-	margin-top: 0.5rem;
-	background: white;
-	height: 1.5rem;
-	border-radius: 0rem;
-	border：1rem;
-	display: -webkit-flex;
-	border-bottom: 1px solid #d9d9d9; 
-}
-
-.name_content span1{
-	position: absolute;
-	
-	/*
-	 * font-size: 1.5rem;
-	margin-left: 0.5rem;
-	margin-top:0.3rem;
-	padding-right: 1rem;
-	*/
+	/*display:flex;*/
+	width:90%;
+	margin: auto;
 	
 }
 
-.name_content span2{
-	position: absolute;
-	
-}
 
-.huanjing{
-	display: flex;
-	position:absolute;
-	margin-left: 10rem;
-}
-
-
-/*
-.huanjing span{
-	font-family: "宋体";
-	text-shadow:none;
-}
-.huanjing img{
-	position: relative;
-	margin-left: 5rem;
-	
-}
-*/
-
-/*球场信息*/
-
-.content{
-	background: white;
-	height: 10rem;
-	font-size: 2rem;
-	border-radius: 0rem;
-	display: -webkit-flex;
-	border-bottom: 1px solid #d9d9d9; 
-	margin-top: 0.5rem;
-}
-	
-
-.content_img{
-	width: 7rem;	
-	margin: 1rem ;	
-}
-
-.content_img img{
-	width:7rem;
-	height: 7rem;
-	
-}
-
-.content_div_right{
-	padding: 1.5rem;
+.search_c{
 	float: left;
-	
+	width: 13%;
+	padding:2%;
+	margin: 2%;
+	border-radius: 1rem!important;
+}
+.search_b{
+	float: left;
+	width: 60%;
+	border-radius: 1rem!important;
 }
 
-.content_top{
-	font-size: 2rem;
-	color: rgb(89,100,243);	
+.search_d{
+	float: left;
+	width: 13%;
+	padding:2%;
+	margin-top: 2%;
+	border-radius: 1rem!important;
 }
-
-.mid{
-	font-size: 2rem;
-	color: rgb(89,100,243);
-	
-}
-
-.content_bottom{
-	font-size:1rem;
-	color: #666666;
-}
-

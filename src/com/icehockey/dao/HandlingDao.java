@@ -27,7 +27,8 @@ public class HandlingDao {
 			if (rs.next()) {
 				int handlingId = rs.getInt("handlingId");
 				String handlingName = rs.getString("handlingName");
-				handling = new Handling(handlingId, handlingName,handlingValue);
+				String remark = rs.getString("remark");
+				handling = new Handling(handlingId, handlingName, handlingValue, remark);
 			}
 
 		} catch (Exception e) {

@@ -35,16 +35,16 @@ public class ChiganfangshiServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		response.setHeader("Access-Control-Allow-Origin", "*");
-		HttpSession session = request.getSession();
 		response.setContentType("application/json");
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=UTF-8");
-		response.setHeader("set-Cookie", "name=value;HttpOnly");
-		System.out.println("-------------Chiganfangshi.html-----------");
+		HttpSession session = request.getSession();
 		PrintWriter writer = response.getWriter();
-		User user = null;
 		Map<String, Object> map = new HashMap<String, Object>();
+		System.out.println("-----------------持杆方式选择后台程序.html----------");
+		
+		User user = null;
 		System.out.println("跳转后的sessionId :" + session.getId());
 		// session
 		if (session.getAttribute("user") == null) {
@@ -53,8 +53,8 @@ public class ChiganfangshiServlet extends HttpServlet {
 			System.out.println("跳转前的sessionId :" + session.getId());
 			user = (User) session.getAttribute("user");
 			System.out.println("user: " + user);
-			if (request.getParameter("handlingId") != null) {
-				String handling = request.getParameter("handlingId");
+			if (request.getParameter("handlingValue") != null) {
+				String handling = request.getParameter("handlingValue");
 				map.put("result", "0");
 				map.put("handling", handling);
 				session.setAttribute("user", user);

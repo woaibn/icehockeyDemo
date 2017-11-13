@@ -40,13 +40,14 @@ public class LoginServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=UTF-8");
-
-		System.out.println("-----------------LoginOrRegister.html----------");
 		HttpSession session = request.getSession();
 		PrintWriter writer = response.getWriter();
+		Map<String, Object> map = new HashMap<String, Object>();
+		System.out.println("-----------------LoginOrRegister.html----------");
+		
 		UserService userService = new UserService();
 		User user = null;
-		Map<String, Object> map = new HashMap<String, Object>();
+		
 		// 遍历map得到前端传入的值
 		String telephone = "";
 		// String verificationCode = "";
@@ -54,22 +55,23 @@ public class LoginServlet extends HttpServlet {
 		String optType = "";
 		if (request.getParameter("optType") != null) {
 			optType = request.getParameter("optType");
+			System.out.println("optType..."+optType);
 			if ("login".equals(optType)) {// 登录
 				if (request.getParameter("phoneNumber") != null && request.getParameter("newPassword") != null) {
 					telephone = request.getParameter("phoneNumber");
-					password = request.getParameter("newPassword");				
+					password = request.getParameter("newPassword");	
+					System.out.println(telephone+" ... "+password+" ... "+optType);
 					// 登录函数
 					user = userService.loginByTelepone(telephone, password);
 					if (user != null) {// 登录成功
 						if (user.getUserId() != -1) {
 							System.out.println("找到session当前用户" + user);
-							// session
+
 							session.setAttribute("user", user);
 							System.out.println("user: " + user);
 							map.put("result", "0");
 							map.put("telephone", telephone);
 							map.put("password", password);
-							System.out.println("map..." + map);
 						} else {
 							System.out.println("用户输入 密码错误，session存储失败");
 							map.put("result", "-3");// 密码错误
@@ -83,13 +85,13 @@ public class LoginServlet extends HttpServlet {
 					map.put("result", "-1");
 				}
 				
-			} else {// 注册
+			} else if ("register".equals(optType)){// 注册
 				if (request.getParameter("phoneNumber") != null && request.getParameter("newPassword") != null) {
 					telephone = request.getParameter("phoneNumber");
 					password = request.getParameter("newPassword");				
 					// 注册函数
 					user = userService.Register(telephone, password);
-					if (user != null) {// 登录成功
+					if (user != null) {// 注册成功
 						if (user.getUserId() != -1) {
 							System.out.println("找到session当前用户" + user);
 							// session
@@ -116,17 +118,17 @@ public class LoginServlet extends HttpServlet {
 
 		}
 
-		if ("0".equals(map.get("result"))) {// 登录成功，且不是第一次登陆
+		if ("0".equals(map.get("result"))) {// 登录成功，且不是第一次登录
 			writer.println("<script>window.location.href='./views/part1/zhukongyemian.jsp'</script>");
 		} else if ("-1".equals(map.get("result"))) {// 缺少参数
 			writer.println("<script>alert('缺少参数');window.location.href='./views/part1/qitadenglufangshi.jsp'</script>");
-		} else if ("-3".equals(map.get("result"))) {// 登陆失败，密码错误
-			writer.println(
-					"<script language='javascript'>alert('密码错误!');window.location.href='./views/part1/qitadenglufangshi.jsp'</script>");
-		} else {// 登陆失败，用户名不存在
+		} else if ("-2".equals(map.get("result"))){// 登录失败，用户名不存在
 			writer.println(
 					"<script language='javascript'>alert('用户名不存在!');window.location.href='./views/part1/qitadenglufangshi.jsp'</script>");
-		}
+		}else if ("-3".equals(map.get("result"))) {// 登录失败，密码错误
+			writer.println(
+					"<script language='javascript'>alert('密码错误!');window.location.href='./views/part1/qitadenglufangshi.jsp'</script>");
+		} 
 	}
 
 	/**

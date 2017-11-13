@@ -32,19 +32,19 @@ public class GenderServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		response.setHeader("Access-Control-Allow-Origin", "*");
-		HttpSession session = request.getSession();
 		response.setContentType("application/json");
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=UTF-8");
-		response.setHeader("set-Cookie", "name=value;HttpOnly");
-		System.out.println("-------------Gender.html-----------");
+		HttpSession session = request.getSession();
 		PrintWriter writer = response.getWriter();
-		User user = null;
 		Map<String, Object> map = new HashMap<String, Object>();
+		System.out.println("-----------------性别选择后台程序.html----------");
+
+		User user = null;
 		System.out.println("跳转后的sessionId :" + session.getId());
 		// session
 		if (session.getAttribute("user") == null) {
@@ -55,7 +55,7 @@ public class GenderServlet extends HttpServlet {
 			System.out.println("user: " + user);
 
 			if (request.getParameter("gender") != null) {
-				String gender = request.getParameter("gender");
+				boolean gender = Boolean.parseBoolean(request.getParameter("gender"));
 				map.put("result", "0");
 				map.put("gender", gender);
 				session.setAttribute("gender", gender);
@@ -71,13 +71,16 @@ public class GenderServlet extends HttpServlet {
 			writer.println("<script>window.location.href='./views/part4/height.jsp'</script>");
 
 		} else if ("-1".equals(map.get("result"))) {// 登陆失败，用户名不存在
-			writer.println("<script language='javascript'>alert('当前没有登录用户');window.location.href='./views/part1/zhucedengluyemian.jsp'</script>");
+			writer.println(
+					"<script language='javascript'>alert('当前没有登录用户');window.location.href='./views/part1/zhucedengluyemian.jsp'</script>");
 
 		} else if ("-2".equals(map.get("result"))) {// 前端错误
-			writer.println("<script language='javascript'>alert('前端错误');window.location.href='history.back(-1);'</script>");
+			writer.println(
+					"<script language='javascript'>alert('前端错误');window.location.href='history.back(-1);'</script>");
 
 		} else if ("-3".equals(map.get("result"))) {// 插入失败
-			writer.println("<script language='javascript'>alert('插入失败');window.location.href='history.back(-1);'</script>");
+			writer.println(
+					"<script language='javascript'>alert('插入失败');window.location.href='history.back(-1);'</script>");
 
 		}
 	}
@@ -86,8 +89,8 @@ public class GenderServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
 

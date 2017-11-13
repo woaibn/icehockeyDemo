@@ -67,6 +67,7 @@ public class DBUtil {
 					url = properties.getProperty("url");
 					username = properties.getProperty("username");
 					password = properties.getProperty("password");
+					System.out.println(url+"url.....");
 				} catch (Exception e) {
 					System.out.println("Error get Property !");
 					e.printStackTrace();

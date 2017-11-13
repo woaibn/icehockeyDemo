@@ -1,16 +1,13 @@
 $(function() {
-	$('body').css({
-		'min-height' : $(window).height()
-	});
-	// 
+	// 男生是1，女生是0
 	$("#man").click(function() {
-		submit('man');
+		submit(1);
 		//window.location.href = "weight.jsp";
 	});
 
 	// 性别"lady"击事件
 	$("#lady").click(function() {
-		submit('lady');
+		submit(0);
 		//window.location.href = "weight.jsp";
 	});
 

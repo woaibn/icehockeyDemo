@@ -6,11 +6,10 @@
 <meta name="viewport"
 	content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 <title>球员详细信息</title>
-<link rel="stylesheet"
-	href="../../css/part4/tianbingtianjiangzhuyemian.css" />
+<link rel="stylesheet" href="../../css/part1/allpagesame.css"/>
 <link rel="stylesheet"
 	href="../../css/jqueryMobile/jquery.mobile-1.4.5.min.css" />
-<link rel="stylesheet" href="../../css/part4/jiechubangding.css" />
+<link rel="stylesheet" href="../../css/part4/qiuyuanxiangxixinxi.css"/>
 
 <script src="../../js/jQuery/jquery-2.2.3.min.js"></script>
 <script src="../../js/jqueryMobile/jquery.mobile-1.4.5.min.js"></script>
@@ -18,17 +17,25 @@
 	$(document).ready(function() {
 
 		$(".jiechubangding").click(function() {
-			alert("您确认要解除绑定吗？");
+			var se=confirm("你确认要解除绑定吗!");
+			if (se==true)
+  				{
+  					alert("你按下的是【确认】");
+ 				 }
+			else
+			{
+ 			 alert("你按下的是【取消】");
+ 			}
 		});
-		$(".xinxione").click(function() {
-			window.location.href = "xiangxixinxi.jsp";
+
+		$(".jiben").click(function() {
+			window.location.href = "jibenxinxi.jsp";
 		});
-		$(".xinxitwo").click(function() {
-			window.location.href = "shujvxinxi2.jsp";
+		
+		$(".shujv").click(function() {
+			window.location.href = "shujvxinxi.jspp";
 		});
-		$(".retu").click(function() {
-			window.location.href = "retu.jsp";
-		});
+		
 	});
 </script>
 </head>
@@ -36,45 +43,94 @@
 <body>
 
 
-	<div data-role="page" class="tianbingtianjiangzhuyemian main">
-		<div data-role="content">
-			<div class="header">
-				<a href="#" onClick="javascript :history.back(-1);"
-					data-ajax="false"></a>  
-			</div>
-            <h1 class="head">添兵添将(待开发)</h1>			
-			<span class="jiechubangding">解除绑定</span>
+	<div data-role="page" class="allpage">		
+				<div class="top">	
+					 <div href="#" onClick="javascript :history.back(-1);" data-ajax="false" class="back">	
+                    	<img src="../../img/part1/back.png" />
+				    </div>
+					<div class="biaoti">
+						添兵添将
+					</div>
+					<div class="jiechubingding">
+					<input type="button" data-role='none' value="解除绑定" class="jiechubangding"></input>
+				</div>
+				</div>
+				
+            
 			
+			<div class="jiben" >
+				<div class="a ">
+					基本信息
+				</div>
+		
+					<div class="everyone">
+						<div class="day">所属俱乐部：</div>
+						<div class="team">
+							<div class="content_left">
+											<div class="image">
+												<img src="../../img/part5/a.jpg" />
+											</div>
+							</div>
 			
-			<div class="xinxione">
-				<h1>详细信息1</h1>
-					
+							<div class="content_mid">
+											<div class="name">姓名:${player.name}</div>
+											<div class="sex">性别:${player.sex}</div>
+											
+											<div class="countryId">国籍:${player.countryId}</div>
+											<div class="cityId">城市:${player.cityId}</div>
+											<div class="height">身高:${player.height}</div>
+											<div class="weight">体重:${player.weight}</div>
+											<div class="position">位置:${player.position}</div>
+							</div>
+			
+							<div class="content_right">
+							             	<div class="roleId">角色:${player.roleId}</div>
+											<div class="birthday">出生日期:${player.birthday}</div>
+											<div class="firstLearnAge">初学年龄:${player.firstLearnAge}</div>
+											<div class="roleId">角色编号:${player.roleId}</div>
+											<div class="handlingId">持杆方式:${player.handlingId}</div>
+											
+											<div class="creatMeld">谁创建我:${player.creatMeld}</div>
+											
+							</div>		
+						</div>	
+					</div>
 			</div>
-			<div class="xinxitwo">
-				<h1>详细信息2</h1>
+			
+			<div class="shujv">
+				<div class="a">
+					数据信息
+				</div>
+				<div class="everyone">
+						<div class="day">个人数据（最近三场比赛）</div>
+						<div class="team">
+							<div class="shujv_content_mid">
+											<div class="jinqiu">进球:${player.jinqiu}</div>
+											<div class="laqiu">拉球:${player.laqiu}</div>
+											<div class="chuanqiu">传球:${player.chuanqiu}</div>		
+							</div>
+				
+						</div>	
+					</div>
+				
 			</div>
-			<div class="retu">
-				<h1>热图</h1>
-			</div>
+			
+	
 			
 			<div class="button">
-							<div class="shouye" onclick="shouyeClick()">
-								<span class="ch">首页</span>
-								<span class="en">	Home</span>
-							</div>
-							<div  class="zhanshu" onclick="zhanshuClick()">
-								<span class="ch">战术</span>
-								<span class="en">Tactical</span>
-							</div>
-							<div  class="zhandui" onclick="zhanduiClick()">
-								<span class="ch">战队</span>
-								<span class="en">Team</span>
-							</div>
-							<div class="wode" onclick="wodeClick()">
-								<span class="ch">我的</span>
-								<span class="en">Mine</span>
-							</div>
-				   </div>	
+				<div class="shouye" onclick="shouyeClick()">
+					<span>首页</span>
+				</div>
+				<div class="zhanshu" onclick="zhanshuClick()">
+					<span>战术</span>
+				</div>
+				<div class="zhandui" onclick="zhanduiClick()">
+					<span>战队</span>
+				</div>
+				<div class="wode" onclick="wodeClick()">
+					<span>我的</span>
+				</div>
+			</div>
 
 		</div>
 

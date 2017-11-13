@@ -1,103 +1,32 @@
-*{
-	margin: 0px;
-	padding: 0px;
-}
-.main{
-	background-color: transparent;
-	background-image: url(../../img/part4/lock-screen-background.png);
-	background-size: 100% 100%;
-	margin: 0 !important;
-	display: flex;
-	flex-direction: column;
-	-webkit-flex-direction: column;
-	display:block !important;
-}
-.head{
-	color: white;
-	text-align: center;
-	font-size: 2rem;
-	margin-top: 3rem;
-	text-decoration: none;
-	font-family: "宋体";
-	text-shadow: none;
-}
-.header{
-	position: fixed;
-	left: 8%;
-	top: 6%;
+.content{
+	width: 90%;
+	margin: auto;
 }
 
-.header a{
-	  width:2.5rem;
-	  background: url(../../img/part4/back.png) no-repeat;
-	  float: left;	
-	  padding: 2rem;
+.search_b{
+	width: 20%;
+	margin: auto;
 }
 
-.header img{
-	float:right;
-	padding-right: 3rem;
-}
-.header span{
-	font-weight: 600;
-	text-shadow:none !important;
-	font-size: 2.5rem;
-	font-family: '微软雅黑';
-	text-align: center;
-}
-
-.search{
-	margin: 20px;
+.submitBtn{
+	width: 100%;
+	padding: 7%;
 }
 
 
 .text{
-	font-family: "微软雅黑";
-	font-size: larger;
+	font-size: 2rem;
 	color: #FFFFFF;
 	text-shadow:white !important;
 }
+
+
 #search{
 	margin:10%;
 }
 
-#btn{
-	float: right;
-}
+
 #new_btn{
 	margin-top: 50%;
 }
-.button{
-	background:rgb(163,163,163);
-	color:white;
-	display: flex;
-	position: fixed;
-	left: 0;
-  	bottom: 0px;
-  	padding: 0rem;/*这个div的内边距，可以去掉*/
-	width: 100%; 
-	height: 3.5rem;
-	
-	font-family:Microsoft YaHei!important;	
-	text-decoration: none!important;	
-}
 
-.button div{
-	margin: auto;
-	display: flex;
-	flex-direction: column;
-}
-.ch{
-	text-align: center;
-	font-size: 2.5rem;
-	font-family: "微软雅黑";
-	text-shadow:none;
-	
-}
-
-.en{
-	text-align: center;
-	font-size: 0.5rem;
-	font-family: "微软雅黑";
-	text-shadow:none;
-}

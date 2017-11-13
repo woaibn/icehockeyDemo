@@ -1,194 +1,165 @@
 
-.qitadenglufangshi{
-	background-image: url(../../img/part1/denglubeijing.jpg);
-	background-size: 100% 100%;
-	height: 100%;
-	margin: 0 !important;
-	background-repeat:no-repeat;
-    background-attachment:fixed;
-	display: flex;
-	flex-direction: column;
-	-webkit-flex-direction: column;
-	font-family: "微软雅黑";
-	
-}
-
-.top{
-
-	color: rgb(178,196,202);
-	margin-top:15%;
-	width: 100%;
-	text-align: center;
-}
-
-.top span{
-	/*display: block;/*默认属性值*/
-	text-shadow:none !important;
-	font-size: 2.8rem;
-text-align: center;
-}
-
 /*输入注册时的手机号*/
-.s1{
-	
-	width: 65%;
-	margin:15%  auto 0 auto;
-	
-}
 .phoneNumber{
-	color: rgb(178,196,202);
-	height: 3rem;
-    border-radius: 0.5rem !important;
-    width:100%;
-    font-size: 1.5rem;
-    border:none !important;
-    	
+	min-height: 3.4rem; /*最小高度*/
+    border-radius:1rem !important;
+    width:90%;
+    margin-left: 5%;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+ 
+    margin-top: 15%;
+    
+    
 }
 
-.yanBtn{
-	display: flex;
-	width: 65%;
-	margin: 0.5rem auto;
-	
-}
-
-.ver{
-	width:55%;
-	height: 3rem;
-	
-}
+/*
 
 
 .verificationCode{
-	height: 3rem;  
-    border-radius: 0.5rem !important;
-    font-size: 1.5rem;
-     border:none !important;
-
+	min-height: 3rem;
+    border-width: 0px;
+    border-radius: 1rem !important;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    font-size: 2.5rem;
+    margin-left: 5%;
 }
 
-.yan{
-	width:40%;
-	height: 3rem;
-	
+.yanBtn input{
+	width: 50%;
+    float: left;
 }
 
-.getCode{
-	margin-left: 1.7rem;
-		width:90%;
-		border-radius: 0.5rem !important;
-	height: 3rem;
-	background-color:orange!important;
-	border:none !important;
-	}
-
-/*输入验证码
 .yanBtn{
-	width: 55%;
-	margin: 0.5rem auto;
-	height: 3rem;
-	display: flex;
+	margin-top: 7%;
 }
 
-.ver{
-	width:60%;
-	margin-left: 0!important;
-}
-
-.verificationCode{
-	min-height: 3rem;  
-    border-radius: 0.5rem !important;
-    font-size: 1.5rem;
-     border:none !important;
-
-}
-
-
-
-.yan{
-	 float: right;	
-}
 .getCode{
-	position: relative;
-
-	width:100%;
-	margin: 0!important;
+	
 	text-shadow:none !important;
-	background-color:orange!important;
-	border-radius: 0.5rem !important;
-	color:black!important;
-	height: 3rem;
-	 border:none !important;
-	 font-family: "微软雅黑";
-	 padding: 0!important;
+	background-color:#22AADD!important;
+	border-radius: 1rem !important;
+	color: #fff !important;
+	width: 25%;
+	left: 4%;
+	border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
 }
 
-
-.getCode span{
-	position: relative;
-	font-size: 1.5rem;
-	margin-top: 1rem;
-
-}
 
 */
 
-/*输入密码*/
-
-
-
-.mima{
-	margin: 0 auto;
-	width: 65%;
+.yanbtn{
+	
 }
-.newPassword{
 
-	height: 3rem;
-    border-radius: 0.5rem !important;
-   width: 100%;
-    font-size: 1.5rem;
-    border:none !important;  
+
+.verificationCode{
+	border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+	height: 3.4rem; /*最小高度*/
+	width: 50%;
+	float:left;
+	 margin:5%;
+	  border-radius:1rem !important;
+	  
+	
+}
+
+
+.yanzhengma{
+	
+	border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+	height: 3.4rem; /*最小高度*/
+	width: 35%;
+	float:left;
+    margin: 5% 0 !important;
+	  border-radius:1rem !important;
+}
+
+
+.newPassword{
+	min-height: 3.4rem; /*最小高度*/
+    border-radius: 1rem !important;
+    width: 90%;
+    margin-left: 5%;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+   
+    margin-top: 5%;
+    
+    
+}
+
+.newPassword1{
+	min-height: 3.4rem; /*最小高度*/
+    border-radius: 1rem !important;
+    width: 90%;
+    margin-left: 5%;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+
+	
+}
+
+.newPassword2{
+	min-height: 3.4rem; /*最小高度*/
+    border-radius: 1rem !important;
+    width: 90%;
+    margin-left: 5%;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+	margin-top: 5%
+	
 }
 
 
 /*登陆按钮*/
-.denglu{
-	width: 65%; 
-	margin: 0 auto;
-	
-}
-
-.submitBtn{
-	width: 100%; 
-	margin: 3rem auto 0 auto;
-	text-shadow:none !important;
-	background-color:orange!important;
-	border-radius: 0.5rem !important;
-	color:black!important;
+.submitBtnone {
+	background: transparent! important;
+	border-radius:1rem !important;
+	width: 90%;
+	margin-top: 2.5rem;
 	height: 3rem;
-	border:none !important;
-	
+    min-height: 3em;
+    font-size: 2rem;
+    color: #fff;
+    text-shadow:none !important;
+    margin-left: 5%;
+    
 }
 
-/*返回*/
-.fanhui{
-	width: 65%; 
-	margin: 0 auto;
-	
-}
-
-.fanhuiBtn{
-	width: 100%; 
-	margin: 0.5rem auto;
-	text-shadow:none !important;
-	background-color:gainsboro!important;
-	border-radius: 0.5rem !important;
-	color:black!important;
+.submitBtntwo{
+	background: transparent! important;
+	border-radius: 1rem !important;
+	width: 90%;
+	margin-top: 2.5rem;
 	height: 3rem;
-	border:none !important;
-	
+    min-height: 3em;
+    font-size: 2rem;
+    color: #fff;
+    text-shadow:none !important;
+    margin-left: 5%;
+    
 }
-
 
 /*出错界面*/
 .errorBtn {
@@ -202,26 +173,24 @@ text-align: center;
 }
 
 /*其他登陆方式*/
-
-.loginList {
- margin-top:4rem;
-  text-align: center;
-}
-
-
-
-.loginList img{
-	margin: 0 1.5rem;
-}
-
 .loginOther {
-  margin-top:1rem;
+  margin-top:7rem;
   text-align: center;
   clear: both;
   text-shadow:none !important;
-  font-size: 1.5rem;
-  color: black;
+  font-size: 2rem;
+  color: rgb(178,196,202);
 
+}
+
+
+.loginList {
+	margin-top:1rem;
+  text-align: center;
+}
+
+.loginList img{
+	margin: 1rem;
 }
 
 

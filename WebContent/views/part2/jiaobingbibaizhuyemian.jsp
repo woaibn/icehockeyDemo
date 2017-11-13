@@ -8,115 +8,141 @@
 <meta name="viewport"
 	content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 <title>浇冰必拜主页面</title>
+
 <link rel="stylesheet" href="../../css/part2/jiaobingbibaizhuyemian.css" />
 <link rel="stylesheet"
 	href="../../css/jqueryMobile/jquery.mobile-1.4.5.min.css" />
-<link rel="stylesheet" href="../../css/part1/zhucedengluyemain.css" />
+<link rel="stylesheet" href="../../css/part1/allpagesame.css" />
 <script type="text/javascript" src="../../js/jQuery/jquery-2.2.3.min.js"></script>
 <script type="text/javascript"
 	src="../../js/jqueryMobile/jquery.mobile-1.4.5.min.js"></script>
-
 </head>
 
 
 <body>
-	<div data-role="page" class="jiaobingbibaizhuyemain">
+	<div data-role="page" class="allpage">
+		<!--标题-->
 		<div class="top">
-			<a href="#" onClick="javascript :history.back(-1);" data-ajax="false"></a>
-			<span>浇冰必拜</span>
+			<div href="#" onClick="javascript :history.back(-1);"
+				data-ajax="false" class="back">
+				<img src="../../img/part1/back.png" />
+			</div>
+			<div class="biaoti">浇冰必拜</div>
+			<div class="筛选"></div>
+
 		</div>
 
-		<!--<div class="search">
-			<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="精确搜索">
 
-				
+		<div class="search_a">
+			<div class="search_c">
+				<input type="submit" data-role='none' value="添加" class="submitBtn1"></input>
+			</div>
 
-				<div class="playground">
-					<c:choose>
-						<c:when test="${!empty places}">
+			<div class="search_b">
+				<input type="text" name="search" id="search" placeholder="模糊查询">
+			</div>
+
+			<div class="search_d">
+				<input type="submit" data-role='none' value="搜索" class="submitBtn"></input>
+			</div>
+		</div>
+
+		<!--		<div class="playground">
+				<c:choose>
+					<c:when test="${!empty places}">
+						
+						<c:forEach items="${places}" var="place" varStatus="st">
+
 							
-							<c:forEach items="${places}" var="place" varStatus="st">
+						</c:forEach>
+					</c:when>
+					<c:otherwise>
+						<P>没有记录</P>
+					</c:otherwise>
+				</c:choose>
 
-								<div class="day">
-									<li data-role="list-divider" class="day">开放日期：${place.openDate}</li>
+
+    -->
+
+		<div data-role="content" class="all">
+			<c:choose>
+				<c:when test="${!empty rinks}">
+					<c:forEach items="${rinks}" var="rink" varStatus="st">
+						<div class="everyone" onclick="goto1('${rink.rinkId}')">
+							<div class="place">
+								<div class="content_left">
+									<div class="img">
+										<img src="${rink.rinkLogo}" />
+									</div>
+
 								</div>
-
-								<div class="name_content">
-
-									<span><a onclick="goto1('${place.placeName}')">${place.placeName}</a></span>
-
+								<div class="content_right">
+									<div class="day">冰场名称：${rink.rinkName}</div>
+									<div class="day">建成日期：${rink.completionDate}</div>
 									<div class="huanjing">
-										<span>环境指数:</span> <img src="../../img/part2/star.png" /> <img
-											src="../../img/part2/star.png" /> <img
-											src="../../img/part2/star.png" /> <img
-											src="../../img/part2/star.png" /> <img
-											src="../../img/part2/star.png" />
+										环境指数:${rink.environmentalIndex}
+										<c:choose>
+										<c:when test="${!empty rink.environmentalIndex}">
+											<c:forEach var="s" begin="1" end="${rink.environmentalIndex}">
+
+												<img src="../../img/part2/star.png" />
+											</c:forEach>
+											</c:when>
+										</c:choose>
 									</div>
+									<div class="tel">冰场联系电话:${rink.telephone}</div>
+									<div class="name">冰场地理位置:${rink.address}</div>
 								</div>
-								<div class="content">
-									<div class="content_img">
-										<img src="../../img/part2/c.jpg" />
-										
-									</div>
-									<div class="content_div_right">
-										<li class="content_top"><a href="">${place.placeName}</a></li>
-										<div class="mid">${place.placeNumber}</div>
-										<div class="content_bottom">${place.placeAddress}</div>
-									</div>
-								</div>
-
-							</c:forEach>
-						</c:when>
-						<c:otherwise>
-							<P>没有记录</P>
-						</c:otherwise>
-					</c:choose>
-
-				</div>
-
-			</ul>
-		</div>-->
-
-
-		<!--	      		
-	      		
-	     <div class="search">
-	      			<form method="post" action="demoform.asp">
-						<div data-role="fieldcontain">
-							<label for="search">请输入搜索姓名：</label>
-							<input data-role="" type="search" name="search" id="search" placeholder="">
+							</div>
 						</div>
-						<input type="submit" data-inline="true" value="搜索" id="btn">
-					</form> 
-	      		</div>
-		-->
+					</c:forEach>
+				</c:when>
+			</c:choose>
+		</div>
+
+		<div class="button">
+			<div class="shouye" onclick="shouyeClick()">
+				<span>首页</span>
+			</div>
+			<div class="zhanshu" onclick="zhanshuClick()">
+				<span>战术</span>
+			</div>
+			<div class="zhandui" onclick="zhanduiClick()">
+				<span>战队</span>
+			</div>
+			<div class="wode" onclick="wodeClick()">
+				<span>我的</span>
+			</div>
+		</div>
+	</div>
 
 
-
+	<!--
+    	<div data-role="page" class="allpage">	
+				<div class="top">	
+					 <div href="#" onClick="javascript :history.back(-1);" data-ajax="false" class="back">	
+                    	<img src="../../img/part1/back.png" />
+				    </div>
+					<div class="biaoti">
+						浇冰必拜
+					</div>
+				</div>
 
 		<div class="search">
 			<div class="search_a">
 				<div class="search_b">
 					<input type="text" name="search" id="search" placeholder="精确查询">
 				</div>
-				<div>
+				<div class="search_c">
 					<input type="submit" data-role='none' value="搜索" class="submitBtn"></input>
 				</div>
 
 			</div>
 
-
-			<!--
-                        	 var：迭代参数的名称。在迭代体中可以使用的变量的名称，用来表示每一个迭代变量。类型为String。 
-           					items：要进行迭代的集合。对于它所支持的类型将在下面进行讲解。 
-         					  varStatus：迭代变量的名称，用来表示迭代的状态，可以访问到迭代自身的信息。 
-
-                        -->
-
 			<div class="playground">
 				<c:choose>
 					<c:when test="${!empty places}">
-						<!--搜索的是冰场的名字,若冰场名字存在，则..-->
+						
 						<c:forEach items="${places}" var="place" varStatus="st">
 
 							<div class="day">
@@ -138,7 +164,7 @@
 							<div class="content">
 								<div class="content_img">
 									<img src="../../img/part2/c.jpg" />
-									<!-- <img>${place.image}</img> -->
+									
 								</div>
 								<div class="content_div_right">
 									<li class="content_top"><a href="">${place.placeName}</a></li>
@@ -159,33 +185,32 @@
 
 		</div>
 
-
-
-
-
-
-
 	</div>
+	
+	
+	
+	<div class="everyone" onclick="goto1('${rink.rinkId}')">
+			<div class="place">
+				<div class="content_left">
+								<div class="img">
+									<img src="../../img/part5/a.jpg" />
+								</div>
+								
+				</div>
 
 
-	<div class="button">
-							<div class="shouye" onclick="shouyeClick()">
-								<span class="ch">首页</span>
-								<span class="en">	Home</span>
-							</div>
-							<div  class="zhanshu" onclick="zhanshuClick()">
-								<span class="ch">战术</span>
-								<span class="en">Tactical</span>
-							</div>
-							<div  class="zhandui" onclick="zhanduiClick()">
-								<span class="ch">战队</span>
-								<span class="en">Team</span>
-							</div>
-							<div class="wode" onclick="wodeClick()">
-								<span class="ch">我的</span>
-								<span class="en">Mine</span>
-							</div>
-				   </div>	
+				<div class="content_right">
+				            	<div class="day">冰场名称：</div>
+								<div class="day">建成日期：</div>
+								<div class="huanjing">环境指数:</div>
+								<div class="tel">冰场联系电话:</div>
+								<div class="name">冰场地理位置:</div>
+				</div>		
+			</div>	
+		</div>
+
+    -->
+
 
 </body>
 <script src="../../js/common/common.js"></script>

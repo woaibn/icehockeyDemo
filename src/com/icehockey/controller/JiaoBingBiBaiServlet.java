@@ -12,8 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.icehockey.entity.Place;
-import com.icehockey.service.PlaceService;
+import com.icehockey.entity.Rink;
+import com.icehockey.service.RinkService;
+
 
 /**
  * Servlet implementation class JiaoBingBiBaiServlet
@@ -34,18 +35,19 @@ public class JiaoBingBiBaiServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession();
+		response.setHeader("Access-Control-Allow-Origin", "*");
 		response.setContentType("application/json");
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=UTF-8");
-		response.setHeader("set-Cookie", "name=value;HttpOnly");
-		System.out.println("-------------JiaoBingBiBaiServlet.html-----------");
+		HttpSession session = request.getSession();
 		PrintWriter writer = response.getWriter();
-		PlaceService placeService = new PlaceService();
-		Place place = null;
-		List<Place> places = null;
 		Map<String, Object> map = new HashMap<String, Object>();
+		System.out.println("-----------------浇冰必拜页面后台程序----------");
+		
+		RinkService rinkservice = new RinkService();
+		Rink rink = null;
+		List<Rink> rinks = null;
 		System.out.println("跳转后的sessionId :" + session.getId());
 		String operateType = null;
 		// session
@@ -55,30 +57,30 @@ public class JiaoBingBiBaiServlet extends HttpServlet {
 			if (request.getParameter("operateType") != null) {
 				operateType = request.getParameter("operateType");
 				if ("zhukongToJiaoZhu".equals(operateType)) {// 如果操作类型是主控页面到浇冰必拜主页面，则取出场地表中的所有场地信息
-					places = placeService.getPlaces();
-					session.setAttribute("places", places);
-					map.put("places", places);
+					rinks = rinkservice.getRinks();
+					session.setAttribute("rinks", rinks);
+					map.put("rinks", rinks);
 					map.put("result", "0");
 					map.put("ok", "1");
 
 				} else if ("JiaoZhuToJiaoXiang".equals(operateType)) {// 如果操作类型是浇冰必拜主页面场地详细信息，则根据场地名称取出场地表中的该场地信息
-					if (request.getParameter("placeName") != null) {
-						String placeName = request.getParameter("placeName");
-						place = placeService.getPlaceByPlaceName(placeName);
-						session.setAttribute("place", place);
-						map.put("place", place);
+					if (request.getParameter("rinkId") != null) {
+						String rinkIdString = request.getParameter("rinkId");
+						rink = rinkservice.getRinkByRinkId(Integer.parseInt(rinkIdString));
+						session.setAttribute("rink", rink);
+						map.put("rink", rinks);
 						map.put("result", "0");
 						map.put("ok", "2");
 					} else {
 						map.put("result", "-2");// 没有操作类型
 					}
 				} else if ("sousuo".equals(operateType)) {// 如果操作类型是浇冰必拜主页面场地详细信息，则根据场地名称取出场地表中的该场地信息
-					if (request.getParameter("placeName") != null) {
-						String placeName = request.getParameter("placeName");
-						System.out.println("placeName:"+placeName);
-						places = placeService.getPlacesByPlaceName(placeName);
-						session.setAttribute("places", places);
-						map.put("places", places);
+					if (request.getParameter("rinkName") != null) {
+						String rinkName = request.getParameter("rinkName");
+						System.out.println("rinkName:"+rinkName);
+						rinks = rinkservice.getRinksByRinkName(rinkName);
+						session.setAttribute("rinks", rinks);
+						map.put("rinks", rinks);
 						map.put("result", "0");
 						map.put("ok", "3");
 					} else {
