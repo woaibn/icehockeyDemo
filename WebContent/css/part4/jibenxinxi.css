@@ -33,7 +33,7 @@
 
 
 .content_left{
-	width:22%;
+	width:20%;
 }
 
 .content_mid{
@@ -49,6 +49,7 @@
 .image img{
 
 	width: 100%;
+	height:13%;
 }
 .shujv_content_mid{
 	width: 100%;
@@ -58,4 +59,8 @@
 .bianji{
 	width: 50%;
 	margin: auto;
+}
+
+.edit{
+	width: 100%;
 }

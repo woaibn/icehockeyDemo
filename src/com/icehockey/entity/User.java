@@ -1,6 +1,6 @@
 package com.icehockey.entity;
 
-import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public class User {
 
@@ -11,13 +11,13 @@ public class User {
 	private String password;// '登录密码',
 	private String roleId;// '角色编号',
 	private boolean sex;// '性别',
-	private Date birthday;// '出生日期',
+	private String birthday;// '出生日期',
 	private String idType;// '证件类型',
 	private int idInfoId;// '证件类型编号',
 	private int countryId;// '国籍编号',
 	private int cityId;// '籍贯编号',
 	private String address;// '住址',
-	private Date joinDate;// '注册时间',
+	private String joinDate;// '注册时间',
 	private String remark;// '备注',
 
 	public User() {
@@ -25,8 +25,8 @@ public class User {
 	}
 
 	public User(int userId, String userName, String weChatId, String telephone, String password, String roleId,
-			boolean sex, Date birthday, String idType, int idInfoId, int countryId, int cityId, String address,
-			Date joinDate, String remark) {
+			boolean sex, String birthday, String idType, int idInfoId, int countryId, int cityId, String address,
+			String joinDate, String remark) {
 		super();
 		this.userId = userId;
 		this.userName = userName;
@@ -101,11 +101,12 @@ public class User {
 		this.sex = sex;
 	}
 
-	public Date getBirthday() {
-		return birthday;
+	public String getBirthday() {
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式	
+		return df.format(birthday);
 	}
 
-	public void setBirthday(Date birthday) {
+	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
 
@@ -149,11 +150,12 @@ public class User {
 		this.address = address;
 	}
 
-	public Date getJoinDate() {
-		return joinDate;
+	public String getJoinDate() {
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式	
+		return df.format(joinDate);
 	}
 
-	public void setJoinDate(Date joinDate) {
+	public void setJoinDate(String joinDate) {
 		this.joinDate = joinDate;
 	}
 

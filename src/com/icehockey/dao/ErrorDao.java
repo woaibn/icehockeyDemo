@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import com.icehockey.entity.LoginError;
+import com.icehockey.entity.Error;
 import com.icehockey.util.DBUtil;
 
 public class ErrorDao {
@@ -15,7 +15,7 @@ public class ErrorDao {
 	private Statement statement = null;
 	private Connection conn = null;
 	private PreparedStatement preparedStatement = null;
-	LoginError error=null;
+	Error error=null;
 	
 	public boolean insertError(String errorName, String errorDesc,String contactInfo ) {//向error表中插入一条新的纪录
 		String sql = "INSERT INTO error (errorName, errorDesc, contactInfo)VALUES (?,?,?)";

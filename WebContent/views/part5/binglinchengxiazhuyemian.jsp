@@ -56,10 +56,9 @@
 	<!--导航栏下面内容-->
 	<div data-role="content" class="all">
 		<c:choose>
-			<c:when test="${!empty competitions}"}>
+			<c:when test="${!empty competitions}">
 				<c:forEach items="${competitions}" var="competition" varStatus="st">
-					<div class="everyone" onclick="goto1('${rink.rinkId}')">
-
+					<div class="everyone" onclick="goto1('${competition.competitionId}')">
 						<div class="day">比赛时间：${competition.competitionTime}</div>
 						<!--年月日时间 -->
 

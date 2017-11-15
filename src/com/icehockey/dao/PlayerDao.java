@@ -5,8 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import com.icehockey.entity.Player;
@@ -41,9 +41,10 @@ public class PlayerDao {
 				String name = rs.getString("name"); // 姓名
 				boolean sex = rs.getBoolean("sex"); // 性别
 				Timestamp timestamp = rs.getTimestamp("birthday");// '出生日期',
-				Date birthday = null;
+				String birthday = null;
 				if (timestamp != null) {
-					birthday = new Date(timestamp.getTime());
+					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式
+					birthday = df.format(timestamp.getTime());
 				}
 
 				double height = rs.getDouble("height"); // 身高
@@ -60,9 +61,10 @@ public class PlayerDao {
 				int creatMeld = rs.getInt("creatMeld"); // 谁创建我
 				String image = rs.getString("image"); // 头像
 				timestamp = rs.getTimestamp("modificateDate");// 修改时间
-				Date modificateDate = null;
+				String modificateDate = null;
 				if (timestamp != null) {
-					modificateDate = new Date(timestamp.getTime());
+					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式
+					modificateDate = df.format(timestamp.getTime());
 				}
 				String remark = rs.getString("remark"); // 备注
 
@@ -118,9 +120,10 @@ public class PlayerDao {
 				String name = rs.getString("name"); // 姓名
 				boolean sex = rs.getBoolean("sex"); // 性别
 				Timestamp timestamp = rs.getTimestamp("birthday");// '出生日期',
-				Date birthday = null;
+				String birthday = null;
 				if (timestamp != null) {
-					birthday = new Date(timestamp.getTime());
+					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式
+					birthday = df.format(timestamp.getTime());
 				}
 
 				double height = rs.getDouble("height"); // 身高
@@ -137,9 +140,10 @@ public class PlayerDao {
 				int creatMeld = rs.getInt("creatMeld"); // 谁创建我
 				String image = rs.getString("image"); // 头像
 				timestamp = rs.getTimestamp("modificateDate");// 修改时间
-				Date modificateDate = null;
+				String modificateDate = null;
 				if (timestamp != null) {
-					modificateDate = new Date(timestamp.getTime());
+					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式
+					modificateDate = df.format(timestamp.getTime());
 				}
 				String remark = rs.getString("remark"); // 备注
 
@@ -195,9 +199,10 @@ public class PlayerDao {
 				String name = rs.getString("name"); // 姓名
 				boolean sex = rs.getBoolean("sex"); // 性别
 				Timestamp timestamp = rs.getTimestamp("birthday");// '出生日期',
-				Date birthday = null;
+				String birthday = null;
 				if (timestamp != null) {
-					birthday = new Date(timestamp.getTime());
+					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式
+					birthday = df.format(timestamp.getTime());
 				}
 
 				double height = rs.getDouble("height"); // 身高
@@ -214,9 +219,10 @@ public class PlayerDao {
 				int creatMeld = rs.getInt("creatMeld"); // 谁创建我
 				String image = rs.getString("image"); // 头像
 				timestamp = rs.getTimestamp("modificateDate");// 修改时间
-				Date modificateDate = null;
+				String modificateDate = null;
 				if (timestamp != null) {
-					modificateDate = new Date(timestamp.getTime());
+					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式
+					modificateDate = df.format(timestamp.getTime());
 				}
 				String remark = rs.getString("remark"); // 备注
 
@@ -360,9 +366,10 @@ public class PlayerDao {
 				String name = rs.getString("name"); // 姓名
 				boolean sex = rs.getBoolean("sex"); // 性别
 				Timestamp timestamp = rs.getTimestamp("birthday");// '出生日期',
-				Date birthday = null;
+				String birthday = null;
 				if (timestamp != null) {
-					birthday = new Date(timestamp.getTime());
+					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式
+					birthday = df.format(timestamp.getTime());
 				}
 
 				double height = rs.getDouble("height"); // 身高
@@ -379,9 +386,10 @@ public class PlayerDao {
 				int creatMeld = rs.getInt("creatMeld"); // 谁创建我
 				String image = rs.getString("image"); // 头像
 				timestamp = rs.getTimestamp("modificateDate");// 修改时间
-				Date modificateDate = null;
+				String modificateDate = null;
 				if (timestamp != null) {
-					modificateDate = new Date(timestamp.getTime());
+					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式
+					modificateDate = df.format(timestamp.getTime());
 				}
 				String remark = rs.getString("remark"); // 备注
 
@@ -420,12 +428,14 @@ public class PlayerDao {
 			preparedStatement.setInt(1, playerId);
 			rs = preparedStatement.executeQuery();
 			if (rs.next()) {
+				// int playerId = rs.getInt("playerId"); // 运动员编号
 				String name = rs.getString("name"); // 姓名
 				boolean sex = rs.getBoolean("sex"); // 性别
 				Timestamp timestamp = rs.getTimestamp("birthday");// '出生日期',
-				Date birthday = null;
+				String birthday = null;
 				if (timestamp != null) {
-					birthday = new Date(timestamp.getTime());
+					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式
+					birthday = df.format(timestamp.getTime());
 				}
 
 				double height = rs.getDouble("height"); // 身高
@@ -442,9 +452,10 @@ public class PlayerDao {
 				int creatMeld = rs.getInt("creatMeld"); // 谁创建我
 				String image = rs.getString("image"); // 头像
 				timestamp = rs.getTimestamp("modificateDate");// 修改时间
-				Date modificateDate = null;
+				String modificateDate = null;
 				if (timestamp != null) {
-					modificateDate = new Date(timestamp.getTime());
+					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式
+					modificateDate = df.format(timestamp.getTime());
 				}
 				String remark = rs.getString("remark"); // 备注
 

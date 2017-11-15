@@ -82,8 +82,8 @@ public class UserService {
 				return false;
 			}
 			player = playerService.insertNewPlayer(userId, gender, height, weight, category.getCategoryId(),
-					handling.getHandlingId(), userName, imageUrl,idNo);// 执行插入动作，并返回是否插入成功
-			if (player!=null) {
+					handling.getHandlingId(), userName, imageUrl, idNo);// 执行插入动作，并返回是否插入成功
+			if (player != null) {
 				System.out.println("创建成功");
 			} else {
 				System.out.println("新建球员失败");
@@ -93,40 +93,6 @@ public class UserService {
 			System.out.println("身份证号码已存在");
 			return false;
 		}
-	}
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	public User queryUserByUserId(int userId) {// 通过用户Id查到当前用户，并返回User对象
-		user = dao.getUserByUserId(userId);
-		return user;
-	}
-
-	public List<User> queryUserByUserName(String userName) {// 通过用户Name查找用户，可能不止一个，所以返回集合
-		users = dao.queryUserByUserName(userName);
-		if (users != null) {// 如果找到了，打印集合
-			System.out.println("users:" + users);
-		} else {// 否则输出不存在此名称用户
-			System.out.println("不存在此名字的用户");
-		}
-		return users;
-	}
-
-	public List<User> queryTop10() {// 查找到当前数据库的10个用户
-		users = dao.queryTop10();
-		if (users != null) {
-			System.out.println(users);
-		} else {
-			System.out.println("不存在此名字的用户");
-		}
-		return users;
 	}
 
 }

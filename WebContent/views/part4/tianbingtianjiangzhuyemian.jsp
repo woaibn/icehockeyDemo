@@ -15,14 +15,18 @@
 <link rel="stylesheet" href="../../css/part1/allpagesame.css" />
 <script src="../../js/jQuery/jquery-2.2.3.min.js"></script>
 <script src="../../js/jqueryMobile/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".submitBtn1").click(function() {
+			window.location.href = "sousuohuochuangjianqiuyuan.jsp";
+		});
+		$(".submitBtn").click(function() {
+			window.location.href = "";
+		});
+	});
+</script>
 </head>
-
-
-
 <body>
-<body>
-
-
 	<div data-role="page" id="pageone" class="allpage">
 		<!--标题-->
 		<div class="top">
@@ -32,48 +36,46 @@
 			</div>
 			<div class="biaoti">添兵添将</div>
 		</div>
-
 		<!--查询框-->
 		<div class="search_a">
 			<div class="search_c">
 				<input type="submit" data-role='none' value="添加" class="submitBtn1"></input>
 			</div>
-
 			<div class="search_b">
 				<input type="text" name="search" id="search"
 					placeholder="输入球员姓名模糊查询">
 			</div>
-
 			<div class="search_d">
 				<!--搜索之后在当前页面显示  -->
 				<input type="submit" data-role='none' value="搜索" class="submitBtn"></input>
 			</div>
 		</div>
-
-
-
 		<div data-role="content" class="all">
 			<c:choose>
 				<c:when test="${!empty players}">
 					<c:forEach items="${players}" var="player" varStatus="st">
 						<div class="everyone" onclick="goto1('${player.playerId}')">
-							<div class="day">所属俱乐部：</div>
+							<div class="day">
+								<!-- 所属俱乐部 -->
+							</div>
 							<div class="team">
 								<div class="content_left">
 									<div class="image">
 										<img src="../../img/part4/lady.png" />
 									</div>
 								</div>
-
 								<div class="content_mid">
 									<div class="name">姓名:${player.name}</div>
-									<div class="sex">性别:${player.sex}</div>
-									<div class="height">身高:${player.height}</div>
 
+									<div class="height">身高:${player.height}cm</div>
+									<div class="sex">
+										性别:
+										<c:if test="${player.sex eq true}">男</c:if>
+										<c:if test="${player.sex eq false}">女</c:if>
+									</div>
 								</div>
-
 								<div class="content_right">
-									<div class="weight">体重:${player.weight}</div>
+									<div class="weight">体重:${player.weight}kg</div>
 									<div class="countryId">国籍:${player.countryId}</div>
 									<div class="cityId">城市:${player.cityId}</div>
 								</div>
@@ -85,15 +87,8 @@
 					<P>没有记录</P>
 				</c:otherwise>
 			</c:choose>
-
 		</div>
-
-
-
 	</div>
-
-
-
 	<div class="button">
 		<div class="shouye" onclick="shouyeClick()">
 			<span>首页</span>
@@ -108,7 +103,6 @@
 			<span>我的</span>
 		</div>
 	</div>
-
 	<script src="../../js/common/common.js"></script>
 	<script src="../../js/urlApi/api.js"></script>
 	<script src="../../js/part4/tianbingtianjiangzhuyemian.js"></script>
