@@ -47,23 +47,6 @@
 			</div>
 		</div>
 
-		<!--		<div class="playground">
-				<c:choose>
-					<c:when test="${!empty places}">
-						
-						<c:forEach items="${places}" var="place" varStatus="st">
-
-							
-						</c:forEach>
-					</c:when>
-					<c:otherwise>
-						<P>没有记录</P>
-					</c:otherwise>
-				</c:choose>
-
-
-    -->
-
 		<div data-role="content" class="all">
 			<c:choose>
 				<c:when test="${!empty rinks}">
@@ -82,11 +65,12 @@
 									<div class="huanjing">
 										环境指数:${rink.environmentalIndex}
 										<c:choose>
-										<c:when test="${!empty rink.environmentalIndex}">
-											<c:forEach var="s" begin="1" end="${rink.environmentalIndex}">
+											<c:when test="${!empty rink.environmentalIndex}">
+												<c:forEach var="s" begin="1"
+													end="${rink.environmentalIndex}">
 
-												<img src="../../img/part2/star.png" />
-											</c:forEach>
+													<img src="../../img/part2/star.png" />
+												</c:forEach>
 											</c:when>
 										</c:choose>
 									</div>
@@ -97,6 +81,9 @@
 						</div>
 					</c:forEach>
 				</c:when>
+				<c:otherwise>
+					<P>没有记录</P>
+				</c:otherwise>
 			</c:choose>
 		</div>
 

@@ -10,7 +10,7 @@ import java.util.Date;
 import com.icehockey.entity.User;
 import com.icehockey.util.DBUtil;
 
-public class ADao {
+public class ADao2 {
 
 	DBUtil util = new DBUtil();
 	private ResultSet rs = null;

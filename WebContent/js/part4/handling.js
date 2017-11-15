@@ -17,7 +17,7 @@ $(function() {
 		var data = {
 			handlingValue : sportEvent,
 		};
-	//	alert(JSON.stringify(data));
+		//alert(JSON.stringify(data));
 		jump(HANDLINGURL, data);
 
 	}

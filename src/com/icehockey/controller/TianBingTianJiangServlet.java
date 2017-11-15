@@ -81,6 +81,22 @@ public class TianBingTianJiangServlet extends HttpServlet {
 					session.setAttribute("players", players);
 					map.put("result", "0");
 					map.put("ok", "3");
+				} else if ("zhuyemianToXiangxi".equals(operateType)) {// 如果操作类型是精确搜索，即根据名字字符串搜索当前关注球员
+					int playerId = Integer.parseInt(request.getParameter("playerId"));
+					System.out.println("playerId:" + playerId);
+					Player player = playerService.getPlayerByPlayerId(playerId);
+					System.out.println(player);
+					session.setAttribute("player", player);
+					map.put("result", "0");
+					map.put("ok", "4");
+				} else if ("quxiaoguanzhu".equals(operateType)) {// 如果操作类型是精确搜索，即根据名字字符串搜索当前关注球员
+					int playerId = Integer.parseInt(request.getParameter("playerId"));
+					System.out.println("playerId:" + playerId);
+					boolean flag = playerService.cancelFollowed(user.getUserId(),playerId);
+					System.out.println(flag);
+					session.setAttribute("flag", flag);
+					map.put("result", "0");
+					map.put("ok", "5");
 				} else {
 					map.put("result", "-2");// 没有操作类型
 				}
@@ -102,7 +118,13 @@ public class TianBingTianJiangServlet extends HttpServlet {
 			} else if ("3".equals(map.get("ok"))) {
 				writer.println(
 						"<script language='javascript'>window.location.href='./views/part4/sousuojieguo.jsp'</script>");
-			} else {
+			} else if ("4".equals(map.get("ok"))) {
+				writer.println(
+						"<script language='javascript'>window.location.href='./views/part4/qiuyuanxiangxixinxi.jsp'</script>");
+			} else if ("5".equals(map.get("ok"))) {
+				writer.println(
+						"<script language='javascript'>window.location.href='./views/part4/tianbingtianjiangzhuyemian.jsp'</script>");
+			}else {
 
 			}
 		} else if ("-1".equals(map.get("result"))) {// 登陆失败，用户名不存在

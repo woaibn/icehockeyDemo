@@ -66,7 +66,7 @@ public class UserService {
 	/**
 	 * 通过userId等参数新建一个player 插入新用户，首先判断前端传入的角色名称，持杆方式名称是否存在，如果都存在，则插入，返回是否插入成功
 	 */
-	public boolean insertNewPlayer(int userId, String gender, double height, double weight, String categoryValue,
+	public boolean insertNewPlayer(int userId, boolean gender, double height, double weight, String categoryValue,
 			String handlingValue, String userName, String imageUrl, String idNo) {
 		// 查找身份证号是否已经存在
 		idInfo = idInfoService.getRecordByIdInfo(idNo);
@@ -81,20 +81,29 @@ public class UserService {
 				System.out.println(handlingValue + "持杆方式未找到");
 				return false;
 			}
-			boolean f = playerService.insertNewPlayer(userId, gender, height, weight, category.getCategoryId(),
-					handling.getHandlingId(), userName, imageUrl,idInfo);// 执行插入动作，并返回是否插入成功
-			if (f) {
+			player = playerService.insertNewPlayer(userId, gender, height, weight, category.getCategoryId(),
+					handling.getHandlingId(), userName, imageUrl,idNo);// 执行插入动作，并返回是否插入成功
+			if (player!=null) {
 				System.out.println("创建成功");
 			} else {
 				System.out.println("新建球员失败");
 			}
-			return f;
+			return true;
 		} else {
 			System.out.println("身份证号码已存在");
 			return false;
 		}
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public User queryUserByUserId(int userId) {// 通过用户Id查到当前用户，并返回User对象
 		user = dao.getUserByUserId(userId);
 		return user;

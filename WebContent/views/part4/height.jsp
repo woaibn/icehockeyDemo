@@ -28,7 +28,7 @@
 <body>
 	<div data-role="page" class="allpage">		
 				<div class="top">	
-					 <div href="#" onClick="javascript :history.back(-1);" data-ajax="false" class="back">	
+					 <div onClick="javascript :history.back(-1);" data-ajax="false" class="back">	
                     	<img src="../../img/part1/back.png" />
 				    </div>
 					<div class="biaoti">
@@ -95,9 +95,6 @@
 				</div>
 			</div>
 		</div>
-		
-
-	</div>
 
 	<script src="../../js/common/common.js"></script>
 	<script src="../../js/urlApi/api.js"></script>

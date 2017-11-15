@@ -3,8 +3,8 @@
  */
 function goto1(para) {
 	var data = {
-		operateType : "tianbingtianjiangzhuyemian",
-		placeName : para,
+		operateType : "zhuyemianToXiangxi",
+		playerId : para,
 	};
 	 alert(JSON.stringify(data));
 	jump(TIANBINGTIANJIANGURL, data);

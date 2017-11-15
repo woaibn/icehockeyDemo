@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -12,7 +12,7 @@
 <link rel="stylesheet"
 	href="../../css/jqueryMobile/jquery.mobile-1.4.5.min.css" />
 <link rel="stylesheet" href="../../css/part4/tianbingtianjiang.css" />
-<link rel="stylesheet" href="../../css/part1/allpagesame.css"/>
+<link rel="stylesheet" href="../../css/part1/allpagesame.css" />
 <script src="../../js/jQuery/jquery-2.2.3.min.js"></script>
 <script src="../../js/jqueryMobile/jquery.mobile-1.4.5.min.js"></script>
 </head>
@@ -20,92 +20,60 @@
 <body>
 
 
-	<div data-role="page" class="allpage">		
-				<div class="top">	
-					 <div href="#" onClick="javascript :history.back(-1);" data-ajax="false" class="back">	
-                    	<img src="../../img/part1/back.png" />
-				    </div>
-					<div class="biaoti">
-						搜索结果
+	<div data-role="page" class="allpage">
+		<div class="top">
+			<div onClick="javascript :history.back(-1);" data-ajax="false"
+				class="back">
+				<img src="../../img/part1/back.png" />
+			</div>
+			<div class="biaoti">搜索结果</div>
+		</div>
+
+
+		<div data-role="content" class="all">
+			<div class="everyone">
+				<div class="day">所属俱乐部：</div>
+				<div class="team">
+					<div class="content_left">
+						<div class="image">
+							<img src="../../img/part5/a.jpg" />
+						</div>
+					</div>
+
+					<div class="content_mid">
+						<div class="name">姓名:${player.name}</div>
+						<div class="sex">性别:${player.sex}</div>
+						<div class="height">身高:${player.height}</div>
+
+					</div>
+
+					<div class="content_right">
+						<div class="weight">体重:${player.weight}</div>
+						<div class="countryId">国籍:${player.countryId}</div>
+						<div class="cityId">城市:${player.cityId}</div>
 					</div>
 				</div>
-				
-				
-			<!--
-            	<div class="playground">
-				<c:choose>
-					<c:when test="${!empty users}">
-						<c:forEach items="${users}" var="user" varStatus="st">
-							<div class="name_content">
-								<span>球员姓名：<a onclick="goto1('${user.userName}')">${user.userName}</a></span>
-							</div>
-							<div class="content">
-								<div class="content_img">
-									<img src="../../img/part2/c.jpg" />
-								</div>
-								<div class="content_div_right">
-									<li class="content_top"><a href="">球员姓名:${user.userName}</a></li>
-									<div class="mid">性别：${user.sex}</div>
-									<div class="content_bottom">身高：${user.height}</div>
-									<div class="content_bottom">体重：${user.weight}</div>
-									<div class="content_bottom">国籍：${user.country}</div>
-									<div class="content_bottom">城市：${user.city}</div>
-								</div>
-							</div>
-
-						</c:forEach>
-					</c:when>
-					
-				</c:choose>
-
 			</div>
-            -->
-			<div data-role="content" class="all">
-		    	<div class="everyone">
-					<div class="day">所属俱乐部：</div>
-					<div class="team">
-						<div class="content_left">
-										<div class="image">
-											<img src="../../img/part5/a.jpg" />
-										</div>
-						</div>
-		
-						<div class="content_mid">
-										<div class="name">姓名:${player.}</div>
-										<div class="sex">性别:${player.sex}</div>
-										<div class="height">身高:${player.height}</div>
-		
-						</div>
-		
-						<div class="content_right">
-										<div class="weight">体重:${player.weight}</div>
-										<div class="countryId">国籍:${player.countryId}</div>
-										<div class="cityId">城市:${player.cityId}</div>
-						</div>		
-					</div>	
-				</div>
-			</div>
-			
-			<div class="guanzhu">
-				<input type="button" value="关注" id="guazhu"/>
-		    </div>
+		</div>
 
-			
-			<div class="button">
-				<div class="shouye" onclick="shouyeClick()">
-					<span>首页</span>
-				</div>
-				<div class="zhanshu" onclick="zhanshuClick()">
-					<span>战术</span>
-				</div>
-				<div class="zhandui" onclick="zhanduiClick()">
-					<span>战队</span>
-				</div>
-				<div class="wode" onclick="wodeClick()">
-					<span>我的</span>
-				</div>
-			</div>
+		<div class="guanzhu">
+			<input type="button" value="关注" id="guazhu" />
+		</div>
 
+
+		<div class="button">
+			<div class="shouye" onclick="shouyeClick()">
+				<span>首页</span>
+			</div>
+			<div class="zhanshu" onclick="zhanshuClick()">
+				<span>战术</span>
+			</div>
+			<div class="zhandui" onclick="zhanduiClick()">
+				<span>战队</span>
+			</div>
+			<div class="wode" onclick="wodeClick()">
+				<span>我的</span>
+			</div>
 		</div>
 
 	</div>

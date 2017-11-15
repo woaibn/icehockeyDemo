@@ -5,11 +5,11 @@ $(function() {
 
 	// 点击登录
 	$(".submitBtn").click(function() {
+		var time = $("#time").val();
 		var address = $("#address").val();
 		var clubAName = $("#clubAName").val();
 		var clubBName = $("#clubBName").val();
 		var beizhu = $("#beizhu").val();
-		var time = $("#time").val();
 
 		if (time == "") {
 			alert("请选择比赛时间");
@@ -39,7 +39,7 @@ $(function() {
 			beizhu : beizhu,
 			time : time
 		};
-//		alert(JSON.stringify(data));
-		jump(BINGLINCHENGXIAURL, data);
+alert(JSON.stringify(data));
+		//jump(BINGLINCHENGXIAURL, data);
 	});
 });

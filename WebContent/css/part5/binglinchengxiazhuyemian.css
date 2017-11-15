@@ -1,215 +1,68 @@
-.main{
-	background-image: url(../../img/part8/lock-screen-background.png);
-	background-size: 100% 100%;
-	height: 100%;
-	margin: 0 !important;
-	display: flex;	/*弹性布局，子元素的float失效*/
-	flex-direction: column;/*定义主轴竖，默认横*/
-	-webkit-flex-direction: column;/*伸缩容器的主轴的方向row row-reverse column column-reverse*/	
-    background-repeat:no-repeat;/*背景固定*/
-    background-attachment:fixed
+/*标题*/
+.biaoti{
+	width:80%!important;
 }
 
-.head{
-	color: white;
-	text-align: center;
-	font-size: 2rem;
-	margin-top: 3rem;
-	text-decoration: none;
-}
+/*增加临时赛事*/
 .zengjia{
-	position: fixed;
+	float: left;
 	top: 6%;
 	right: 8%;
 }	
-.button1{
-	position: fixed;
-	left: 8%;
-	top: 6%;
-	
-}
-.button2{
-	display: flex;
-	color:white;
-	text-shadow: none;
 
-	
-}
-.yiguanzhu{
-	
-	text-align: center;
-	font-size: 1.3rem;
-	width:50%;
-}
-.saishixuanze{
-	text-align: center;
-	font-size: 1.3rem;
-	width:50%;
-}
-.button{
-	background:rgb(163,163,163);
-	color:white;
-	display: flex;
-	position: fixed;
-	left: 0;
-  	bottom: 0px;
-  	padding: 0rem;/*这个div的内边距，可以去掉*/
-	width: 100%; 
-	height: 3.5rem;
-	
-	font-family:Microsoft YaHei!important;	
-	text-decoration: none!important;	
+
+/*导航栏*/
+.navbar{
+	background: black;
+	margin-top: 3%;
 }
 
-.button div{
-	margin: auto;
+/*导航栏下面的内容*/
+.all{
 	display: flex;
 	flex-direction: column;
-}
-.ch{
-	text-align: center;
-	font-size: 2.5rem;
-	font-family: "微软雅黑";
-	text-shadow:none;
-	
-}
-
-.en{
-	text-align: center;
-	font-size: 0.5rem;
-	font-family: "微软雅黑";
-	text-shadow:none;
-}
-.team{
-	width:90%;
-	margin: auto;
-	margin-top: 1rem;
-	overflow: scroll;
-}
-
-/*日期*/
-.day{
-	margin-top: 0.5rem;
-	font-size: 2rem;
-	color: rgb(178,196,202);
-}
-/*x姓名，星级*/
-
-.name_content{
-	position:relative;
-	margin-top: 0.5rem;
-	background: white;
-	height: 1.5rem;
-	border-radius: 2rem;
-	display: -webkit-flex;
-	border-bottom: 1px solid #d9d9d9; 
-}
-
-.name_content span1{
-	position: absolute;
-	
-	/*
-	 * font-size: 1.5rem;
-	margin-left: 0.5rem;
-	margin-top:0.3rem;
-	padding-right: 1rem;
-	*/
-	
-}
-
-.name_content span2{
-	position: absolute;
-	
-}
-
-.huanjing{
-	display: flex;
-	position:absolute;
-	margin-left: 10rem;
-}
-
-
-/*
-.huanjing span{
-	font-family: "宋体";
-	text-shadow:none;
-}
-.huanjing img{
-	position: relative;
-	margin-left: 5rem;
-	
-}
-*/
-
-/*球场信息*/
-
-.content{
-	background: white;
-	height: 10rem;
-	font-size: 1.5rem;
-	border-radius: 2rem;
-	display: -webkit-flex;
-	border-bottom: 1px solid #d9d9d9; 
-	margin-top: 0.5rem;
-}
-
-
-.img{
-	text-align: center;
-	width: 7rem;	
-}
-
-.img img{
-	width:7rem;
-	height: 7rem;
-}
-
-.name{
-	font-size: 1rem;
-	width:8rem!important;
-}
-
-.content_left div{
+	height:75% ;
 	width: 100%;
-	
+	padding:0rem!important;
+	overflow: auto;
 }
 
 
-.name span{
-	width:100%;
-	
+
+.everyone{ 
+	background:whitesmoke ;
+	border-style:solid; 
+	border-width:1px; 
+	border-color:#000;
+	margin: 0rem!important;
+	padding:1%;
 }
 
-.content div{
-width: 33%;
-}
-
-
-.content_mid div{
-	width: 100%;
-	text-align: center;
-	font-size: 1.3rem;
-	color: rgb(89,100,243);	
-	margin: 1rem 0rem;
-	
-
+.everyone div{
+	margin: 1%;
 }
 
 
-/*
-.content_top{
-	font-size: 2rem;
-	color: rgb(89,100,243);	
+
+.content_left{
+	width:30%;
 }
 
 .content_mid{
-	font-size: 2rem;
-	color: rgb(89,100,243);
+	width:40%;
+	text-align: center;
 	
 }
 
-.content_bottom{
-	font-size:1rem;
-	color: #666666;
+.content_right{
+	width:30%;
 }
-*/
+
+.team{
+	display: flex;
+}
+
+.img img{
+	height: 6rem;
+	width: 6rem;
+}

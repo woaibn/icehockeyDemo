@@ -73,7 +73,7 @@ public class AliasServlet extends HttpServlet {
 				map.put("reslut", "-2");
 			}
 			if ("0".equals(map.get("result"))) {
-				String gender = (String) session.getAttribute("gender");
+				boolean gender = (Boolean) session.getAttribute("gender");
 				double height = (Double) session.getAttribute("height");
 				double weight = (Double) session.getAttribute("weight");
 				String category = (String) session.getAttribute("role");

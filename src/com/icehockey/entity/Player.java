@@ -15,15 +15,13 @@ public class Player {
 	private int roleId; // 角色编号
 	private int handlingId; // 持杆方式编号
 	private String idType; // 证件类型
-	private int idInfoId; // 证件信息编号
+	private String idInfoId; // 证件信息编号
 	private int categoryId; // 类别编号
 	private String position; // 位置
 	private int creatMeld; // 谁创建我
 	private String image; // 头像
 	private Date modificateDate; // 修改时间
 	private String remark; // 备注
-	
-	
 	public int getPlayerId() {
 		return playerId;
 	}
@@ -96,10 +94,10 @@ public class Player {
 	public void setIdType(String idType) {
 		this.idType = idType;
 	}
-	public int getIdInfoId() {
+	public String getIdInfoId() {
 		return idInfoId;
 	}
-	public void setIdInfoId(int idInfoId) {
+	public void setIdInfoId(String idInfoId) {
 		this.idInfoId = idInfoId;
 	}
 	public int getCategoryId() {
@@ -138,19 +136,9 @@ public class Player {
 	public void setRemark(String remark) {
 		this.remark = remark;
 	}
-	
-	
-	public Player() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	
-	
-	public Player(int playerId, String name, boolean sex, Date birthday,
-			double height, double weight, int countryId, int cityId,
-			double firstLearnAge, int roleId, int handlingId, String idType,
-			int idInfoId, int categoryId, String position, int creatMeld,
-			String image, Date modificateDate, String remark) {
+	public Player(int playerId, String name, boolean sex, Date birthday, double height, double weight, int countryId,
+			int cityId, double firstLearnAge, int roleId, int handlingId, String idType, String idInfoId,
+			int categoryId, String position, int creatMeld, String image, Date modificateDate, String remark) {
 		super();
 		this.playerId = playerId;
 		this.name = name;
@@ -172,21 +160,20 @@ public class Player {
 		this.modificateDate = modificateDate;
 		this.remark = remark;
 	}
-	
-	
+	public Player() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	@Override
 	public String toString() {
-		return "Player [playerId=" + playerId + ", name=" + name + ", sex="
-				+ sex + ", birthday=" + birthday + ", height=" + height
-				+ ", weight=" + weight + ", countryId=" + countryId
-				+ ", cityId=" + cityId + ", firstLearnAge=" + firstLearnAge
-				+ ", roleId=" + roleId + ", handlingId=" + handlingId
-				+ ", idType=" + idType + ", idInfoId=" + idInfoId
-				+ ", categoryId=" + categoryId + ", position=" + position
-				+ ", creatMeld=" + creatMeld + ", image=" + image
-				+ ", modificateDate=" + modificateDate + ", remark=" + remark
-				+ "]";
+		return "Player [playerId=" + playerId + ", name=" + name + ", sex=" + sex + ", birthday=" + birthday
+				+ ", height=" + height + ", weight=" + weight + ", countryId=" + countryId + ", cityId=" + cityId
+				+ ", firstLearnAge=" + firstLearnAge + ", roleId=" + roleId + ", handlingId=" + handlingId + ", idType="
+				+ idType + ", idInfoId=" + idInfoId + ", categoryId=" + categoryId + ", position=" + position
+				+ ", creatMeld=" + creatMeld + ", image=" + image + ", modificateDate=" + modificateDate + ", remark="
+				+ remark + "]";
 	}
+	
 	
 	
 

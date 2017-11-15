@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="../../css/part1/zhucedengluyemain.css" />
 <script src="../../js/jQuery/jquery-2.2.3.min.js"></script>
 <script src="../../js/jqueryMobile/jquery.mobile-1.4.5.min.js"></script>
+<link rel="stylesheet" href="../../css/part1/allpagesame.css"/>
 <script type="text/javascript">
 	$(document).ready(function() {
 		$(".yiguanzhu").click(function() {
@@ -28,90 +29,112 @@
 </head>
 
 <body>
-	<div data-role="page" class="main">
-		<div class="button1" onclick="javascript:history.back(-1);">
-			<img src="../../img/part8/back.png" />
-		</div>
+	<div data-role="page" class="allpage">		
+				<div class="top">	
+					 <div href="#" onClick="javascript :history.back(-1);" data-ajax="false" class="back">	
+                    	<img src="../../img/part1/back.png" />
+				    </div>
+					<div class="biaoti">
+						兵临城下
+					</div>
+				</div>
 
-		<h1 class="head">兵临城下</h1>
-
-		<div class="button2">
-			<div class="yiguanzhu">
-				<span>已关注</span>
-			</div>
-			<div class="saishixuanze">
-				<span>赛事选择</span>
-			</div>
-		</div>
+	<div class="content">
+		
+	
 		<div class="button3">
-			<div class="a">
-				<span>时间:</span>
-			</div>
-			<input type="datetime-local"  class="time"
-				placeholder="" id="time" />
+			<div class="a">时间:</div>
+			<input type="date"  class="time" placeholder="" id="time" data-role='none' />
 		</div>
+
 		<div class="button3">
-			<div class="a">
-				<span>场地:</span>
-			</div>
-
-			<input type="text" data-role='none' class="shurukuang1"
-				placeholder="" id="address" />
-
+			<div class="a">场地:</div>
+			<select  data-role='none' class="changdi" placeholder="" id="address" />
+				<c:choose>
+    		<c:when test="${!empty rinks}"}>
+    			<c:forEach items="${rinks}" var="rink" varStatus="st">
+				
+				<option value='${rink.rinkId}'>${rink.rinkName}</option>
+				</c:forEach>		
+    		</c:when>
+    	</c:choose>
+				
+				
+		    </select>
 		</div>
-
-
+		 
+		 
+		<!-- <div class="button3">
+			<div class="a">场地:</div>
+			<select  data-role='none' class="changdi" placeholder="" id="address" />
+				<foreach rinks,var rink,sat>
+					<option id='${rink.rinkId}'>${rink.rinkName}</option>
+				</foreach>
+				
+		    </select>
+	</div>-->
 		<div class="button4">
 			<div class="a">
-				<span>对阵双方:</span>
+				对阵双方:
 			</div>
-			<div>
-				<input type="text" data-role='none' class="shurukuang2"
-					placeholder="" id="clubAName" />
-			</div>
+			<select  data-role='none' class="teama" placeholder="" id="clubAName" />
+				<c:choose>
+    		<c:when test="${!empty clubs}"}>
+    			<c:forEach items="${clubs}" var="club" varStatus="st">
+				
+				<option value='${club.clubId}'>${club.clubName}</option>
+				</c:forEach>		
+    		</c:when>
+    	</c:choose>
+				
+				
+		    </select>
 			<div class="vs">
-				<span>VS</span>
+				VS
 			</div>
-			<div>
-				<input type="text" data-role='none' class="shurukuang2"
-					placeholder="" id="clubBName" />
-			</div>
+			<select  data-role='none' class="teamb" placeholder="" id="clubBName" />
+					<c:choose>
+    		<c:when test="${!empty rinks}"}>
+    			<c:forEach items="${rinks}" var="rinkId" varStatus="st">
+				
+				<option value='${rink.rinkId}'>${rink.rinkName}</option>
+				</c:forEach>		
+    		</c:when>
+    	</c:choose>
+				
+		    </select>
 		</div>
 
 
 		<div class="button5">
 			<div class="a">
-				<span>备注:</span>
+				备注:
 			</div>
 			<div>
-				<input type="text" data-role='none' class="shurukuang4"
-					placeholder="" id="beizhu" />
+				<textarea class="beizhu" name="beizhu" id="beizhu">
+				</textarea>
 			</div>
 		</div>
 
 		<div class="queren">
-			<input type="submit" data-role='none' value="确认" class="submitBtn"></input>
+			<input type="submit" data-role='none' value="确认提交" class="submitBtn" ></input>
 		</div>
-
+	</div>
 
 		<div class="button">
-							<div class="shouye" onclick="shouyeClick()">
-								<span class="ch">首页</span>
-								<span class="en">	Home</span>
-							</div>
-							<div  class="zhanshu" onclick="zhanshuClick()">
-								<span class="ch">战术</span>
-								<span class="en">Tactical</span>
-							</div>
-							<div  class="zhandui" onclick="zhanduiClick()">
-								<span class="ch">战队</span>
-								<span class="en">Team</span>
-							</div>
-							<div class="wode" onclick="wodeClick()">
-								<span class="ch">我的</span>
-								<span class="en">Mine</span>
-							</div>
-				   </div>	
+			<div class="shouye" onclick="shouyeClick()">
+				<span>首页</span>
+			</div>
+			<div class="zhanshu" onclick="zhanshuClick()">
+				<span>战术</span>
+			</div>
+			<div class="zhandui" onclick="zhanduiClick()">
+				<span>战队</span>
+			</div>
+			<div class="wode" onclick="wodeClick()">
+				<span>我的</span>
+			</div>
+		</div>
 	</div>
 
 </body>
