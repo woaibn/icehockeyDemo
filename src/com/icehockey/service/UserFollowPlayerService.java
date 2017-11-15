@@ -17,8 +17,16 @@ public class UserFollowPlayerService {
 	}
 
 	public boolean updateRecord(int id, String dateString) {
-		boolean b = dao.updateRe(id, dateString);
-		return b;
+		return dao.updateRe(id, dateString);
+	}
+
+	public boolean reFollow(int id, String followDateString, String cancelDateString) {
+		return dao.updateRe2(id, followDateString, cancelDateString);
+
+	}
+
+	public boolean addFollowRecord(int userId, int playerId, String followDateString) {
+		return dao.insertRe(userId,playerId,followDateString);
 	}
 
 }

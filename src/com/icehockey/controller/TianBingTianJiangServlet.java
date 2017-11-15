@@ -12,9 +12,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.icehockey.entity.Category;
+import com.icehockey.entity.City;
+import com.icehockey.entity.Club;
+import com.icehockey.entity.Country;
+import com.icehockey.entity.Handling;
 import com.icehockey.entity.Player;
+import com.icehockey.entity.Role;
 import com.icehockey.entity.User;
+import com.icehockey.entity.UserFollowPlayer;
+import com.icehockey.service.CategoryService;
+import com.icehockey.service.ClubService;
+import com.icehockey.service.CountryCityService;
+import com.icehockey.service.HandlingService;
 import com.icehockey.service.PlayerService;
+import com.icehockey.service.RoleService;
+import com.icehockey.service.UserService;
 
 /**
  * Servlet implementation class TianBingTianJiangServlet
@@ -44,10 +57,30 @@ public class TianBingTianJiangServlet extends HttpServlet {
 		PrintWriter writer = response.getWriter();
 		Map<String, Object> map = new HashMap<String, Object>();
 		System.out.println("-----------------添兵添将后台程序----------");
-
+		/**
+		 * 
+		 * 声明对象
+		 */
 		PlayerService playerService = new PlayerService();
+		ClubService clubService = new ClubService();
+		CountryCityService countryCityService = new CountryCityService();
+		UserService userService = new UserService();
+		RoleService roleService = new RoleService();
+		HandlingService handlingService = new HandlingService();
+		CategoryService categoryService = new CategoryService();
+		Handling handling = null;
+		Country country = null;
+		City city = null;
 		User user = null;
+		Player player = null;
+		Club club = null;
+		Role role = null;
+		Category category = null;
+		User creatMeUser = null;
 		List<Player> players = null;
+		List<Club> clubs = null;
+		List<Category> categories = null;
+		List<Handling> handlings = null;
 
 		System.out.println("跳转后的sessionId :" + session.getId());
 		String operateType = null;
@@ -76,27 +109,90 @@ public class TianBingTianJiangServlet extends HttpServlet {
 				} else if ("jingquesousuo".equals(operateType)) {// 如果操作类型是精确搜索，即根据名字字符串搜索当前关注球员
 					String playerName = request.getParameter("playerName");
 					System.out.println("playerName:" + playerName);
-					players = playerService.getUserFollowedPlayersByPlayerName(user.getUserId(), playerName);
-					System.out.println(players);
-					session.setAttribute("players", players);
+					player = playerService.getUserFollowedPlayersByPlayerName(user.getUserId(), playerName);
+					if (player != null) {
+						country = countryCityService.queryCountry(player.getCountryId());
+						city = countryCityService.queryCity(player.getCityId());
+					}
+					session.setAttribute("country", country);
+					session.setAttribute("city", city);
+					System.out.println(player);
+					session.setAttribute("player", player);
 					map.put("result", "0");
 					map.put("ok", "3");
 				} else if ("zhuyemianToXiangxi".equals(operateType)) {// 如果操作类型是精确搜索，即根据名字字符串搜索当前关注球员
 					int playerId = Integer.parseInt(request.getParameter("playerId"));
 					System.out.println("playerId:" + playerId);
-					Player player = playerService.getPlayerByPlayerId(playerId);
-					System.out.println(player);
+					player = playerService.getPlayerByPlayerId(playerId);
+					if (player != null) {
+						club = clubService.queryClub(player.getPlayerId());
+						country = countryCityService.queryCountry(player.getCountryId());
+						city = countryCityService.queryCity(player.getCityId());
+						role = roleService.queryRole(player.getRoleId());
+						creatMeUser = userService.queryUserById(player.getCreatMeld());
+						handling = handlingService.queryHandling(player.getHandlingId());
+						category = categoryService.queryCategoryByCategoryId(player.getCategoryId());
+					}
+					System.out.println("creatMeUser" + creatMeUser);
 					session.setAttribute("player", player);
+					session.setAttribute("club", club);
+					session.setAttribute("country", country);
+					session.setAttribute("city", city);
+					session.setAttribute("role", role);
+					session.setAttribute("creatMeUser", creatMeUser);
+					session.setAttribute("handling", handling);
+					session.setAttribute("category", category);
+
 					map.put("result", "0");
 					map.put("ok", "4");
 				} else if ("quxiaoguanzhu".equals(operateType)) {// 如果操作类型是精确搜索，即根据名字字符串搜索当前关注球员
 					int playerId = Integer.parseInt(request.getParameter("playerId"));
 					System.out.println("playerId:" + playerId);
-					boolean flag = playerService.cancelFollowed(user.getUserId(),playerId);
+					boolean flag = playerService.cancelFollowed(user.getUserId(), playerId);
 					System.out.println(flag);
 					session.setAttribute("flag", flag);
 					map.put("result", "0");
 					map.put("ok", "5");
+				} else if ("guanzhuqiuyuan".equals(operateType)) {// 如果操作类型是精确搜索，即根据名字字符串搜索当前关注球员
+					int playerId = Integer.parseInt(request.getParameter("playerId"));
+					System.out.println("playerId:" + playerId);
+					UserFollowPlayer userFollowPlayer = playerService.userFollowPlayer(user.getUserId(), playerId);
+					System.out.println(userFollowPlayer);
+					session.setAttribute("userFollowPlayer", userFollowPlayer);
+					map.put("result", "0");
+					map.put("ok", "6");
+				} else if ("jibexinxi".equals(operateType)) {// 如果操作类型是精确搜索，即根据名字字符串搜索当前关注球员
+					int playerId = Integer.parseInt(request.getParameter("playerId"));
+					System.out.println("playerId:" + playerId);
+					map.put("result", "0");
+					map.put("ok", "7");
+				} else if ("jibenxinxiToxiugai".equals(operateType)) {// 如果操作类型是精确搜索，即根据名字字符串搜索当前关注球员
+					categories = categoryService.getAll();
+					clubs = clubService.getAll();
+					handlings = handlingService.getAll();
+
+					session.setAttribute("categories", categories);
+					session.setAttribute("clubs", clubs);
+					session.setAttribute("handlings", handlings);
+					System.out.println(categories);
+					System.out.println(clubs);
+					System.out.println(handlings);
+					map.put("result", "0");
+					map.put("ok", "8");
+				} else if ("tijiaoxiugai".equals(operateType)) {// 如果操作类型是精确搜索，即根据名字字符串搜索当前关注球员
+					
+					String image = request.getParameter("image");
+					int playerId = Integer.parseInt(request.getParameter("playerId"));
+					int clubId = Integer.parseInt(request.getParameter("clubId"));
+					double weight = Double.parseDouble(request.getParameter("weight"));
+					double height = Double.parseDouble(request.getParameter("height"));
+					String position = request.getParameter("position");
+					int categoryId = Integer.parseInt(request.getParameter("categoryId"));
+					int handlingId = Integer.parseInt(request.getParameter("handlingId"));
+					String birthday = request.getParameter("birthday");
+					player=playerService.updateInfo(player,playerId,clubId,weight,height,position,categoryId,handlingId,birthday,image);					
+					map.put("result", "0");
+					map.put("ok", "9");
 				} else {
 					map.put("result", "-2");// 没有操作类型
 				}
@@ -114,7 +210,7 @@ public class TianBingTianJiangServlet extends HttpServlet {
 						"<script language='javascript'>window.location.href='./views/part4/tianbingtianjiangzhuyemian.jsp'</script>");
 			} else if ("2".equals(map.get("ok"))) {
 				writer.println(
-						"<script language='javascript'>window.location.href='./views/part4/sousuojieguo.jsp'</script>");
+						"<script language='javascript'>window.location.href='./views/part4/tianbingtianjiangzhuyemian.jsp'</script>");
 			} else if ("3".equals(map.get("ok"))) {
 				writer.println(
 						"<script language='javascript'>window.location.href='./views/part4/sousuojieguo.jsp'</script>");
@@ -124,6 +220,18 @@ public class TianBingTianJiangServlet extends HttpServlet {
 			} else if ("5".equals(map.get("ok"))) {
 				writer.println(
 						"<script language='javascript'>window.location.href='./views/part4/tianbingtianjiangzhuyemian.jsp'</script>");
+			} else if ("6".equals(map.get("ok"))) {
+				writer.println(
+						"<script language='javascript'>window.location.href='./views/part4/tianbingtianjiangzhuyemian.jsp'</script>");
+			} else if ("7".equals(map.get("ok"))) {
+				writer.println(
+						"<script language='javascript'>window.location.href='./views/part4/jibenxinxi.jsp'</script>");
+			} else if ("8".equals(map.get("ok"))) {
+				writer.println(
+						"<script language='javascript'>window.location.href='./views/part4/jibenxinxixiugai.jsp'</script>");
+			} else if ("9".equals(map.get("ok"))) {
+				writer.println(
+						"<script language='javascript'>alert('修改成功');window.location.href='./views/part4/tianbingtianjiangzhuyemian.jsp'</script>");
 			}else {
 
 			}

@@ -1,14 +1,12 @@
 package com.icehockey.entity;
 
-import java.util.Date;
-
 public class Club {
 	private int clubId; // 俱乐部编号
 	private String clubName; // 俱乐部名称
 	private String clubLogo; //俱乐部LOGO
 	private String organization; //俱乐部所属机构
 	private String address; //官方地址
-	private Date buildTime; //成立时间
+	private String buildTime; //成立时间
 	private int countryId; //国籍编号
 	private int cityId; //城市编号
 	private String managerContent; //经营内容
@@ -48,10 +46,10 @@ public class Club {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public Date getBuildTime() {
+	public String getBuildTime() {
 		return buildTime;
 	}
-	public void setBuildTime(Date buildTime) {
+	public void setBuildTime(String buildTime) {
 		this.buildTime = buildTime;
 	}
 	public int getCountryId() {
@@ -105,7 +103,7 @@ public class Club {
 	
 	
 	public Club(int clubId, String clubName, String clubLogo,
-			String organization, String address, Date buildTime, int countryId,
+			String organization, String address, String buildTime, int countryId,
 			int cityId, String managerContent, String email,
 			String construction, String province, String remark) {
 		super();

@@ -79,4 +79,14 @@
     <servlet-name>DownloadImageServlet</servlet-name>
     <url-pattern>/DownloadImageServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>WoDeZhongXinServlet</display-name>
+    <servlet-name>WoDeZhongXinServlet</servlet-name>
+    <servlet-class>com.icehockey.controller.WoDeZhongXinServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WoDeZhongXinServlet</servlet-name>
+    <url-pattern>/WoDeZhongXinServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

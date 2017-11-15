@@ -30,9 +30,9 @@
 			</div>
 		</div>
 		<div class="jiben">
-			<div class="a ">基本信息：${club.clubName}</div>
+			<div class="a ">基本信息</div>
 			<div class="everyone">
-				<div class="day">所属俱乐部：</div>
+				<div class="day">所属俱乐部：${club.clubName}</div>
 				<div class="team">
 					<div class="content_left">
 						<div class="image">
@@ -46,19 +46,18 @@
 							<c:if test="${player.sex eq true}">男</c:if>
 							<c:if test="${player.sex eq false}">女</c:if>
 						</div>
-						<div class="countryId">国籍:${player.countryId}</div>
-						<div class="cityId">城市:${player.cityId}</div>
+						<div class="countryId">国籍:${country.nameChinese}</div>
+						<div class="cityId">城市:${city.cityName}</div>
 						<div class="height">身高:${player.height}</div>
 						<div class="weight">体重:${player.weight}</div>
 						<div class="position">位置:${player.position}</div>
 					</div>
 					<div class="content_right">
-						<div class="roleId">角色:${player.roleId}</div>
+						<div class="roleId">角色:${role.roleName}</div>
 						<div class="birthday">出生日期:${player.birthday}</div>
-						<div class="firstLearnAge">初学年龄:${player.firstLearnAge}</div>
-						<div class="roleId">角色编号:${player.roleId}</div>
-						<div class="handlingId">持杆方式:${player.handlingId}</div>
-						<div class="creatMeld">谁创建我:${player.creatMeld}</div>
+						<div class="firstLearnAge">初学年龄:${player.firstLearnAge}岁</div>
+						<div class="handlingId">持杆方式:${handling.handlingName}</div>
+						<div class="creatMeld">谁创建我:${creatMeUser.userName}</div>
 					</div>
 				</div>
 			</div>

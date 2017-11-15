@@ -43,12 +43,85 @@ public class UserDao {
 				Timestamp timestamp = rs.getTimestamp("birthday");// '用户出生日期',
 				String birthday = null;
 				if (timestamp != null) {
-					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式
+					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");// 设置日期格式
 					birthday = df.format(timestamp.getTime());
 					System.out.println("birthdayDao" + birthday);
 				}
 				String idType = rs.getString("idType");// '证件类型',
-				int idInfoId = rs.getInt("idInfoId");// '证件类型编号',
+				String idInfoId = rs.getString("idInfoId");// '证件类型编号',
+				int countryId = rs.getInt("countryId");// '国籍编号',
+				int cityId = rs.getInt("cityId");// '籍贯编号',
+				String address = rs.getString("address");// '住址',
+				timestamp = rs.getTimestamp("joinDate");
+				String joinDate = null;
+				if (timestamp != null) {
+					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式
+					joinDate = df.format(timestamp.getTime());
+					System.out.println("joinDateDao" + joinDate);
+				}
+				String remark = rs.getString("remark");// '备注',
+				user = new User(userId, userName, weChatId, telephone, password, roleId, sex, birthday, idType,
+						idInfoId, countryId, cityId, address, joinDate, remark);
+				System.out.println(user + "......DAO");
+				return user;
+			} else {
+				System.out.println("dao层未找到");
+				return null;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (preparedStatement != null) {
+					preparedStatement.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+		}
+		return user;
+	}
+	
+	
+	/**
+	 * @param userId
+	 * @return User
+	 * 
+	 *         通过userid查找用户并返回user对象
+	 */
+	public User getUserByUserId(int userId) {
+		String sql = "SELECT * FROM user WHERE user.userId=?";
+		System.out.println(sql);
+		try {
+			conn = util.openConnection();
+			System.out.println(conn);
+			preparedStatement = conn.prepareStatement(sql);
+			preparedStatement.setInt(1, userId);
+			rs = preparedStatement.executeQuery();
+			if (rs.next()) {
+				String telephone = rs.getString("telephone");// '用户编号',
+				String userName = rs.getString("userName");// '用户姓名',
+				String weChatId = rs.getString("weChatId");// '微信账号',
+				String password = rs.getString("password");// '登录密码',
+				String roleId = rs.getString("roleId");// '角色编号',
+				boolean sex = rs.getBoolean("sex");// '性别',
+				Timestamp timestamp = rs.getTimestamp("birthday");// '用户出生日期',
+				String birthday = null;
+				if (timestamp != null) {
+					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");// 设置日期格式
+					birthday = df.format(timestamp.getTime());
+					System.out.println("birthdayDao" + birthday);
+				}
+				String idType = rs.getString("idType");// '证件类型',
+				String idInfoId = rs.getString("idInfoId");// '证件类型编号',
 				int countryId = rs.getInt("countryId");// '国籍编号',
 				int cityId = rs.getInt("cityId");// '籍贯编号',
 				String address = rs.getString("address");// '住址',
@@ -131,15 +204,6 @@ public class UserDao {
 		return null;
 	}
 
-	/**
-	 * @param userId
-	 * @return User
-	 * 
-	 *         通过userid查找用户并返回user对象
-	 */
-	public User getUserByUserId(int userId) {
-
-		return user;
-	}
+	
 
 }

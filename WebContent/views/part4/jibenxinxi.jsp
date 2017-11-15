@@ -14,17 +14,6 @@
 
 <script src="../../js/jQuery/jquery-2.2.3.min.js"></script>
 <script src="../../js/jqueryMobile/jquery.mobile-1.4.5.min.js"></script>
-<script type="text/javascript">
-	$(document).ready(function() {
-
-		$(".edit").click(function() {
-			window.location.href = "jibenxinxixiugai.jsp";
-		});
-	});
-</script>
-
-
-
 </head>
 
 <body>
@@ -42,7 +31,7 @@
 			<div class="a ">基本信息</div>
 
 			<div class="everyone">
-				<div class="day">所属俱乐部：</div>
+				<div class="day">所属俱乐部：${club.clubName}</div>
 
 				<div class="team">
 					<div class="content_left">
@@ -58,23 +47,22 @@
 							<c:if test="${player.sex eq true}">男</c:if>
 							<c:if test="${player.sex eq false}">女</c:if>
 						</div>
-						<div class="countryId">身份证号${player.idInfoId}</div>
+						<div class="countryId">身份证号:${player.idInfoId}</div>
 
 					</div>
 
 				</div>
 
 				<div class="next">
-					<div class="height">身高:${player.height}</div>
-					<div class="weight">体重：${player.weight}</div>
+					<div class="height">身高:${player.height}cm</div>
+					<div class="weight">体重：${player.weight}kg</div>
 					<div class="position">位置：${player.position}</div>
-					<div class="roleId">角色：${player.roleId}</div>
+					<div class="roleId">类别：${category.categoryName}</div>
 					<div class="birthday">出生日期：${player.birthday}</div>
-					<div class="firstLearnAge">初学年龄：${player.firstLearnAge}</div>
-					<div class="roleId">角色编号：${player.roleId}</div>
-					<div class="handlingId">持杆方式：${player.handlingId}</div>
-					<div class="creatMeld">谁创建我：${player.creatMeld}</div>
-					<div class="">当前组别：动态获取</div>
+					<div class="firstLearnAge">初学年龄：${player.firstLearnAge}岁</div>
+					<div class="handlingId">持杆方式：${handling.handlingName}</div>
+					<div class="creatMeld">谁创建我：${creatMeUser.userName}</div>
+					<!-- <div class="">当前组别：动态获取</div> -->
 					<div class="">师从教练：动态获取</div>
 
 				</div>
@@ -104,7 +92,7 @@
 
 	<script src="../../js/common/common.js"></script>
 	<script src="../../js/urlApi/api.js"></script>
-	<script type="text/javascript" src="../../js/part4/.js"></script>
+	<script src="../../js/part4/jibenxinxi.js"></script>
 </body>
 </html>
 

@@ -167,4 +167,73 @@ public class UserFollowPlayerDao {
 		return false;
 	}
 
+	public boolean updateRe2(int id, String followDateString, String cancelDateString) {
+		String sql = "UPDATE userfollowplayer SET followDate=? and cancelDate=? WHERE id=?;";
+		try {
+			conn = util.openConnection();
+			preparedStatement = conn.prepareStatement(sql);
+			preparedStatement.setString(1, followDateString);
+			preparedStatement.setString(2, cancelDateString);
+			preparedStatement.setInt(3, id);
+			int i = preparedStatement.executeUpdate();
+			if (i == 1) {
+				System.out.println("插入成功");
+				userFollowPlayer = queryById(id);
+				return true;
+			} else
+				return false;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (preparedStatement != null) {
+					preparedStatement.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+		}
+		return false;
+	}
+
+	public boolean insertRe(int userId, int playerId, String followDateString) {
+		String sql = "INSERT INTO userfollowplayer ( userfollowplayer.userId, userfollowplayer.playerId, userfollowplayer.followDate ) VALUES ( "
+				+ userId + ", " + playerId + ", '" + followDateString + "' );";
+		try {
+			conn = util.openConnection();
+			preparedStatement = conn.prepareStatement(sql);
+			int i = preparedStatement.executeUpdate();
+			if (i == 1) {
+				System.out.println("插入成功");
+				return true;
+			} else
+				return false;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (preparedStatement != null) {
+					preparedStatement.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+		}
+		return false;
+	}
+
 }

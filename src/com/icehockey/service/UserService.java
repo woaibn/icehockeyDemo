@@ -95,4 +95,14 @@ public class UserService {
 		}
 	}
 
+	public User queryUserById(int userId) {
+		user=dao.getUserByUserId(userId);
+		return user;
+	}
+
+	public boolean updateUser(int userId, String name, String birthday, String address) {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
 }

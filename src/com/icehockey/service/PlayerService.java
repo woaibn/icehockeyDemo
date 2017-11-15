@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.icehockey.dao.PlayerDao;
 import com.icehockey.dao.UserDao;
+import com.icehockey.entity.Category;
 import com.icehockey.entity.Player;
 import com.icehockey.entity.User;
 import com.icehockey.entity.UserFollowPlayer;
@@ -69,15 +70,15 @@ public class PlayerService {
 	 * 
 	 *         通过用户编号和球员名字字符串，精确查询找到用户关注的球员列表
 	 */
-	public List<Player> getUserFollowedPlayersByPlayerName(int userId, String playerName) {
-		players = playerDao.getPlayersUserFollowedByPlayerName(userId, playerName);
-		if (players != null) {
-			System.out.println(players);
+	public Player getUserFollowedPlayersByPlayerName(int userId, String playerName) {
+		player = playerDao.getPlayersByPlayerName1(playerName);
+		if (player != null) {
+			System.out.println(player);
 		} else {
 			System.out.println("getUserFollowedPlayersByPlayerName.....PlayerService......null");
-			players = null;
+			player = null;
 		}
-		return players;
+		return player;
 	}
 
 	/**
@@ -122,12 +123,70 @@ public class PlayerService {
 		if (userFollowPlayer != null) {
 			SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式
 			Date currentDateTime = new Date();
-			System.out.println(df.format(currentDateTime));// new Date()为获取当前系统时间
+			System.out.println(df.format(currentDateTime));// new
+															// Date()为获取当前系统时间
 			String dateString = df.format(currentDateTime);
-			f = followPlayerService.updateRecord(userFollowPlayer.getId(),dateString);
+			f = followPlayerService.updateRecord(userFollowPlayer.getId(), dateString);
 			return f;
 		}
 		return false;
+	}
+
+	/**
+	 * @param userId
+	 *            用户编号
+	 * @param playerId
+	 *            远动员编号
+	 * 
+	 * @return boolean
+	 * 
+	 *         通过用户编号，球员编号，对某远动员的关注 先查找该用户是否之前已经关注了远动员，或者关注了之后又取消关注了，
+	 *         1.如果之前已经关注了并且没有取消关注，则返回已关注
+	 *         2.如果之前曾经关注过，但是已经取消关注，此时我们设置关注时间为当前时间，取消关注时间为1900-01-01 00:00:00
+	 *         3.如果该用户从未关注过此运动员，则插入一条新纪录，即用户关注远动员，关注时间为当前时间
+	 */
+	public UserFollowPlayer userFollowPlayer(int userId, int playerId) {
+		userFollowPlayer = followPlayerService.query(userId, playerId);
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式
+		Date currentDateTime = new Date();
+		System.out.println(df.format(currentDateTime));// 获取当前系统时间
+		String followDateString = df.format(currentDateTime);
+		boolean f = false;
+		if (userFollowPlayer == null) {
+			// 插入新纪录
+			f = followPlayerService.addFollowRecord(userId, playerId, followDateString);
+			if (f == true) {
+				userFollowPlayer = followPlayerService.query(userId, playerId);
+				userFollowPlayer.setRemark(userFollowPlayer.getFollowDate() + "第一次关注");
+				return userFollowPlayer;
+			} else {
+				return null;
+			}
+		} else {
+			if ("1900-01-01 00:00:00".equals(userFollowPlayer.getCancelDate())) {
+				System.out.println("关注时间：" + userFollowPlayer.getFollowDate());
+				System.out.println("已关注");
+				userFollowPlayer.setRemark(userFollowPlayer.getFollowDate() + "时，已关注！！");
+				System.out.println(userFollowPlayer);
+				return userFollowPlayer;
+			} else {// 曾经关注过，并且已经取消关注,修改记录，注时间为当前时间，取消关注时间为1900-01-01 00:00:00
+				f = followPlayerService.reFollow(userFollowPlayer.getId(), followDateString, "1900-01-01 00:00:00");// 重新关注
+				if (f == true) {
+					userFollowPlayer = followPlayerService.query(userId, playerId);
+					userFollowPlayer.setRemark(userFollowPlayer.getFollowDate() + "重新关注");
+					return userFollowPlayer;
+				} else {
+					return null;
+				}
+			}
+
+		}
+	}
+
+	public Player updateInfo(Player player2, int playerId, int clubId, double weight, double height, String position,
+			int categoryId, int handlingId, String birthday, String image) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

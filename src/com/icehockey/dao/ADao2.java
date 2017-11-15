@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.util.Date;
+import java.text.SimpleDateFormat;
 
 import com.icehockey.entity.User;
 import com.icehockey.util.DBUtil;
@@ -29,16 +29,18 @@ public class ADao2 {
 		try {
 			conn = util.openConnection();
 			preparedStatement = conn.prepareStatement(sql);
+			preparedStatement.setInt(1, 1);
 			preparedStatement.setString(1, telephone);
 			rs = preparedStatement.executeQuery();
 			if (rs.next()) {
 			
-				Timestamp timestamp = rs.getTimestamp("birthday");// '用户出生日期',
-				Date birthday = null;
+				Timestamp timestamp = rs.getTimestamp("birthday");// '出生日期',
+				String birthday = null;
 				if (timestamp != null) {
-					birthday = new Date(timestamp.getTime());
-				}
-				
+					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式
+					birthday = df.format(timestamp.getTime());
+					}																	
+				System.out.println(birthday);
 				return user;
 			} else {
 				return null;

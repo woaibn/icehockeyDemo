@@ -20,9 +20,7 @@
 		$(".submitBtn1").click(function() {
 			window.location.href = "sousuohuochuangjianqiuyuan.jsp";
 		});
-		$(".submitBtn").click(function() {
-			window.location.href = "";
-		});
+		
 	});
 </script>
 </head>

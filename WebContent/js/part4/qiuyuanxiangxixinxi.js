@@ -23,10 +23,18 @@ $(function() {
 
 	});
 	$(".jiben").click(function() {
-		window.location.href = "jibenxinxi.jsp";
+		alert("aaaaaaaaa");
+		var playerId = $(".playerId").val();
+		var data = {
+			operateType : "jibexinxi",
+			playerId : playerId,
+		};
+		alert(JSON.stringify(data));
+		jump(TIANBINGTIANJIANGURL, data);
+		//window.location.href = "jibenxinxi.jsp";
 	});
 
 	$(".shujv").click(function() {
-		window.location.href = "shujvxinxi.jspp";
+		window.location.href = "shujvxinxi.jsp";
 	});
 });

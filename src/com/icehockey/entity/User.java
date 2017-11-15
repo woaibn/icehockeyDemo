@@ -1,7 +1,5 @@
 package com.icehockey.entity;
 
-import java.text.SimpleDateFormat;
-
 public class User {
 
 	private int userId;// '用户编号',
@@ -13,19 +11,104 @@ public class User {
 	private boolean sex;// '性别',
 	private String birthday;// '出生日期',
 	private String idType;// '证件类型',
-	private int idInfoId;// '证件类型编号',
+	private String idInfoId;// '证件类型编号',
 	private int countryId;// '国籍编号',
 	private int cityId;// '籍贯编号',
 	private String address;// '住址',
 	private String joinDate;// '注册时间',
 	private String remark;// '备注',
-
-	public User() {
-		super();
+	public int getUserId() {
+		return userId;
 	}
-
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public String getWeChatId() {
+		return weChatId;
+	}
+	public void setWeChatId(String weChatId) {
+		this.weChatId = weChatId;
+	}
+	public String getTelephone() {
+		return telephone;
+	}
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getRoleId() {
+		return roleId;
+	}
+	public void setRoleId(String roleId) {
+		this.roleId = roleId;
+	}
+	public boolean isSex() {
+		return sex;
+	}
+	public void setSex(boolean sex) {
+		this.sex = sex;
+	}
+	public String getBirthday() {
+		return birthday;
+	}
+	public void setBirthday(String birthday) {
+		this.birthday = birthday;
+	}
+	public String getIdType() {
+		return idType;
+	}
+	public void setIdType(String idType) {
+		this.idType = idType;
+	}
+	public String getIdInfoId() {
+		return idInfoId;
+	}
+	public void setIdInfoId(String idInfoId) {
+		this.idInfoId = idInfoId;
+	}
+	public int getCountryId() {
+		return countryId;
+	}
+	public void setCountryId(int countryId) {
+		this.countryId = countryId;
+	}
+	public int getCityId() {
+		return cityId;
+	}
+	public void setCityId(int cityId) {
+		this.cityId = cityId;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getJoinDate() {
+		return joinDate;
+	}
+	public void setJoinDate(String joinDate) {
+		this.joinDate = joinDate;
+	}
+	public String getRemark() {
+		return remark;
+	}
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
 	public User(int userId, String userName, String weChatId, String telephone, String password, String roleId,
-			boolean sex, String birthday, String idType, int idInfoId, int countryId, int cityId, String address,
+			boolean sex, String birthday, String idType, String idInfoId, int countryId, int cityId, String address,
 			String joinDate, String remark) {
 		super();
 		this.userId = userId;
@@ -44,129 +127,10 @@ public class User {
 		this.joinDate = joinDate;
 		this.remark = remark;
 	}
-
-	public int getUserId() {
-		return userId;
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
-
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
-
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public String getWeChatId() {
-		return weChatId;
-	}
-
-	public void setWeChatId(String weChatId) {
-		this.weChatId = weChatId;
-	}
-
-	public String getTelephone() {
-		return telephone;
-	}
-
-	public void setTelephone(String telephone) {
-		this.telephone = telephone;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getRoleId() {
-		return roleId;
-	}
-
-	public void setRoleId(String roleId) {
-		this.roleId = roleId;
-	}
-
-	public boolean isSex() {
-		return sex;
-	}
-
-	public void setSex(boolean sex) {
-		this.sex = sex;
-	}
-
-	public String getBirthday() {
-		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式	
-		return df.format(birthday);
-	}
-
-	public void setBirthday(String birthday) {
-		this.birthday = birthday;
-	}
-
-	public String getIdType() {
-		return idType;
-	}
-
-	public void setIdType(String idType) {
-		this.idType = idType;
-	}
-
-	public int getIdInfoId() {
-		return idInfoId;
-	}
-
-	public void setIdInfoId(int idInfoId) {
-		this.idInfoId = idInfoId;
-	}
-
-	public int getCountryId() {
-		return countryId;
-	}
-
-	public void setCountryId(int countryId) {
-		this.countryId = countryId;
-	}
-
-	public int getCityId() {
-		return cityId;
-	}
-
-	public void setCityId(int cityId) {
-		this.cityId = cityId;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public String getJoinDate() {
-		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式	
-		return df.format(joinDate);
-	}
-
-	public void setJoinDate(String joinDate) {
-		this.joinDate = joinDate;
-	}
-
-	public String getRemark() {
-		return remark;
-	}
-
-	public void setRemark(String remark) {
-		this.remark = remark;
-	}
-
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", userName=" + userName + ", weChatId=" + weChatId + ", telephone="
@@ -174,6 +138,6 @@ public class User {
 				+ birthday + ", idType=" + idType + ", idInfoId=" + idInfoId + ", countryId=" + countryId + ", cityId="
 				+ cityId + ", address=" + address + ", joinDate=" + joinDate + ", remark=" + remark + "]";
 	}
-	
+
 	
 }

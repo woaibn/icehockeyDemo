@@ -56,35 +56,35 @@
 	<!--导航栏下面内容-->
 	<div data-role="content" class="all">
 		<c:choose>
-			<c:when test="${!empty competitions}">
-				<c:forEach items="${competitions}" var="competition" varStatus="st">
-					<div class="everyone" onclick="goto1('${competition.competitionId}')">
-						<div class="day">比赛时间：${competition.competitionTime}</div>
+			<c:when test="${!empty duikangs}">
+				<c:forEach items="${duikangs}" var="duikang" varStatus="st">
+					<div class="everyone" onclick="goto1('${duikang.id}')">
+						<div class="day">比赛时间：${duikang.pkDate}</div>
 						<!--年月日时间 -->
 
-						<div class="changdi">比赛场地：${rink.rinkName}</div>
+						<div class="changdi">比赛场地：${duikang.rinkName}</div>
 						<div class="huanjing">环境指数:</div>
 						<div class="team">
 							<div class="content_left">
 								<div class="img">
-									<img src="${competition.teamAImage}" />
+									<img src="${duikang.teamALogo}" />
 								</div>
-								<div class="name">${competition.teamAId}</div>
+								<div class="name">${duikang.clubAName}</div>
 							</div>
 
 							<div class="content_mid">
-								<div class="">${competition.competitionDegree}</div>
-								<div class="">${competition.Time}</div>
+								<div class="">${duikang.competitionDegree}</div>
+								<div class="">${duikang.pkTime}</div>
 								<!--时、分时间 -->
-								<div class="">${competition.round}</div>
+								<div class="">${duikang.round}</div>
 
 							</div>
 
 							<div class="content_right">
 								<div class="img">
-									<img src="${competition.teamBImage}" />
+									<img src="${duikang.teamBLogo}" />
 								</div>
-								<div class="name">${competition.teamBId}</div>
+								<div class="name">${duikang.clubBName}</div>
 							</div>
 						</div>
 					</div>
@@ -144,36 +144,35 @@
 	<!--导航栏下面内容-->
 	<div data-role="content" class="all">
 		<c:choose>
-			<c:when test="${!empty rinkId}"}>
-				<c:forEach items="${rinkId}" var="rinkId" varStatus="st">
-					<div class="everyone" onclick="goto1('${rink.rinkId}')">
-
-						<div class="day">比赛时间：${competition.competitionTime}</div>
+			<c:when test="${!empty duikangs}">
+				<c:forEach items="${duikangs}" var="duikang" varStatus="st">
+					<div class="everyone" onclick="goto1('${duikang.id}')">
+						<div class="day">比赛时间：${duikang.pkDate}</div>
 						<!--年月日时间 -->
 
-						<div class="changdi">比赛场地：${rink.rinkName}</div>
+						<div class="changdi">比赛场地：${duikang.rinkName}</div>
 						<div class="huanjing">环境指数:</div>
 						<div class="team">
 							<div class="content_left">
 								<div class="img">
-									<img src="${competition.teamAImage}" />
+									<img src="${duikang.teamALogo}" />
 								</div>
-								<div class="name">${competition.teamAId}</div>
+								<div class="name">${duikang.clubAName}</div>
 							</div>
 
 							<div class="content_mid">
-								<div class="">${competition.competitionDegree}</div>
-								<div class="">${competition.Time}</div>
+								<div class="">${duikang.competitionDegree}</div>
+								<div class="">${duikang.pkTime}</div>
 								<!--时、分时间 -->
-								<div class="">${competition.round}</div>
+								<div class="">${duikang.round}</div>
 
 							</div>
 
 							<div class="content_right">
 								<div class="img">
-									<img src="${competition.teamBImage}" />
+									<img src="${duikang.teamBLogo}" />
 								</div>
-								<div class="name">${competition.teamBId}</div>
+								<div class="name">${duikang.clubBName}</div>
 							</div>
 						</div>
 					</div>
@@ -184,6 +183,7 @@
 				<P>没有记录</P>
 			</c:otherwise>
 		</c:choose>
+
 	</div>
 
 	<div class="button">

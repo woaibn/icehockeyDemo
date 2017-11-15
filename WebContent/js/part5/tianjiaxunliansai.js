@@ -15,7 +15,7 @@ $(function() {
 			alert("请选择比赛时间");
 			return false;
 		}
-		
+
 		if (address == "") {
 			alert("请输入比赛场地");
 			return false;
@@ -32,14 +32,14 @@ $(function() {
 		}
 		// 请求后台服务
 		var data = {
-			operateType : "tianjianxunliansai",
-			address : address,
-			clubAName : clubAName,
-			clubBName : clubBName,
-			beizhu : beizhu,
+			operateType : "tijiaolinshisaishi",
+			rinkId : address,
+			teamAId : clubAName,
+			teamBId : clubBName,
+			remark : beizhu,
 			time : time
 		};
-alert(JSON.stringify(data));
-		//jump(BINGLINCHENGXIAURL, data);
+		alert(JSON.stringify(data));
+		jump(BINGLINCHENGXIAURL, data);
 	});
 });

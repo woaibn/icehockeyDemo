@@ -29,7 +29,9 @@ public class PlayerDao {
 	 */
 	public List<Player> getPlayersUserFollowed(int userId) {
 		players = new ArrayList<Player>();
-		String sql = "SELECT player.playerId, player.`name`, player.sex, player.birthday, player.height, player.weight, player.countryId, player.cityId, player.firstLearnAge, player.roleId, player.handlingId, player.idType, player.idInfoId, player.categoryId, player.position, player.creatMeld, player.image, player.modificateDate, player.remark FROM player, userfollowplayer, `user` WHERE player.playerId = userfollowplayer.playerId AND `user`.userId = userfollowplayer.userId AND userfollowplayer.cancelDate = '1970-01-01 00:00:00' AND `user`.userId = ?";
+		String sql = "SELECT player.* FROM player, userfollowplayer, `user` WHERE player.playerId = userfollowplayer.playerId AND"
+				+ " `user`.userId = userfollowplayer.userId AND userfollowplayer.cancelDate = '1900-01-01 00:00:00' AND `user`.userId = ?";
+		System.out.println(sql);
 		try {
 			conn = util.openConnection();
 			preparedStatement = conn.prepareStatement(sql);
@@ -43,7 +45,7 @@ public class PlayerDao {
 				Timestamp timestamp = rs.getTimestamp("birthday");// '出生日期',
 				String birthday = null;
 				if (timestamp != null) {
-					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式
+					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");// 设置日期格式
 					birthday = df.format(timestamp.getTime());
 				}
 
@@ -107,12 +109,12 @@ public class PlayerDao {
 	 */
 	public List<Player> getPlayersUserFollowedByNameString(int userId, String playerNameString) {
 		players = new ArrayList<Player>();
-		String sql = "SELECT player.playerId, player.`name`, player.sex, player.birthday, player.height, player.weight, player.countryId, player.cityId, player.firstLearnAge, player.roleId, player.handlingId, player.idType, player.idInfoId, player.categoryId, player.position, player.creatMeld, player.image, player.modificateDate, player.remark FROM player, userfollowplayer, `user` WHERE player.playerId = userfollowplayer.playerId AND `user`.userId = userfollowplayer.userId AND `user`.userId = ? AND player.`name` = '%?%';";
+		String sql = "SELECT player.* FROM player, userfollowplayer, user WHERE player.playerId = userfollowplayer.playerId AND `user`.userId = userfollowplayer.userId AND `user`.userId = "
+				+ userId + " AND player.`name` like '%" + playerNameString + "%';";
+		System.out.println(sql);
 		try {
 			conn = util.openConnection();
 			preparedStatement = conn.prepareStatement(sql);
-			preparedStatement.setInt(1, userId);
-			preparedStatement.setString(1, playerNameString);
 			rs = preparedStatement.executeQuery();
 			while (rs.next()) {
 
@@ -122,7 +124,7 @@ public class PlayerDao {
 				Timestamp timestamp = rs.getTimestamp("birthday");// '出生日期',
 				String birthday = null;
 				if (timestamp != null) {
-					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式
+					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");// 设置日期格式
 					birthday = df.format(timestamp.getTime());
 				}
 
@@ -184,16 +186,15 @@ public class PlayerDao {
 	 * 
 	 *         通过用户编号和球员名字字符串，精确查询找到用户关注的球员列表
 	 */
-	public List<Player> getPlayersUserFollowedByPlayerName(int userId, String playerName) {
+	public List<Player> getPlayersByPlayerName(String playerName) {
 		players = new ArrayList<Player>();
-		String sql = "SELECT player.* FROM player, userfollowplayer, user WHERE player.playerId = userfollowplayer.playerId AND user.userId = userfollowplayer.userId AND user.userId = ? AND player.name = ?;";
+		String sql = "SELECT * FROM player WHERE player. name = ?;";
 		try {
 			conn = util.openConnection();
 			preparedStatement = conn.prepareStatement(sql);
-			preparedStatement.setInt(1, userId);
-			preparedStatement.setString(2, playerName);
+			preparedStatement.setString(1, playerName);
 			rs = preparedStatement.executeQuery();
-			while (rs.next()) {
+			if (rs.next()) {
 
 				int playerId = rs.getInt("playerId"); // 运动员编号
 				String name = rs.getString("name"); // 姓名
@@ -201,7 +202,7 @@ public class PlayerDao {
 				Timestamp timestamp = rs.getTimestamp("birthday");// '出生日期',
 				String birthday = null;
 				if (timestamp != null) {
-					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式
+					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");// 设置日期格式
 					birthday = df.format(timestamp.getTime());
 				}
 
@@ -252,6 +253,73 @@ public class PlayerDao {
 
 		}
 		return players;
+	}
+
+	public Player getPlayersByPlayerName1(String playerName) {
+		String sql = "SELECT * FROM player WHERE player. name = ?;";
+		try {
+			conn = util.openConnection();
+			preparedStatement = conn.prepareStatement(sql);
+			preparedStatement.setString(1, playerName);
+			rs = preparedStatement.executeQuery();
+			if (rs.next()) {
+
+				int playerId = rs.getInt("playerId"); // 运动员编号
+				String name = rs.getString("name"); // 姓名
+				boolean sex = rs.getBoolean("sex"); // 性别
+				Timestamp timestamp = rs.getTimestamp("birthday");// '出生日期',
+				String birthday = null;
+				if (timestamp != null) {
+					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");// 设置日期格式
+					birthday = df.format(timestamp.getTime());
+				}
+
+				double height = rs.getDouble("height"); // 身高
+				double weight = rs.getDouble("weight"); // 体重
+				int countryId = rs.getInt("countryId"); // 国籍编号
+				int cityId = rs.getInt("cityId"); // 籍贯编号
+				double firstLearnAge = rs.getDouble("firstLearnAge"); // 初学年龄
+				int roleId = rs.getInt("roleId"); // 角色编号
+				int handlingId = rs.getInt("handlingId"); // 持杆方式编号
+				String idType = rs.getString("idType"); // 证件类型
+				String idInfoId = rs.getString("idInfoId"); // 证件信息编号
+				int categoryId = rs.getInt("categoryId"); // 类别编号
+				String position = rs.getString("position"); // 位置
+				int creatMeld = rs.getInt("creatMeld"); // 谁创建我
+				String image = rs.getString("image"); // 头像
+				timestamp = rs.getTimestamp("modificateDate");// 修改时间
+				String modificateDate = null;
+				if (timestamp != null) {
+					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式
+					modificateDate = df.format(timestamp.getTime());
+				}
+				String remark = rs.getString("remark"); // 备注
+
+				player = new Player(playerId, name, sex, birthday, height, weight, countryId, cityId, firstLearnAge,
+						roleId, handlingId, idType, idInfoId, categoryId, position, creatMeld, image, modificateDate,
+						remark);
+			}
+			return player;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (preparedStatement != null) {
+					preparedStatement.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+		}
+		return player;
 	}
 
 	/**
@@ -368,7 +436,7 @@ public class PlayerDao {
 				Timestamp timestamp = rs.getTimestamp("birthday");// '出生日期',
 				String birthday = null;
 				if (timestamp != null) {
-					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式
+					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");// 设置日期格式
 					birthday = df.format(timestamp.getTime());
 				}
 
@@ -434,7 +502,7 @@ public class PlayerDao {
 				Timestamp timestamp = rs.getTimestamp("birthday");// '出生日期',
 				String birthday = null;
 				if (timestamp != null) {
-					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式
+					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");// 设置日期格式
 					birthday = df.format(timestamp.getTime());
 				}
 

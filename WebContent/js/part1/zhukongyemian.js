@@ -15,9 +15,7 @@ $(document).ready(function() {
 		var data = {
 			operateType : "zhukongToTianBingTianJiang",
 		};
-		 //alert(JSON.stringify(data));
 		jump(TIANBINGTIANJIANGURL, data);
-		// window.location.href = "../part4/tianbingtianjiangzhuyemian.jsp";
 	});
 	$(".d").click(function() {// 主页面跳转兵临城下主页面
 		// 请求后台服务
