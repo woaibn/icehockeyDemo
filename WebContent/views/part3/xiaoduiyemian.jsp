@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -16,10 +17,11 @@
 	href="../../css/jqueryMobile/jquery.mobile-1.4.5.min.css" />
 <script src="../../js/jqueryMobile/jquery.mobile-1.4.5.min.js"
 	type="text/javascript"></script>
+ 
 </head>
 
 <body style='overflow: scroll; overflow-x: hidden'>
-	<div data-role="page" class="allpage">
+	<div  data-role="page"  class="allpage">
 		<!--标题-->
 		<div class="top">
 			<div onClick="javascript :history.back(-1);" data-ajax="false"
@@ -28,48 +30,54 @@
 			</div>
 			<div class="biaoti">冰天雪地</div>
 		</div>
+
 		<!--查询框-->
 		<div class="search_a">
 			<div class="search_c">
 				<input type="submit" data-role='none' value="添加" class="submitBtn1"></input>
 			</div>
+
 			<div class="search_b">
-				<input type="text" name="search" id="clubSearch" placeholder="模糊查询">
+				<input type="text" name="search" id="schoolTeamSearch" placeholder="模糊查询">
 			</div>
+
 			<div class="search_d">
 				<input type="submit" data-role='none' value="搜索" class="submitBtn"
-					id="clubSubmitBtn"></input>
+					id="schoolTeamSubmitBtn"></input>
 			</div>
 		</div>
 
 
 		<!--导航栏-->
 		<div class="navbar">
-			<div class="club">
-				<div>
-					<img src="../../img/part3/xiehui.png">
+				<div class="club">
+					<div >
+						<img src="../../img/part3/xiehui.png">
+					</div>
+					
+						<div>俱乐部</div>
 				</div>
-				<div>俱乐部</div>
-			</div>
-			<div class="schoolTeam">
-				<img src="../../img/part3/xuexiao.png">
-				<div>校队</div>
-			</div>
-			<div class="competition">
-				<img src="../../img/part3/qiuyuan.png">
-				<div>赛事</div>
-			</div>
+						
+				<div class="schoolTeam">
+					<img src="../../img/part3/xuexiao.png">
+						<div>校队</div>
+				</div>
+				
+				<div class="competition">
+					<img src="../../img/part3/qiuyuan.png">
+						<div>赛事</div>	
+				</div>
 		</div>
 
 		<!--导航栏下面内容-->
 		<div data-role="content" class="all">
 			<c:choose>
-				<c:when test="${!empty clubs}">
-					<c:forEach items="${clubs}" var="club" varStatus="st">
-						<input type="hidden" id="clubId" value="${club.clubId}" />
-						<div class="everyone" id="club" onclick="goto1('${club.clubId}','club')">
-							<div class="name">${club.clubName}</div>
-							<div class="introduce">成立时间： ${club.buildTime}</div>
+				<c:when test="${!empty schoolTeams}">
+					<c:forEach items="${schoolTeams}" var="schoolTeam" varStatus="st">
+						<div class="everyone"
+							onclick="goto1('${schoolTeam.teamId}','schoolTeam')" id="schoolTeam">
+							<div class="name">${schoolTeam.teamName}</div>
+							<div class="introduce">成立时间： ${schoolTeam.buildTime}</div>
 						</div>
 					</c:forEach>
 				</c:when>
@@ -78,8 +86,8 @@
 				</c:otherwise>
 			</c:choose>
 		</div>
-
-
+		
+		
 		<div class="button">
 			<div class="shouye" onclick="shouyeClick()">
 				<span>首页</span>
@@ -97,7 +105,8 @@
 	</div>
 </body>
 
-<script src="../../js/common/common.js"></script>
-<script src="../../js/urlApi/api.js"></script>
-<script src="../../js/part3/bingtianxuedi.js"></script>
+	<script src="../../js/common/common.js"></script>
+	<script src="../../js/urlApi/api.js"></script>
+	<script src="../../js/part3/bingtianxuedi.js"></script>
 </html>
+

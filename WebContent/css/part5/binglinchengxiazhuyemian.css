@@ -13,15 +13,25 @@
 
 /*导航栏*/
 .navbar{
-	background: black;
+	background:transparent;
 	margin-top: 3%;
+	display: flex;
+	color: white;
+}
+
+
+.navbar div{
+	width: 50%;
+	text-align: center;
+	font-size: 2.5rem;
+	margin: 1%;
 }
 
 /*导航栏下面的内容*/
 .all{
 	display: flex;
 	flex-direction: column;
-	height:75% ;
+	height:78% ;
 	width: 100%;
 	padding:0rem!important;
 	overflow: auto;

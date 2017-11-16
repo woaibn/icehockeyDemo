@@ -12,4 +12,17 @@ public class DuiKangService {
 		return dao.getDuiKangsByUserId(userId);
 	}
 
+	public List<DuiKang> queryDuiKangsByNameString(String nameString) {
+		
+		return dao.getDuiKangsByNameString(nameString);
+	}
+
+	public List<DuiKang> getDuiKangsGuanFang() {
+		return dao.getDuiKangsGuanFang();
+	}
+
+	public DuiKang getDuiKangById(int id) {
+		return dao.getDuiKangById(id);
+		}
+
 }

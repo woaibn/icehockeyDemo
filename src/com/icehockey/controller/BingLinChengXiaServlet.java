@@ -96,6 +96,12 @@ public class BingLinChengXiaServlet extends HttpServlet {
 					}else{
 						System.out.println("添加失败");
 					}
+				}else if ("yaoqingsaishichakan".equals(operateType)) {// 如果操作类型是主控页面到浇冰必拜主页面，则取出场地表中的所有场地信息
+					duiKangs = duiKangService.getDuiKangsGuanFang();
+					session.setAttribute("duiKangs", duiKangs);
+					map.put("duiKangs", duiKangs);
+					map.put("result", "0");
+					map.put("ok", "4");
 				}
 			} else {
 				map.put("result", "-2");// 没有操作类型
@@ -114,6 +120,9 @@ public class BingLinChengXiaServlet extends HttpServlet {
 			}else if ("3".equals(map.get("ok"))) {
 				writer.println(
 						"<script language='javascript'>alert('提交成功');window.location.href='./views/part5/binglinchengxiazhuyemian.jsp'</script>");
+			}else if ("4".equals(map.get("ok"))) {
+				writer.println(
+						"<script language='javascript'>alert('提交成功');window.location.href='./views/part5/saishixuanze.jsp'</script>");
 			}
 		} else if ("-1".equals(map.get("result"))) {// 登陆失败，用户名不存在
 			writer.println(

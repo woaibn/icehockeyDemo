@@ -1,13 +1,11 @@
 package com.icehockey.entity;
 
-import java.util.Date;
-
 public class SchoolTeam {
 	private int  teamId; // 校队编号
 	private String teamName; // 校队名称
 	private String teamLogo; // 校队LOGO
 	private String teamAddress; // 校队地址
-	private Date buildTime; // 组建时间
+	private String buildTime; // 组建时间
 	private String telephone; // 联系方式
 	private String leaderName; // 领队
 	private String leaderTelephone; // 领队联系方式
@@ -40,10 +38,10 @@ public class SchoolTeam {
 	public void setTeamAddress(String teamAddress) {
 		this.teamAddress = teamAddress;
 	}
-	public Date getBuildTime() {
+	public String getBuildTime() {
 		return buildTime;
 	}
-	public void setBuildTime(Date buildTime) {
+	public void setBuildTime(String buildTime) {
 		this.buildTime = buildTime;
 	}
 	public String getTelephone() {
@@ -91,7 +89,7 @@ public class SchoolTeam {
 	
 	
 	public SchoolTeam(int teamId, String teamName, String teamLogo,
-			String teamAddress, Date buildTime, String telephone,
+			String teamAddress, String buildTime, String telephone,
 			String leaderName, String leaderTelephone, String construction,
 			String email, String remark) {
 		super();

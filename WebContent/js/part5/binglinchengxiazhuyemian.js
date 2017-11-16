@@ -2,18 +2,29 @@
  * 
  */
 $(document).ready(function() {
-		
-		$(".zengjia").click(function() {//添加赛事
-			var data = {
-					operateType : "tianjianxunliansai"
-				};
-				jump(BINGLINCHENGXIAURL, data);
-			//window.location.href = "tianjiaxunliansai.jsp";
-		});
-		$(".yiguanzhu").click(function() {
-			window.location.href = "daikaifa.jsp";
-		});
-		$(".saishixuanze").click(function() {
-			window.location.href = "daikaifa.jsp";
-		});
+
+	$(".zengjia").click(function() {// 添加赛事
+		var data = {
+			operateType : "tianjianxunliansai"
+		};
+		jump(BINGLINCHENGXIAURL, data);
+		// window.location.href = "tianjiaxunliansai.jsp";
 	});
+
+	$(".yiguanzhu").click(function() {
+		var data = {
+			operateType : "BingLinChengXia"
+		};
+		alert(JSON.stringify(data));
+		jump(BINGLINCHENGXIAURL, data);
+		// window.location.href = "binglinchengxiazhuyemian.jsp";
+	});
+	$(".saishixuanze").click(function() {
+		var data = {
+			operateType : "yaoqingsaishichakan"
+		};
+		alert(JSON.stringify(data));
+		jump(BINGLINCHENGXIAURL, data);
+		// window.location.href = "binglinchengxiazhuyemian.jsp";
+	});
+});

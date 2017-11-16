@@ -18,4 +18,10 @@ public class ClubService {
 	public List<Club> getAll() {
 		return dao.getClubs();
 	}
+	public List<Club> queryClubByNameString(String nameString) {
+		return dao.queryClubWithNameString(nameString);
+	}
+	public Club queryClubByClubId(int clubId) {
+		return dao.queryClubByClubId(clubId);
+	}
 }

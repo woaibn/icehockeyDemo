@@ -89,4 +89,14 @@
     <servlet-name>WoDeZhongXinServlet</servlet-name>
     <url-pattern>/WoDeZhongXinServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BingTianXueDiServlet</display-name>
+    <servlet-name>BingTianXueDiServlet</servlet-name>
+    <servlet-class>com.icehockey.controller.BingTianXueDiServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BingTianXueDiServlet</servlet-name>
+    <url-pattern>/BingTianXueDiServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

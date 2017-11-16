@@ -140,4 +140,118 @@ public class ClubDao {
 		return clubs;
 	}
 
+	public List<Club> queryClubWithNameString(String nameString) {
+		List<Club> clubs = new ArrayList<Club>();
+		String sql = "SELECT * FROM club where clubName like '%"+nameString+"%';";
+		System.out.println(sql);
+		try {
+			conn = util.openConnection();
+			preparedStatement = conn.prepareStatement(sql);
+			rs = preparedStatement.executeQuery();
+			while (rs.next()) {
+				int clubId = rs.getInt("clubId"); // 城市编号
+				String clubName = rs.getString("clubName"); // 俱乐部名称
+				String clubLogo = rs.getString("clubLogo"); // 俱乐部LOGO
+				String organization = rs.getString("organization"); // 俱乐部所属机构
+				String address = rs.getString("address"); // 官方地址
+				Timestamp timestamp = rs.getTimestamp("buildTime");// 成立时间
+				String buildTime = null;
+				if (timestamp != null) {
+					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式
+					buildTime = df.format(timestamp.getTime());
+				}
+				int countryId = rs.getInt("countryId"); // 国籍编号
+				int cityId = rs.getInt("cityId"); // 城市编号
+				String managerContent = rs.getString("managerContent"); // 经营内容
+				String email = rs.getString("email"); // 电子邮件
+				String construction = rs.getString("construction"); // 球队建设
+				String province = rs.getString("provinceId"); // 省份
+				String remark = rs.getString("remark"); // 备注
+
+				club = new Club(clubId, clubName, clubLogo, organization, address, buildTime, countryId, cityId,
+						managerContent, email, construction, province, remark);
+				System.out.println(club);
+				clubs.add(club);
+				
+			}
+			return clubs;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (preparedStatement != null) {
+					preparedStatement.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+		}
+		return clubs;
+	}
+
+	public Club queryClubByClubId(int clubId) {
+		String sql = "SELECT * FROM club where clubId=?;";
+		System.out.println(sql);
+		try {
+			conn = util.openConnection();
+			preparedStatement = conn.prepareStatement(sql);
+			preparedStatement.setInt(1, clubId);
+			rs = preparedStatement.executeQuery();
+			if (rs.next()) {
+				 clubId = rs.getInt("clubId"); // 城市编号
+				String clubName = rs.getString("clubName"); // 俱乐部名称
+				String clubLogo = rs.getString("clubLogo"); // 俱乐部LOGO
+				String organization = rs.getString("organization"); // 俱乐部所属机构
+				String address = rs.getString("address"); // 官方地址
+				Timestamp timestamp = rs.getTimestamp("buildTime");// 成立时间
+				String buildTime = null;
+				if (timestamp != null) {
+					SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式
+					buildTime = df.format(timestamp.getTime());
+				}
+				int countryId = rs.getInt("countryId"); // 国籍编号
+				int cityId = rs.getInt("cityId"); // 城市编号
+				String managerContent = rs.getString("managerContent"); // 经营内容
+				String email = rs.getString("email"); // 电子邮件
+				String construction = rs.getString("construction"); // 球队建设
+				String province = rs.getString("provinceId"); // 省份
+				String remark = rs.getString("remark"); // 备注
+
+				club = new Club(clubId, clubName, clubLogo, organization, address, buildTime, countryId, cityId,
+						managerContent, email, construction, province, remark);
+				System.out.println(club);
+				return club;
+				
+			}
+			return null;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (preparedStatement != null) {
+					preparedStatement.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+		}
+		return null;
+	}
+
 }

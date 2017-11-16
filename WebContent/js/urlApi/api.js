@@ -15,4 +15,5 @@ const HEIGHTURL=IPCONFIG+'HeightServlet';//身高选择url
 const WEIGHTURL=IPCONFIG+'WeightServlet';//体重选择url
 const HANDLINGURL=IPCONFIG+'ChiganfangshiServlet';//持杆方式url
 const ALIASURL=IPCONFIG+'AliasServlet';//头像选择url
-const WODEZHONGXINURL=IPCONFIG+'WoDeZhongXinServlet';//我的中心选择url
+const BINGTIANXUEDIURL=IPCONFIG+'BingTianXueDiServlet';//冰天雪地选择url
+const WODEZHONGXINURL=IPCONFIG+'WoDeZhongXinServlet';//冰天雪地选择url

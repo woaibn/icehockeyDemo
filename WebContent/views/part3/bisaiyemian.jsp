@@ -16,6 +16,7 @@
 	href="../../css/jqueryMobile/jquery.mobile-1.4.5.min.css" />
 <script src="../../js/jqueryMobile/jquery.mobile-1.4.5.min.js"
 	type="text/javascript"></script>
+
 </head>
 
 <body style='overflow: scroll; overflow-x: hidden'>
@@ -28,17 +29,21 @@
 			</div>
 			<div class="biaoti">冰天雪地</div>
 		</div>
+
 		<!--查询框-->
 		<div class="search_a">
 			<div class="search_c">
 				<input type="submit" data-role='none' value="添加" class="submitBtn1"></input>
 			</div>
+
 			<div class="search_b">
-				<input type="text" name="search" id="clubSearch" placeholder="模糊查询">
+				<input type="text" name="search" id="competitionSearch"
+					placeholder="模糊查询">
 			</div>
+
 			<div class="search_d">
 				<input type="submit" data-role='none' value="搜索" class="submitBtn"
-					id="clubSubmitBtn"></input>
+					id="competitionSubmitBtn"></input>
 			</div>
 		</div>
 
@@ -64,12 +69,13 @@
 		<!--导航栏下面内容-->
 		<div data-role="content" class="all">
 			<c:choose>
-				<c:when test="${!empty clubs}">
-					<c:forEach items="${clubs}" var="club" varStatus="st">
-						<input type="hidden" id="clubId" value="${club.clubId}" />
-						<div class="everyone" id="club" onclick="goto1('${club.clubId}','club')">
-							<div class="name">${club.clubName}</div>
-							<div class="introduce">成立时间： ${club.buildTime}</div>
+				<c:when test="${!empty duiKangs}">
+					<c:forEach items="${duiKangs}" var="duiKang" varStatus="st">
+						<div class="everyone"
+							onclick="goto1('${duiKang.id}','competition')" id="competition">
+							<div class="name">${duiKang.competitionName}</div>
+							<div class="introduce">比赛时间： ${duiKang.pkDate}</div>
+							<div class="introduce">相关信息：${duiKang.clubAName}VS${duiKang.clubBName}</div>
 						</div>
 					</c:forEach>
 				</c:when>
@@ -101,3 +107,9 @@
 <script src="../../js/urlApi/api.js"></script>
 <script src="../../js/part3/bingtianxuedi.js"></script>
 </html>
+
+
+
+<!--导航栏下面内容
+		
+-->
