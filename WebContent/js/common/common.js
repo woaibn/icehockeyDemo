@@ -36,12 +36,14 @@ $(".shouye").click(function() {
 	jump(DAOHANGLANURL, data);
 });
 $(".zhanshu").click(function() {
+	window.location.href="";
 //	var data = {
 //		operateType : "zhanshu",
 //	};
 //	jump(DAOHANGLANURL, data);
 });
 $(".zhandui").click(function() {
+	window.location.href="";
 //	var data = {
 //		operateType : "zhandui",
 //	};

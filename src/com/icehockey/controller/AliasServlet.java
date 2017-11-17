@@ -3,6 +3,7 @@ package com.icehockey.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -12,7 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.icehockey.entity.Player;
 import com.icehockey.entity.User;
+import com.icehockey.service.PlayerService;
 import com.icehockey.service.UserService;
 
 /**
@@ -59,6 +62,8 @@ public class AliasServlet extends HttpServlet {
 			String userName = "";
 			String imageUrl = "";
 			String idNo = "";// 身份证号码
+			PlayerService playerService = new PlayerService();
+			List<Player> players = null;
 			if (request.getParameter("name") != null && request.getParameter("touxiang") != null
 					&& request.getParameter("idnum") != null) {
 				userName = request.getParameter("name");
@@ -87,6 +92,8 @@ public class AliasServlet extends HttpServlet {
 				boolean f = userService.insertNewPlayer(user.getUserId(), gender, height, weight, category,
 						handlingValue, userName, imageUrl, idNo);
 				if (f) {
+					players = playerService.getUserFollowedPlayers(user.getUserId());
+					session.setAttribute("players", players);
 					map.put("ok", "0");
 				} else {
 					map.put("ok", "-1");

@@ -62,7 +62,7 @@
 				<c:if test="${rink.hasCarpark eq false}">无</c:if>
 			</div>
 			<div class="content_div">冰场训练等级:${rink.trainingDegree}</div>
-			<div class="content_div">规模:${rink.scale}</div>
+			<div class="content_div">规模:${rink.scale}人使用</div>
 			<div class="content_div">
 				有无陆地训练室:
 				<c:if test="${rink.hasLandTrainingRoom eq true}">有</c:if>
@@ -74,7 +74,7 @@
 			<div class="content_div">投入使用时间：${rink.beginUseDate}</div>
 			<div class="content_div">开放时间：${rink.openTime}</div>
 			<div class="content_div">
-				是否接受散滑：${rink.allowedSlip}
+				是否接受散滑：
 				<c:if test="${rink.allowedSlip eq true}">是</c:if>
 				<c:if test="${rink.allowedSlip eq false}">否</c:if>
 			</div>

@@ -98,6 +98,7 @@ public class BingLinChengXiaServlet extends HttpServlet {
 					}
 				}else if ("yaoqingsaishichakan".equals(operateType)) {// 如果操作类型是主控页面到浇冰必拜主页面，则取出场地表中的所有场地信息
 					duiKangs = duiKangService.getDuiKangsGuanFang();
+					System.out.println(duiKangs);
 					session.setAttribute("duiKangs", duiKangs);
 					map.put("duiKangs", duiKangs);
 					map.put("result", "0");
