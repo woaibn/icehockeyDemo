@@ -45,6 +45,7 @@
 				<c:when test="${!empty players}">
 					<c:forEach items="${players}" var="player" varStatus="st">
 						<div class="everyone" onclick="goto1('${player.playerId}')">
+							<div class="day">所属俱乐部：</div>
 							<div class="team">
 								<div class="content_left">
 									<div class="image">

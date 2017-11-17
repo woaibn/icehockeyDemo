@@ -34,7 +34,7 @@
 		<!--查询框-->
 		<div class="search_a">
 			<div class="search_c">
-				<input type="submit" data-role='none' value="添加" class="submitBtn1"></input>
+				<input type="submit" data-role='none' value="添加" class="schoolTeamAddBtn"></input>
 			</div>
 
 			<div class="search_b">

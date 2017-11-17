@@ -1,13 +1,5 @@
 .allpage{
-	min-height: 0;
-}
-
-.content{
-	height: 78%;
-	color: white;
-	overflow: auto;
-	min-height: 0;
-
+	color:white
 }
 
 .content_div{
@@ -16,18 +8,18 @@
 }
 
 .content_div_left{
-	width: 40%;
+	width: 30%;
 }
 
 .content_div_right{
-	width: 60%;
+	width: 70%;
 }
 
 .content_div_right input{
 	width: 95%;
 }
 
-.content_div_right select{
+.content_div_right textarea{
 	width: 95%;
 }
 

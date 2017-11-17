@@ -69,7 +69,7 @@
 				<c:if test="${rink.hasLandTrainingRoom eq false}">无</c:if>
 			</div>
 			<div class="content_div">占地面积:${rink.area}平方米</div>
-			<div class="content_div">冰面面积:${rink.iceArea}</div>
+			<div class="content_div">冰面面积:${rink.iceArea}平方米</div>
 			<div class="content_div">建成时间:${rink.completionDate}</div>
 			<div class="content_div">投入使用时间：${rink.beginUseDate}</div>
 			<div class="content_div">开放时间：${rink.openTime}</div>

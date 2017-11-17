@@ -27,12 +27,8 @@
  			 alert("你按下的是【取消】");
  			}
 		});
-		
-		
+			
 
-		
-		
-		
 		$(".xinxione").click(function() {
 			window.location.href = "xiangxixinxi.jsp";
 		});

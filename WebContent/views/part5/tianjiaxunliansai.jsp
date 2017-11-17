@@ -38,13 +38,13 @@
 			<div class="biaoti">兵临城下</div>
 		</div>
 		<div class="content">
-
+		
 			<div class="button3">
 				<div class="a">时间:</div>
 				<input type="date" class="time" placeholder="" id="time"
 					data-role='none' />
 			</div>
-
+			
 			<div class="button3">
 				<div class="a">场地:</div>
 				<select data-role='none' class="changdi" placeholder="" id="address">
@@ -57,11 +57,10 @@
 					</c:choose>
 				</select>
 			</div>
-
+			
 			<div class="button4">
 				<div class="a">对阵双方:</div>
 				<select data-role='none' class="teama" placeholder="" id="clubAName">
-					<option value=-1>--请选择俱乐部--</option>
 					<c:choose>
 						<c:when test="${!empty clubs}">
 							<c:forEach items="${clubs}" var="club" varStatus="st">
@@ -72,7 +71,6 @@
 				</select>
 				<div class="vs">VS</div>
 				<select data-role='none' class="teamb" placeholder="" id="clubBName">
-					<option value=-1>--请选择俱乐部--</option>
 					<c:choose>
 						<c:when test="${!empty clubs}">
 							<c:forEach items="${clubs}" var="club" varStatus="st">

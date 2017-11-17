@@ -21,17 +21,13 @@ $(function() {
 			return false;
 		}
 
-		if (clubAName == -1) {
-			alert("请选择俱乐部");
+		if (clubAName == "") {
+			alert("请输入对战队伍A");
 			return false;
 		}
 
-		if (clubBName == -1) {
-			alert("请选择俱乐部");
-			return false;
-		}
-		if (clubBName == clubAName) {
-			alert("您选择的对战双方俱乐部相同，请重新选择");
+		if (clubBName == "") {
+			alert("请输入对战队伍B");
 			return false;
 		}
 		// 请求后台服务
