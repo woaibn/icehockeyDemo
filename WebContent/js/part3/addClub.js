@@ -16,7 +16,7 @@ $(function() {
 			clubConstruction : clubConstruction
 			
 		};
-		alert(JSON.stringify(data));
+		//alert(JSON.stringify(data));
 		jump(BINGTIANXUEDIURL, data);
 	});
 });
