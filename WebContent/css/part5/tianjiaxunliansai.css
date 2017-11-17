@@ -1,5 +1,5 @@
 .content{
-	width:75%;
+	width:80%;
 	margin: auto;
 }
 
@@ -23,7 +23,7 @@
 .changdi{
 	 width: 80%;
     margin: 0 2%;
-    height:2rem!important;
+    
 	
 }
 
@@ -59,12 +59,17 @@ text-align: center;
 
 /*确认*/
 .submitBtn{
-width: 50%;
+width: 20%;
 height: 5%;
-margin-left:25%;
+margin-left:77%;
 }
 
 .queren{
 
 margin: 3rem auto;
+}
+
+#beizhu{
+	width: 82%;
+	margin-left: 15%;
 }

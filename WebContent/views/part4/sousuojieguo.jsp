@@ -66,11 +66,15 @@
 					</c:otherwise>
 				</c:choose>
 			</div>
+				<div class="guanzhu">
+			<input type="button" data-role='none' value="关注" id="guazhu" class="buttonguanzhu" />
+		</div>
 		</div>
 
-		<div class="guanzhu">
-			<input type="button" value="关注" id="guazhu" />
-		</div>
+
+	
+
+	
 
 
 		<div class="button">

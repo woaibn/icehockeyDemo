@@ -36,10 +36,10 @@ $(".shouye").click(function() {
 	jump(DAOHANGLANURL, data);
 });
 $(".zhanshu").click(function() {
-	var data = {
-		operateType : "zhanshu",
-	};
-	jump(DAOHANGLANURL, data);
+//	var data = {
+//		operateType : "zhanshu",
+//	};
+//	jump(DAOHANGLANURL, data);
 });
 $(".zhandui").click(function() {
 //	var data = {

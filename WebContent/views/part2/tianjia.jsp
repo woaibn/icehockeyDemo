@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
 	content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-<title>基本信息修改</title>
+<title>添加冰场</title>
 <link rel="stylesheet" href="../../css/part1/allpagesame.css" />
 <link rel="stylesheet"
 	href="../../css/jqueryMobile/jquery.mobile-1.4.5.min.css" />
@@ -23,28 +23,17 @@
 				class="back">
 				<img src="../../img/part1/back.png" />
 			</div>
-			<div class="biaoti">基本信息修改</div>
+			<div class="biaoti">添加冰场</div>
 
 		</div>
 
 
 		<div data-role="content" class="content">
 			<!--上传用户头像-->
-			<input type="hidden" value="${player.playerId}" class="playerId" id="playerId"/>
-			<form action="">
-				<!--头像-->
-				<div class="change_image">
-					<div>头像修改:</div>
-					<div class="uploadImg">
-						<input type="file" data-role="none" accept="image/png"
-							name="touxiang" class="touxiang" id="touxiang" /> <img
-							src="../../img/part4/user-photo.png" class="image" />
-					</div>
-				</div>
 
 				<!--俱乐部-->
 				<div class="content_div">
-					<div class="content_div_left">俱乐部：</div>
+					<div class="content_div_left">所属俱乐部：</div>
 					<div class="content_div_right">
 						<select data-role='none' id="clubName" class="select_div">
 							<c:choose>
@@ -60,6 +49,46 @@
 
 				<!--身高-->
 
+				<div class="content_div">
+					<div class="content_div_left">身高：</div>
+					<div class="content_div_right">
+						<input type="text" name="height" class="height" id="height"
+							data-role='none' />
+					</div>
+				</div>
+
+				<!--体重-->
+				<div class="content_div">
+					<div class="content_div_left">体重：</div>
+					<div class="content_div_right">
+						<input type="text" name="weight" class="weight" id="weight"
+							data-role='none' />
+					</div>
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				<div class="content_div">
+					<div class="content_div_left">身高：</div>
+					<div class="content_div_right">
+						<input type="text" name="height" class="height" id="height"
+							data-role='none' />
+					</div>
+				</div>
+
+				<!--体重-->
+				<div class="content_div">
+					<div class="content_div_left">体重：</div>
+					<div class="content_div_right">
+						<input type="text" name="weight" class="weight" id="weight"
+							data-role='none' />
+					</div>
+				</div>
+				
 				<div class="content_div">
 					<div class="content_div_left">身高：</div>
 					<div class="content_div_right">
@@ -132,20 +161,11 @@
 					</div>
 				</div>
 
-				<input type="button" value="保存" data-role='none' class="submitBtn"
+				<input type="button" value="修改完成" data-role='none' class="submitBtn"
 					name="imgupload" id="imgupload" />
-			</form>
 
-			<form id="formimgupload" action="../../ImageUploadServlet"
-				method="post" target="hidden_frame" enctype="multipart/form-data">
-			</form>
-			<iframe name="hidden_frame" id="hidden_frame" style="display: none;"></iframe>
 
-		
-
-		</div>
-		
-		<div class="button">
+			<div class="button">
 				<div class="shouye" onclick="shouyeClick()">
 					<span>首页</span>
 				</div>
@@ -158,7 +178,10 @@
 				<div class="wode" onclick="wodeClick()">
 					<span>我的</span>
 				</div>
+			</div>
+
 		</div>
+
 	</div>
 
 	<script src="../../js/common/common.js"></script>

@@ -8,8 +8,6 @@
 }
 
 
-
-
 .everyone{ 
 	background:whitesmoke ;
 	border-style:solid; 
@@ -26,11 +24,11 @@
 
 
 .content_left{
-	width:30%;
+	width:25%;
 }
 
 .content_mid{
-	width:40%;
+	width:45%;
 	
 	
 }
@@ -43,10 +41,14 @@
 	display: flex;
 }
 
-.img img{
-	height: 6rem;
-	width: 6rem;
-	height: 20%;
+.img{
+	width:100%;
+}
+
+.image img{
+	height: rem;
+	width: 100%;
+	
 }
 
 

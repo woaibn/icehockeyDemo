@@ -46,7 +46,6 @@
 			
 			<div class="player_card">
 				<div>球员卡片</div>
-				<!--    ${player.num}     管理员所管理的球员个数       -->
 				<div>关注球员：${num}个</div>
 	
 			</div>

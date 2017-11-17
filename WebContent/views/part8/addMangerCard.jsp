@@ -55,7 +55,7 @@
 				</div>
 			</div>
 
-			<input type="button" value="修改完成" data-role='none' class="submitBtn"
+			<input type="button" value="完成" data-role='none' class="submitBtn"
 				name="imgupload" id="imgupload" />
 
 		</div>

@@ -12,10 +12,7 @@ $(function() {
 		var touxiang = $("#touxiang").val();
 		var name = $("#name").val();
 		var idnum = $("#idnum").val();
-		if (touxiang == "") {
-			alert("请选择您的头像");
-			return false;
-		}
+		
 		if (name == "") {
 			alert("请输入您的真实姓名!");
 			return false;

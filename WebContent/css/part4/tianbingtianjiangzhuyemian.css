@@ -1,34 +1,44 @@
-.search_a{
-	/*display:flex;*/
-	width:90%;
-	margin: auto;
-	
-}
 
+/*搜索框*/
+
+.search_a{
+	width:90%;
+	margin: auto;	
+	display:flex;
+	height:6%;
+	margin-top:2%;
+}
 
 .search_c{
 	float: left;
-	width: 13%;
-	padding:2%;
-	margin: 2%;
-	border-radius: 1rem!important;
+	height：100%；
+		
 }
+
+.submitBtn1{
+	
+}
+
 .search_b{
 	float: left;
-	width: 60%;
-	border-radius: 1rem!important;
+	width: 70%;
+	margin:0 2%
+}
+
+.search{
+	width:100%;
+	
 }
 
 .search_d{
 	float: left;
-	width: 13%;
-	padding:2%;
-	margin-top: 2%;
-	border-radius: 1rem!important;
+	
+
 }
 
-
-
+.submitBtn{
+	
+}
 
 
 .all{
@@ -83,7 +93,15 @@
 
 
 .guanzhu{
-	width:50%;
-	margin: auto;
+	width: 20%;
+	margin-left: 77%;
+
+}
+
+.buttonguanzhu{
+	
+	width: 100%;
+	padding: 7%;
+}
 
 }

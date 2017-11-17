@@ -28,7 +28,7 @@
 
 
 .content_left{
-	width:25%;
+	width:20%;
 }
 
 
@@ -36,41 +36,56 @@
 	width:80%;
 }
 
+.content_right div{
+	margin: 2%;
+}
+
 .place{
 	display: flex;
 }
 
 .img img{
-	height: 6rem;
-	width: 6rem;
+	height: 5rem;
+	width: 5rem;
 	margin-top: 30%;
 }
+/*搜索框*/
 
 .search_a{
-	/*display:flex;*/
 	width:90%;
-	margin: auto;
-	
+	margin: auto;	
+	display:flex;
+	height:6%;
+	margin-top:2%;
 }
-
 
 .search_c{
 	float: left;
-	width: 13%;
-	padding:2%;
-	margin: 2%;
-	border-radius: 1rem!important;
+	height：100%；
+		
 }
+
+.submitBtn1{
+	
+}
+
 .search_b{
 	float: left;
-	width: 60%;
-	border-radius: 1rem!important;
+	width: 70%;
+	margin:0 2%
+}
+
+.search{
+	width:100%;
+	
 }
 
 .search_d{
 	float: left;
-	width: 13%;
-	padding:2%;
-	margin-top: 2%;
-	border-radius: 1rem!important;
+	
+
+}
+
+.submitBtn{
+	
 }

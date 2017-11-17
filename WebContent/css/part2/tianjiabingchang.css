@@ -1,0 +1,11 @@
+.content{
+	color: white;
+	display: flex;
+	flex-direction: column;
+}
+
+
+.content_div{
+	display: flex;
+
+}

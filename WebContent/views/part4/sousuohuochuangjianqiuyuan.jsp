@@ -30,8 +30,8 @@
 
 		<div class="content">
 			<div data-role="fieldcontain">
-				<label for="search" class="text">请输入您想搜索的姓名：</label> <input
-					data-role="" type="search" name="search" id="search" placeholder="">
+				<label for="search" class="text">请输入您想搜索的姓名：</label> 
+				<input data-role="" type="search" name="search" id="search" placeholder="">
 			</div>
 
 			<div class="search_b">
@@ -40,7 +40,7 @@
 			</div>
 
 			<div id="new_btn">
-				<button>创建新球员</button>
+				<input type="button" data-role='none' value="创建新球员" class="button1"></input>
 			</div>
 
 		</div>

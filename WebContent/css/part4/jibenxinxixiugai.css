@@ -1,5 +1,5 @@
 .content{
-	color: white;
+	
 	display: flex;
 	flex-direction: column;
 }
@@ -37,6 +37,8 @@
 
 .content_div{
 	display: flex;
+	color: white;
+	margin: 2%;
 }
 
 .content_div_left{
@@ -55,8 +57,9 @@
 
 
 .submitBtn{
-	width: 50%;
-	margin: 10% 25%;
+	width: 20%;
+	margin-left: 80%;
+	margin-top: 3%;
 }
 
 .weight{

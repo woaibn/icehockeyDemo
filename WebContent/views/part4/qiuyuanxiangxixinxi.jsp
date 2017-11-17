@@ -51,8 +51,6 @@
 						<div class="height">身高:${player.height}</div>
 						<div class="weight">体重:${player.weight}</div>
 						<div class="position">位置:${player.position}</div>
-					</div>
-					<div class="content_right">
 						<div class="roleId">角色:${role.roleName}</div>
 						<div class="birthday">出生日期:${player.birthday}</div>
 						<div class="firstLearnAge">初学年龄:${player.firstLearnAge}岁</div>

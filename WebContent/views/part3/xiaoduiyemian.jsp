@@ -38,7 +38,7 @@
 			</div>
 
 			<div class="search_b">
-				<input type="text" name="search" id="schoolTeamSearch" placeholder="模糊查询">
+				<input type="text" data-role='none' class="search" name="search" id="schoolTeamSearch" placeholder="模糊查询">
 			</div>
 
 			<div class="search_d">

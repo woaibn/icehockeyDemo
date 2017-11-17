@@ -12,7 +12,6 @@
 <link rel="stylesheet" href="../../css/part5/tianjiaxunliansai.css" />
 <link rel="stylesheet"
 	href="../../css/jqueryMobile/jquery.mobile-1.4.5.min.css" />
-<link rel="stylesheet" href="../../css/part1/zhucedengluyemain.css" />
 <script src="../../js/jQuery/jquery-2.2.3.min.js"></script>
 <script src="../../js/jqueryMobile/jquery.mobile-1.4.5.min.js"></script>
 <link rel="stylesheet" href="../../css/part1/allpagesame.css" />
@@ -39,11 +38,13 @@
 			<div class="biaoti">兵临城下</div>
 		</div>
 		<div class="content">
+		
 			<div class="button3">
 				<div class="a">时间:</div>
 				<input type="date" class="time" placeholder="" id="time"
 					data-role='none' />
 			</div>
+			
 			<div class="button3">
 				<div class="a">场地:</div>
 				<select data-role='none' class="changdi" placeholder="" id="address">
@@ -56,6 +57,7 @@
 					</c:choose>
 				</select>
 			</div>
+			
 			<div class="button4">
 				<div class="a">对阵双方:</div>
 				<select data-role='none' class="teama" placeholder="" id="clubAName">
@@ -86,7 +88,7 @@
 				</div>
 			</div>
 			<div class="queren">
-				<input type="submit" data-role='none' value="确认提交" class="submitBtn"></input>
+				<input type="submit" data-role='none' value="提交" class="submitBtn"></input>
 			</div>
 		</div>
 		<div class="button">

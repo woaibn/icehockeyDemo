@@ -35,12 +35,13 @@
 			<div class="biaoti">添兵添将</div>
 		</div>
 		<!--查询框-->
+		
 		<div class="search_a">
 			<div class="search_c">
 				<input type="submit" data-role='none' value="添加" class="submitBtn1"></input>
 			</div>
 			<div class="search_b">
-				<input type="text" name="search" id="search"
+				<input type="text" data-role='none' name="search" id="search" class="search"
 					placeholder="输入球员姓名模糊查询">
 			</div>
 			<div class="search_d">

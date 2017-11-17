@@ -34,7 +34,7 @@
 				<input type="submit" data-role='none' value="添加" class="submitBtn1"></input>
 			</div>
 			<div class="search_b">
-				<input type="text" name="search" id="clubSearch" placeholder="模糊查询">
+				<input type="text" data-role='none' class="search" name="search" id="clubSearch" placeholder="模糊查询">
 			</div>
 			<div class="search_d">
 				<input type="submit" data-role='none' value="搜索" class="submitBtn"

@@ -38,9 +38,18 @@
 
 .content_mid{
 	width:78%;
-	
-	
+
 }
+
+.content_mid div{
+	margin:2%;
+}
+
+.next div{
+	margin:2%;
+}
+
+
 
 .team{
 	display: flex;
@@ -57,8 +66,8 @@
 
 
 .bianji{
-	width: 50%;
-	margin: auto;
+	width: 20%;
+	margin-left: 77%;
 }
 
 .edit{

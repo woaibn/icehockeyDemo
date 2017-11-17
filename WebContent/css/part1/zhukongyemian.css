@@ -6,63 +6,95 @@
 }
 	
 
-
 .zhukongyemian_top{
-	position: fixed;
-	left: 50%;/*上下左右居中*/
-	top: 50%;
-	-webkit-transform:translate(-50%,-50%);
-	-moz-transform:translate(-50%,-50%);
-	-o-transform:translate(-50%,-50%);
-	-ms-transform:translate(-50%,-50%);
-	transform:translate(-50%,-50%);
-  text-shadow:none !important;
-  font-size: 2rem;
-
+	width: 60%;
+	margin:50% auto;
+	
 }
 
 .backimage img{
-	position:relative;
-	font-size: 2rem;
+	width: 100%;
   color: rgb(178,196,202);
+}
+
+.a{
+	width: 20%;
+	margin-top:-85%;
+	margin-left: 20%;
+	color:white;
 	
 }
 
-/*.a{
-	position: relative;
-	margin-top:-13rem;
-	margin-left:4rem;
-	font-size: 2rem;
+.a span{
+	font-size: 2.5rem!important;	
 	
 }
-
 
 .b{
-	position: relative;
-	margin-top:-3rem;
-	margin-left: 10rem;
+	width: 20%;
+	margin-top:-25%;
+	margin-left: 60%;
+	color:white;
+	
+}
+
+.b span{
+	font-size: 2.5rem!important;	
 	
 }
 
 .c{
-	position: relative;
-	margin-top:2.5rem;
-	margin-left: 2rem;
+	width: 20%;
+	margin-top:10%;
+	margin-left: 10%;
+	color:white;
+	
 }
+
+.c span{
+	font-size: 2.5rem!important;	
+	
+}
+
 
 .d{
-	position: relative;
-	margin-top:-2.5rem;
-	margin-left: 12rem;
+	width: 20%;
+	margin-top:-25%;
+	margin-left: 70%;
+	color:white;
+	
 }
 
-.e{
-	position: relative;
-	margin-left: 7rem;
+.d span{
+	font-size: 2.5rem!important;	
 	
-}*/
+}
+
+
+
+.e{
+	width: 20%;
+	margin-top:%;
+	margin-left: 40%;
+	color:white;
+	
+}
+
+.e span{
+	font-size: 2.5rem!important;	
+	
+}
+
+
+
+
+
+
+
+
+/*
 .a{
-	position: absolute;
+
 	margin-top:-14rem;
 	margin-left:3rem;	
 }
@@ -131,5 +163,5 @@
 
 
 
-
+*/
 

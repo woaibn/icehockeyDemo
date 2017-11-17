@@ -40,7 +40,12 @@
 	overflow: auto;
 }
 
-
+.jiben{
+	margin-top:-2%;
+}
+.shujv{
+	margin-top:-4%;
+}
 
 .everyone{ 
 	background:whitesmoke ;
@@ -68,14 +73,16 @@
 }
 
 .content_mid{
-	width:30%;
-	
+	width:70%;
 	
 }
 
-.content_right{
-	width:45%;
+.content_mid div{
+	margin:2%;
+	
 }
+
+
 
 .team{
 	display: flex;
