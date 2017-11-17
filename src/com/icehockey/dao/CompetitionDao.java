@@ -65,4 +65,41 @@ public class CompetitionDao {
 		return false;
 	}
 
+	public boolean insertRe(String competitionName, String remark) {
+		String sql = "INSERT INTO competition ( competitionName, remark) " + "VALUES ( '" + competitionName + "', '"
+				+ remark + "' )";
+		System.out.println(sql);
+		try {
+			// 获取数据库链接
+			conn = util.openConnection();
+			// 执行SQL1语句
+			preparedStatement = conn.prepareStatement(sql);
+			int row = preparedStatement.executeUpdate(sql);
+			System.out.println(row);
+			if (row == 1) {
+				return true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		} finally {
+			// 关闭Statement
+			try {
+				System.out.println("statement关闭");
+				preparedStatement.close();
+			} catch (Exception e) {
+				System.out.println("statement关闭失败");
+			}
+			// 关闭Connection
+			try {
+				System.out.println("conn关闭");
+				conn.close();
+			} catch (Exception e) {
+				System.out.println("conn关闭失败");
+			}
+		}
+
+		return false;
+	}
+
 }

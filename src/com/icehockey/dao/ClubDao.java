@@ -115,7 +115,7 @@ public class ClubDao {
 						managerContent, email, construction, province, remark);
 				System.out.println(club);
 				clubs.add(club);
-				
+
 			}
 			return clubs;
 		} catch (SQLException e) {
@@ -142,7 +142,7 @@ public class ClubDao {
 
 	public List<Club> queryClubWithNameString(String nameString) {
 		List<Club> clubs = new ArrayList<Club>();
-		String sql = "SELECT * FROM club where clubName like '%"+nameString+"%';";
+		String sql = "SELECT * FROM club where clubName like '%" + nameString + "%';";
 		System.out.println(sql);
 		try {
 			conn = util.openConnection();
@@ -172,7 +172,7 @@ public class ClubDao {
 						managerContent, email, construction, province, remark);
 				System.out.println(club);
 				clubs.add(club);
-				
+
 			}
 			return clubs;
 		} catch (SQLException e) {
@@ -206,7 +206,7 @@ public class ClubDao {
 			preparedStatement.setInt(1, clubId);
 			rs = preparedStatement.executeQuery();
 			if (rs.next()) {
-				 clubId = rs.getInt("clubId"); // 城市编号
+				clubId = rs.getInt("clubId"); // 城市编号
 				String clubName = rs.getString("clubName"); // 俱乐部名称
 				String clubLogo = rs.getString("clubLogo"); // 俱乐部LOGO
 				String organization = rs.getString("organization"); // 俱乐部所属机构
@@ -229,7 +229,7 @@ public class ClubDao {
 						managerContent, email, construction, province, remark);
 				System.out.println(club);
 				return club;
-				
+
 			}
 			return null;
 		} catch (SQLException e) {
@@ -252,6 +252,43 @@ public class ClubDao {
 
 		}
 		return null;
+	}
+
+	public boolean addClub(String clubName, String buildTime, String construction) {
+		String sql = "INSERT INTO club ( clubName, buildTime, construction ) " + "VALUES ( '" + clubName + "', '"
+				+ buildTime + "', '" + construction + "' )";
+		System.out.println(sql);
+		try {
+			// 获取数据库链接
+			conn = util.openConnection();
+			// 执行SQL1语句
+			preparedStatement = conn.prepareStatement(sql);
+			int row = preparedStatement.executeUpdate(sql);
+			System.out.println(row);
+			if (row == 1) {
+				return true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		} finally {
+			// 关闭Statement
+			try {
+				System.out.println("statement关闭");
+				preparedStatement.close();
+			} catch (Exception e) {
+				System.out.println("statement关闭失败");
+			}
+			// 关闭Connection
+			try {
+				System.out.println("conn关闭");
+				conn.close();
+			} catch (Exception e) {
+				System.out.println("conn关闭失败");
+			}
+		}
+
+		return false;
 	}
 
 }

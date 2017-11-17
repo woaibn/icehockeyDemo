@@ -28,7 +28,6 @@ $(function() {
 			rinkName : rinkName,
 			address : address,
 			telephone : telephone,
-			jigou : jigou,
 			indoor : indoor,
 			hasLocker : hasLocker,
 			hasCarparks : hasCarparks,
@@ -41,9 +40,9 @@ $(function() {
 			beginUseDate : beginUseDate,
 			openTime : openTime,
 			allowedSlip : allowedSlip,
-			iceType : iceType,
+			iceType : iceType
 		};
 		alert(JSON.stringify(data));
-		// jump(BINGLINCHENGXIAURL, data);
+		jump(JIAOBINGBIBAIURL, data);
 	});
 });

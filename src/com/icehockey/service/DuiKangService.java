@@ -25,4 +25,8 @@ public class DuiKangService {
 		return dao.getDuiKangById(id);
 		}
 
+	public List<DuiKang> getDuiKangsAll() {
+		return dao.getDuiKangsAll();
+	}
+
 }

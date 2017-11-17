@@ -180,17 +180,23 @@ public class TianBingTianJiangServlet extends HttpServlet {
 					map.put("result", "0");
 					map.put("ok", "8");
 				} else if ("tijiaoxiugai".equals(operateType)) {// 如果操作类型是精确搜索，即根据名字字符串搜索当前关注球员
-					
-					String image = request.getParameter("image");
-					int playerId = Integer.parseInt(request.getParameter("playerId"));
-					int clubId = Integer.parseInt(request.getParameter("clubId"));
-					double weight = Double.parseDouble(request.getParameter("weight"));
-					double height = Double.parseDouble(request.getParameter("height"));
-					String position = request.getParameter("position");
-					int categoryId = Integer.parseInt(request.getParameter("categoryId"));
-					int handlingId = Integer.parseInt(request.getParameter("handlingId"));
-					String birthday = request.getParameter("birthday");
-					player=playerService.updateInfo(player,playerId,clubId,weight,height,position,categoryId,handlingId,birthday,image);					
+
+					// String image = request.getParameter("image");
+					// int playerId =
+					// Integer.parseInt(request.getParameter("playerId"));
+					// int clubId =
+					// Integer.parseInt(request.getParameter("clubId"));
+					// double weight =
+					// Double.parseDouble(request.getParameter("weight"));
+					// double height =
+					// Double.parseDouble(request.getParameter("height"));
+					// String position = request.getParameter("position");
+					// int categoryId =
+					// Integer.parseInt(request.getParameter("categoryId"));
+					// int handlingId =
+					// Integer.parseInt(request.getParameter("handlingId"));
+					// String birthday = request.getParameter("birthday");
+					// player=playerService.updateInfo(player,playerId,clubId,weight,height,position,categoryId,handlingId,birthday,image);
 					map.put("result", "0");
 					map.put("ok", "9");
 				} else {
@@ -231,8 +237,8 @@ public class TianBingTianJiangServlet extends HttpServlet {
 						"<script language='javascript'>window.location.href='./views/part4/jibenxinxixiugai.jsp'</script>");
 			} else if ("9".equals(map.get("ok"))) {
 				writer.println(
-						"<script language='javascript'>alert('修改成功');window.location.href='./views/part4/tianbingtianjiangzhuyemian.jsp'</script>");
-			}else {
+						"<script language='javascript'>window.location.href='./views/part4/tianbingtianjiangzhuyemian.jsp'</script>");
+			} else {
 
 			}
 		} else if ("-1".equals(map.get("result"))) {// 登陆失败，用户名不存在

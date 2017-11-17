@@ -24,4 +24,8 @@ public class ClubService {
 	public Club queryClubByClubId(int clubId) {
 		return dao.queryClubByClubId(clubId);
 	}
+	public boolean addClub(String clubName, String buildTime, String remark) {
+		
+		return dao.addClub(clubName, buildTime, remark);
+	}
 }

@@ -21,4 +21,8 @@ public class SchoolTeamService {
 		return dao.getSchoolTeamBySchoolTeamId(schoolTeamId);
 	}
 
+	public boolean addschoolTeam(String teamName, String buildTime, String construction) {
+		return dao.addschoolTeam(teamName, buildTime, construction);
+	}
+
 }

@@ -87,6 +87,35 @@ public class JiaoBingBiBaiServlet extends HttpServlet {
 						map.put("result", "-2");// 没有操作类型
 					}
 					System.out.println("map:" + map);
+				}else if ("tianjiaRink".equals(operateType)) {// 如果操作类型是浇冰必拜主页面场地详细信息，则根据场地名称取出场地表中的该场地信息
+					String rinkName= request.getParameter("rinkName");
+					String address =request.getParameter("address");
+					String telephone = request.getParameter("telephone");
+					boolean indoor=Boolean.parseBoolean(request.getParameter("indoor")); 
+					boolean  hasLocker = Boolean.parseBoolean(request.getParameter("hasLocker"));
+					boolean hasCarparks = Boolean.parseBoolean(request.getParameter("hasCarparks"));
+					String trainingDegree = request.getParameter("trainingDegree");
+					int scale = Integer.parseInt(request.getParameter("scale"));
+					boolean hasLandTrainingRoom = Boolean.parseBoolean(request.getParameter("hasLandTrainingRoom"));
+					int area = Integer.parseInt(request.getParameter("area"));
+					int iceArea = Integer.parseInt(request.getParameter("iceArea"));
+					String completionDate = request.getParameter("completionDate");
+					String beginUseDate = request.getParameter("beginUseDate");
+					String openTime = request.getParameter("openTime");
+					boolean allowedSlip=Boolean.parseBoolean(request.getParameter("allowedSlip"));
+					String iceType = request.getParameter("iceType");
+					
+					boolean f=rinkservice.AddRink(rinkName,address,telephone,indoor,hasLocker,hasCarparks,trainingDegree,scale,hasLandTrainingRoom,area,iceArea,completionDate,beginUseDate,openTime,allowedSlip,iceType);
+					if (f) {					
+						rinks = rinkservice.getRinks();
+						session.setAttribute("rinks", rinks);
+						map.put("rinks", rinks);
+						map.put("result", "0");
+						map.put("ok", "4");
+					} else {
+						map.put("result", "-3");// 没有操作类型
+					}
+					System.out.println("map:" + map);
 				}
 			} else {
 				map.put("result", "-2");// 没有操作类型
@@ -101,6 +130,8 @@ public class JiaoBingBiBaiServlet extends HttpServlet {
 			} else if ("2".equals(map.get("ok"))) {
 				writer.println("<script language='javascript'>window.location.href='./views/part2/bingchangxiangxixinxi.jsp'</script>");
 			} else if ("3".equals(map.get("ok"))) {
+				writer.println("<script language='javascript'>window.location.href='./views/part2/jiaobingbibaizhuyemian.jsp'</script>");
+			} else if ("4".equals(map.get("ok"))) {
 				writer.println("<script language='javascript'>window.location.href='./views/part2/jiaobingbibaizhuyemian.jsp'</script>");
 			}
 		} else if ("-1".equals(map.get("result"))) {// 登陆失败，用户名不存在

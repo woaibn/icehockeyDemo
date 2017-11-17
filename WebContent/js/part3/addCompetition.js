@@ -15,6 +15,6 @@ $(function() {
 			
 		};
 		alert(JSON.stringify(data));
-		//jump(BINGLINCHENGXIAURL, data);
+		jump(BINGTIANXUEDIURL, data);
 	});
 });

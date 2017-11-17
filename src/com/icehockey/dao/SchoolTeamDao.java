@@ -29,7 +29,7 @@ public class SchoolTeamDao {
 	 */
 	public List<SchoolTeam> getSchoolsByNameString(String nameString) {
 		schoolTeams = new ArrayList<SchoolTeam>();
-		String sql = "SELECT * FROM schoolteam where teamName like %" + nameString + "%;";
+		String sql = "SELECT * FROM schoolteam where teamName like '%" + nameString + "%';";
 		System.out.println(sql);
 		try {
 			conn = util.openConnection();
@@ -184,6 +184,43 @@ public class SchoolTeamDao {
 
 		}
 		return null;
+	}
+
+	public boolean addschoolTeam(String teamName, String buildTime, String construction) {
+		String sql = "INSERT INTO schoolteam ( teamName, buildTime, construction ) " + "VALUES ( '" + teamName + "', '"
+				+ buildTime + "', '" + construction + "' )";
+		System.out.println(sql);
+		try {
+			// 获取数据库链接
+			conn = util.openConnection();
+			// 执行SQL1语句
+			preparedStatement = conn.prepareStatement(sql);
+			int row = preparedStatement.executeUpdate(sql);
+			System.out.println(row);
+			if (row == 1) {
+				return true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		} finally {
+			// 关闭Statement
+			try {
+				System.out.println("statement关闭");
+				preparedStatement.close();
+			} catch (Exception e) {
+				System.out.println("statement关闭失败");
+			}
+			// 关闭Connection
+			try {
+				System.out.println("conn关闭");
+				conn.close();
+			} catch (Exception e) {
+				System.out.println("conn关闭失败");
+			}
+		}
+
+		return false;
 	}
 
 }

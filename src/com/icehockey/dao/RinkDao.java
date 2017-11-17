@@ -8,7 +8,6 @@ import java.sql.Statement;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import com.icehockey.entity.Rink;
@@ -114,7 +113,7 @@ public class RinkDao {
 	 * 获取Rink表中的通过冰场名称模糊查询
 	 */
 	public List<Rink> getRinksByString(String nameString) {
-		String sql = "SELECT * FROM rink WHERE rinkName LIKE '%"+nameString+"%';";
+		String sql = "SELECT * FROM rink WHERE rinkName LIKE '%" + nameString + "%';";
 		System.out.println(sql);
 		rinks = new ArrayList<Rink>();
 		try {
@@ -197,6 +196,7 @@ public class RinkDao {
 		}
 		return rinks;
 	}
+
 	/**
 	 * @param rinkId
 	 *            冰场编号 通过冰场名称获取冰场对象
@@ -210,7 +210,7 @@ public class RinkDao {
 			preparedStatement.setInt(1, rinkId);
 			rs = preparedStatement.executeQuery();
 			if (rs.next()) {
-				 rinkId = rs.getInt("rinkId"); // 场地编号
+				rinkId = rs.getInt("rinkId"); // 场地编号
 				String rinkName = rs.getString("rinkName"); // 场地名称
 				String rinkLogo = rs.getString("rinkLogo"); // 场地LOGO
 				int countryId = rs.getInt("countryId"); // 国籍编号
@@ -286,6 +286,48 @@ public class RinkDao {
 
 		}
 		return null;
+	}
+
+	public boolean addRink(String rinkName, String address, String telephone, boolean indoor, boolean hasLocker,
+			boolean hasCarparks, String trainingDegree, int scale, boolean hasLandTrainingRoom, int area, int iceArea,
+			String completionDate, String beginUseDate, String openTime, boolean allowedSlip, String iceType) {
+		String sql = "INSERT INTO rink ( rinkName, address, telephone, indoor, hasLocker, hasCarpark, trainingDegree, scale, hasLandTrainingRoom, area, iceArea, completionDate, beginUseDate, openTime, allowedSlip, iceType ) "
+				+ "VALUES ( '" + rinkName + "', '" + address + "', '" + telephone + "', " + indoor + ", " + hasLocker
+				+ "," + hasCarparks + ", '" + trainingDegree + "', " + scale + ", " + hasLandTrainingRoom + ", " + area
+				+ ", " + iceArea + ", '" + completionDate + "', '" + beginUseDate + "', '" + openTime + "', "
+				+ allowedSlip + ", '" + iceType + "' )";
+		System.out.println(sql);
+		try {
+			// 获取数据库链接
+			conn = util.openConnection();
+			// 执行SQL1语句
+			preparedStatement = conn.prepareStatement(sql);
+			int row = preparedStatement.executeUpdate(sql);
+			System.out.println(row);
+			if (row == 1) {
+				return true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		} finally {
+			// 关闭Statement
+			try {
+				System.out.println("statement关闭");
+				preparedStatement.close();
+			} catch (Exception e) {
+				System.out.println("statement关闭失败");
+			}
+			// 关闭Connection
+			try {
+				System.out.println("conn关闭");
+				conn.close();
+			} catch (Exception e) {
+				System.out.println("conn关闭失败");
+			}
+		}
+
+		return false;
 	}
 
 }

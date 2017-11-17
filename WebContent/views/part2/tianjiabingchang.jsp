@@ -50,22 +50,13 @@
 							data-role='none' />
 					</div>
 				</div>
-				
-				<div class="content_div">
-					<div class="content_div_left">所属机构：</div>
-					<div class="content_div_right">
-						<input type="text" name="jigou" class="jigou" id="jigou"
-							data-role='none' />
-					</div>
-				</div>
-
 
 				<div class="content_div">
 					<div class="content_div_left">室内/室外:</div>
 					<div class="content_div_right">
 						<select data-role='none' id="indoor" class="select_div">
-							<option class="option" value='true'>室内</option>
-							<option class="option" value='false'>室外</option>
+							<option class="option" value='1'>室内</option>
+							<option class="option" value='0'>室外</option>
 						</select>
 					</div>
 				</div>
@@ -74,8 +65,8 @@
 					<div class="content_div_left">有无更衣室:</div>
 					<div class="content_div_right">
 						<select data-role='none' id="hasLocker" class="select_div">
-							<option class="option" value='true'>有</option>
-							<option class="option" value='false'>无</option>
+							<option class="option" value='1'>有</option>
+							<option class="option" value='0'>无</option>
 						</select>
 					</div>
 				</div>
@@ -84,8 +75,8 @@
 					<div class="content_div_left">有无停车场:</div>
 					<div class="content_div_right">
 						<select data-role='none' id="hasCarparks" class="select_div">
-							<option class="option" value='true'>有</option>
-							<option class="option" value='false'>无</option>
+							<option class="option" value='1'>有</option>
+							<option class="option" value='0'>无</option>
 						</select>
 					</div>
 				</div>
@@ -95,13 +86,9 @@
 					<div class="content_div_left">冰场训练等级:</div>
 					<div class="content_div_right">
 						<select data-role='none' id="trainingDegree" class="select_div">
-							<c:choose>
-								<c:when test="${!empty trainingDegrees}">
-									<c:forEach items="${trainingDegrees}" var="trainingDegree" varStatus="st">
-										<option class="option" value='rink.trainingDegree'></option>
-									</c:forEach>
-								</c:when>
-							</c:choose>
+							<option class="option" >初级</option>
+							<option class="option" >进阶</option>
+							<option class="option" >专业</option>
 						</select>
 					</div>
 				</div>
@@ -109,8 +96,11 @@
 				<div class="content_div">
 					<div class="content_div_left">规模：</div>
 					<div class="content_div_right">
-						<input type="text" name="scale" class="scale" id="scale"
-							data-role='none' />
+							<select data-role='none' id="scale" class="select_div">
+							<option class="option" value='100'>100人以上</option>
+							<option class="option" value='500'>500人以上</option>
+							<option class="option" value='1000'>1000人以上</option>
+						</select>
 					</div>
 				</div>
 				
@@ -118,8 +108,8 @@
 					<div class="content_div_left">有无陆地训练室:</div>
 					<div class="content_div_right">
 						<select data-role='none' id="hasLandTrainingRoom" class="select_div">
-							<option class="option" value='true'>有</option>
-							<option class="option" value='false'>无</option>
+							<option class="option" value='1'>有</option>
+							<option class="option" value='0'>无</option>
 						</select>
 					</div>
 				</div>
@@ -169,8 +159,8 @@
 					<div class="content_div_left">是否接受散滑:</div>
 					<div class="content_div_right">
 						<select data-role='none' id="allowedSlip" class="select_div">
-							<option class="option" value='true'>是</option>
-							<option class="option" value='false'>否</option>
+							<option class="option" value='1'>是</option>
+							<option class="option" value='0'>否</option>
 						</select>
 					</div>
 				</div>				
@@ -178,8 +168,11 @@
 				<div class="content_div">
 					<div class="content_div_left">冰面类型：</div>
 					<div class="content_div_right">
-						<input type="text" name="iceType" class="iceType" id="iceType"
-							data-role='none' />
+					<select data-role='none' id="iceType" class="select_div">
+							<option class="option">真冰</option>
+							<option class="option">仿冰</option>
+						</select>
+						
 					</div>
 				</div>
 

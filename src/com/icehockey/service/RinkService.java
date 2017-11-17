@@ -6,7 +6,7 @@ import com.icehockey.dao.RinkDao;
 import com.icehockey.entity.Rink;
 
 public class RinkService {
-	RinkDao RinkDao = new RinkDao();
+	RinkDao rinkDao = new RinkDao();
 
 	Rink rink = null;
 	List<Rink> rinks = null;
@@ -17,7 +17,7 @@ public class RinkService {
 	 */
 	public Rink getRinkByRinkId(int rinkId) {
 
-		rink = RinkDao.getRinkByRinkName(rinkId);
+		rink = rinkDao.getRinkByRinkName(rinkId);
 		if (rink != null) {
 			System.out.println(rink.toString());
 			return rink;
@@ -33,7 +33,7 @@ public class RinkService {
 	 * 
 	 */
 	public List<Rink> getRinks() {
-		rinks = RinkDao.getRinks();
+		rinks = rinkDao.getRinks();
 		if (rinks != null) {
 			System.out.println(rinks.toString());
 			return rinks;
@@ -48,7 +48,7 @@ public class RinkService {
 	 * 
 	 */
 	public List<Rink> getRinksByRinkName(String rinkName) {
-		rinks = RinkDao.getRinksByString(rinkName);
+		rinks = rinkDao.getRinksByString(rinkName);
 		if (rinks != null) {
 			System.out.println(rinks.toString());
 			return rinks;
@@ -56,6 +56,14 @@ public class RinkService {
 			System.out.println("Rinks为空");
 			return null;
 		}
+	}
+
+	public boolean AddRink(String rinkName, String address, String telephone, boolean indoor, boolean hasLocker,
+			boolean hasCarparks, String trainingDegree, int scale, boolean hasLandTrainingRoom, int area, int iceArea,
+			String completionDate, String beginUseDate, String openTime, boolean allowedSlip, String iceType) {
+		
+		return rinkDao.addRink(rinkName,address,telephone,indoor,hasLocker,hasCarparks,trainingDegree,scale,hasLandTrainingRoom,area,iceArea,completionDate,beginUseDate,openTime,allowedSlip,iceType);
+		
 	}
 
 }
