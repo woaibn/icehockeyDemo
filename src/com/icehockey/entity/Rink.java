@@ -17,15 +17,15 @@ public class Rink {
 	private boolean hasLandTrainingRoom; // 有无陆地训练室
 	private double area; // 占地面积
 	private double iceArea; // 冰面面积
-	private Date completionDate; // 建成时间
-	private Date beginUseDate; // 投入使用时间
-	private Date openTime; // 开放时间
+	private String completionDate; // 建成时间
+	private String beginUseDate; // 投入使用时间
+	private String openTime; // 开放时间
 	private boolean allowedSlip; // 是否接受散滑
 	private String email; // 电子邮件
 	private String iceType; // 冰面类型
 	private String address; // 地址
 	private int environmentalIndex; // 环境指数
-	private Date changeDate; // 最后修改时间
+	private String changeDate; // 最后修改时间
 	private String remark; // 备注
 
 	public int getRinkId() {
@@ -140,27 +140,27 @@ public class Rink {
 		this.iceArea = iceArea;
 	}
 
-	public Date getCompletionDate() {
+	public String getCompletionDate() {
 		return completionDate;
 	}
 
-	public void setCompletionDate(Date completionDate) {
+	public void setCompletionDate(String completionDate) {
 		this.completionDate = completionDate;
 	}
 
-	public Date getBeginUseDate() {
+	public String getBeginUseDate() {
 		return beginUseDate;
 	}
 
-	public void setBeginUseDate(Date beginUseDate) {
+	public void setBeginUseDate(String beginUseDate) {
 		this.beginUseDate = beginUseDate;
 	}
 
-	public Date getOpenTime() {
+	public String getOpenTime() {
 		return openTime;
 	}
 
-	public void setOpenTime(Date openTime) {
+	public void setOpenTime(String openTime) {
 		this.openTime = openTime;
 	}
 
@@ -204,11 +204,11 @@ public class Rink {
 		this.environmentalIndex = environmentalIndex;
 	}
 
-	public Date getChangeDate() {
+	public String getChangeDate() {
 		return changeDate;
 	}
 
-	public void setChangeDate(Date changeDate) {
+	public void setChangeDate(String changeDate) {
 		this.changeDate = changeDate;
 	}
 
@@ -227,9 +227,9 @@ public class Rink {
 
 	public Rink(int rinkId, String rinkName, String rinkLogo, int countryId, int cityId, String telephone,
 			boolean indoor, boolean hasLocker, boolean hasCarpark, String trainingDegree, int scale,
-			boolean hasLandTrainingRoom, double area, double iceArea, Date completionDate, Date beginUseDate,
-			Date openTime, boolean allowedSlip, String email, String iceType, String address, int environmentalIndex,
-			Date changeDate, String remark) {
+			boolean hasLandTrainingRoom, double area, double iceArea, String completionDate, String beginUseDate,
+			String openTime, boolean allowedSlip, String email, String iceType, String address, int environmentalIndex,
+			String changeDate, String remark) {
 		super();
 		this.rinkId = rinkId;
 		this.rinkName = rinkName;

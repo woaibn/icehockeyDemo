@@ -48,6 +48,6 @@ function callback(content) {
 		birthday : birthday
 	};
 	// alert(content.length)
-	alert(JSON.stringify(data));
+	//alert(JSON.stringify(data));
 	jump(TIANBINGTIANJIANGURL, data);
 }

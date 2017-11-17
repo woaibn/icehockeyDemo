@@ -10,7 +10,7 @@
 				operateType : "jingquesousuo",//精确搜索
 				playerName : searchName,
 			};
-			alert(JSON.stringify(data));
+			//alert(JSON.stringify(data));
 			jump(TIANBINGTIANJIANGURL, data);
 		});
 		$("#new_btn").click(function() {

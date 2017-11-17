@@ -122,7 +122,7 @@ public class BingLinChengXiaServlet extends HttpServlet {
 						"<script language='javascript'>alert('提交成功');window.location.href='./views/part5/binglinchengxiazhuyemian.jsp'</script>");
 			}else if ("4".equals(map.get("ok"))) {
 				writer.println(
-						"<script language='javascript'>alert('提交成功');window.location.href='./views/part5/saishixuanze.jsp'</script>");
+						"<script language='javascript'>window.location.href='./views/part5/saishixuanze.jsp'</script>");
 			}
 		} else if ("-1".equals(map.get("result"))) {// 登陆失败，用户名不存在
 			writer.println(

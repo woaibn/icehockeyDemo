@@ -70,7 +70,7 @@
 		</div>
 
 		<div class="bianji">
-			<input type="button" data-role="none" value="修改基本信息" class="edit">
+			<input type="button" data-role="none" value="修改" class="edit">
 		</div>
 
 		<div class="button">

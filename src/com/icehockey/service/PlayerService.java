@@ -6,7 +6,6 @@ import java.util.List;
 
 import com.icehockey.dao.PlayerDao;
 import com.icehockey.dao.UserDao;
-import com.icehockey.entity.Category;
 import com.icehockey.entity.Player;
 import com.icehockey.entity.User;
 import com.icehockey.entity.UserFollowPlayer;

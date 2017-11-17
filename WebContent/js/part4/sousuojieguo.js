@@ -6,7 +6,7 @@ $(document).ready(function() {
 			operateType : "guanzhuqiuyuan",
 			playerId : playerId,
 		};
-		alert(JSON.stringify(data));
+	//	alert(JSON.stringify(data));
 		jump(TIANBINGTIANJIANGURL, data);
 	});
 });

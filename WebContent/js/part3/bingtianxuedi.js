@@ -11,7 +11,7 @@ function goto1(searchId, searchType) {
 		operateType : operateType,
 		searchId : searchId,
 	};
-	alert(JSON.stringify(data));
+	//alert(JSON.stringify(data));
 
 	jump(BINGTIANXUEDIURL, data);
 }
@@ -22,7 +22,7 @@ $("#clubSubmitBtn").click(function() {
 		operateType : "clubSearch",
 		searchString : searchName,
 	};
-	alert(JSON.stringify(data));
+	//alert(JSON.stringify(data));
 	jump(BINGTIANXUEDIURL, data);
 });
 
@@ -33,7 +33,7 @@ $("#schoolTeamSubmitBtn").click(function() {
 		operateType : "schoolTeamSearch",
 		searchString : searchName,
 	};
-	alert(JSON.stringify(data));
+	//alert(JSON.stringify(data));
 	jump(BINGTIANXUEDIURL, data);
 });
 
@@ -44,21 +44,21 @@ $("#competitionSubmitBtn").click(function() {
 		operateType : "competitionSearch",
 		searchString : searchName,
 	};
-	alert(JSON.stringify(data));
+	//alert(JSON.stringify(data));
 	jump(BINGTIANXUEDIURL, data);
 });
 $(".club").click(function() {
 	var data = {
 		operateType : "zhukongToBingTianXueDi",
 	};
-	alert(JSON.stringify(data));
+	//alert(JSON.stringify(data));
 	jump(BINGTIANXUEDIURL, data);
 });
 $(".schoolTeam").click(function() {
 	var data = {
 		operateType : "schoolTeamAll"
 	};
-	alert(JSON.stringify(data));
+	//alert(JSON.stringify(data));
 	jump(BINGTIANXUEDIURL, data);
 	// window.location.href = "schoolTeam.jsp";
 });
@@ -66,7 +66,7 @@ $(".competition").click(function() {
 	var data = {
 		operateType : "competitionAll"
 	};
-	alert(JSON.stringify(data));
+	//alert(JSON.stringify(data));
 	jump(BINGTIANXUEDIURL, data);
 	// window.location.href = "bisaiyemian.jsp";
 });

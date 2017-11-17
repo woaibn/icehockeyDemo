@@ -54,12 +54,16 @@ public class UserService {
 			user = dao.addUser(telephone, password);
 			if (user == null) {
 				System.out.println("插入失败");
+				
 			} else {
-				System.out.println("插入成功" + user);
+				user.setRemark("注册成功");
+				System.out.println("注册成功");
 			}
 		} else {
+			user.setRemark("该用户已存在");
 			System.out.println("该用户已存在");
 		}
+		System.out.println(user);
 		return user;
 	}
 
@@ -96,7 +100,7 @@ public class UserService {
 	}
 
 	public User queryUserById(int userId) {
-		user=dao.getUserByUserId(userId);
+		user = dao.getUserByUserId(userId);
 		return user;
 	}
 

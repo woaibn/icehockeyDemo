@@ -25,7 +25,7 @@ $(function() {
 			birthday : time,
 			address : home
 		};
-		alert(JSON.stringify(data));
+		//alert(JSON.stringify(data));
 		jump(WODEZHONGXINURL, data);
 	});
 });

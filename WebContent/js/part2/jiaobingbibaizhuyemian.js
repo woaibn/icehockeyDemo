@@ -6,7 +6,7 @@ function goto1(para) {
 		operateType : "JiaoZhuToJiaoXiang",
 		rinkId : para,
 	};
-	alert(JSON.stringify(data));
+	//alert(JSON.stringify(data));
 	jump(JIAOBINGBIBAIURL, data);
 }
 
@@ -17,6 +17,6 @@ $(".submitBtn").click(function() {
 		operateType : "sousuo",
 		rinkName : searchName,
 	};
-	alert(JSON.stringify(data));
+	//alert(JSON.stringify(data));
 	jump(JIAOBINGBIBAIURL, data);
 });

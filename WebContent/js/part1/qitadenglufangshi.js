@@ -23,7 +23,7 @@ $(function() {
 			optType : optType,
 			newPassword : password
 		};
-		alert(JSON.stringify(data));
+		//alert(JSON.stringify(data));
 		jump(LOGIN_API, data);
 	});
 });

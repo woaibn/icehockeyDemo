@@ -6,7 +6,7 @@ function goto1(para) {
 		operateType : "zhuyemianToXiangxi",
 		playerId : para,
 	};
-	 alert(JSON.stringify(data));
+	// alert(JSON.stringify(data));
 	jump(TIANBINGTIANJIANGURL, data);
 }
 
@@ -17,6 +17,6 @@ $(".submitBtn").click(function() {
 		operateType : "mohusousuo",
 		playerName : searchName,
 	};
-	alert(JSON.stringify(data));
+//	alert(JSON.stringify(data));
 	jump(TIANBINGTIANJIANGURL, data);
 });

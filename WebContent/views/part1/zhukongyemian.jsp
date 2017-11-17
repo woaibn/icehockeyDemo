@@ -24,7 +24,7 @@
 				
 				<div>
 				
-              	    <div class="a"><span>骄兵<br/>必败</span></div>
+              	    <div class="a"><span>浇兵<br/>必败</span></div>
 					<div class="b"><span>冰天<br/>雪地</span></div>
 					<div class="c"><span>添兵<br/>添将</span></div>
 					<div class="d"><span>兵临<br/>城下</span></a></div>

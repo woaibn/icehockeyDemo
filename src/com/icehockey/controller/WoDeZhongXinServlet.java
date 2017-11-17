@@ -12,22 +12,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.icehockey.entity.Category;
 import com.icehockey.entity.City;
-import com.icehockey.entity.Club;
 import com.icehockey.entity.Country;
-import com.icehockey.entity.Handling;
 import com.icehockey.entity.IdInfo;
 import com.icehockey.entity.Player;
-import com.icehockey.entity.Role;
 import com.icehockey.entity.User;
-import com.icehockey.service.CategoryService;
-import com.icehockey.service.ClubService;
 import com.icehockey.service.CountryCityService;
-import com.icehockey.service.HandlingService;
 import com.icehockey.service.IdInfoService;
 import com.icehockey.service.PlayerService;
-import com.icehockey.service.RoleService;
 import com.icehockey.service.UserService;
 
 /**
@@ -65,27 +57,14 @@ public class WoDeZhongXinServlet extends HttpServlet {
 		 * 
 		 */
 		PlayerService playerService = new PlayerService();
-		ClubService clubService = new ClubService();
 		CountryCityService countryCityService = new CountryCityService();
 		UserService userService = new UserService();
-		RoleService roleService = new RoleService();
-		HandlingService handlingService = new HandlingService();
-		CategoryService categoryService = new CategoryService();
 		IdInfoService idInfoService = new IdInfoService();
-		Handling handling = null;
 		Country country = null;
 		City city = null;
 		User user = null;
-		Player player = null;
-		Club club = null;
-		Role role = null;
 		IdInfo idInfo = null;
-		Category category = null;
-		User creatMeUser = null;
 		List<Player> players = null;
-		List<Club> clubs = null;
-		List<Category> categories = null;
-		List<Handling> handlings = null;
 		System.out.println("跳转后的sessionId :" + session.getId());
 		String operateType = null;
 		// session
@@ -116,20 +95,20 @@ public class WoDeZhongXinServlet extends HttpServlet {
 					String address = request.getParameter("address");
 					boolean f = userService.updateUser(user.getUserId(), name, birthday, address);
 					if (f) {
-						
+
 						map.put("result", "0");
 						map.put("ok", "2");
 					} else {
 						System.out.println("更新失败");
 					}
-				}else if ("zhongxinToPlayer".equals(operateType)) {// 如果操作类型是主控页面到浇冰必拜主页面，则取出场地表中的所有场地信息
-					players=playerService.getUserFollowedPlayers(user.getUserId());
-					if (players!=null) {
+				} else if ("zhongxinToPlayer".equals(operateType)) {// 如果操作类型是主控页面到浇冰必拜主页面，则取出场地表中的所有场地信息
+					players = playerService.getUserFollowedPlayers(user.getUserId());
+					if (players != null) {
 						session.setAttribute("players", players);
 						map.put("result", "0");
 						map.put("ok", "3");
 					} else {
-						
+
 						System.out.println("更新失败");
 					}
 				}
@@ -146,10 +125,10 @@ public class WoDeZhongXinServlet extends HttpServlet {
 			} else if ("2".equals(map.get("ok"))) {
 				writer.println(
 						"<script language='javascript'>alert('提交成功');window.location.href='./views/part8/wodezhongxin.jsp'</script>");
-			}else if ("3".equals(map.get("ok"))) {
+			} else if ("3".equals(map.get("ok"))) {
 				writer.println(
 						"<script language='javascript'>window.location.href='./views/part8/playerCard.jsp'</script>");
-			}  else {
+			} else {
 
 			}
 		} else if ("-1".equals(map.get("result"))) {// 登陆失败，用户名不存在

@@ -4,7 +4,7 @@ $(document).ready(function() {
 		var data = {
 			operateType : "zhongxinToManager",
 		};
-		alert(JSON.stringify(data));
+		//alert(JSON.stringify(data));
 		jump(WODEZHONGXINURL, data);
 		// window.location.href = "mangerCard.jsp";
 	});
@@ -12,7 +12,7 @@ $(document).ready(function() {
 		var data = {
 				operateType : "zhongxinToPlayer",
 			};
-			alert(JSON.stringify(data));
+		//	alert(JSON.stringify(data));
 			jump(WODEZHONGXINURL, data);
 		
 	});

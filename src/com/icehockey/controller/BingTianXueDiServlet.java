@@ -14,13 +14,10 @@ import javax.servlet.http.HttpSession;
 
 import com.icehockey.entity.Club;
 import com.icehockey.entity.DuiKang;
-import com.icehockey.entity.Rink;
 import com.icehockey.entity.SchoolTeam;
 import com.icehockey.entity.User;
 import com.icehockey.service.ClubService;
-import com.icehockey.service.CompetitionService;
 import com.icehockey.service.DuiKangService;
-import com.icehockey.service.RinkService;
 import com.icehockey.service.SchoolTeamService;
 
 /**
@@ -53,8 +50,6 @@ public class BingTianXueDiServlet extends HttpServlet {
 
 		DuiKangService duiKangService = new DuiKangService();
 		ClubService clubService=new ClubService();
-		RinkService rinkService=new RinkService();
-		CompetitionService competitionService=new CompetitionService();
 		SchoolTeamService schoolTeamService=new SchoolTeamService();
 		User user = null;
 		Club club=null;
@@ -62,12 +57,12 @@ public class BingTianXueDiServlet extends HttpServlet {
 		DuiKang duiKang=null;
 		List<DuiKang> duiKangs = null;
 		List<Club> clubs = null;
-		List<Rink> rinks = null;
 		List<SchoolTeam> schoolTeams = null;
 		System.out.println("跳转后的sessionId :" + session.getId());
 		String operateType = null;
 		// session
 		if (session.getAttribute("user") == null) {
+			user=null;
 			map.put("result", "-1");// 没有用户登录
 		} else {
 			user = (User) session.getAttribute("user");

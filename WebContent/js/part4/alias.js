@@ -40,6 +40,6 @@ function callback(content) {
 		name : name,
 		idnum : idnum
 	};
-	alert(JSON.stringify(data));
+	//alert(JSON.stringify(data));
 	jump(ALIASURL, data);
 }

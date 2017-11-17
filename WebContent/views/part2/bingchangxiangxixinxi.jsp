@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 
@@ -46,18 +46,38 @@
 			<div class="location">位置:${rink.address}</div>
 			<div class="tel">场地电话：${rink.telephone}</div>
 			<div class="content_div">所属机构:${rink.address}</div>
-			<div class="content_div">室内/室外:${rink.indoor}</div>
-			<div class="content_div">有无更衣室:${rink.hasLocker}</div>
-			<div class="content_div">有无停车场:${rink.hasCarpark}</div>
+			<div class="content_div">
+				室内/室外:
+				<c:if test="${rink.indoor eq true}">室内</c:if>
+				<c:if test="${rink.indoor eq false}">室外</c:if>
+			</div>
+			<div class="content_div">
+				有无更衣室:
+				<c:if test="${rink.hasLocker eq true}">有</c:if>
+				<c:if test="${rink.hasLocker eq false}">无</c:if>
+			</div>
+			<div class="content_div">
+				有无停车场:
+				<c:if test="${rink.hasCarpark eq true}">有</c:if>
+				<c:if test="${rink.hasCarpark eq false}">无</c:if>
+			</div>
 			<div class="content_div">冰场训练等级:${rink.trainingDegree}</div>
 			<div class="content_div">规模:${rink.scale}</div>
-			<div class="content_div">有无陆地训练室:${rink.hasLandTrainingRoom}</div>
-			<div class="content_div">占地面积:${rink.area}</div>
+			<div class="content_div">
+				有无陆地训练室:
+				<c:if test="${rink.hasLandTrainingRoom eq true}">有</c:if>
+				<c:if test="${rink.hasLandTrainingRoom eq false}">无</c:if>
+			</div>
+			<div class="content_div">占地面积:${rink.area}平方米</div>
 			<div class="content_div">冰面面积:${rink.iceArea}</div>
 			<div class="content_div">建成时间:${rink.completionDate}</div>
 			<div class="content_div">投入使用时间：${rink.beginUseDate}</div>
 			<div class="content_div">开放时间：${rink.openTime}</div>
-			<div class="content_div">是否接受散滑：${rink.allowedSlip}</div>
+			<div class="content_div">
+				是否接受散滑：${rink.allowedSlip}
+				<c:if test="${rink.allowedSlip eq true}">是</c:if>
+				<c:if test="${rink.allowedSlip eq false}">否</c:if>
+			</div>
 			<div class="content_div">冰面类型：${rink.iceType}</div>
 		</div>
 

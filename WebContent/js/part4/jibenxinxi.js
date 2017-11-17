@@ -4,7 +4,7 @@ $(document).ready(function() {
 		var data = {
 			operateType : "jibenxinxiToxiugai",
 		};
-		alert(JSON.stringify(data));
+		//alert(JSON.stringify(data));
 		jump(TIANBINGTIANJIANGURL, data);
 		//window.location.href = "jibenxinxixiugai.jsp";
 	});

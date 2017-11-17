@@ -4,14 +4,14 @@ $(document).ready(function() {
 		var data = {
 			operateType : "zhukongToJiaoZhu",
 		};
-		alert(JSON.stringify(data));
+		//alert(JSON.stringify(data));
 		jump(JIAOBINGBIBAIURL, data);
 	});
 	$(".b").click(function() {
 		var data = {
 			operateType : "zhukongToBingTianXueDi",
 		};
-		alert(JSON.stringify(data));
+		//alert(JSON.stringify(data));
 		jump(BINGTIANXUEDIURL, data);
 		// window.location.href = "../part3/bingtianxuedizhuyemian.jsp";
 	});

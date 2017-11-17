@@ -77,8 +77,8 @@
 								</div>
 
 								<div class="content_mid">
-									<div class="">比赛等级：${duiKang.competitionDegreeName}</div>
-									<div class="">比赛时间：${duiKang.pkTime}</div>
+									<div class="">等级：${duiKang.competitionDegreeName}</div>
+									<div class="">时间：${duiKang.pkTime}</div>
 									<!--时、分时间 -->
 									<div class="">第${duiKang.round}轮</div>
 

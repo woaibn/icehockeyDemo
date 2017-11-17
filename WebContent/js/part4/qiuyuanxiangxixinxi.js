@@ -15,7 +15,7 @@ $(function() {
 				operateType : "quxiaoguanzhu",
 				playerId : playerId,
 			};
-			alert(JSON.stringify(data));
+		//	alert(JSON.stringify(data));
 			jump(TIANBINGTIANJIANGURL, data);
 		} else {
 			alert("你按下的是【取消】");
@@ -23,13 +23,12 @@ $(function() {
 
 	});
 	$(".jiben").click(function() {
-		alert("aaaaaaaaa");
 		var playerId = $(".playerId").val();
 		var data = {
 			operateType : "jibexinxi",
 			playerId : playerId,
 		};
-		alert(JSON.stringify(data));
+		//alert(JSON.stringify(data));
 		jump(TIANBINGTIANJIANGURL, data);
 		//window.location.href = "jibenxinxi.jsp";
 	});
