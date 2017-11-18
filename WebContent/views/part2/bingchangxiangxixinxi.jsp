@@ -2,9 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
-
-
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -21,8 +18,6 @@
 <script src="../../js/jqueryMobile/jquery.mobile-1.4.5.min.js"
 	type="text/javascript"></script>
 </head>
-
-
 <body>
 	<div data-role="page" class="allpage">
 		<!--标题-->
@@ -41,7 +36,6 @@
 		</div>
 
 		<div data-role="content" class="all">
-
 			<div class="name">冰场名称：${rink.rinkName}</div>
 			<div class="location">位置:${rink.address}</div>
 			<div class="tel">场地电话：${rink.telephone}</div>
@@ -79,10 +73,6 @@
 			</div>
 			<div class="content_div">冰面类型：${rink.iceType}</div>
 		</div>
-
-
-
-
 		<div class="button">
 			<div class="shouye" onclick="shouyeClick()">
 				<span>首页</span>

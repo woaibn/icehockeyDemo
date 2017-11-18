@@ -31,15 +31,15 @@
 		</div>
 
 		<!--查询框-->
-		
 		<div class="search_a">
 			<div class="search_c">
-				<input type="submit" data-role='none' value="添加" class="competitionAddtBtn"></input>
+				<input type="submit" data-role='none' value="添加"
+					class="competitionAddtBtn"></input>
 			</div>
 
 			<div class="search_b">
-				<input type="text"  data-role='none' class="search"  name="search" id="competitionSearch"
-					placeholder="模糊查询">
+				<input type="text" data-role='none' class="search" name="search"
+					id="competitionSearch" placeholder="模糊查询">
 			</div>
 
 			<div class="search_d">

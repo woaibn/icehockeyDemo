@@ -17,8 +17,6 @@
 <script type="text/javascript"
 	src="../../js/jqueryMobile/jquery.mobile-1.4.5.min.js"></script>
 </head>
-
-
 <body>
 	<div data-role="page" class="allpage">
 		<!--标题-->
@@ -39,7 +37,8 @@
 			</div>
 
 			<div class="search_b">
-				<input type="text" data-role='none' name="search" id="search" class="search" placeholder="模糊查询">
+				<input type="text" data-role='none' name="search" id="search"
+					class="search" placeholder="模糊查询">
 			</div>
 
 			<div class="search_d">

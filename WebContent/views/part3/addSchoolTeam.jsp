@@ -15,7 +15,7 @@
 <script src="../../js/jqueryMobile/jquery.mobile-1.4.5.min.js"></script>
 </head>
 
-<body style='overflow:scroll;overflow-y:hidden'>
+<body style='overflow: scroll; overflow-y: hidden'>
 	<div data-role="page" class="allpage">
 		<div class="top">
 			<div onClick="javascript :history.back(-1);" data-ajax="false"
@@ -23,59 +23,48 @@
 				<img src="../../img/part1/back.png" />
 			</div>
 			<div class="biaoti">添加校队</div>
-
 		</div>
-
-		<div  data-role="content"  class="content">
-				<div class="content_div">
-					<div class="content_div_left">名称：</div>
-					<div class="content_div_right">
-						<input type="text" name="SchoolTeamName" class="SchoolTeamName" id="SchoolTeamName"
-							data-role='none' />
-					</div>
+		<div data-role="content" class="content">
+			<div class="content_div">
+				<div class="content_div_left">名称：</div>
+				<div class="content_div_right">
+					<input type="text" name="SchoolTeamName" class="SchoolTeamName"
+						id="SchoolTeamName" data-role='none' />
 				</div>
-				
-				<div class="content_div">
-					<div class="content_div_left">成立时间：</div>
-					<div class="content_div_right">
-						<input type="date" name="buildTime" class="buildTime" id="buildTime"
-							data-role='none' />
-					</div>
+			</div>
+			<div class="content_div">
+				<div class="content_div_left">成立时间：</div>
+				<div class="content_div_right">
+					<input type="date" name="buildTime" class="buildTime"
+						id="buildTime" data-role='none' />
 				</div>
-						
-				<div class="content_div">
-					<div class="content_div_left">简介：</div>
-					<div class="content_div_right">
-						<textarea name="errorMain" id="schoolTeamConstruction" class="schoolTeamConstruction" placeholder="请简要说明">
+			</div>
+			<div class="content_div">
+				<div class="content_div_left">简介：</div>
+				<div class="content_div_right">
+					<textarea name="errorMain" id="schoolTeamConstruction"
+						class="schoolTeamConstruction" placeholder="请简要说明">
                			 </textarea>
-					</div>
-				</div>
-
-
-				<input type="button" value="添加" data-role='none' class="submitBtn"
-					name="imgupload" id="imgupload" />
-			</div>
-
-
-			<div class="button">
-				<div class="shouye" onclick="shouyeClick()">
-					<span>首页</span>
-				</div>
-				<div class="zhanshu" onclick="zhanshuClick()">
-					<span>战术</span>
-				</div>
-				<div class="zhandui" onclick="zhanduiClick()">
-					<span>战队</span>
-				</div>
-				<div class="wode" onclick="wodeClick()">
-					<span>我的</span>
 				</div>
 			</div>
-
-	
-
+			<input type="button" value="添加" data-role='none' class="submitBtn"
+				name="imgupload" id="imgupload" />
+		</div>
+		<div class="button">
+			<div class="shouye" onclick="shouyeClick()">
+				<span>首页</span>
+			</div>
+			<div class="zhanshu" onclick="zhanshuClick()">
+				<span>战术</span>
+			</div>
+			<div class="zhandui" onclick="zhanduiClick()">
+				<span>战队</span>
+			</div>
+			<div class="wode" onclick="wodeClick()">
+				<span>我的</span>
+			</div>
+		</div>
 	</div>
-
 	<script src="../../js/common/common.js"></script>
 	<script src="../../js/urlApi/api.js"></script>
 	<script type="text/javascript" src="../../js/part3/addSchoolTeam.js"></script>

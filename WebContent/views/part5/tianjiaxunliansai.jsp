@@ -51,6 +51,7 @@
 			<div class="button4">
 				<div class="a">对阵双方:</div>
 				<select data-role='none' class="teama" placeholder="" id="clubAName">
+				<option value='-1'>--请选择主场俱乐部--</option>
 					<c:choose>
 						<c:when test="${!empty clubs}">
 							<c:forEach items="${clubs}" var="club" varStatus="st">
@@ -61,6 +62,7 @@
 				</select>
 				<div class="vs">VS</div>
 				<select data-role='none' class="teamb" placeholder="" id="clubBName">
+				<option value='-1'>--请选择客场俱乐部--</option>
 					<c:choose>
 						<c:when test="${!empty clubs}">
 							<c:forEach items="${clubs}" var="club" varStatus="st">

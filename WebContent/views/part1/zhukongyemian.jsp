@@ -21,9 +21,7 @@
 				<div class="backimage">
 					<img src="../../img/part1/zhukongyemian.png" />
 				</div>
-				
 				<div>
-				
               	    <div class="a"><span>浇兵<br/>必败</span></div>
 					<div class="b"><span>冰天<br/>雪地</span></div>
 					<div class="c"><span>添兵<br/>添将</span></div>
@@ -31,24 +29,18 @@
 					<div class="e"><span>冰步<br/>雪刃</span></a></div>
 				</div>
 			</div>
-			
-			
 			<div class="button">
 							<div class="shouye" onclick="shouyeClick()">
 								<span class="ch">首页</span>
-								
 							</div>
 							<div  class="zhanshu" onclick="zhanshuClick()">
 								<span class="ch">战术</span>
-								
 							</div>
 							<div  class="zhandui" onclick="zhanduiClick()">
 								<span class="ch">战队</span>
-								
 							</div>
 							<div class="wode" onclick="wodeClick()">
 								<span class="ch">我的</span>
-								
 							</div>
 				  </div>	
 		</div>

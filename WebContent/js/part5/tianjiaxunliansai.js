@@ -21,13 +21,17 @@ $(function() {
 			return false;
 		}
 
-		if (clubAName == "") {
-			alert("请输入对战队伍A");
+		if (clubAName == ""||clubAName==-1) {
+			alert("请输入主场俱乐部A");
 			return false;
 		}
 
-		if (clubBName == "") {
-			alert("请输入对战队伍B");
+		if (clubBName == ""||clubBName==-1) {
+			alert("请输入客场俱乐部B");
+			return false;
+		}
+		if (clubAName==clubBName) {
+			alert("主场和客场俱乐部相同");
 			return false;
 		}
 		// 请求后台服务
