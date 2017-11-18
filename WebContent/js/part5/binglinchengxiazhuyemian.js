@@ -7,6 +7,7 @@ $(document).ready(function() {
 		var data = {
 			operateType : "tianjianxunliansai"
 		};
+		//alert(JSON.stringify(data));
 		jump(BINGLINCHENGXIAURL, data);
 		// window.location.href = "tianjiaxunliansai.jsp";
 	});

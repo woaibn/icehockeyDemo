@@ -36,7 +36,7 @@
 				<img src="../../img/part1/back.png" />
 			</div>
 			<div class="biaoti">兵临城下</div>
-			<div class="zengjia" onclick="zengjiaClick()">
+			<div class="zengjia">
 				<img src="../../img/part5/plus.png" />
 			</div>
 		</div>

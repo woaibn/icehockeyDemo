@@ -149,10 +149,16 @@ public class TianBingTianJiangServlet extends HttpServlet {
 					int playerId = Integer.parseInt(request.getParameter("playerId"));
 					System.out.println("playerId:" + playerId);
 					boolean flag = playerService.cancelFollowed(user.getUserId(), playerId);
-					System.out.println(flag);
-					session.setAttribute("flag", flag);
-					map.put("result", "0");
-					map.put("ok", "5");
+					if (flag) {
+						players = playerService.getUserFollowedPlayers(user.getUserId());
+						System.out.println(flag);
+						session.setAttribute("flag", flag);
+						session.setAttribute("players", players);
+						map.put("result", "0");
+						map.put("ok", "5");
+					} else {
+						map.put("result", "-3");
+					}
 				} else if ("guanzhuqiuyuan".equals(operateType)) {// 如果操作类型是精确搜索，即根据名字字符串搜索当前关注球员
 					int playerId = Integer.parseInt(request.getParameter("playerId"));
 					System.out.println("playerId:" + playerId);
@@ -180,25 +186,55 @@ public class TianBingTianJiangServlet extends HttpServlet {
 					map.put("result", "0");
 					map.put("ok", "8");
 				} else if ("tijiaoxiugai".equals(operateType)) {// 如果操作类型是精确搜索，即根据名字字符串搜索当前关注球员
+					int playerId = Integer.parseInt(request.getParameter("playerId"));
+					player = playerService.getPlayerByPlayerId(playerId);
 
-					// String image = request.getParameter("image");
-					// int playerId =
-					// Integer.parseInt(request.getParameter("playerId"));
-					// int clubId =
-					// Integer.parseInt(request.getParameter("clubId"));
-					// double weight =
-					// Double.parseDouble(request.getParameter("weight"));
-					// double height =
-					// Double.parseDouble(request.getParameter("height"));
-					// String position = request.getParameter("position");
-					// int categoryId =
-					// Integer.parseInt(request.getParameter("categoryId"));
-					// int handlingId =
-					// Integer.parseInt(request.getParameter("handlingId"));
-					// String birthday = request.getParameter("birthday");
-					// player=playerService.updateInfo(player,playerId,clubId,weight,height,position,categoryId,handlingId,birthday,image);
-					map.put("result", "0");
-					map.put("ok", "9");
+					String image = player.getImage();
+					if (request.getParameter("image") != null && request.getParameter("image").length() > 24) {
+						image = request.getParameter("image");
+					}
+
+					double weight = player.getWeight();
+					if (!(request.getParameter("weight") == null||"".equals(request.getParameter("weight")))) {
+						weight = Double.parseDouble(request.getParameter("weight"));
+					}
+
+					double height = player.getHeight();
+					if (!(request.getParameter("height") == null||"".equals(request.getParameter("height")))) {
+						height = Double.parseDouble(request.getParameter("height"));
+					}
+
+					String position = player.getPosition();
+					if (!(request.getParameter("position") == null||"".equals(request.getParameter("position")))) {
+						position = request.getParameter("position");
+					}
+
+					int categoryId = player.getCategoryId();
+					if (!(request.getParameter("categoryId") == null||"".equals(request.getParameter("categoryId")))) {
+						categoryId = Integer.parseInt(request.getParameter("categoryId"));
+					}
+
+					int handlingId = player.getHandlingId();
+					if (!(request.getParameter("handlingId") == null||"".equals(request.getParameter("handlingId")))) {
+						handlingId = Integer.parseInt(request.getParameter("handlingId"));
+					}
+
+					String birthday = player.getBirthday();
+					if (!(request.getParameter("birthday") == null||"".equals(request.getParameter("birthday")))) {
+						birthday = request.getParameter("birthday");
+						System.out.println("birthday:"+birthday);
+					}
+					//这里没有处理球员所在俱乐部
+					boolean f = playerService.updateInfo(playerId, weight, height, position, categoryId,
+							handlingId, birthday, image);
+					if (f) {
+						players = playerService.getUserFollowedPlayers(user.getUserId());
+						session.setAttribute("players", players);
+						map.put("result", "0");
+						map.put("ok", "9");
+					} else {
+						map.put("result", "-3");
+					}
 				} else {
 					map.put("result", "-2");// 没有操作类型
 				}

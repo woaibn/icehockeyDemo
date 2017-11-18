@@ -15,16 +15,6 @@
 <script src="../../js/jQuery/jquery-2.2.3.min.js"></script>
 <script src="../../js/jqueryMobile/jquery.mobile-1.4.5.min.js"></script>
 <link rel="stylesheet" href="../../css/part1/allpagesame.css" />
-<script type="text/javascript">
-	$(document).ready(function() {
-		$(".yiguanzhu").click(function() {
-			window.location.href = "daikaifa.jsp";
-		});
-		$(".saishixuanze").click(function() {
-			window.location.href = "daikaifa.jsp";
-		});
-	});
-</script>
 
 </head>
 

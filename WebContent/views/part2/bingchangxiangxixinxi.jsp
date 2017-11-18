@@ -45,7 +45,6 @@
 			<div class="name">冰场名称：${rink.rinkName}</div>
 			<div class="location">位置:${rink.address}</div>
 			<div class="tel">场地电话：${rink.telephone}</div>
-			<div class="content_div">所属机构:${rink.address}</div>
 			<div class="content_div">
 				室内/室外:
 				<c:if test="${rink.indoor eq true}">室内</c:if>

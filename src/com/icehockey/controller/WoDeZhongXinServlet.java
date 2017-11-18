@@ -90,12 +90,22 @@ public class WoDeZhongXinServlet extends HttpServlet {
 					map.put("ok", "1");
 				} else if ("xiugaixinxi".equals(operateType)) {// 如果操作类型是主控页面到浇冰必拜主页面，则取出场地表中的所有场地信息
 
-					String name = request.getParameter("name");
-					String birthday = request.getParameter("birthday");
-					String address = request.getParameter("address");
+					String name = user.getUserName();
+					if (!(request.getParameter("name") == null||"".equals(request.getParameter("name")))) {
+						name = request.getParameter("name");
+					}
+					String birthday = user.getBirthday();
+					if (!(request.getParameter("birthday") == null||"".equals(request.getParameter("birthday")))) {
+						birthday = request.getParameter("birthday");
+					}
+					String address = user.getAddress();
+					if (!(request.getParameter("address") == null||"".equals(request.getParameter("address")))) {
+						address = request.getParameter("address");
+					}
 					boolean f = userService.updateUser(user.getUserId(), name, birthday, address);
 					if (f) {
-
+						user=userService.queryUserById(user.getUserId());
+						session.setAttribute("user", user);
 						map.put("result", "0");
 						map.put("ok", "2");
 					} else {

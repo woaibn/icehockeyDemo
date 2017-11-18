@@ -182,10 +182,15 @@ public class PlayerService {
 		}
 	}
 
-	public Player updateInfo(Player player2, int playerId, int clubId, double weight, double height, String position,
+	public boolean updateInfo( int playerId, double weight, double height, String position,
 			int categoryId, int handlingId, String birthday, String image) {
-		// TODO Auto-generated method stub
-		return null;
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置日期格式
+		Date currentDateTime = new Date();
+		System.out.println(df.format(currentDateTime));// 获取当前系统时间
+		String modificateDate = df.format(currentDateTime);
+		boolean f=playerDao.updatePlayerInfo(playerId, weight, height, position, categoryId,
+				handlingId, birthday, image,modificateDate);
+		return f;
 	}
 
 }

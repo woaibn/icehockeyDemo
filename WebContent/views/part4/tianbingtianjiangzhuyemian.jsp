@@ -20,7 +20,7 @@
 		$(".submitBtn1").click(function() {
 			window.location.href = "sousuohuochuangjianqiuyuan.jsp";
 		});
-		
+
 	});
 </script>
 </head>
@@ -35,14 +35,14 @@
 			<div class="biaoti">添兵添将</div>
 		</div>
 		<!--查询框-->
-		
+
 		<div class="search_a">
 			<div class="search_c">
 				<input type="submit" data-role='none' value="添加" class="submitBtn1"></input>
 			</div>
 			<div class="search_b">
-				<input type="text" data-role='none' name="search" id="search" class="search"
-					placeholder="输入球员姓名模糊查询">
+				<input type="text" data-role='none' name="search" id="search"
+					class="search" placeholder="输入球员姓名模糊查询">
 			</div>
 			<div class="search_d">
 				<!--搜索之后在当前页面显示  -->
@@ -67,16 +67,16 @@
 									<div class="name">姓名:${player.name}</div>
 
 									<div class="height">身高:${player.height}cm</div>
+
+								</div>
+								<div class="content_right">
 									<div class="sex">
 										性别:
 										<c:if test="${player.sex eq true}">男</c:if>
 										<c:if test="${player.sex eq false}">女</c:if>
 									</div>
-								</div>
-								<div class="content_right">
 									<div class="weight">体重:${player.weight}kg</div>
-									<div class="countryId">国籍:${player.countryId}</div>
-									<div class="cityId">城市:${player.cityId}</div>
+
 								</div>
 							</div>
 						</div>

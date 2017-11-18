@@ -105,8 +105,8 @@ public class UserService {
 	}
 
 	public boolean updateUser(int userId, String name, String birthday, String address) {
-		// TODO Auto-generated method stub
-		return true;
+		return dao.updateUser(userId, name, birthday, address);
+		
 	}
 
 }

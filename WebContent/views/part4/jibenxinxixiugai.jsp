@@ -42,22 +42,6 @@
 					</div>
 				</div>
 
-				<!--俱乐部-->
-				<div class="content_div">
-					<div class="content_div_left">俱乐部：</div>
-					<div class="content_div_right">
-						<select data-role='none' id="clubName" class="select_div">
-							<c:choose>
-								<c:when test="${!empty clubs}">
-									<c:forEach items="${clubs}" var="club" varStatus="st">
-										<option class="option" value="${club.clubId}">${club.clubName}</option>
-									</c:forEach>
-								</c:when>
-							</c:choose>
-						</select>
-					</div>
-				</div>
-
 				<!--身高-->
 
 				<div class="content_div">

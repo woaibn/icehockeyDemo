@@ -10,7 +10,6 @@ $(function() {
 	$("#imgupload").click(function() {
 
 		var touxiang = $("#touxiang").val();
-		var clubName = $("#clubName").val();
 		var height = $("#height").val();
 		var weight = $("#weight").val();
 		var pos = $("#position").val();
@@ -27,7 +26,6 @@ $(function() {
 
 function callback(content) {
 	var playerId = $("#playerId").val();
-	var clubId = $("#clubName").val();
 	var height = $("#height").val();
 	var weight = $("#weight").val();
 	var position = $("#position").val();
@@ -39,7 +37,6 @@ function callback(content) {
 		operateType : "tijiaoxiugai",
 		playerId : playerId,
 		image : content,
-		clubId : clubId,
 		weight : weight,
 		height : height,
 		position : position,
@@ -48,6 +45,6 @@ function callback(content) {
 		birthday : birthday
 	};
 	// alert(content.length)
-	//alert(JSON.stringify(data));
+	alert(JSON.stringify(data));
 	jump(TIANBINGTIANJIANGURL, data);
 }

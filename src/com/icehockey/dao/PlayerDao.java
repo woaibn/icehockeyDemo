@@ -554,4 +554,47 @@ public class PlayerDao {
 		return null;
 	}
 
+	public boolean updatePlayerInfo(int playerId, double weight, double height, String position, int categoryId,
+			int handlingId, String birthday, String image, String modificateDate) {
+		player = getPlayerById(playerId);
+		if (player != null) {
+			try {
+				// 获取数据库链接
+				conn = util.openConnection();
+				String sql = "UPDATE player SET weight = " + weight + ",height = " + height + ",position ='" + position
+						+ "',categoryId =" + categoryId + ",handlingId = " + handlingId + ",birthday = '" + birthday
+						+ "',image = '" + image + "',modificateDate = '" + modificateDate + "' WHERE playerId = "
+						+ playerId + ";";
+				System.out.println("sql:  " + sql);
+				// 执行SQL1语句
+				preparedStatement = conn.prepareStatement(sql);
+				int row1 = preparedStatement.executeUpdate(sql);
+				System.out.println(row1);
+				if (row1 == 1) {
+					return true;
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+
+			} finally {
+				// 关闭Statement
+				try {
+					System.out.println("statement关闭");
+					preparedStatement.close();
+				} catch (Exception e) {
+					System.out.println("statement关闭失败");
+				}
+				// 关闭Connection
+				try {
+					System.out.println("conn关闭");
+					conn.close();
+				} catch (Exception e) {
+					System.out.println("conn关闭失败");
+				}
+			}
+			return false;
+		}
+		return false;
+	}
+
 }
