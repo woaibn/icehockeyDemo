@@ -164,7 +164,10 @@ public class TianBingTianJiangServlet extends HttpServlet {
 					System.out.println("playerId:" + playerId);
 					UserFollowPlayer userFollowPlayer = playerService.userFollowPlayer(user.getUserId(), playerId);
 					System.out.println(userFollowPlayer);
+					players = playerService.getUserFollowedPlayers(user.getUserId());
 					session.setAttribute("userFollowPlayer", userFollowPlayer);
+					
+					session.setAttribute("players", players);
 					map.put("result", "0");
 					map.put("ok", "6");
 				} else if ("jibexinxi".equals(operateType)) {// 如果操作类型是精确搜索，即根据名字字符串搜索当前关注球员

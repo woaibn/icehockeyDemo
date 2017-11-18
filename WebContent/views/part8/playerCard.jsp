@@ -55,7 +55,11 @@
 
 								<div class="content_mid">
 									<div class="name">姓名:${player.name}</div>
-									<div class="sex">性别:${player.sex}</div>
+									<div class="sex">
+										性别:
+										<c:if test="${player.sex eq true}">男</c:if>
+										<c:if test="${player.sex eq false}">女</c:if>
+									</div>
 									<div class="height">身高:${player.height}</div>
 								</div>
 

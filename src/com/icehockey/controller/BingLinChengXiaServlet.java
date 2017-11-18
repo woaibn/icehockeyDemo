@@ -91,6 +91,8 @@ public class BingLinChengXiaServlet extends HttpServlet {
 					String time=request.getParameter("time");
 					boolean f = competitionService.addCompetition(teamAId, teamBId, rinkId, time, remark);
 					if(f){
+						duiKangs = duiKangService.getDuiKangs(user.getUserId());
+						session.setAttribute("duiKangs", duiKangs);
 						map.put("result", "0");
 						map.put("ok", "3");
 					}else{
